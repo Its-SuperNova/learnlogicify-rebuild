@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className={styles.nav}>
       <div className={styles.dropdown}>
-        <li className={styles.gradientText}>Company</li>
+        <Link href={"/Company/About"}>Company</Link>
         <div className={styles.dropdownContent}>
           <li>
             <Link href="/Company/About">About Us</Link>
@@ -19,29 +19,14 @@ const Header = () => {
           </li>
         </div>
       </div>
-      <div className={styles.dropdown}>
-        <li className={styles.gradientText}>Courses</li>
-        <div className={styles.dropdownContent}>
-          <li>
-            <Link href="/Courses">All Courses</Link>
-          </li>
-          <li>
-            <Link href="/Courses">All Bootcamps</Link>
-          </li>
-          <li>
-            <Link href="/Courses">Company Specific</Link>
-          </li>
-        </div>
+      <div>
+        <Link href={"/courses"}>Courses</Link>
       </div>
       <div>
-        <li className={styles.gradientText}>
-          <Link href={"/Services"}>Services</Link>
-        </li>
+        <Link href={"/Services"}>Services</Link>
       </div>
       <div>
-        <li className={styles.gradientText}>
-          <Link href={"/Contact"}>Contact</Link>
-        </li>
+        <Link href={"/Contact"}>Contact</Link>
       </div>
     </div>
   );

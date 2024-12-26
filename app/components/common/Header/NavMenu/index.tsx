@@ -21,17 +21,6 @@ const Header = () => {
       </div>
       <div className={styles.dropdown}>
         <li className={styles.gradientText}>Courses</li>
-        <div className={styles.dropdownContent}>
-          <li>
-            <Link href="/Courses">All Courses</Link>
-          </li>
-          <li>
-            <Link href="/Courses">All Bootcamps</Link>
-          </li>
-          <li>
-            <Link href="/Courses">Company Specific</Link>
-          </li>
-        </div>
       </div>
       <div>
         <li className={styles.gradientText}>
