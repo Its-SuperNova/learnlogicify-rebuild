@@ -1,7 +1,8 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two-column layout */
-  gap: 20px;
+  gap: 40px;
+  row-gap: 60px;
   padding: 20px;
 }
 
