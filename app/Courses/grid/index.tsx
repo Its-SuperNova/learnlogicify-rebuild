@@ -7,17 +7,46 @@ import Card from "../card";
 
 const CardGrid = () => {
   const cardData = [
-    { image: "/images/courseCover/ai.jpg", title: "AI Essentials & Beyond" },
-    { image: "/images/courseCover/ml.png", title: "Machine Learning Mastery" },
+    {
+      image: "/images/courseCover/ai.jpg",
+      title: "AI Essentials & Beyond",
+      link: "/courses/pages/basic-c",
+    },
+    {
+      image: "/images/courseCover/ml.png",
+      title: "Machine Learning Mastery",
+      link: "/courses/ml",
+    },
     {
       image: "/images/courseCover/web.png",
       title: "Full-Stack Web Development",
+      link: "/courses/web",
     },
-    { image: "/images/courseCover/app.png", title: "Next-Gen App Development" },
-    { image: "/images/courseCover/DS.png", title: "Data Science Accelerator" },
-    { image: "/images/courseCover/c++.png", title: "C++ Fundamentals" },
-    { image: "/images/courseCover/java.png", title: "Java Programming" },
-    { image: "/images/courseCover/py.png", title: "Python Programming" },
+    {
+      image: "/images/courseCover/app.png",
+      title: "Next-Gen App Development",
+      link: "/courses/app",
+    },
+    {
+      image: "/images/courseCover/DS.png",
+      title: "Data Science Accelerator",
+      link: "/courses/ds",
+    },
+    {
+      image: "/images/courseCover/c++.png",
+      title: "C++ Fundamentals",
+      link: "/courses/cpp",
+    },
+    {
+      image: "/images/courseCover/java.png",
+      title: "Java Programming",
+      link: "/courses/java",
+    },
+    {
+      image: "/images/courseCover/py.png",
+      title: "Python Programming",
+      link: "/courses/python",
+    },
   ];
 
   return (
@@ -38,7 +67,7 @@ const CardGrid = () => {
           }}
           viewport={{ once: false, amount: 0.1 }}
         >
-          <Card image={data.image} title={data.title} />
+          <Card image={data.image} title={data.title} link={data.link} />
         </motion.div>
       ))}
     </div>
