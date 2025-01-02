@@ -1,4 +1,33 @@
-.main{
-    background-color: black;
-    height: 100vh;
+.main {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 200px;
+    gap: 30px;
+}
+
+@media (max-width: 1080px) {
+    .main {
+        padding: 80px 100px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .main {
+        padding: 80px;
+    }
+}
+
+@media (max-width: 720px) {
+    .main {
+        padding: 50px;
+    }
+}
+
+@media (max-width: 520px) {
+    .main {
+        padding: 30px;
+        /* Minimal padding for smaller screens */
+        gap: 20px;
+        /* Adjust gap for better spacing */
+    }
 }

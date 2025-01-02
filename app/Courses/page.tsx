@@ -1,20 +1,18 @@
-// File: c:/Ashwin/projects/Learnlogicify/learnlogicify/app/pages/example.tsx
-"use client";
-import React from "react";
-import {FlipWords} from "@/components/ui/flip-words"
-
-const ExamplePage = () => {
-  const words = ["Artificial Intelligence", "Machine Learning", "Data Science"];
-
+import React from 'react'
+import styles from "./styles.module.css"
+import Header from "@/app/components/common/HeaderDark";
+import Description from "./Description"
+import Grid from "./grid"
+const CoursePage = () => {
   return (
-    <div className="flex justify-center items-center h-screen text-black">
-      <FlipWords
-        words={words}
-        duration={5000}
-        className="text-2xl font-bold text-black"
-      />
+    <div>
+      <Header />
+      <div className={styles.main}>
+        <Description />
+        <Grid />
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default ExamplePage;
+export default CoursePage
