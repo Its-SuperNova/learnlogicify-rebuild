@@ -10,7 +10,7 @@ const Hero = () => {
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.title}>
-          <p>Artificial Intelligence Essentials & Beyond</p>
+          <p>Machine Learning Mastery</p>
         </div>
         <div className={styles.Hstats}>
           <div className={styles.tutor}>
@@ -41,40 +41,38 @@ const Hero = () => {
           <div className={styles.about}>
             <div className={styles.AbtTitle}>About This Course</div>
             <p className={styles.Abtdesc}>
-              The Artificial Intelligence Essentials & Beyond course is designed
-              to provide a comprehensive introduction to AI concepts and
-              techniques. This course covers the foundations of AI, including
-              programming, mathematics for AI, and practical problem-solving.
-              Students will explore topics such as Python programming, data
-              structures, machine learning, deep learning, and natural language
-              processing through structured training sessions and guided
-              exercises.
+              The Machine Learning Mastery course is designed to provide
+              students with a comprehensive understanding of machine learning
+              concepts, techniques, and applications. This course covers
+              foundational topics such as Python programming, statistics, and
+              data visualization, as well as advanced topics like supervised and
+              unsupervised learning, deep learning, and natural language
+              processing (NLP).
             </p>
             <p className={styles.Abtdesc}>
-              By the end of this course, students will gain a strong
-              understanding of AI fundamentals and advanced topics, preparing
-              them to tackle real-world challenges and build a solid foundation
-              for further studies or professional opportunities in Artificial
-              Intelligence.
+              Through practical training and real-world projects, students will
+              learn to build and optimize machine learning models, work with
+              popular frameworks like TensorFlow and Scikit-Learn, and gain
+              hands-on experience in solving real-world problems using
+              data-driven techniques.
             </p>
           </div>
         </div>
         <div className={styles.con3}>
           <div className={styles.about}>
-            <div className={styles.AbtTitle}>
-              Pre-requisites for this Course
-            </div>
+            <div className={styles.AbtTitle}>Who Should Take This Course?</div>
             <p className={styles.Abtdesc}>
-              This AI course is suitable for beginners and requires no prior
-              experience in programming or AI concepts. However, familiarity
-              with basic mathematics, such as linear algebra, calculus, and
-              probability, will be advantageous for understanding advanced
-              topics.
+              This Machine Learning Mastery course is designed for beginners
+              with a keen interest in learning how machines learn from data.
+              Whether you are new to programming or looking to specialize in
+              machine learning, this course will guide you step-by-step through
+              the fundamentals and advanced techniques of machine learning.
             </p>
             <p className={styles.Abtdesc}>
-              Whether you are a beginner or have some experience in programming,
-              this course will guide you step-by-step to master the fundamentals
-              and advanced topics of Artificial Intelligence.
+              By the end of this course, students will have the skills and
+              confidence to design, develop, and deploy machine learning models,
+              preparing them for real-world applications and further career
+              opportunities in the field.
             </p>
           </div>
         </div>

@@ -10,7 +10,7 @@ const Hero = () => {
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.title}>
-          <p>Artificial Intelligence Essentials & Beyond</p>
+          <p>Core Programming-(java)</p>
         </div>
         <div className={styles.Hstats}>
           <div className={styles.tutor}>
@@ -41,21 +41,20 @@ const Hero = () => {
           <div className={styles.about}>
             <div className={styles.AbtTitle}>About This Course</div>
             <p className={styles.Abtdesc}>
-              The Artificial Intelligence Essentials & Beyond course is designed
-              to provide a comprehensive introduction to AI concepts and
-              techniques. This course covers the foundations of AI, including
-              programming, mathematics for AI, and practical problem-solving.
-              Students will explore topics such as Python programming, data
-              structures, machine learning, deep learning, and natural language
-              processing through structured training sessions and guided
-              exercises.
+              The Core Programming - Java course is designed to introduce
+              students to the fundamentals of programming using Java, a powerful
+              and versatile programming language widely used in enterprise
+              applications, web development, and Android development. This
+              course covers essential programming concepts, object-oriented
+              programming (OOP), and core Java features.
             </p>
             <p className={styles.Abtdesc}>
-              By the end of this course, students will gain a strong
-              understanding of AI fundamentals and advanced topics, preparing
-              them to tackle real-world challenges and build a solid foundation
-              for further studies or professional opportunities in Artificial
-              Intelligence.
+              Students will also explore advanced topics such as data
+              structures, algorithms, database management, and software
+              development methodologies. By the end of this course, participants
+              will have a strong foundation in Java programming, enabling them
+              to solve real-world problems and prepare for advanced
+              opportunities in software development.
             </p>
           </div>
         </div>
@@ -65,16 +64,15 @@ const Hero = () => {
               Pre-requisites for this Course
             </div>
             <p className={styles.Abtdesc}>
-              This AI course is suitable for beginners and requires no prior
-              experience in programming or AI concepts. However, familiarity
-              with basic mathematics, such as linear algebra, calculus, and
-              probability, will be advantageous for understanding advanced
-              topics.
+              This Core Programming - Java course is beginner-friendly and does
+              not require any prior programming experience. However, familiarity
+              with basic mathematics, such as algebra and logic, will be helpful
+              in understanding programming concepts more effectively.
             </p>
             <p className={styles.Abtdesc}>
-              Whether you are a beginner or have some experience in programming,
-              this course will guide you step-by-step to master the fundamentals
-              and advanced topics of Artificial Intelligence.
+              Whether you are new to programming or have some prior experience,
+              this course will guide you step-by-step to master Java programming
+              and its applications in real-world scenarios.
             </p>
           </div>
         </div>

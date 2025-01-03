@@ -10,7 +10,7 @@ const Hero = () => {
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.title}>
-          <p>Artificial Intelligence Essentials & Beyond</p>
+          <p>Full-Stack Web Development</p>
         </div>
         <div className={styles.Hstats}>
           <div className={styles.tutor}>
@@ -41,21 +41,21 @@ const Hero = () => {
           <div className={styles.about}>
             <div className={styles.AbtTitle}>About This Course</div>
             <p className={styles.Abtdesc}>
-              The Artificial Intelligence Essentials & Beyond course is designed
-              to provide a comprehensive introduction to AI concepts and
-              techniques. This course covers the foundations of AI, including
-              programming, mathematics for AI, and practical problem-solving.
-              Students will explore topics such as Python programming, data
-              structures, machine learning, deep learning, and natural language
-              processing through structured training sessions and guided
-              exercises.
+              The Full-Stack Web Development course is designed to provide
+              students with the knowledge and skills required to build complete,
+              dynamic, and scalable web applications. This course covers
+              essential web development topics, including frontend and backend
+              development, database integration, and deployment strategies,
+              using modern tools and frameworks like React, Node.js, Express,
+              and MongoDB.
             </p>
             <p className={styles.Abtdesc}>
-              By the end of this course, students will gain a strong
-              understanding of AI fundamentals and advanced topics, preparing
-              them to tackle real-world challenges and build a solid foundation
-              for further studies or professional opportunities in Artificial
-              Intelligence.
+              Students will explore a variety of topics, including HTML, CSS,
+              and JavaScript basics, responsive design, RESTful APIs,
+              authentication, state management, and performance optimization. By
+              the end of the course, participants will have the ability to
+              design, develop, and deploy professional-grade web applications
+              for real-world use.
             </p>
           </div>
         </div>
@@ -65,16 +65,15 @@ const Hero = () => {
               Pre-requisites for this Course
             </div>
             <p className={styles.Abtdesc}>
-              This AI course is suitable for beginners and requires no prior
-              experience in programming or AI concepts. However, familiarity
-              with basic mathematics, such as linear algebra, calculus, and
-              probability, will be advantageous for understanding advanced
-              topics.
+              This Full-Stack Web Development course is beginner-friendly and
+              requires no prior programming experience. However, familiarity
+              with basic computer operations and a keen interest in web
+              technologies will be advantageous.
             </p>
             <p className={styles.Abtdesc}>
-              Whether you are a beginner or have some experience in programming,
-              this course will guide you step-by-step to master the fundamentals
-              and advanced topics of Artificial Intelligence.
+              Whether you are new to programming or already have some
+              experience, this course will guide you step-by-step to master the
+              skills needed to build modern and scalable web applications.
             </p>
           </div>
         </div>

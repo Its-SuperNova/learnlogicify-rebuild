@@ -10,7 +10,7 @@ const Hero = () => {
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.title}>
-          <p>Artificial Intelligence Essentials & Beyond</p>
+          <p>Next-Gen App Development</p>
         </div>
         <div className={styles.Hstats}>
           <div className={styles.tutor}>
@@ -41,21 +41,19 @@ const Hero = () => {
           <div className={styles.about}>
             <div className={styles.AbtTitle}>About This Course</div>
             <p className={styles.Abtdesc}>
-              The Artificial Intelligence Essentials & Beyond course is designed
-              to provide a comprehensive introduction to AI concepts and
-              techniques. This course covers the foundations of AI, including
-              programming, mathematics for AI, and practical problem-solving.
-              Students will explore topics such as Python programming, data
-              structures, machine learning, deep learning, and natural language
-              processing through structured training sessions and guided
-              exercises.
+              The Full-Stack Mobile App Development course is designed to equip
+              students with the skills and knowledge required to build complete,
+              robust, and scalable mobile applications. This course covers
+              essential topics such as frontend and backend development,
+              database management, and app deployment, using modern tools and
+              frameworks like React Native, Firebase, and REST APIs.
             </p>
             <p className={styles.Abtdesc}>
-              By the end of this course, students will gain a strong
-              understanding of AI fundamentals and advanced topics, preparing
-              them to tackle real-world challenges and build a solid foundation
-              for further studies or professional opportunities in Artificial
-              Intelligence.
+              Students will explore a wide range of topics, including UI/UX
+              design with Figma, mobile app architecture, real-time database
+              integration, and advanced debugging techniques. By the end of the
+              course, participants will have the expertise to design, develop,
+              and deploy mobile applications that meet real-world demands.
             </p>
           </div>
         </div>
@@ -65,16 +63,17 @@ const Hero = () => {
               Pre-requisites for this Course
             </div>
             <p className={styles.Abtdesc}>
-              This AI course is suitable for beginners and requires no prior
-              experience in programming or AI concepts. However, familiarity
-              with basic mathematics, such as linear algebra, calculus, and
-              probability, will be advantageous for understanding advanced
-              topics.
+              This Full-Stack Mobile App Development course is suitable for
+              beginners with a passion for creating mobile applications. No
+              prior programming experience is required, although familiarity
+              with basic programming concepts, such as HTML and CSS, can be
+              helpful.
             </p>
             <p className={styles.Abtdesc}>
-              Whether you are a beginner or have some experience in programming,
-              this course will guide you step-by-step to master the fundamentals
-              and advanced topics of Artificial Intelligence.
+              Whether you are a beginner or have some experience in app
+              development, this course provides a step-by-step guide to
+              mastering the skills needed to develop modern, scalable mobile
+              applications for iOS and Android platforms.
             </p>
           </div>
         </div>
