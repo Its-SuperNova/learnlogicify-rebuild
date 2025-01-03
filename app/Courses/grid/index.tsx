@@ -10,7 +10,7 @@ const CardGrid = () => {
     {
       image: "/images/courseCover/ai.jpg",
       title: "AI Essentials & Beyond",
-      link: "/courses/pages/basic-c",
+      link: "/courses/pages/ai-essentials",
     },
     {
       image: "/images/courseCover/ml.png",

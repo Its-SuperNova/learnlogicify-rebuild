@@ -14,7 +14,7 @@ const Certificate = () => {
       </div>
       <div className={styles.content}>
         <div className={styles.title}>
-          <h3>Certificate for Basic Python Course</h3>
+          <h3>Certificate of the course</h3>
         </div>
         <div className={styles.desc}>
           <p>
