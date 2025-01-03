@@ -1,16 +1,35 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./styles.module.css";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
-import { BiMessageSquareDots } from "react-icons/bi";
+import { BiMessageSquareDots } from "react-icons/bi"; // Import the icon
 import { syllabusData } from "./data/syllabusData";
-import Quotes from "./components/quotes";
-import Probanner from "./components/proBanner"
+
 const Syllabus: React.FC = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const contentRefs = useRef<HTMLDivElement[]>([]);
 
   const toggleExpand = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
+  // Function to determine the styles for main topic icons
+  const getMainTopicIconStyle = (mainIndex: number) => {
+    const styles = [
+      {
+        backgroundColor: "rgb(255, 221, 170)", // Light orange
+        color: "rgb(255, 157, 37)", // Orange
+      },
+      {
+        backgroundColor: "rgb(170, 255, 221)", // Light green
+        color: "rgb(0, 160, 107)", // Green
+      },
+      {
+        backgroundColor: "rgb(221, 214, 255)", // Light purple
+        color: "rgb(101, 78, 163)", // Purple
+      },
+    ];
+    return styles[mainIndex % styles.length]; // Cycle through styles
   };
 
   return (
@@ -30,6 +49,7 @@ const Syllabus: React.FC = () => {
           {syllabusData.map((module, index) => {
             const Icon = module.icon;
             const isExpanded = expandedIndex === index;
+
             return (
               <div
                 key={index}
@@ -37,7 +57,10 @@ const Syllabus: React.FC = () => {
                   isExpanded ? styles.expanded : ""
                 }`}
               >
-                <div className={styles.listRow}>
+                <div
+                  className={styles.listRow}
+                  onClick={() => toggleExpand(index)}
+                >
                   <div className={styles.icon}>
                     <Icon size={35} />
                   </div>
@@ -46,54 +69,62 @@ const Syllabus: React.FC = () => {
                       <div className={styles.module}>{module.title}</div>
                       <div className={styles.topic}>{module.subtitle}</div>
                     </div>
-                    <div
-                      className={styles.DropdownIcon}
-                      onClick={() => toggleExpand(index)}
-                    >
+                    <div className={styles.DropdownIcon}>
                       {isExpanded ? <FaAngleUp /> : <FaAngleDown />}
                     </div>
                   </div>
                 </div>
-                {isExpanded && (
-                  <div className={styles.dropdownContent}>
-                    <ul>
-                      {module.topics.map((topic, topicIndex) => (
-                        <li key={topicIndex}>
-                          <BiMessageSquareDots color="blue" /> {topic}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
+                <div
+                  ref={(el) => {
+                    if (el) contentRefs.current[index] = el;
+                  }}
+                  className={styles.dropdownContent}
+                  style={{
+                    maxHeight: isExpanded
+                      ? contentRefs.current[index]?.scrollHeight
+                      : 0,
+                  }}
+                >
+                  {module.mainTopics.map((mainTopic, mainIndex) => {
+                    const iconStyle = getMainTopicIconStyle(mainIndex); // Get styles for the icon
+                    return (
+                      <div key={mainIndex} className={styles.contentlist}>
+                        <div className={styles.mainTopic}>
+                          <div
+                            className={styles.mainTopicIcon}
+                            style={{
+                              backgroundColor: iconStyle.backgroundColor,
+                              color: iconStyle.color,
+                            }}
+                          >
+                            <mainTopic.icon size={25} />
+                          </div>
+                          <span>{mainTopic.title}</span>
+                        </div>
+                        {mainTopic.subTopics.map((subTopic, subIndex) => (
+                          <div key={subIndex} className={styles.subTopics}>
+                            <h4>{subTopic.title}</h4>
+                            <ul>
+                              {subTopic.points.map((point, pointIndex) => (
+                                <li key={pointIndex}>
+                                  <BiMessageSquareDots
+                                    color="blue"
+                                    size={18}
+                                    style={{ marginRight: "8px" }}
+                                  />
+                                  {point}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             );
           })}
-        </div>
-        <div className={styles.right}>
-          <div className={styles.cardContainer}>
-            <Quotes />
-            <Probanner />
-          </div>
-          <div className={styles.why}>
-            <div className={styles.tit}>
-              Why should take this Python course?
-            </div>
-            <div>
-              <br />
-              <b>Beginner-Friendly</b> This course requires no prior
-              programming experience, making it ideal for complete beginners.
-              <br />
-              <br />
-              <b>Comprehensive Learning</b>You ll gain a solid foundation
-              in Python, covering all essential concepts from variables and data
-              types to control structures and functions.
-              <br />
-              <br />
-              <b>Practical Skills</b> Learn through hands on exercises and
-              real world examples, ensuring you can apply Python programming
-              skills effectively in various domains.
-            </div>
-          </div>
         </div>
       </div>
     </div>

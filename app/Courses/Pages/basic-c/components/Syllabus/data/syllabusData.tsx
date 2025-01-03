@@ -1,221 +1,497 @@
-import { FaCode } from "react-icons/fa6";
-import { FaPython } from "react-icons/fa6";
-import { IoCubeOutline } from "react-icons/io5";
+import { PiCubeBold } from "react-icons/pi";
+import { FaPython, FaBrain } from "react-icons/fa6";
 import { PiMathOperationsBold } from "react-icons/pi";
-import { FaQuestion } from "react-icons/fa";
-import { RiLoopLeftFill } from "react-icons/ri";
-import { TbMathFunction } from "react-icons/tb";
 import { FaRegFolderOpen } from "react-icons/fa";
-import { AiOutlineExclamationCircle } from "react-icons/ai";
+
+interface SubTopic {
+  title: string;
+  points: string[];
+}
+
 interface SyllabusModule {
   icon: React.ElementType;
   title: string;
   subtitle: string;
-  topics: string[];
+  mainTopics: {
+    icon: React.ElementType;
+    title: string;
+    subTopics: SubTopic[];
+  }[];
 }
 
 export const syllabusData: SyllabusModule[] = [
   {
-    icon: FaCode,
-    title: "Module 1",
-    subtitle: "Introduction to Computers",
-    topics: [
-      "Overview of computer systems",
-      "The role of Programming Language",
-      "Understanding binary and data representation",
-      "Number Conversions",
+    icon: PiCubeBold,
+    title: "Semester 1",
+    subtitle: "Foundations of AI and Problem-Solving",
+    mainTopics: [
+      {
+        icon: FaPython,
+        title: "Introduction to Programming (Python)",
+        subTopics: [
+          {
+            title: "Basics of Python Programming",
+            points: [
+              "Syntax and Variables",
+              "Control Structures: Loops and Conditionals",
+              "Functions and Modular Programming",
+              "Lists, Tuples, and Dictionaries",
+            ],
+          },
+          {
+            title: "Advanced Programming Concepts",
+            points: [
+              "File Handling in Python",
+              "Introduction to Python Libraries (NumPy, Pandas, Matplotlib)",
+              "Error Handling and Debugging",
+              "Basic Object-Oriented Programming (OOP) Concepts",
+            ],
+          },
+        ],
+      },
+      {
+        icon: PiMathOperationsBold,
+        title: "Mathematics for AI",
+        subTopics: [
+          {
+            title: "Linear Algebra and Probability",
+            points: [
+              "Linear Algebra Basics (Vectors and Matrices)",
+              "Probability and Statistics Foundations",
+              "Probability Distributions (Normal, Binomial, etc.)",
+              "Matrix Operations and Applications in AI",
+            ],
+          },
+          {
+            title: "Graph Theory and Calculus",
+            points: [
+              "Basic Calculus for Optimization",
+              "Introduction to Graph Theory",
+              "Discrete Mathematics Basics",
+              "Concept of Gradient and its Applications",
+            ],
+          },
+        ],
+      },
+      {
+        icon: FaRegFolderOpen,
+        title: "Soft Skills Class",
+        subTopics: [
+          {
+            title: "Communication and Collaboration",
+            points: [
+              "Effective Communication Techniques",
+              "Team Collaboration and Problem Solving",
+              "Time Management and Productivity Skills",
+              "Public Speaking and Presentation Skills",
+            ],
+          },
+          {
+            title: "Professional Development",
+            points: [
+              "Writing Professional Emails and Documents",
+              "Developing Confidence and Leadership",
+              "Understanding Workplace Etiquette",
+              "Introduction to Emotional Intelligence",
+            ],
+          },
+        ],
+      },
     ],
   },
   {
-    icon: FaPython,
-    title: "Module 2",
-    subtitle: "Introduction to Python",
-    topics: [
-      "Overview of Python",
-      "Setting up the Python environment",
-      "Writing and running your first Python program",
-      "Understanding Python’s syntax and structure",
+    icon: PiCubeBold,
+    title: "Semester 2",
+    subtitle: "Building Computational Thinking",
+    mainTopics: [
+      {
+        icon: FaPython,
+        title: "Data Structures and Algorithms with Python",
+        subTopics: [
+          {
+            title: "Core Data Structures",
+            points: [
+              "Arrays, Linked Lists, Stacks, Queues",
+              "Searching and Sorting Algorithms",
+              "Recursion and Dynamic Programming",
+              "Trees and Graphs with Python",
+            ],
+          },
+          {
+            title: "Advanced Concepts",
+            points: [
+              "Hashing and Hash Tables",
+              "Advanced Sorting Techniques (Merge Sort, Quick Sort)",
+              "Applications of Graph Algorithms (DFS, BFS, Dijkstra's)",
+              "Introduction to Big-O Notation and Complexity Analysis",
+            ],
+          },
+        ],
+      },
+      {
+        icon: PiMathOperationsBold,
+        title: "Statistics for AI",
+        subTopics: [
+          {
+            title: "Foundational Concepts",
+            points: [
+              "Descriptive and Inferential Statistics",
+              "Data Distributions and Visualization",
+              "Hypothesis Testing and Confidence Intervals",
+              "Introduction to Bayesian Inference",
+            ],
+          },
+          {
+            title: "Advanced Applications",
+            points: [
+              "Sampling Techniques and Sampling Distributions",
+              "Correlation and Regression Analysis",
+              "Understanding Central Limit Theorem",
+              "Chi-Square and t-Tests Applications",
+            ],
+          },
+        ],
+      },
+      {
+        icon: FaRegFolderOpen,
+        title: "Soft Skills Class",
+        subTopics: [
+          {
+            title: "Critical Thinking and Leadership",
+            points: [
+              "Critical Thinking and Decision Making",
+              "Emotional Intelligence in the Workplace",
+              "Building Leadership Skills",
+              "Cross-Cultural Communication",
+            ],
+          },
+          {
+            title: "Professional Growth",
+            points: [
+              "Conflict Management Strategies",
+              "Negotiation Skills and Techniques",
+              "Building Trust in Teams",
+              "Handling Feedback Positively",
+            ],
+          },
+        ],
+      },
     ],
   },
   {
-    icon: IoCubeOutline,
-    title: "Module 3",
-    subtitle: "Variables and Data Types",
-    topics: [
-      "Introduction to Variables",
-      "Primitive Data Types",
-      "Composite Data Types",
-      "Type Conversion",
-      "Mutable and Immutable Types",
+    icon: PiCubeBold,
+    title: "Semester 3",
+    subtitle: "Introduction to AI Concepts",
+    mainTopics: [
+      {
+        icon: FaBrain,
+        title: "Introduction to Artificial Intelligence",
+        subTopics: [
+          {
+            title: "AI Basics",
+            points: [
+              "What is AI? History and Applications",
+              "AI vs Machine Learning vs Deep Learning",
+              "Ethical Implications of AI",
+              "Introduction to Search Algorithms (DFS, BFS)",
+            ],
+          },
+          {
+            title: "Advanced AI Topics",
+            points: [
+              "Constraint Satisfaction Problems",
+              "Applications of AI in Real-World Scenarios",
+              "AI Frameworks Overview (TensorFlow, PyTorch Basics)",
+              "Fundamentals of Intelligent Agents",
+            ],
+          },
+        ],
+      },
+      {
+        icon: FaPython,
+        title: "Programming Tools for AI",
+        subTopics: [
+          {
+            title: "Python for AI",
+            points: [
+              "Python Advanced Techniques for AI",
+              "Working with Jupyter Notebooks",
+              "Version Control using Git and GitHub",
+              "Data Manipulation with Pandas and NumPy",
+            ],
+          },
+          {
+            title: "Automation and APIs",
+            points: [
+              "Visualizing Data with Matplotlib and Seaborn",
+              "Introduction to APIs and JSON Handling",
+              "Working with Large Datasets",
+              "Automating Tasks with Python Scripts",
+            ],
+          },
+        ],
+      },
+      {
+        icon: FaRegFolderOpen,
+        title: "Soft Skills Class",
+        subTopics: [
+          {
+            title: "Personal Development",
+            points: [
+              "Creative Thinking and Innovation",
+              "Conflict Resolution and Negotiation",
+              "Building a Growth Mindset",
+              "Resume Building and Interview Preparation",
+            ],
+          },
+          {
+            title: "Professional Networking",
+            points: [
+              "Developing an Online Presence (LinkedIn, GitHub)",
+              "Networking Effectively",
+              "Building Effective Professional Relationships",
+              "Understanding Team Dynamics",
+            ],
+          },
+        ],
+      },
     ],
   },
   {
-    icon: PiMathOperationsBold,
-    title: "Module 4",
-    subtitle: "Operators and Expressions",
-    topics: [
-      "Arithmetic Operators",
-      "Comparison Operators",
-      "Logical Operators",
-      "Bitwise Operators",
-      "Expressions in Python",
+    icon: FaBrain,
+    title: "Semester 4",
+    subtitle: "Machine Learning Mastery",
+    mainTopics: [
+      {
+        icon: FaPython,
+        title: "Machine Learning (ML)",
+        subTopics: [
+          {
+            title: "Core ML Concepts",
+            points: [
+              "Supervised and Unsupervised Learning",
+              "Linear and Logistic Regression",
+              "Decision Trees and Random Forests",
+              "Clustering (K-Means, Hierarchical Clustering)",
+            ],
+          },
+          {
+            title: "Advanced Techniques",
+            points: [
+              "Support Vector Machines (SVMs)",
+              "Ensemble Learning Techniques (Bagging, Boosting)",
+              "Overfitting and Regularization (L1, L2)",
+              "Dimensionality Reduction (PCA)",
+            ],
+          },
+        ],
+      },
+      {
+        icon: FaPython,
+        title: "Python for ML",
+        subTopics: [
+          {
+            title: "Libraries and Tools",
+            points: [
+              "Introduction to Scikit-Learn",
+              "Model Evaluation Metrics (Accuracy, Precision, Recall, F1 Score)",
+              "Data Preprocessing and Feature Engineering",
+              "Building and Evaluating ML Models",
+            ],
+          },
+          {
+            title: "Advanced Topics",
+            points: [
+              "Hyperparameter Tuning (Grid Search, Random Search)",
+              "Cross-Validation Techniques",
+              "Working with Real-World Datasets",
+              "Automating Machine Learning with Pipelines",
+            ],
+          },
+        ],
+      },
+      {
+        icon: FaRegFolderOpen,
+        title: "Soft Skills Class",
+        subTopics: [
+          {
+            title: "Professional Skills",
+            points: [
+              "Persuasive Communication Skills",
+              "Team Leadership and Motivation",
+              "Networking and Building Professional Relationships",
+              "Managing Feedback and Criticism",
+            ],
+          },
+          {
+            title: "Public Speaking and Problem Solving",
+            points: [
+              "Advanced Public Speaking Techniques",
+              "Designing Effective Presentations",
+              "Understanding Workplace Politics",
+              "Effective Problem Solving in Teams",
+            ],
+          },
+        ],
+      },
     ],
   },
   {
-    icon: FaQuestion,
-    title: "Module 5",
-    subtitle: "Conditional Statements",
-    topics: [
-      "The if Statement",
-      "The else Statement",
-      "The elif Statement",
-      "Nested Conditionals",
-      "Ternary Operators",
-    ],
-  },
-  {
-    icon: RiLoopLeftFill,
-    title: "Module 6",
-    subtitle: "Loops",
-    topics: [
-      "The for Loop",
-      "The while Loop",
-      "Nested Loops",
-      "Loop Control Statements",
-      "Iterators",
-    ],
-  },
-  {
-    icon: TbMathFunction,
-    title: "Module 7",
-    subtitle: "Functions",
-    topics: [
-      "Defining Functions",
-      "Function Arguments",
-      "Return Values",
-      "Scope and Lifetime",
-      "Lambda Functions",
-    ],
-  },
-  {
-    icon: FaCode,
-    title: "Module 8",
-    subtitle: "Number Crunching",
-    topics: [
-      "Mathematical Functions",
-      "Random Numbers",
-      "Statistics",
-      "NumPy Library",
-    ],
-  },
-  {
-    icon: FaCode,
-    title: "Module 9",
-    subtitle: "Patterns",
-    topics: [
-      "Pattern Matching",
-      "Regular Expressions",
-      "Wildcards",
-      "String Patterns",
-    ],
-  },
-  {
-    icon: FaCode,
-    title: "Module 10",
-    subtitle: "Arrays",
-    topics: [
-      "Introduction to Arrays",
-      "Array Operations",
-      "Multidimensional Arrays",
-      "Array Libraries",
-    ],
-  },
-  {
-    icon: FaCode,
-    title: "Module 11",
-    subtitle: "2D Arrays",
-    topics: [
-      "Introduction to 2D Arrays",
-      "2D Array Operations",
-      "Matrix Manipulations",
-      "Applications of 2D Arrays",
-    ],
-  },
-  {
-    icon: FaCode,
-    title: "Module 12",
-    subtitle: "Strings",
-    topics: [
-      "Introduction to Strings",
-      "String Operations",
-      "String Methods",
-      "String Formatting",
-    ],
-  },
-  {
-    icon: FaCode,
-    title: "Module 13",
-    subtitle: "Tuples",
-    topics: [
-      "Introduction to Tuples",
-      "Tuple Operations",
-      "Nested Tuples",
-      "Applications of Tuples",
-    ],
-  },
-  {
-    icon: FaCode,
-    title: "Module 14",
-    subtitle: "Dictionaries",
-    topics: [
-      "Introduction to Dictionaries",
-      "Dictionary Operations",
-      "Nested Dictionaries",
-      "Applications of Dictionaries",
-    ],
-  },
-  {
-    icon: FaCode,
-    title: "Module 15",
-    subtitle: "Sets",
-    topics: [
-      "Introduction to Sets",
-      "Set Operations",
-      "Set Methods",
-      "Applications of Sets",
-    ],
-  },
-  {
-    icon: FaCode,
-    title: "Module 16",
-    subtitle: "Working with Modules",
-    topics: [
-      "Introduction to Modules",
-      "Importing Modules",
-      "Creating Modules",
-      "Using Standard Library Modules",
+    icon: FaBrain,
+    title: "Semester 5",
+    subtitle: "Advanced AI Techniques",
+    mainTopics: [
+      {
+        icon: FaBrain,
+        title: "Deep Learning (DL)",
+        subTopics: [
+          {
+            title: "Core Deep Learning Concepts",
+            points: [
+              "Neural Network Basics",
+              "Convolutional Neural Networks (CNNs)",
+              "Recurrent Neural Networks (RNNs) and LSTMs",
+              "Applications of Deep Learning in AI",
+            ],
+          },
+          {
+            title: "Advanced Techniques",
+            points: [
+              "Transfer Learning and Pre-Trained Models",
+              "GANs (Generative Adversarial Networks)",
+              "Optimization Techniques for Neural Networks",
+              "Understanding Activation Functions",
+            ],
+          },
+        ],
+      },
+      {
+        icon: FaBrain,
+        title: "Natural Language Processing (NLP)",
+        subTopics: [
+          {
+            title: "Core NLP Topics",
+            points: [
+              "Text Preprocessing (Tokenization, Stemming, Lemmatization)",
+              "Sentiment Analysis and Text Classification",
+              "Word Embeddings (Word2Vec, GloVe)",
+              "Introduction to Transformers and BERT",
+            ],
+          },
+          {
+            title: "Advanced NLP Applications",
+            points: [
+              "Sequence-to-Sequence Models",
+              "Chatbot Development Basics",
+              "Topic Modeling (LDA, NMF)",
+              "Applications of NLP in Real-World Problems",
+            ],
+          },
+        ],
+      },
+      {
+        icon: FaRegFolderOpen,
+        title: "Soft Skills Class",
+        subTopics: [
+          {
+            title: "Leadership and Resilience",
+            points: [
+              "Advanced Public Speaking and Storytelling",
+              "Strategic Planning and Execution",
+              "Building Personal Branding",
+              "Coping with Stress and Burnout",
+            ],
+          },
+          {
+            title: "Empathy and Communication",
+            points: [
+              "Developing Emotional Resilience",
+              "Effective Delegation Techniques",
+              "Creating Impactful Elevator Pitches",
+              "Practicing Empathy in Communication",
+            ],
+          },
+        ],
+      },
     ],
   },
   {
     icon: FaRegFolderOpen,
-    title: "Module 17",
-    subtitle: "File Handling",
-    topics: [
-      "Introduction to File Handling",
-      "Reading Files",
-      "Writing to Files",
-      "Working with CSV Files",
-    ],
-  },
-  {
-    icon: AiOutlineExclamationCircle,
-    title: "Module 18",
-    subtitle: "Exception Handling",
-    topics: [
-      "Introduction to Exception Handling",
-      "Try and Except Blocks",
-      "Handling Multiple Exceptions",
-      "Creating Custom Exceptions",
+    title: "Semester 6",
+    subtitle: "AI in Action",
+    mainTopics: [
+      {
+        icon: FaBrain,
+        title: "Capstone Projects",
+        subTopics: [
+          {
+            title: "AI Project Planning",
+            points: [
+              "Define and Plan AI Projects",
+              "Implementation of AI Solutions",
+              "Presentation and Peer Review",
+              "Real-World Case Studies",
+            ],
+          },
+          {
+            title: "AI Deployment and Publishing",
+            points: [
+              "Collaboration in AI Project Teams",
+              "Publishing Research Papers",
+              "Incorporating Feedback for Improvements",
+              "End-to-End Deployment of AI Models",
+            ],
+          },
+        ],
+      },
+      {
+        icon: FaRegFolderOpen,
+        title: "Portfolio Development",
+        subTopics: [
+          {
+            title: "Building an AI Portfolio",
+            points: [
+              "Creating an Online Portfolio (GitHub, LinkedIn)",
+              "Writing Technical Blogs and Documenting Projects",
+              "Showcasing AI and ML Projects",
+              "Building a Personal Website",
+            ],
+          },
+          {
+            title: "Engagement and Contribution",
+            points: [
+              "Publishing Open-Source Contributions",
+              "Highlighting Soft Skills and Achievements",
+              "Recording Video Demonstrations of Projects",
+              "Engaging with Online Developer Communities",
+            ],
+          },
+        ],
+      },
+      {
+        icon: FaRegFolderOpen,
+        title: "Soft Skills Class",
+        subTopics: [
+          {
+            title: "Career Preparation",
+            points: [
+              "Preparing for Job Interviews",
+              "Developing Entrepreneurial Mindset",
+              "Industry Networking and Professional Etiquette",
+              "Continuous Learning and Upskilling Strategies",
+            ],
+          },
+          {
+            title: "Advanced Career Development",
+            points: [
+              "Mastering Negotiation in Job Offers",
+              "Understanding Global AI Market Trends",
+              "Building a Vision for Your Career",
+              "Exploring Opportunities Beyond the Classroom",
+            ],
+          },
+        ],
+      },
     ],
   },
 ];

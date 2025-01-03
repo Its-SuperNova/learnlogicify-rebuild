@@ -10,7 +10,7 @@ const Hero = () => {
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.title}>
-          <p>Basic Python For Beginner</p>
+          <p>Artificial Intelligence Essentials & Beyond</p>
         </div>
         <div className={styles.Hstats}>
           <div className={styles.tutor}>
@@ -41,15 +41,21 @@ const Hero = () => {
           <div className={styles.about}>
             <div className={styles.AbtTitle}>About This Course</div>
             <p className={styles.Abtdesc}>
-              The Basic Python course is designed for beginners with no prior
-              programming experience. You ll learn the fundamental concepts of
-              Python, including syntax, data types, variables, and control
-              structures. Our course features engaging lessons, exclusive
-              videos, and hands-on exercises through our LMS portal, where you
-              can run and execute problems in real-time. At the end of the
-              course, you ll take a final exam and receive a certificate with
-              your scored marks. You ll have a solid foundation to build upon
-              for more advanced Python topics.
+              The Artificial Intelligence Essentials & Beyond course is designed
+              to provide a comprehensive introduction to AI concepts and
+              techniques. This course covers the foundations of AI, including
+              programming, mathematics for AI, and practical problem-solving.
+              Students will explore topics such as Python programming, data
+              structures, machine learning, deep learning, and natural language
+              processing through structured training sessions and guided
+              exercises.
+            </p>
+            <p className={styles.Abtdesc}>
+              By the end of this course, students will gain a strong
+              understanding of AI fundamentals and advanced topics, preparing
+              them to tackle real-world challenges and build a solid foundation
+              for further studies or professional opportunities in Artificial
+              Intelligence.
             </p>
           </div>
         </div>
@@ -59,19 +65,16 @@ const Hero = () => {
               Pre-requisites for this Course
             </div>
             <p className={styles.Abtdesc}>
-              This basic Python course has no pre requisites, making it ideal
-              for beginners with no programming experience. However, if you know
-              some C programming, you ll find it easier to understand how Python
-              works behind the scenes. Don t worry if you re new we ll guide you
-              through Python s features and syntax from scratch.
+              This AI course is suitable for beginners and requires no prior
+              experience in programming or AI concepts. However, familiarity
+              with basic mathematics, such as linear algebra, calculus, and
+              probability, will be advantageous for understanding advanced
+              topics.
             </p>
             <p className={styles.Abtdesc}>
-              If you re interested in gaining some C programming knowledge
-              beforehand, feel free to explore our{" "}
-              <Link href={"/Courses"} className={styles.link}>
-                Basic C Programming
-              </Link>{" "}
-              Course.
+              Whether you are a beginner or have some experience in programming,
+              this course will guide you step-by-step to master the fundamentals
+              and advanced topics of Artificial Intelligence.
             </p>
           </div>
         </div>
