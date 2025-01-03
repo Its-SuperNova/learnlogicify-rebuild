@@ -15,37 +15,37 @@ const CardGrid = () => {
     {
       image: "/images/courseCover/ml.png",
       title: "Machine Learning Mastery",
-      link: "/courses/ml",
+      link: "/courses/pages/ml-mastery",
     },
     {
       image: "/images/courseCover/web.png",
       title: "Full-Stack Web Development",
-      link: "/courses/web",
+      link: "/courses/pages/web-dev",
     },
     {
       image: "/images/courseCover/app.png",
       title: "Next-Gen App Development",
-      link: "/courses/app",
+      link: "/courses/pages/app-dev",
     },
     {
       image: "/images/courseCover/DS.png",
       title: "Data Science Accelerator",
-      link: "/courses/ds",
+      link: "/courses/pages/data-science-accelerator",
     },
     {
       image: "/images/courseCover/c++.png",
       title: "C++ Fundamentals",
-      link: "/courses/cpp",
+      link: "/courses/pages/core-programming-cpp",
     },
     {
       image: "/images/courseCover/java.png",
       title: "Java Programming",
-      link: "/courses/java",
+      link: "/courses/pages/core-programming-java",
     },
     {
       image: "/images/courseCover/py.png",
       title: "Python Programming",
-      link: "/courses/python",
+      link: "/courses/pages/core-programming-python",
     },
   ];
 
