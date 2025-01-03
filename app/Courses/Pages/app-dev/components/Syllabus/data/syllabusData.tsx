@@ -1,7 +1,12 @@
+import {
+  FaReact,
+  FaNodeJs,
+  FaDatabase,
+  FaRegFolderOpen,
+} from "react-icons/fa6";
 import { PiCubeBold } from "react-icons/pi";
-import { FaPython, FaBrain } from "react-icons/fa6";
-import { PiMathOperationsBold } from "react-icons/pi";
-import { FaRegFolderOpen } from "react-icons/fa";
+import { FaPenRuler } from "react-icons/fa6";
+import { SiJavascript, SiCss3, SiFigma } from "react-icons/si";
 
 interface SubTopic {
   title: string;
@@ -23,52 +28,76 @@ export const syllabusData: SyllabusModule[] = [
   {
     icon: PiCubeBold,
     title: "Semester 1",
-    subtitle: "Foundations of AI and Problem-Solving",
+    subtitle: "Foundations of Mobile App Development",
     mainTopics: [
       {
-        icon: FaPython,
-        title: "Introduction to Programming (Python)",
+        icon: SiCss3,
+        title: "Introduction to Web Development (HTML & CSS)",
         subTopics: [
           {
-            title: "Basics of Python Programming",
+            title: "HTML Basics",
             points: [
-              "Syntax and Variables",
-              "Control Structures: Loops and Conditionals",
-              "Functions and Modular Programming",
-              "Lists, Tuples, and Dictionaries",
+              "Tags, Elements, and Attributes",
+              "Semantic HTML for Accessibility",
+              "HTML Forms and Inputs",
+              "Building Static Websites",
             ],
           },
           {
-            title: "Advanced Programming Concepts",
+            title: "CSS Basics",
             points: [
-              "File Handling in Python",
-              "Introduction to Python Libraries (NumPy, Pandas, Matplotlib)",
-              "Error Handling and Debugging",
-              "Basic Object-Oriented Programming (OOP) Concepts",
+              "Selectors, Properties, and Box Model",
+              "Flexbox and Grid Layout",
+              "Responsive Design and Media Queries",
+              "Styling a Portfolio Website",
             ],
           },
         ],
       },
       {
-        icon: PiMathOperationsBold,
-        title: "Mathematics for AI",
+        icon: SiJavascript,
+        title: "Introduction to Programming (JavaScript/TypeScript)",
         subTopics: [
           {
-            title: "Linear Algebra and Probability",
+            title: "JavaScript Basics",
             points: [
-              "Linear Algebra Basics (Vectors and Matrices)",
-              "Probability and Statistics Foundations",
-              "Probability Distributions (Normal, Binomial, etc.)",
-              "Matrix Operations and Applications in AI",
+              "Syntax, Variables, and Data Types",
+              "Control Structures: Loops and Conditionals",
+              "Functions and Scope",
+              "Arrays, Objects, and ES6 Features",
             ],
           },
           {
-            title: "Graph Theory and Calculus",
+            title: "TypeScript Basics",
             points: [
-              "Basic Calculus for Optimization",
-              "Introduction to Graph Theory",
-              "Discrete Mathematics Basics",
-              "Concept of Gradient and its Applications",
+              "Type Annotations and Interfaces",
+              "Classes and Inheritance",
+              "Working with Modules",
+              "Type Safety in Modern Applications",
+            ],
+          },
+        ],
+      },
+      {
+        icon: FaReact,
+        title: "Introduction to React Native",
+        subTopics: [
+          {
+            title: "React Native Basics",
+            points: [
+              "What is React Native? History and Architecture",
+              "Setting up the Development Environment (Expo/CLI)",
+              "Components and JSX Basics",
+              "Styling in React Native (Flexbox, StyleSheet)",
+            ],
+          },
+          {
+            title: "State Management",
+            points: [
+              "Understanding State and Props",
+              "Managing State with Hooks (useState, useEffect)",
+              "Handling Events in React Native",
+              "Reusable Components and Best Practices",
             ],
           },
         ],
@@ -78,21 +107,82 @@ export const syllabusData: SyllabusModule[] = [
         title: "Soft Skills Class",
         subTopics: [
           {
-            title: "Communication and Collaboration",
+            title: "Communication and Productivity",
             points: [
               "Effective Communication Techniques",
-              "Team Collaboration and Problem Solving",
               "Time Management and Productivity Skills",
-              "Public Speaking and Presentation Skills",
+              "Building Confidence and Presentation Skills",
+              "Team Collaboration and Problem Solving",
             ],
           },
+        ],
+      },
+    ],
+  },
+  {
+    icon: FaReact,
+    title: "Semester 2",
+    subtitle: "Advanced React Native and APIs",
+    mainTopics: [
+      {
+        icon: FaReact,
+        title: "React Native Core Concepts",
+        subTopics: [
+          {
+            title: "Advanced Navigation",
+            points: [
+              "React Navigation Basics",
+              "Stack and Tab Navigation",
+              "Deep Linking in React Native",
+              "Dynamic Routing",
+            ],
+          },
+          {
+            title: "Handling Forms and Lists",
+            points: [
+              "Forms and User Input (TextInput, Keyboard Handling)",
+              "Working with FlatList and SectionList",
+              "Optimizing Large Lists",
+              "Custom List Components",
+            ],
+          },
+        ],
+      },
+      {
+        icon: FaPenRuler,
+        title: "UI/UX Design with Figma",
+        subTopics: [
+          {
+            title: "Design Basics",
+            points: [
+              "Introduction to UI/UX Design Principles",
+              "Wireframing and Prototyping",
+              "Designing Mobile App Interfaces",
+              "Collaborating on Design Projects",
+            ],
+          },
+          {
+            title: "Hands-On Practice",
+            points: [
+              "Building a Mobile App Design in Figma",
+              "Exporting Assets for Development",
+              "Ensuring Design Consistency",
+              "User Testing and Feedback Integration",
+            ],
+          },
+        ],
+      },
+      {
+        icon: FaRegFolderOpen,
+        title: "Soft Skills Class",
+        subTopics: [
           {
             title: "Professional Development",
             points: [
-              "Writing Professional Emails and Documents",
-              "Developing Confidence and Leadership",
-              "Understanding Workplace Etiquette",
-              "Introduction to Emotional Intelligence",
+              "Critical Thinking and Decision-Making",
+              "Handling Feedback and Constructive Criticism",
+              "Networking and Building Professional Relationships",
+              "Public Speaking and Presentation Skills",
             ],
           },
         ],
@@ -100,212 +190,54 @@ export const syllabusData: SyllabusModule[] = [
     ],
   },
   {
-    icon: PiCubeBold,
-    title: "Semester 2",
-    subtitle: "Building Computational Thinking",
-    mainTopics: [
-      {
-        icon: FaPython,
-        title: "Data Structures and Algorithms with Python",
-        subTopics: [
-          {
-            title: "Core Data Structures",
-            points: [
-              "Arrays, Linked Lists, Stacks, Queues",
-              "Searching and Sorting Algorithms",
-              "Recursion and Dynamic Programming",
-              "Trees and Graphs with Python",
-            ],
-          },
-          {
-            title: "Advanced Concepts",
-            points: [
-              "Hashing and Hash Tables",
-              "Advanced Sorting Techniques (Merge Sort, Quick Sort)",
-              "Applications of Graph Algorithms (DFS, BFS, Dijkstra's)",
-              "Introduction to Big-O Notation and Complexity Analysis",
-            ],
-          },
-        ],
-      },
-      {
-        icon: PiMathOperationsBold,
-        title: "Statistics for AI",
-        subTopics: [
-          {
-            title: "Foundational Concepts",
-            points: [
-              "Descriptive and Inferential Statistics",
-              "Data Distributions and Visualization",
-              "Hypothesis Testing and Confidence Intervals",
-              "Introduction to Bayesian Inference",
-            ],
-          },
-          {
-            title: "Advanced Applications",
-            points: [
-              "Sampling Techniques and Sampling Distributions",
-              "Correlation and Regression Analysis",
-              "Understanding Central Limit Theorem",
-              "Chi-Square and t-Tests Applications",
-            ],
-          },
-        ],
-      },
-      {
-        icon: FaRegFolderOpen,
-        title: "Soft Skills Class",
-        subTopics: [
-          {
-            title: "Critical Thinking and Leadership",
-            points: [
-              "Critical Thinking and Decision Making",
-              "Emotional Intelligence in the Workplace",
-              "Building Leadership Skills",
-              "Cross-Cultural Communication",
-            ],
-          },
-          {
-            title: "Professional Growth",
-            points: [
-              "Conflict Management Strategies",
-              "Negotiation Skills and Techniques",
-              "Building Trust in Teams",
-              "Handling Feedback Positively",
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    icon: PiCubeBold,
+    icon: FaNodeJs,
     title: "Semester 3",
-    subtitle: "Introduction to AI Concepts",
+    subtitle: "Backend Development and Database Integration",
     mainTopics: [
       {
-        icon: FaBrain,
-        title: "Introduction to Artificial Intelligence",
+        icon: FaNodeJs,
+        title: "Backend Fundamentals",
         subTopics: [
           {
-            title: "AI Basics",
+            title: "Node.js and Express Basics",
             points: [
-              "What is AI? History and Applications",
-              "AI vs Machine Learning vs Deep Learning",
-              "Ethical Implications of AI",
-              "Introduction to Search Algorithms (DFS, BFS)",
+              "Setting up a Backend Server",
+              "Building REST APIs",
+              "Middleware and Routing Basics",
+              "Securing APIs (CORS, Authentication)",
             ],
           },
           {
-            title: "Advanced AI Topics",
+            title: "API Design",
             points: [
-              "Constraint Satisfaction Problems",
-              "Applications of AI in Real-World Scenarios",
-              "AI Frameworks Overview (TensorFlow, PyTorch Basics)",
-              "Fundamentals of Intelligent Agents",
+              "Versioning APIs",
+              "Error Handling and Validation",
+              "Introduction to GraphQL",
+              "Building Scalable APIs",
             ],
           },
         ],
       },
       {
-        icon: FaPython,
-        title: "Programming Tools for AI",
+        icon: FaDatabase,
+        title: "Database Integration",
         subTopics: [
           {
-            title: "Python for AI",
+            title: "Database Basics",
             points: [
-              "Python Advanced Techniques for AI",
-              "Working with Jupyter Notebooks",
-              "Version Control using Git and GitHub",
-              "Data Manipulation with Pandas and NumPy",
-            ],
-          },
-          {
-            title: "Automation and APIs",
-            points: [
-              "Visualizing Data with Matplotlib and Seaborn",
-              "Introduction to APIs and JSON Handling",
-              "Working with Large Datasets",
-              "Automating Tasks with Python Scripts",
-            ],
-          },
-        ],
-      },
-      {
-        icon: FaRegFolderOpen,
-        title: "Soft Skills Class",
-        subTopics: [
-          {
-            title: "Personal Development",
-            points: [
-              "Creative Thinking and Innovation",
-              "Conflict Resolution and Negotiation",
-              "Building a Growth Mindset",
-              "Resume Building and Interview Preparation",
-            ],
-          },
-          {
-            title: "Professional Networking",
-            points: [
-              "Developing an Online Presence (LinkedIn, GitHub)",
-              "Networking Effectively",
-              "Building Effective Professional Relationships",
-              "Understanding Team Dynamics",
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    icon: FaBrain,
-    title: "Semester 4",
-    subtitle: "Machine Learning Mastery",
-    mainTopics: [
-      {
-        icon: FaPython,
-        title: "Machine Learning (ML)",
-        subTopics: [
-          {
-            title: "Core ML Concepts",
-            points: [
-              "Supervised and Unsupervised Learning",
-              "Linear and Logistic Regression",
-              "Decision Trees and Random Forests",
-              "Clustering (K-Means, Hierarchical Clustering)",
-            ],
-          },
-          {
-            title: "Advanced Techniques",
-            points: [
-              "Support Vector Machines (SVMs)",
-              "Ensemble Learning Techniques (Bagging, Boosting)",
-              "Overfitting and Regularization (L1, L2)",
-              "Dimensionality Reduction (PCA)",
-            ],
-          },
-        ],
-      },
-      {
-        icon: FaPython,
-        title: "Python for ML",
-        subTopics: [
-          {
-            title: "Libraries and Tools",
-            points: [
-              "Introduction to Scikit-Learn",
-              "Model Evaluation Metrics (Accuracy, Precision, Recall, F1 Score)",
-              "Data Preprocessing and Feature Engineering",
-              "Building and Evaluating ML Models",
+              "Introduction to SQL and NoSQL Databases",
+              "CRUD Operations with Firebase Firestore",
+              "Real-Time Data Updates",
+              "Data Modeling and Optimization",
             ],
           },
           {
             title: "Advanced Topics",
             points: [
-              "Hyperparameter Tuning (Grid Search, Random Search)",
-              "Cross-Validation Techniques",
-              "Working with Real-World Datasets",
-              "Automating Machine Learning with Pipelines",
+              "Integrating Firebase Authentication",
+              "Working with Cloud Functions",
+              "Database Security Rules",
+              "Scaling Databases for Large Applications",
             ],
           },
         ],
@@ -315,21 +247,12 @@ export const syllabusData: SyllabusModule[] = [
         title: "Soft Skills Class",
         subTopics: [
           {
-            title: "Professional Skills",
+            title: "Leadership and Teamwork",
             points: [
-              "Persuasive Communication Skills",
-              "Team Leadership and Motivation",
-              "Networking and Building Professional Relationships",
-              "Managing Feedback and Criticism",
-            ],
-          },
-          {
-            title: "Public Speaking and Problem Solving",
-            points: [
-              "Advanced Public Speaking Techniques",
-              "Designing Effective Presentations",
-              "Understanding Workplace Politics",
-              "Effective Problem Solving in Teams",
+              "Creative Thinking and Problem-Solving",
+              "Writing Professional Emails and Documents",
+              "Leadership and Team Management",
+              "Building an Online Presence (GitHub, LinkedIn)",
             ],
           },
         ],
@@ -337,54 +260,54 @@ export const syllabusData: SyllabusModule[] = [
     ],
   },
   {
-    icon: FaBrain,
-    title: "Semester 5",
-    subtitle: "Advanced AI Techniques",
+    icon: FaReact,
+    title: "Semester 4",
+    subtitle: "State Management and Advanced Features",
     mainTopics: [
       {
-        icon: FaBrain,
-        title: "Deep Learning (DL)",
+        icon: FaReact,
+        title: "State Management in React Native",
         subTopics: [
           {
-            title: "Core Deep Learning Concepts",
+            title: "Redux Basics",
             points: [
-              "Neural Network Basics",
-              "Convolutional Neural Networks (CNNs)",
-              "Recurrent Neural Networks (RNNs) and LSTMs",
-              "Applications of Deep Learning in AI",
+              "Introduction to Redux and Context API",
+              "Setting Up Redux in React Native Apps",
+              "Actions, Reducers, and Store",
+              "Middleware: Redux Thunk and Saga",
             ],
           },
           {
-            title: "Advanced Techniques",
+            title: "Advanced State Management",
             points: [
-              "Transfer Learning and Pre-Trained Models",
-              "GANs (Generative Adversarial Networks)",
-              "Optimization Techniques for Neural Networks",
-              "Understanding Activation Functions",
+              "Persisting State with AsyncStorage",
+              "Optimizing Performance in State Updates",
+              "Using Context API for Local State Management",
+              "Advanced Patterns in Redux",
             ],
           },
         ],
       },
       {
-        icon: FaBrain,
-        title: "Natural Language Processing (NLP)",
+        icon: FaReact,
+        title: "Advanced Features in React Native",
         subTopics: [
           {
-            title: "Core NLP Topics",
+            title: "Enhancing User Experience",
             points: [
-              "Text Preprocessing (Tokenization, Stemming, Lemmatization)",
-              "Sentiment Analysis and Text Classification",
-              "Word Embeddings (Word2Vec, GloVe)",
-              "Introduction to Transformers and BERT",
+              "Animations with Reanimated",
+              "Gestures with React Native Gesture Handler",
+              "Offline Functionality and Caching",
+              "Push Notifications with Firebase",
             ],
           },
           {
-            title: "Advanced NLP Applications",
+            title: "Integration and Optimization",
             points: [
-              "Sequence-to-Sequence Models",
-              "Chatbot Development Basics",
-              "Topic Modeling (LDA, NMF)",
-              "Applications of NLP in Real-World Problems",
+              "File Uploads and Downloads in React Native",
+              "Integrating GraphQL APIs",
+              "Improving App Performance",
+              "Debugging and Error Tracking with Reactotron",
             ],
           },
         ],
@@ -394,21 +317,12 @@ export const syllabusData: SyllabusModule[] = [
         title: "Soft Skills Class",
         subTopics: [
           {
-            title: "Leadership and Resilience",
+            title: "Strategic Thinking",
             points: [
-              "Advanced Public Speaking and Storytelling",
               "Strategic Planning and Execution",
-              "Building Personal Branding",
-              "Coping with Stress and Burnout",
-            ],
-          },
-          {
-            title: "Empathy and Communication",
-            points: [
-              "Developing Emotional Resilience",
-              "Effective Delegation Techniques",
-              "Creating Impactful Elevator Pitches",
-              "Practicing Empathy in Communication",
+              "Advanced Public Speaking and Storytelling",
+              "Conflict Resolution and Negotiation",
+              "Building Empathy in Communication",
             ],
           },
         ],
@@ -416,30 +330,100 @@ export const syllabusData: SyllabusModule[] = [
     ],
   },
   {
-    icon: FaRegFolderOpen,
-    title: "Semester 6",
-    subtitle: "AI in Action",
+    icon: FaNodeJs,
+    title: "Semester 5",
+    subtitle: "Deployment, Testing, and Advanced Topics",
     mainTopics: [
       {
-        icon: FaBrain,
-        title: "Capstone Projects",
+        icon: FaReact,
+        title: "Testing and Debugging",
         subTopics: [
           {
-            title: "AI Project Planning",
+            title: "Debugging Tools",
             points: [
-              "Define and Plan AI Projects",
-              "Implementation of AI Solutions",
-              "Presentation and Peer Review",
-              "Real-World Case Studies",
+              "Debugging React Native Apps (Reactotron, Flipper)",
+              "Analyzing Network Requests",
+              "Common Errors and Fixes in React Native",
+              "Profiling and Optimizing Performance",
             ],
           },
           {
-            title: "AI Deployment and Publishing",
+            title: "Testing Strategies",
             points: [
-              "Collaboration in AI Project Teams",
-              "Publishing Research Papers",
-              "Incorporating Feedback for Improvements",
-              "End-to-End Deployment of AI Models",
+              "Unit Testing with Jest",
+              "End-to-End Testing with Detox",
+              "Test Coverage and Automation",
+              "Integration Testing for API Calls",
+            ],
+          },
+        ],
+      },
+      {
+        icon: FaReact,
+        title: "Deployment and CI/CD",
+        subTopics: [
+          {
+            title: "Preparing for Deployment",
+            points: [
+              "Generating Build Files for iOS and Android",
+              "Signing APKs and iOS Certificates",
+              "Publishing to Google Play Store",
+              "Publishing to Apple App Store",
+            ],
+          },
+          {
+            title: "Continuous Integration and Delivery",
+            points: [
+              "Introduction to CI/CD Pipelines",
+              "Setting Up Fastlane for Deployment Automation",
+              "Testing and Deploying Automatically",
+              "Best Practices for Versioning and Updates",
+            ],
+          },
+        ],
+      },
+      {
+        icon: FaRegFolderOpen,
+        title: "Soft Skills Class",
+        subTopics: [
+          {
+            title: "Professional Development",
+            points: [
+              "Leadership and Motivation",
+              "Advanced Networking and Professional Etiquette",
+              "Coping with Stress and Burnout",
+              "Personal Branding and Career Development",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    icon: FaReact,
+    title: "Semester 6",
+    subtitle: "Capstone Project and Portfolio Development",
+    mainTopics: [
+      {
+        icon: FaReact,
+        title: "Capstone Project",
+        subTopics: [
+          {
+            title: "Planning and Development",
+            points: [
+              "Defining Objectives and Scope",
+              "Building End-to-End Mobile Applications",
+              "Integrating Features: Authentication, APIs, and State Management",
+              "Testing and Debugging Final Application",
+            ],
+          },
+          {
+            title: "Deployment and Feedback",
+            points: [
+              "Deploying the App to Stores",
+              "Peer Review and Incorporating Feedback",
+              "Showcasing the Application",
+              "Continuous Improvements and Iterations",
             ],
           },
         ],
@@ -449,21 +433,21 @@ export const syllabusData: SyllabusModule[] = [
         title: "Portfolio Development",
         subTopics: [
           {
-            title: "Building an AI Portfolio",
+            title: "Creating a Professional Portfolio",
             points: [
-              "Creating an Online Portfolio (GitHub, LinkedIn)",
-              "Writing Technical Blogs and Documenting Projects",
-              "Showcasing AI and ML Projects",
               "Building a Personal Website",
+              "Highlighting Projects on GitHub",
+              "Recording Video Demonstrations of Projects",
+              "Engaging with Online Developer Communities",
             ],
           },
           {
-            title: "Engagement and Contribution",
+            title: "Technical and Personal Branding",
             points: [
+              "Writing Technical Blogs and Documentation",
               "Publishing Open-Source Contributions",
-              "Highlighting Soft Skills and Achievements",
-              "Recording Video Demonstrations of Projects",
-              "Engaging with Online Developer Communities",
+              "Showcasing AI and ML Integrations in Apps",
+              "Building a Strong Online Presence",
             ],
           },
         ],
@@ -476,18 +460,9 @@ export const syllabusData: SyllabusModule[] = [
             title: "Career Preparation",
             points: [
               "Preparing for Job Interviews",
-              "Developing Entrepreneurial Mindset",
-              "Industry Networking and Professional Etiquette",
-              "Continuous Learning and Upskilling Strategies",
-            ],
-          },
-          {
-            title: "Advanced Career Development",
-            points: [
               "Mastering Negotiation in Job Offers",
-              "Understanding Global AI Market Trends",
-              "Building a Vision for Your Career",
-              "Exploring Opportunities Beyond the Classroom",
+              "Understanding Global Market Trends in Mobile App Development",
+              "Continuous Learning and Upskilling Strategies",
             ],
           },
         ],

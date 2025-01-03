@@ -1,7 +1,19 @@
-import { PiCubeBold } from "react-icons/pi";
-import { FaPython, FaBrain } from "react-icons/fa6";
-import { PiMathOperationsBold } from "react-icons/pi";
-import { FaRegFolderOpen } from "react-icons/fa";
+import {
+  FaDatabase,
+  FaPython,
+  FaChartBar,
+  FaBrain,
+  FaRegFolderOpen,
+  FaChartLine,
+  FaServer,
+} from "react-icons/fa6";
+
+import {
+  SiTensorflow,
+  SiScikitlearn,
+  SiPandas,
+  SiNumpy,
+} from "react-icons/si";
 
 interface SubTopic {
   title: string;
@@ -21,54 +33,54 @@ interface SyllabusModule {
 
 export const syllabusData: SyllabusModule[] = [
   {
-    icon: PiCubeBold,
+    icon: FaChartBar,
     title: "Semester 1",
-    subtitle: "Foundations of AI and Problem-Solving",
+    subtitle: "Foundations of Data Science",
     mainTopics: [
       {
         icon: FaPython,
-        title: "Introduction to Programming (Python)",
+        title: "Introduction to Python for Data Science",
         subTopics: [
           {
-            title: "Basics of Python Programming",
+            title: "Python Basics",
             points: [
-              "Syntax and Variables",
+              "Syntax, Variables, and Data Types",
               "Control Structures: Loops and Conditionals",
-              "Functions and Modular Programming",
+              "Functions and Modules",
               "Lists, Tuples, and Dictionaries",
             ],
           },
           {
-            title: "Advanced Programming Concepts",
+            title: "Python Libraries for Data Science",
             points: [
-              "File Handling in Python",
-              "Introduction to Python Libraries (NumPy, Pandas, Matplotlib)",
-              "Error Handling and Debugging",
-              "Basic Object-Oriented Programming (OOP) Concepts",
+              "Introduction to NumPy",
+              "Working with Pandas DataFrames",
+              "Data Visualization with Matplotlib and Seaborn",
+              "Jupyter Notebooks for Data Analysis",
             ],
           },
         ],
       },
       {
-        icon: PiMathOperationsBold,
-        title: "Mathematics for AI",
+        icon: FaChartLine,
+        title: "Mathematics for Data Science",
         subTopics: [
           {
             title: "Linear Algebra and Probability",
             points: [
-              "Linear Algebra Basics (Vectors and Matrices)",
-              "Probability and Statistics Foundations",
-              "Probability Distributions (Normal, Binomial, etc.)",
-              "Matrix Operations and Applications in AI",
+              "Vectors, Matrices, and Matrix Operations",
+              "Probability Distributions",
+              "Random Variables and Expectations",
+              "Statistical Independence and Correlation",
             ],
           },
           {
-            title: "Graph Theory and Calculus",
+            title: "Calculus and Optimization",
             points: [
-              "Basic Calculus for Optimization",
-              "Introduction to Graph Theory",
-              "Discrete Mathematics Basics",
-              "Concept of Gradient and its Applications",
+              "Derivatives and Gradients",
+              "Optimization Techniques",
+              "Partial Derivatives",
+              "Introduction to Gradient Descent",
             ],
           },
         ],
@@ -86,13 +98,74 @@ export const syllabusData: SyllabusModule[] = [
               "Public Speaking and Presentation Skills",
             ],
           },
+        ],
+      },
+    ],
+  },
+  {
+    icon: SiScikitlearn,
+    title: "Semester 2",
+    subtitle: "Exploratory Data Analysis and Visualization",
+    mainTopics: [
+      {
+        icon: SiPandas,
+        title: "Data Analysis with Pandas",
+        subTopics: [
+          {
+            title: "Data Cleaning and Preparation",
+            points: [
+              "Handling Missing Values",
+              "Filtering and Sorting Data",
+              "Data Transformation and Aggregation",
+              "Time-Series Data Analysis",
+            ],
+          },
+          {
+            title: "Advanced Data Manipulation",
+            points: [
+              "Merging and Joining DataFrames",
+              "Working with Multi-Index DataFrames",
+              "Pivot Tables and Crosstabulations",
+              "Efficient Data Handling with Pandas",
+            ],
+          },
+        ],
+      },
+      {
+        icon: FaChartLine,
+        title: "Data Visualization",
+        subTopics: [
+          {
+            title: "Basics of Data Visualization",
+            points: [
+              "Plotting with Matplotlib",
+              "Creating Complex Visualizations with Seaborn",
+              "Customizing Plots for Better Insights",
+              "Creating Interactive Dashboards",
+            ],
+          },
+          {
+            title: "Best Practices in Visualization",
+            points: [
+              "Choosing the Right Charts",
+              "Designing for Readability",
+              "Avoiding Misleading Visualizations",
+              "Storytelling with Data",
+            ],
+          },
+        ],
+      },
+      {
+        icon: FaRegFolderOpen,
+        title: "Soft Skills Class",
+        subTopics: [
           {
             title: "Professional Development",
             points: [
-              "Writing Professional Emails and Documents",
-              "Developing Confidence and Leadership",
-              "Understanding Workplace Etiquette",
-              "Introduction to Emotional Intelligence",
+              "Critical Thinking and Decision-Making",
+              "Handling Feedback and Constructive Criticism",
+              "Networking and Building Professional Relationships",
+              "Public Speaking and Presentation Skills",
             ],
           },
         ],
@@ -100,212 +173,54 @@ export const syllabusData: SyllabusModule[] = [
     ],
   },
   {
-    icon: PiCubeBold,
-    title: "Semester 2",
-    subtitle: "Building Computational Thinking",
+    icon: SiScikitlearn,
+    title: "Semester 3",
+    subtitle: "Statistical Modeling and Machine Learning",
     mainTopics: [
       {
-        icon: FaPython,
-        title: "Data Structures and Algorithms with Python",
+        icon: SiScikitlearn,
+        title: "Statistical Modeling",
         subTopics: [
           {
-            title: "Core Data Structures",
-            points: [
-              "Arrays, Linked Lists, Stacks, Queues",
-              "Searching and Sorting Algorithms",
-              "Recursion and Dynamic Programming",
-              "Trees and Graphs with Python",
-            ],
-          },
-          {
-            title: "Advanced Concepts",
-            points: [
-              "Hashing and Hash Tables",
-              "Advanced Sorting Techniques (Merge Sort, Quick Sort)",
-              "Applications of Graph Algorithms (DFS, BFS, Dijkstra's)",
-              "Introduction to Big-O Notation and Complexity Analysis",
-            ],
-          },
-        ],
-      },
-      {
-        icon: PiMathOperationsBold,
-        title: "Statistics for AI",
-        subTopics: [
-          {
-            title: "Foundational Concepts",
+            title: "Core Statistical Concepts",
             points: [
               "Descriptive and Inferential Statistics",
-              "Data Distributions and Visualization",
-              "Hypothesis Testing and Confidence Intervals",
-              "Introduction to Bayesian Inference",
-            ],
-          },
-          {
-            title: "Advanced Applications",
-            points: [
-              "Sampling Techniques and Sampling Distributions",
+              "Hypothesis Testing",
+              "Confidence Intervals",
               "Correlation and Regression Analysis",
-              "Understanding Central Limit Theorem",
-              "Chi-Square and t-Tests Applications",
+            ],
+          },
+          {
+            title: "Advanced Statistical Methods",
+            points: [
+              "ANOVA and Chi-Square Tests",
+              "Time Series Analysis",
+              "Principal Component Analysis (PCA)",
+              "Feature Selection Techniques",
             ],
           },
         ],
       },
       {
-        icon: FaRegFolderOpen,
-        title: "Soft Skills Class",
+        icon: SiScikitlearn,
+        title: "Introduction to Machine Learning",
         subTopics: [
           {
-            title: "Critical Thinking and Leadership",
+            title: "Supervised Learning",
             points: [
-              "Critical Thinking and Decision Making",
-              "Emotional Intelligence in the Workplace",
-              "Building Leadership Skills",
-              "Cross-Cultural Communication",
-            ],
-          },
-          {
-            title: "Professional Growth",
-            points: [
-              "Conflict Management Strategies",
-              "Negotiation Skills and Techniques",
-              "Building Trust in Teams",
-              "Handling Feedback Positively",
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    icon: PiCubeBold,
-    title: "Semester 3",
-    subtitle: "Introduction to AI Concepts",
-    mainTopics: [
-      {
-        icon: FaBrain,
-        title: "Introduction to Artificial Intelligence",
-        subTopics: [
-          {
-            title: "AI Basics",
-            points: [
-              "What is AI? History and Applications",
-              "AI vs Machine Learning vs Deep Learning",
-              "Ethical Implications of AI",
-              "Introduction to Search Algorithms (DFS, BFS)",
-            ],
-          },
-          {
-            title: "Advanced AI Topics",
-            points: [
-              "Constraint Satisfaction Problems",
-              "Applications of AI in Real-World Scenarios",
-              "AI Frameworks Overview (TensorFlow, PyTorch Basics)",
-              "Fundamentals of Intelligent Agents",
-            ],
-          },
-        ],
-      },
-      {
-        icon: FaPython,
-        title: "Programming Tools for AI",
-        subTopics: [
-          {
-            title: "Python for AI",
-            points: [
-              "Python Advanced Techniques for AI",
-              "Working with Jupyter Notebooks",
-              "Version Control using Git and GitHub",
-              "Data Manipulation with Pandas and NumPy",
-            ],
-          },
-          {
-            title: "Automation and APIs",
-            points: [
-              "Visualizing Data with Matplotlib and Seaborn",
-              "Introduction to APIs and JSON Handling",
-              "Working with Large Datasets",
-              "Automating Tasks with Python Scripts",
-            ],
-          },
-        ],
-      },
-      {
-        icon: FaRegFolderOpen,
-        title: "Soft Skills Class",
-        subTopics: [
-          {
-            title: "Personal Development",
-            points: [
-              "Creative Thinking and Innovation",
-              "Conflict Resolution and Negotiation",
-              "Building a Growth Mindset",
-              "Resume Building and Interview Preparation",
-            ],
-          },
-          {
-            title: "Professional Networking",
-            points: [
-              "Developing an Online Presence (LinkedIn, GitHub)",
-              "Networking Effectively",
-              "Building Effective Professional Relationships",
-              "Understanding Team Dynamics",
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    icon: FaBrain,
-    title: "Semester 4",
-    subtitle: "Machine Learning Mastery",
-    mainTopics: [
-      {
-        icon: FaPython,
-        title: "Machine Learning (ML)",
-        subTopics: [
-          {
-            title: "Core ML Concepts",
-            points: [
-              "Supervised and Unsupervised Learning",
-              "Linear and Logistic Regression",
+              "Linear Regression and Logistic Regression",
               "Decision Trees and Random Forests",
-              "Clustering (K-Means, Hierarchical Clustering)",
+              "K-Nearest Neighbors (KNN)",
+              "Model Evaluation Metrics",
             ],
           },
           {
-            title: "Advanced Techniques",
+            title: "Unsupervised Learning",
             points: [
-              "Support Vector Machines (SVMs)",
-              "Ensemble Learning Techniques (Bagging, Boosting)",
-              "Overfitting and Regularization (L1, L2)",
-              "Dimensionality Reduction (PCA)",
-            ],
-          },
-        ],
-      },
-      {
-        icon: FaPython,
-        title: "Python for ML",
-        subTopics: [
-          {
-            title: "Libraries and Tools",
-            points: [
-              "Introduction to Scikit-Learn",
-              "Model Evaluation Metrics (Accuracy, Precision, Recall, F1 Score)",
-              "Data Preprocessing and Feature Engineering",
-              "Building and Evaluating ML Models",
-            ],
-          },
-          {
-            title: "Advanced Topics",
-            points: [
-              "Hyperparameter Tuning (Grid Search, Random Search)",
-              "Cross-Validation Techniques",
-              "Working with Real-World Datasets",
-              "Automating Machine Learning with Pipelines",
+              "Clustering Techniques (K-Means, Hierarchical Clustering)",
+              "Dimensionality Reduction with PCA",
+              "Anomaly Detection",
+              "Applications of Unsupervised Learning",
             ],
           },
         ],
@@ -315,21 +230,12 @@ export const syllabusData: SyllabusModule[] = [
         title: "Soft Skills Class",
         subTopics: [
           {
-            title: "Professional Skills",
+            title: "Creative Problem Solving",
             points: [
-              "Persuasive Communication Skills",
-              "Team Leadership and Motivation",
-              "Networking and Building Professional Relationships",
-              "Managing Feedback and Criticism",
-            ],
-          },
-          {
-            title: "Public Speaking and Problem Solving",
-            points: [
-              "Advanced Public Speaking Techniques",
-              "Designing Effective Presentations",
-              "Understanding Workplace Politics",
-              "Effective Problem Solving in Teams",
+              "Creative Thinking Techniques",
+              "Conflict Resolution in Teams",
+              "Building Confidence in Presentations",
+              "Developing Leadership Skills",
             ],
           },
         ],
@@ -337,54 +243,54 @@ export const syllabusData: SyllabusModule[] = [
     ],
   },
   {
-    icon: FaBrain,
-    title: "Semester 5",
-    subtitle: "Advanced AI Techniques",
+    icon: SiTensorflow,
+    title: "Semester 4",
+    subtitle: "Advanced Machine Learning and Deep Learning",
     mainTopics: [
       {
-        icon: FaBrain,
-        title: "Deep Learning (DL)",
+        icon: SiTensorflow,
+        title: "Advanced Machine Learning",
         subTopics: [
           {
-            title: "Core Deep Learning Concepts",
+            title: "Ensemble Methods",
             points: [
-              "Neural Network Basics",
-              "Convolutional Neural Networks (CNNs)",
-              "Recurrent Neural Networks (RNNs) and LSTMs",
-              "Applications of Deep Learning in AI",
+              "Boosting (XGBoost, AdaBoost)",
+              "Bagging (Random Forests)",
+              "Stacking and Blending",
+              "Applications of Ensemble Learning",
             ],
           },
           {
-            title: "Advanced Techniques",
+            title: "Hyperparameter Tuning",
             points: [
-              "Transfer Learning and Pre-Trained Models",
-              "GANs (Generative Adversarial Networks)",
-              "Optimization Techniques for Neural Networks",
-              "Understanding Activation Functions",
+              "Grid Search and Random Search",
+              "Cross-Validation Techniques",
+              "Bayesian Optimization",
+              "Automating Tuning Processes",
             ],
           },
         ],
       },
       {
-        icon: FaBrain,
-        title: "Natural Language Processing (NLP)",
+        icon: SiTensorflow,
+        title: "Deep Learning Basics",
         subTopics: [
           {
-            title: "Core NLP Topics",
+            title: "Introduction to Neural Networks",
             points: [
-              "Text Preprocessing (Tokenization, Stemming, Lemmatization)",
-              "Sentiment Analysis and Text Classification",
-              "Word Embeddings (Word2Vec, GloVe)",
-              "Introduction to Transformers and BERT",
+              "Building Neural Networks with TensorFlow",
+              "Understanding Activation Functions",
+              "Forward and Backpropagation",
+              "Training and Optimizing Neural Networks",
             ],
           },
           {
-            title: "Advanced NLP Applications",
+            title: "Convolutional Neural Networks (CNNs)",
             points: [
-              "Sequence-to-Sequence Models",
-              "Chatbot Development Basics",
-              "Topic Modeling (LDA, NMF)",
-              "Applications of NLP in Real-World Problems",
+              "Image Processing Basics",
+              "Building CNNs for Image Classification",
+              "Popular Architectures (ResNet, AlexNet, VGG)",
+              "Applications of CNNs",
             ],
           },
         ],
@@ -394,21 +300,73 @@ export const syllabusData: SyllabusModule[] = [
         title: "Soft Skills Class",
         subTopics: [
           {
-            title: "Leadership and Resilience",
+            title: "Strategic Thinking",
             points: [
-              "Advanced Public Speaking and Storytelling",
               "Strategic Planning and Execution",
+              "Advanced Public Speaking and Storytelling",
+              "Conflict Resolution and Negotiation",
+              "Building Empathy in Communication",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    icon: FaDatabase,
+    title: "Semester 5",
+    subtitle: "Big Data and Scalable Data Science",
+    mainTopics: [
+      {
+        icon: FaDatabase,
+        title: "Big Data Tools",
+        subTopics: [
+          {
+            title: "Hadoop Basics",
+            points: [
+              "Introduction to HDFS and MapReduce",
+              "Data Processing with Hive",
+              "Integration with Spark",
+              "Applications of Big Data in Data Science",
+            ],
+          },
+          {
+            title: "Spark for Data Science",
+            points: [
+              "Introduction to PySpark",
+              "Working with RDDs and DataFrames",
+              "Streaming Data with Spark",
+              "Optimizing Spark Applications",
+            ],
+          },
+        ],
+      },
+      {
+        icon: FaServer,
+        title: "Model Deployment",
+        subTopics: [
+          {
+            title: "Deploying Data Science Models",
+            points: [
+              "Creating APIs with Flask/FastAPI",
+              "Dockerizing Data Science Applications",
+              "Cloud Deployment (AWS, Azure, GCP)",
+              "Monitoring and Retraining Models",
+            ],
+          },
+        ],
+      },
+      {
+        icon: FaRegFolderOpen,
+        title: "Soft Skills Class",
+        subTopics: [
+          {
+            title: "Professional Development",
+            points: [
               "Building Personal Branding",
               "Coping with Stress and Burnout",
-            ],
-          },
-          {
-            title: "Empathy and Communication",
-            points: [
-              "Developing Emotional Resilience",
-              "Effective Delegation Techniques",
-              "Creating Impactful Elevator Pitches",
-              "Practicing Empathy in Communication",
+              "Networking and Industry Etiquette",
+              "Developing Career Goals",
             ],
           },
         ],
@@ -416,30 +374,30 @@ export const syllabusData: SyllabusModule[] = [
     ],
   },
   {
-    icon: FaRegFolderOpen,
+    icon: FaBrain,
     title: "Semester 6",
-    subtitle: "AI in Action",
+    subtitle: "Capstone Project and Portfolio Development",
     mainTopics: [
       {
         icon: FaBrain,
-        title: "Capstone Projects",
+        title: "Capstone Project",
         subTopics: [
           {
-            title: "AI Project Planning",
+            title: "Project Planning and Execution",
             points: [
-              "Define and Plan AI Projects",
-              "Implementation of AI Solutions",
-              "Presentation and Peer Review",
-              "Real-World Case Studies",
+              "Defining Objectives and Scope",
+              "Building Real-World Data Science Applications",
+              "Testing and Debugging Final Projects",
+              "Presenting Results and Outcomes",
             ],
           },
           {
-            title: "AI Deployment and Publishing",
+            title: "Team Collaboration",
             points: [
-              "Collaboration in AI Project Teams",
+              "Version Control with Git and GitHub",
+              "Code Reviews and Peer Feedback",
+              "Collaborating in Teams",
               "Publishing Research Papers",
-              "Incorporating Feedback for Improvements",
-              "End-to-End Deployment of AI Models",
             ],
           },
         ],
@@ -449,21 +407,21 @@ export const syllabusData: SyllabusModule[] = [
         title: "Portfolio Development",
         subTopics: [
           {
-            title: "Building an AI Portfolio",
+            title: "Creating a Professional Portfolio",
             points: [
-              "Creating an Online Portfolio (GitHub, LinkedIn)",
-              "Writing Technical Blogs and Documenting Projects",
-              "Showcasing AI and ML Projects",
+              "Highlighting Data Science Projects on GitHub",
+              "Writing Technical Blogs and Documentation",
               "Building a Personal Website",
+              "Recording Video Demonstrations of Projects",
             ],
           },
           {
-            title: "Engagement and Contribution",
+            title: "Career Preparation",
             points: [
-              "Publishing Open-Source Contributions",
-              "Highlighting Soft Skills and Achievements",
-              "Recording Video Demonstrations of Projects",
-              "Engaging with Online Developer Communities",
+              "Preparing for Job Interviews",
+              "Negotiation in Job Offers",
+              "Global Trends in Data Science",
+              "Continuous Learning and Upskilling",
             ],
           },
         ],
@@ -473,21 +431,12 @@ export const syllabusData: SyllabusModule[] = [
         title: "Soft Skills Class",
         subTopics: [
           {
-            title: "Career Preparation",
+            title: "Industry Readiness",
             points: [
-              "Preparing for Job Interviews",
               "Developing Entrepreneurial Mindset",
-              "Industry Networking and Professional Etiquette",
-              "Continuous Learning and Upskilling Strategies",
-            ],
-          },
-          {
-            title: "Advanced Career Development",
-            points: [
-              "Mastering Negotiation in Job Offers",
-              "Understanding Global AI Market Trends",
-              "Building a Vision for Your Career",
-              "Exploring Opportunities Beyond the Classroom",
+              "Mastering Workplace Dynamics",
+              "Adapting to Emerging Data Trends",
+              "Building Long-Term Career Vision",
             ],
           },
         ],
