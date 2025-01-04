@@ -51,7 +51,7 @@ const AboutPortal = () => {
             initial="initial"
             animate={isButtonInView ? "open" : "initial"}
           >
-            <Link href={"/company/portal"}>
+            <Link href={"/portal"}>
               <Rounded className={styles.btn}>
                 <p>About Portal</p>
               </Rounded>

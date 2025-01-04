@@ -67,7 +67,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               <Link href="/company/team">Team</Link>
             </li>
             <li>
-              <Link href="/company/portal">LMS Portal</Link>
+              <Link href="/portal">Portal</Link>
             </li>
             <li>
               <Link href="/contact">Contact us</Link>
