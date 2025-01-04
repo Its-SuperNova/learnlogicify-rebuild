@@ -2,7 +2,7 @@ import React from "react";
 import AboutPortal from "./AboutPortal";
 import Different from "./Different";
 import AboutPortalInterface from "./AboutPortalInterface";
-import Header from "@/app/components/common/Header";
+import Header from "@/app/components/common/HeaderDark";
 import Footer from "@/app/components/common/Footer";
 import styles from "./styles.module.css";
 import dynamic from "next/dynamic";

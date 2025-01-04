@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import styles from "./styles.module.css";
-import Header from "../components/common/Header";
+import Header from "../components/common/HeaderDark";
 import Footer from "../components/common/Footer";
 import ContactForm from "./components/form";
 import ReachOut from "./components/reachOut";

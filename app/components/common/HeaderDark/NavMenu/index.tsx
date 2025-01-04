@@ -6,16 +6,13 @@ const Header = () => {
   return (
     <div className={styles.nav}>
       <div className={styles.dropdown}>
-        <Link href={"/Company/About"}>Company</Link>
+        <Link href={"/"}>Company</Link>
         <div className={styles.dropdownContent}>
           <li>
-            <Link href="/Company/About">About Us</Link>
+            <Link href="/company/about">About Us</Link>
           </li>
           <li>
-            <Link href="/Company/Team">Team</Link>
-          </li>
-          <li>
-            <Link href="/Company/Portal">LMS Portal</Link>
+            <Link href="/company/team">Team</Link>
           </li>
         </div>
       </div>
@@ -23,10 +20,10 @@ const Header = () => {
         <Link href={"/courses"}>Courses</Link>
       </div>
       <div>
-        <Link href={"/Services"}>Services</Link>
+        <Link href={"/portal"}>LMS Portal</Link>
       </div>
       <div>
-        <Link href={"/Contact"}>Contact</Link>
+        <Link href={"/contact"}>Contact</Link>
       </div>
     </div>
   );

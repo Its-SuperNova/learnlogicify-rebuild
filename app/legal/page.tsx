@@ -2,7 +2,7 @@
 
 import React, { Suspense } from "react";
 import styles from "./styles.module.css";
-import Header from "@/app/components/common/Header";
+import Header from "@/app/components/common/HeaderDark";
 import Footer from "@/app/components/common/Footer";
 import LegalPoliciesBox from "./components/box";
 
