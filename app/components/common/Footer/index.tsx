@@ -61,38 +61,19 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           <h4>Company</h4>
           <ul>
             <li>
-              <Link href="/about">About us</Link>
+              <Link href="/company/about">About us</Link>
             </li>
             <li>
-              <Link href="/team">Team</Link>
+              <Link href="/company/team">Team</Link>
             </li>
             <li>
-              <Link href="/lms-portal">LMS Portal</Link>
-            </li>
-            <li>
-              <Link href="/services">Services</Link>
+              <Link href="/company/portal">LMS Portal</Link>
             </li>
             <li>
               <Link href="/contact">Contact us</Link>
             </li>
-          </ul>
-        </div>
-
-        {/* Section 3 - Courses Links */}
-        <div className={styles.section3}>
-          <h4>Courses</h4>
-          <ul>
             <li>
-              <Link href="/courses">All Courses</Link>
-            </li>
-            <li>
-              <Link href="/bootcamps">All Bootcamps</Link>
-            </li>
-            <li>
-              <Link href="/aptitude-courses">Aptitude Courses</Link>
-            </li>
-            <li>
-              <Link href="/interview-preparations">Interview Preparations</Link>
+              <Link href="/courses">Courses</Link>
             </li>
           </ul>
         </div>
@@ -106,9 +87,6 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             </li>
             <li>
               <Link href="/legal?tab=privacy">Privacy Policy</Link>
-            </li>
-            <li>
-              <Link href="/legal?tab=refund">Refund Policy</Link>
             </li>
           </ul>
         </div>
