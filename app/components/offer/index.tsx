@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"; // Framer Motion for an
 import styles from "./styles.module.css";
 import { RxCross1 } from "react-icons/rx";
 import confetti from "canvas-confetti";
+import Link from "next/link"; // Import Link from Next.js
 
 interface OfferProps {
   setOfferVisible: (isVisible: boolean) => void; // Prop to notify parent
@@ -113,8 +114,12 @@ const Offer: React.FC<OfferProps> = ({ setOfferVisible }) => {
               {timeLeft.seconds}s
             </div>
           </div>
-          <div className={styles.message}>The Ultimate Webinar on Mastering the Git & Github</div>
-          <button className={styles.enrollButton}>Enroll Now</button>
+          <div className={styles.message}>
+            The Ultimate Webinar on Mastering the Git & Github
+          </div>
+          <Link href="/webinar/ultimate-webinar-on-mastering-git-&-github">
+            <button className={styles.enrollButton}>Enroll Now</button>
+          </Link>
           <RxCross1 className={styles.crossIcon} onClick={handleClose} />
         </motion.div>
       )}
