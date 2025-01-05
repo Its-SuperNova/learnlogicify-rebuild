@@ -1,0 +1,84 @@
+/* Main Offer container */
+.offer {
+    position: fixed; /* Sticky to the top */
+    top: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 1000000000;
+    background: #ffd700; /* Bright yellow background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    overflow: hidden; /* Ensures confetti doesn’t overflow */
+    font-family: 'Inter', sans-serif;
+}
+
+/* Left section: Gift icon and Timer */
+.leftSection {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the gift icon and timer */
+}
+
+/* Gift icon styling */
+.giftIcon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Countdown Timer styling */
+.timer {
+    color: #333; /* Dark text for readability */
+    font-size: 14px;
+}
+
+/* Center message styling */
+.message {
+    flex: 1; /* Ensures message takes available space */
+    text-align: center; /* Center-align the message */
+    font-size: 16px;
+    color: #333;
+}
+
+/* Enroll Button styling */
+.enrollButton {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif; /* Matching font */
+    margin-right: 15px; /* Space between button and cross icon */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.enrollButton:hover {
+    background-color: #333; /* Darker black on hover */
+}
+
+/* Cross icon styling */
+.crossIcon {
+    font-size: 24px; /* Large size for visibility */
+    color: #333; /* Match the color scheme */
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease; /* Smooth hover animation */
+}
+
+.crossIcon:hover {
+    transform: scale(1.2); /* Slight zoom effect on hover */
+    color: #000;
+}
+
+/* Confetti Canvas styling */
+.confettiCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensure it doesn’t block user interactions */
+    z-index: 1;
+}
