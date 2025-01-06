@@ -89,9 +89,9 @@
 
 .card .card_title__container .card_paragraph {
   margin-top: 0.25rem;
-  width: 65%;
+  width: 70%;
 
-  font-size: 12px;
+  font-size: 14px;
   color: var(--paragraph);
 }
 
@@ -140,3 +140,9 @@
 }
 
 
+@media (max-width: 1000px) {
+  .card{
+    max-width: 800px;
+    width: 100%;
+  }
+}

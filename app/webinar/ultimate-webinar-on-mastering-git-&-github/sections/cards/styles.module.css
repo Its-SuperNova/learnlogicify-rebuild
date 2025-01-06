@@ -19,5 +19,6 @@
 @media (max-width: 500px) {
   .cardsContainer {
     padding: 50px 20px;
+    gap: 40px;
   }
 }
