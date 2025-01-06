@@ -1,0 +1,29 @@
+.paragraph {
+    display: flex;
+    font-size: 40px;
+    line-height: 1.4;
+    max-width: 1200px;
+    width: 100%;
+    flex-wrap: wrap;
+    text-align: center;
+    .word {
+        position: relative;
+        margin-right: 12px;
+        margin-top: 12px;
+        text-align: center;
+        .shadow {
+            position: absolute;
+            opacity: 20%;
+        }
+    }
+
+    span {
+        color: rgb(141, 108, 164);
+        text-align: center;
+    }
+}
+@media (max-width: 768px) {
+    .paragraph {
+        font-size: 32px;
+    }
+}
