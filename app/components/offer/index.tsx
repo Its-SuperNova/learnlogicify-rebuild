@@ -6,7 +6,7 @@ import styles from "./styles.module.css";
 import { RxCross1 } from "react-icons/rx";
 import confetti from "canvas-confetti";
 import Link from "next/link"; // Import Link from Next.js
-
+import EnrollBtn from "./enrollBtn"
 interface OfferProps {
   setOfferVisible: (isVisible: boolean) => void; // Prop to notify parent
 }
@@ -118,9 +118,15 @@ const Offer: React.FC<OfferProps> = ({ setOfferVisible }) => {
             The Ultimate Webinar on Mastering the Git & Github
           </div>
           <Link href="/webinar/ultimate-webinar-on-mastering-git-&-github">
-            <button className={styles.enrollButton}>Enroll Now</button>
+            <EnrollBtn
+              color="black"
+              label="Enroll"
+              onClick={(e) => console.log("Button clicked!", e)}
+            />
           </Link>
-          <RxCross1 className={styles.crossIcon} onClick={handleClose} />
+          <div className={styles.icon}>
+            <RxCross1 className={styles.crossIcon} onClick={handleClose} />
+          </div>
         </motion.div>
       )}
     </AnimatePresence>

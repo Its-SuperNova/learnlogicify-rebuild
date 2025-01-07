@@ -10,8 +10,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    overflow: hidden; /* Ensures confetti doesn’t overflow */
-    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    font-weight: 400;
 }
 
 /* Left section: Gift icon and Timer */
@@ -31,6 +31,7 @@
 .timer {
     color: #333; /* Dark text for readability */
     font-size: 14px;
+    font-weight: 600;
 }
 
 /* Center message styling */
@@ -40,36 +41,21 @@
     font-size: 16px;
     color: #333;
 }
-
-/* Enroll Button styling */
-.enrollButton {
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
-    border: none;
-    border-radius: 4px;
-    padding: 8px 16px;
-    font-size: 14px;
-    cursor: pointer;
-    font-family: 'Inter', sans-serif; /* Matching font */
-    margin-right: 15px; /* Space between button and cross icon */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
+.icon{
+    background-color: #000;
+    border-radius: 50%;
+    padding: 10px;
+    transition: transform 0.2s ease, background-color 0.2s ease; 
 }
-
-.enrollButton:hover {
-    background-color: #333; /* Darker black on hover */
-}
-
-/* Cross icon styling */
 .crossIcon {
-    font-size: 24px; /* Large size for visibility */
-    color: #333; /* Match the color scheme */
+    font-size: 18px;
+    color:white; 
     cursor: pointer;
-    transition: transform 0.2s ease, color 0.2s ease; /* Smooth hover animation */
 }
 
-.crossIcon:hover {
-    transform: scale(1.2); /* Slight zoom effect on hover */
-    color: #000;
+.icon:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    background-color: #333;
 }
 
 /* Confetti Canvas styling */

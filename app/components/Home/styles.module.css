@@ -1,3 +1,4 @@
+/* Main Page Container */
 .main {
     overflow: hidden;
     position: relative;
@@ -19,6 +20,8 @@
     mix-blend-mode: difference;
     transition: transform 0.1s ease-out;
 }
+
+/* Stroke Effect (For Scroll Animation) */
 .stroke {
     position: absolute;
     top: 600px;
@@ -28,3 +31,14 @@
     z-index: 1;
 }
 
+/* Offer Component Visibility */
+.offer {
+    display: block;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+@media (max-width: 839px) {
+    .offer {
+        display: none;
+    }
+}

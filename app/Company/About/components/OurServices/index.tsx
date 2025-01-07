@@ -45,12 +45,12 @@ const OurServices = () => {
   });
   const headertitle = ["Services We Provide"];
   const title = ["Campus Training Services"];
-  const coursetitle = ["Comprehensive Course Offerings"];
+  const coursetitle = ["Advanced LMS for Better Learning"];
   const subtitle = `Explore our specialized services crafted to deliver outstanding results, driven by expertise and dedication.`;
   const descriptionPart1 = `Our placement training programs are carefully tailored to meet the unique needs of colleges and universities. With a focus on holistic career preparation, we combine technical skills training, aptitude development, and soft skills enhancement to equip students for real-world challenges.`;
   const descriptionPart2 = `Led by professional trainers with extensive industry experience, our programs bring valuable insights that help students stand out. We ensure that each participant is thoroughly prepared to meet the demands of their future careers with confidence and competence`;
-  const CourseDescription1 = `Alongside placement training, we offer programming courses to build technical proficiency and deepen understanding of modern technologies. With options for beginners and advanced learners, our curriculum ensures a match for every skill level.`;
-  const CourseDescription2 = `Courses include Python, C, C++, Java, Data Structures and Algorithms (DSA), Web Development, and more. Each course emphasizes hands-on learning to boost confidence and competence, preparing students for success in tech.`;
+  const CourseDescription1 = `Our Learning Management System (LMS) is designed to enhance the learning experience with course-specific interactive modules. Each module includes problem-solving exercises to build skills and encourage critical thinking.`;
+  const CourseDescription2 = `Students can track their progress through regular assessments and identify areas for improvement. With a user-friendly interface and structured content, our LMS empowers students to achieve their academic and career goals efficiently.`;
   return (
     <div className={styles.main}>
       <div className={styles.headerContainer}>
@@ -111,9 +111,9 @@ const OurServices = () => {
               initial="initial"
               animate={iscampusButtonInView ? "open" : "initial"}
             >
-              <Link href={"/company/portal"}>
+              <Link href={"/courses"}>
                 <Rounded className={styles.btn}>
-                  <p>About Portal</p>
+                  <p>View Course</p>
                 </Rounded>
               </Link>
             </motion.div>
@@ -158,7 +158,7 @@ const OurServices = () => {
               initial="initial"
               animate={iscourseButtonInView ? "open" : "initial"}
             >
-              <Link href={"/company/portal"}>
+              <Link href={"/portal"}>
                 <Rounded className={styles.btn}>
                   <p>About Portal</p>
                 </Rounded>
