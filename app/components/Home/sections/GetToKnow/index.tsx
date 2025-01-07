@@ -1,7 +1,7 @@
 "use client";
 import { useInView } from "react-intersection-observer";
-import SlideUpWord from "../../../common/Animations/slideUpWord";
-import FadeTransition from "../../../common/Animations/textFade";
+import SlideUpWord from "@/app/components/common/Animations/slideUpWord";
+import FadeTransition from "@/app/components/common/Animations/textFade";
 import { motion } from "framer-motion";
 import {
   gridSlideUp,

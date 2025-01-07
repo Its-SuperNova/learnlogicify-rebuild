@@ -65,10 +65,10 @@ const hero = () => {
         <div className="absolute h-5 w-5  left-full border border-white rounded-full top-1/2 -translate-x-1/2 -translate-y-1/2 inline-flex items-center justify-center">
           <div className="h-2 w-2 bg-white rounded-full"></div>
         </div>
-        <div className="absolute left-full  top-0 -translate-x-1/2 -translate-y-1/2 inline-flex items-center justify-center">
+        <div className="absolute  left-full  top-0 -translate-x-1/2 -translate-y-1/2 inline-flex items-center justify-center">
           <FaGitAlt />
         </div>
-        <div className="absolute left-0 border border-white rounded-full top-full -translate-x-1/2 -translate-y-1/2 inline-flex items-center justify-center">
+        <div className="absolute  left-0 border border-white rounded-full top-full -translate-x-1/2 -translate-y-1/2 inline-flex items-center justify-center">
           <FaGithub />
         </div>
       </motion.div>

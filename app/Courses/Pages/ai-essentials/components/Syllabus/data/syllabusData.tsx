@@ -49,54 +49,6 @@ export const syllabusData: SyllabusModule[] = [
           },
         ],
       },
-      {
-        icon: PiMathOperationsBold,
-        title: "Mathematics for AI",
-        subTopics: [
-          {
-            title: "Linear Algebra and Probability",
-            points: [
-              "Linear Algebra Basics (Vectors and Matrices)",
-              "Probability and Statistics Foundations",
-              "Probability Distributions (Normal, Binomial, etc.)",
-              "Matrix Operations and Applications in AI",
-            ],
-          },
-          {
-            title: "Graph Theory and Calculus",
-            points: [
-              "Basic Calculus for Optimization",
-              "Introduction to Graph Theory",
-              "Discrete Mathematics Basics",
-              "Concept of Gradient and its Applications",
-            ],
-          },
-        ],
-      },
-      {
-        icon: FaRegFolderOpen,
-        title: "Soft Skills Class",
-        subTopics: [
-          {
-            title: "Communication and Collaboration",
-            points: [
-              "Effective Communication Techniques",
-              "Team Collaboration and Problem Solving",
-              "Time Management and Productivity Skills",
-              "Public Speaking and Presentation Skills",
-            ],
-          },
-          {
-            title: "Professional Development",
-            points: [
-              "Writing Professional Emails and Documents",
-              "Developing Confidence and Leadership",
-              "Understanding Workplace Etiquette",
-              "Introduction to Emotional Intelligence",
-            ],
-          },
-        ],
-      },
     ],
   },
   {
