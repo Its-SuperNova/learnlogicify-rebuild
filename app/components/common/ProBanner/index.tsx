@@ -7,6 +7,7 @@ import Spotlight from "../../common/buttons/spotlight"
 import ProStar from "../SVG/icons/ProStar"
 import Link from "next/link";
 import LogoIcon from "../SVG/logo/ComanyIcon"
+import Sparkle from "@/app/components/common/buttons/sparkleBtn"
 const Probanner = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({ triggerOnce: false });
@@ -32,7 +33,9 @@ const Probanner = () => {
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className={styles.title}
         >
-          <p className={styles.p}>All-Access Subscription</p>
+          <p className="bg-white bg-[radial-gradient(100%_140%_at_top_left,white,white,rgb(74,32,138,.5))] text-transparent bg-clip-text">
+            Ultimate Git & Github Workshop
+          </p>
           <div className={styles.star}>
             <ProStar />
           </div>
@@ -44,11 +47,12 @@ const Probanner = () => {
           className={styles.desc}
         >
           <p>
-            Unlock the full potential of your coding skills with our All Access
-            Subscription. Gain unlimited access to all current and future
-            courses, and explore the exclusive features of this membership.
-            Become the best coder you can be with a wealth of resources at your
-            fingertips.
+            Take your coding skills to the next level with our 2-day hands-on
+            Git & GitHub workshop. Dive deep into version control, collaboration
+            workflows, branching, and repository management. Learn to track
+            changes, work in teams seamlessly, and manage projects like a pro.
+            Perfect for developers of all levels looking to sharpen their skills
+            and boost productivity!
           </p>
         </motion.div>
         <motion.div
@@ -58,7 +62,7 @@ const Probanner = () => {
           className={styles.btn}
         >
           <Link href="/Pro">
-            <Spotlight />
+            <Sparkle />
           </Link>
         </motion.div>
         <motion.div

@@ -13,16 +13,37 @@
     max-width: 1400px;
     min-width:1200px ;
     background-color: #1C1D20;
-    border-radius: 29px;
+    border-radius: 50px;
     position: relative;
     overflow: hidden;
     padding: 100px;
+     background-color: hsla(240, 15%, 9%, 1);
+  background-image: radial-gradient(
+      at 88% 40%,
+      hsla(240, 15%, 9%, 1) 0px,
+      transparent 85%
+    ),
+    radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 0% 64%, hsla(263, 93%, 56%, 1) 0px, transparent 85%),
+    radial-gradient(at 41% 94%, hsla(284, 100%, 84%, 1) 0px, transparent 85%),
+    radial-gradient(at 100% 99%, hsla(306, 100%, 57%, 1) 0px, transparent 85%);
+  box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25) inset;
 }
 
 .circle_1 {
     height: 300px;
     width: 300px;
-    background-color: #292A2D;
+     background-image: radial-gradient(
+      at 88% 40%,
+      hsla(240, 15%, 9%, 1) 0px,
+      transparent 85%
+    ),
+    radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 0% 64%, hsla(263, 93%, 56%, 1) 0px, transparent 85%),
+    radial-gradient(at 41% 94%, hsla(284, 100%, 84%, 1) 0px, transparent 85%),
+    radial-gradient(at 100% 99%, hsla(306, 100%, 57%, 1) 0px, transparent 85%);
     border-radius: 50%;
     position: absolute;
     top: -150px;
@@ -32,15 +53,24 @@
 .circle_2 {
     height: 300px;
     width: 300px;
-    background-color: #fb02de;
+    background-image: radial-gradient(
+      at 88% 40%,
+      hsla(240, 15%, 9%, 1) 0px,
+      transparent 85%
+    ),
+    radial-gradient(at 49% 30%,hsla(306, 100%, 57%, 1) 0px, transparent 85%),
+    radial-gradient(at 14% 26%,  hsla(284, 100%, 84%, 1) 0px, transparent 85%),
+    radial-gradient(at 0% 64%, hsla(263, 93%, 56%, 1) 0px, transparent 85%),
+    radial-gradient(at 41% 94%,hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+    radial-gradient(at 100% 99%, hsla(240, 15%, 9%, 1)  0px, transparent 85%);
     border-radius: 50%;
     position: absolute;
     bottom: -150px;
     right: -150px;
 }
 .icon{
-    height: 65px;
-    width: 65px;
+    height: 70px;
+    width: 70px;
     position: absolute;
     top: 40px;
     right: 40px;
@@ -49,7 +79,6 @@
     font-size: 48px;
     color: #ffffff;
     margin-bottom: 25px;
-    font-weight: 600;
     display: flex;
     align-items: center;
 }
@@ -62,6 +91,7 @@
     font-weight: 300;   
 }
 .btn{
+    margin-top: 50px;
     justify-content: flex-start;
 }
 @media (max-width: 1270px) {
@@ -165,12 +195,13 @@
     }
 
     .banner {
-        height: 400px;
+        height: auto;
         max-width: 100%;
         min-width: 300px;
-        padding: 50px;
+        padding: 80px;
         padding-left: 40px;
         padding-right: 40px;
+        padding-bottom: 50px;
     }
 
     .circle_1 {
@@ -188,8 +219,8 @@
     }
 
     .icon {
-        top: 10px;
-        right: 20px;
+        top: 30px;
+        right: 30px;
         height: 35px;
         width: 35px;
     }
