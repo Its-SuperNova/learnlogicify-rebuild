@@ -1,15 +1,33 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "./components/sidebar";
 import Step1 from "./components/steps/Step1";
 import Step2 from "./components/steps/Step2";
 import Step3 from "./components/steps/Step3";
 import Step4 from "./components/steps/Step4";
 import Step5 from "./components/steps/Step5";
+import MobileView from "./mobile";
 import styles from "./styles.module.css";
 
 const MultiStepForm: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect screen width and toggle between desktop and mobile view
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 820);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add resize event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Step 1 state
   const [step1Data, setStep1Data] = useState({
@@ -104,6 +122,21 @@ const MultiStepForm: React.FC = () => {
         return <Step1 data={step1Data} setData={setStep1Data} />;
     }
   };
+
+  // Render mobile or desktop view
+  if (isMobile) {
+    if (isMobile) {
+      return (
+        <MobileView
+          currentStep={currentStep}
+          totalSteps={5}
+          setCurrentStep={setCurrentStep}
+          renderStep={renderStep}
+        />
+      );
+    }
+
+  }
 
   return (
     <main className={styles.main}>
