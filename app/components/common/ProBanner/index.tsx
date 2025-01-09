@@ -61,7 +61,7 @@ const Probanner = () => {
           transition={{ duration: 1.4, ease: "easeInOut" }}
           className={styles.btn}
         >
-          <Link href="/Pro">
+          <Link href="/webinar/ultimate-webinar-on-mastering-git-&-github">
             <Sparkle />
           </Link>
         </motion.div>
