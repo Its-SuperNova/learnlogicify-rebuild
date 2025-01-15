@@ -1,13 +1,9 @@
 .header {
     padding: 30px;
     position: fixed;
-    /* Keeps it sticky while scrolling */
     top: 35px;
-    /* Adjust the vertical position */
     right: 0px;
-    /* Adjust the horizontal position */
     z-index: 1000;
-    /* Ensure it stays above other elements */
 }
 
 .header .button {
@@ -72,6 +68,7 @@
     }
 
     .header {
+        top: 5px;
         padding-right: 20px;
         padding-top: 22px;
     }

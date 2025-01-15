@@ -8,6 +8,7 @@ import Step4 from "./components/steps/Step4";
 import Step5 from "./components/steps/Step5";
 import MobileView from "./mobile";
 import styles from "./styles.module.css";
+import submitFormToGoogleSheet from "./utils/submitFormToGoogleSheet"; // Adjust the path based on your project structure
 
 const MultiStepForm: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -94,15 +95,25 @@ const MultiStepForm: React.FC = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (): void => {
-    alert("Form Submitted Successfully!");
-    console.log("Form Data:", {
-      step1: step1Data,
-      step2: step2Data,
-      step3: step3Data,
-      step4: step4Data,
-    });
-    setCurrentStep(1); // Reset to the first step
+  const handleSubmit = async (): Promise<void> => {
+    const formData = {
+      fullName: step1Data.fullName,
+      email: step1Data.email,
+      phone: step1Data.phone,
+      yearOfStudy: step2Data.yearOfStudy,
+      graduationYear: step2Data.graduationYear,
+      collegeName: step2Data.collegeName,
+      department: step2Data.department,
+      address: step2Data.address,
+      fullstackInterest: step3Data.fullstack,
+      workshopInterest: step3Data.joinWorkshop,
+      priceRange: step3Data.priceRange,
+      setupHelp: step4Data.setupHelp,
+      topicsInterested: step4Data.topics,
+    };
+
+    await submitFormToGoogleSheet(formData);
+    setCurrentStep(1); // Reset to Step 1 after successful submission
   };
 
   // Function to render the current step dynamically
@@ -125,17 +136,14 @@ const MultiStepForm: React.FC = () => {
 
   // Render mobile or desktop view
   if (isMobile) {
-    if (isMobile) {
-      return (
-        <MobileView
-          currentStep={currentStep}
-          totalSteps={5}
-          setCurrentStep={setCurrentStep}
-          renderStep={renderStep}
-        />
-      );
-    }
-
+    return (
+      <MobileView
+        currentStep={currentStep}
+        totalSteps={5}
+        setCurrentStep={setCurrentStep}
+        renderStep={renderStep}
+      />
+    );
   }
 
   return (
