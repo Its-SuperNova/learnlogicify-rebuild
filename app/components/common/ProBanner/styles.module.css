@@ -232,7 +232,7 @@
     }
 
     .title {
-        font-size: 23px;
+        font-size: 24px;
         color: #ffffff;
         margin-bottom: 10px;
         font-weight: 500;
@@ -240,13 +240,20 @@
     }
 
     .desc {
-        font-size: 13px;
+        font-size: 16px;
         font-weight: 200;
     }
 }
 @media (max-width: 554px) {
+
+    .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .banner {
+        border-radius: 40px;
+    }
     .star {
-        margin-left: 15px;
         height: 55px;
         width: 35px;
         margin-bottom: 20px;
