@@ -6,11 +6,11 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Styles from "./styles.module.css";
 import { FiArrowRightCircle } from "react-icons/fi";
-
+import { IoArrowForwardCircleOutline } from "react-icons/io5";
 type CardProps = {
   image?: string;
   title: string;
-  link: string; // New prop for the link
+  link: string;
 };
 
 const Card: React.FC<CardProps> = ({ image, title, link }) => {
@@ -92,7 +92,7 @@ const Card: React.FC<CardProps> = ({ image, title, link }) => {
           )}
         </motion.div>
         <div className={Styles.stats}>
-          <FiArrowRightCircle size={30} />
+          <IoArrowForwardCircleOutline size={30} />
           <p>{title}</p>
         </div>
       </motion.div>

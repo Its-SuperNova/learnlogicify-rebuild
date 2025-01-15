@@ -31,31 +31,10 @@
     margin-top: 20px;
 }
 
-.grid {
-    margin-top: 20px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-}
 
-@media (max-width: 1200px) {
-    .grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
 
-@media (max-width: 900px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (max-width: 600px) {
-    .grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
+
 .viewAllLink {
     font-size: 20px;
     color: #000;
@@ -82,4 +61,15 @@
 
 .viewAllLink:hover .arrowIcon {
     transform: translateX(5px);
+}
+
+@media (max-width: 500px) {
+    .exploreCourses {
+        padding: 0px 25px;
+        margin-bottom: 50px;
+    }
+    .title{
+        font-size: 35px;
+        line-height: 40px;
+    }
 }

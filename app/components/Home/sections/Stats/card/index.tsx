@@ -44,8 +44,8 @@ const StatsCard: React.FC<StatsCardProps> = ({
           options={defaultOptions}
           isStopped={!isHovered} 
           isPaused={!isHovered} 
-          height={55}
-          width={55}
+          height={50}
+          width={50}
         />
       </div>
       <div className={styles.content}>
