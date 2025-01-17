@@ -4,10 +4,8 @@
     align-items: flex-start;
     background-color: rgb(245, 245, 245);
     padding: 80px 0;
-    /* Keep vertical padding */
     overflow: hidden;
     width: 100vw;
-    /* Prevent overflow on the sides */
 }
 
 .body {
