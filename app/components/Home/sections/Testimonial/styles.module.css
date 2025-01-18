@@ -1,4 +1,4 @@
-.exploreCourses {
+.main {
     height: 100%;
     display: flex;
     align-items: flex-start;
@@ -9,7 +9,6 @@
 }
 
 .body {
-    max-width: 1400px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -63,4 +62,69 @@
     /* Hide scrollbar on IE and Edge */
     scrollbar-width: none;
     /* Hide scrollbar on Firefox */
+}
+.gridWrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.arrowButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(80, 80, 80);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgba(128, 128, 128, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(3px);
+    transition: transform 0.2s, background-color 0.2s,opacity 0.5s;
+    z-index: 10;
+    opacity: 0;
+}
+
+.arrowButton:hover {
+    transform: translateY(-50%) scale(1.1);
+    background-color: rgba(128, 128, 128, 0.2);
+}
+
+.arrowButton:active {
+    transform: translateY(-50%) scale(1);
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+.leftArrow {
+    left: 10px;
+}
+
+.rightArrow {
+    right: 30px;
+}
+.gridWrapper:hover .arrowButton {
+    opacity: 1;
+    pointer-events: auto;
+}
+.grid {
+    display: flex;
+    gap: 25px;
+    overflow: hidden;
+    /* Prevent content overflow */
+    padding-bottom: 40px;
+    padding-top: 40px;
+    width: 100%;
+}
+
+.grid::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar for better UX */
 }

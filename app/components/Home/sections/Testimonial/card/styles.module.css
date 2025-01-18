@@ -57,3 +57,10 @@
     font-size: 18px;
     /* Adjust star size */
 }
+
+@media (max-width: 730px) {
+    .card:hover {
+            transform: none;
+            box-shadow: none;
+        }
+}
