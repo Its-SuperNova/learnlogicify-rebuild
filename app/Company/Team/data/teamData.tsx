@@ -44,7 +44,7 @@ export const teamMembers: TeamMember[] = [
     name: "Arun Akash ",
     nickname: "ARUN",
     designation: "Technical Trainer",
-    image: "/images/team/arun x.png",
+    image: "/images/team/arun.png",
     instagram: "https://www.instagram.com/yourprofile",
     whatsapp: "https://wa.me/yourphonenumber",
     linkedin: "https://www.linkedin.com/in/yourprofile",

@@ -1,23 +1,36 @@
+// card/index.tsx
 import React from "react";
+import { AiFillStar } from "react-icons/ai";
 import styles from "./styles.module.css";
 
-const Card = () => {
+// Define the prop types
+interface CardProps {
+  image: string;
+  feedback: string;
+  name: string;
+  role: string;
+  rating: number;
+}
+
+const Card: React.FC<CardProps> = ({ image, feedback, name, role, rating }) => {
   return (
-    <div className={styles.card}>
-      <div className={styles.header}>
-        <img className={styles.profile} src="images/students/s1.jpg" alt="" />
-        <div className={styles.content}>
-          <p className={styles.feed}>
-            LearnLogicify is fantastic&#33; The courses are well&#45;structured,
-            and the platform is super easy to navigate. I&#39;ve gained valuable
-            tech skills, and the hands&#45;on exercises really boosted my
-            confidence. Highly recommend&#33;
-          </p>
-          <p className={styles.name}>Arun Kumar</p>
-          <p className={styles.role}>Student</p>
+    <main className={styles.card}>
+      <div className={styles.content}>
+        <div className={styles.top}>
+          <img className={styles.profile} src={image} alt={name} />
+          <p className={styles.feed}>{feedback}</p>
+        </div>
+        <div className={styles.bottom}>
+          <div className={styles.rating}>
+            {[...Array(rating)].map((_, i) => (
+              <AiFillStar key={i} className={styles.star} />
+            ))}
+          </div>
+          <p className={styles.name}>{name}</p>
+          <p className={styles.role}>{role}</p>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 
