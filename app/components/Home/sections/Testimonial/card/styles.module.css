@@ -62,5 +62,9 @@
     .card:hover {
             transform: none;
             box-shadow: none;
-        }
+    }
+    .card{
+        width: 310px;
+        height: 500px;
+    }
 }

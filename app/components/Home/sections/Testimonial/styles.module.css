@@ -23,7 +23,6 @@
     font-family: "Wix Madefor Text";
     color: rgb(0, 0, 0);
     margin-left: 180px;
-    /* Ensure the title is placed within the view */
 }
 
 .descriptionText {
@@ -33,7 +32,6 @@
     font-family: "Wix Madefor Text";
     color: rgb(72, 72, 72);
     margin-left: 180px;
-    /* Same alignment as the title */
 }
 
 .grid {
@@ -44,25 +42,20 @@
     padding-bottom: 40px;
     padding-top: 40px;
     width: 100vw;
-    /* Set the grid width to the viewport width */
     padding-left: 180px;
     padding-right: 80px;
-    /* Keep the left alignment under the title */
     scroll-padding-left: 200px;
-    /* Ensure the first card aligns with the title */
 }
 
 .grid::-webkit-scrollbar {
     display: none;
-    /* Hide the scrollbar */
 }
 
 .grid {
     -ms-overflow-style: none;
-    /* Hide scrollbar on IE and Edge */
     scrollbar-width: none;
-    /* Hide scrollbar on Firefox */
 }
+
 .gridWrapper {
     position: relative;
     width: 100%;
@@ -88,9 +81,10 @@
     background-color: rgba(128, 128, 128, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(3px);
-    transition: transform 0.2s, background-color 0.2s,opacity 0.5s;
+    transition: transform 0.2s, background-color 0.2s, opacity 0.5s;
     z-index: 10;
     opacity: 0;
+    pointer-events: none;
 }
 
 .arrowButton:hover {
@@ -110,21 +104,32 @@
 .rightArrow {
     right: 30px;
 }
+
 .gridWrapper:hover .arrowButton {
     opacity: 1;
     pointer-events: auto;
 }
-.grid {
-    display: flex;
-    gap: 25px;
-    overflow: hidden;
-    /* Prevent content overflow */
-    padding-bottom: 40px;
-    padding-top: 40px;
-    width: 100%;
-}
 
-.grid::-webkit-scrollbar {
-    display: none;
-    /* Hide scrollbar for better UX */
+@media (max-width: 730px) {
+    .title {
+        font-size: 40px;
+        line-height: 50px;
+        margin-left: 20px;
+    }
+
+    .descriptionText {
+        font-size: 20px;
+        margin-left: 20px;
+    }
+
+    .grid {
+        padding-left: 20px;
+    }
+
+    .arrowButton {
+        display: none;
+        /* Hide the arrows completely */
+        visibility: hidden;
+        opacity: 0;
+    }
 }
