@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import AboutPortal from "./AboutPortal";
 import Different from "./Different";

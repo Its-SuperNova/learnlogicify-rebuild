@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./styles.module.css";
 import Hero from "./components/Hero";
@@ -27,7 +28,7 @@ const CoursePage = () => {
           <CertificateProcess />
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
