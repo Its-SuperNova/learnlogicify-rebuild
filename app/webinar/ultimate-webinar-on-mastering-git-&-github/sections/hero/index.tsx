@@ -13,7 +13,7 @@ import { useRef } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa6";
 
-const hero = () => {
+const Hero = () => {
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -151,4 +151,4 @@ const hero = () => {
   );
 };
 
-export default hero;
+export default Hero;
