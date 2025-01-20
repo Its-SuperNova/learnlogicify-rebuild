@@ -19,10 +19,9 @@ export default function ExplorePopularCourses() {
 
   const scrollLeft = () => {
     if (gridRef.current) {
-      const newPosition = Math.max(scrollPosition - 300, 0); // Calculate new scroll position
+      const newPosition = Math.max(scrollPosition - 300, 0);
       setScrollPosition(newPosition);
 
-      // Use DOM `scrollBy` for smooth scrolling
       gridRef.current.scrollBy({
         left: -300,
         behavior: "smooth",
@@ -36,10 +35,9 @@ export default function ExplorePopularCourses() {
     if (gridRef.current) {
       const maxScroll =
         gridRef.current.scrollWidth - gridRef.current.clientWidth;
-      const newPosition = Math.min(scrollPosition + 300, maxScroll); // Calculate new scroll position
+      const newPosition = Math.min(scrollPosition + 300, maxScroll);
       setScrollPosition(newPosition);
 
-      // Use DOM `scrollBy` for smooth scrolling
       gridRef.current.scrollBy({
         left: 300,
         behavior: "smooth",
@@ -53,7 +51,7 @@ export default function ExplorePopularCourses() {
     if (gridRef.current) {
       const maxScroll =
         gridRef.current.scrollWidth - gridRef.current.clientWidth;
-      setShowLeftArrow(position > 0); // Show left arrow only if scrolled
+      setShowLeftArrow(position > 0);
     }
   };
 
@@ -86,7 +84,7 @@ export default function ExplorePopularCourses() {
           <div
             ref={gridRef}
             className={styles.grid}
-            onScroll={() => updateArrowVisibility(scrollPosition)} // Update visibility on manual scroll
+            onScroll={() => updateArrowVisibility(scrollPosition)}
           >
             {testimonials.map((testimonial, i) => (
               <div key={i} className={styles.cardWrapper}>

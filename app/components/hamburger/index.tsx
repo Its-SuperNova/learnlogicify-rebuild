@@ -11,8 +11,9 @@ const HamburgerMenu: React.FC = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (isActive) setIsActive(false);
-  }, [pathname]);
+    // Close the menu when the pathname changes
+    setIsActive(false);
+  }, [pathname]); // Only pathname is relevant here
 
   return (
     <>

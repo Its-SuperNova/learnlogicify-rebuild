@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image"; // Import the Image component
 import styles from "./styles.module.css";
 import {
   FaInstagram,
@@ -34,10 +35,12 @@ const Card: React.FC<CardProps> = ({ member }) => {
           style={{ backgroundColor: member.backgroundColor }}
           onClick={toggleModal}
         >
-          <img
+          <Image
             src={member.image}
             alt={`${member.name} Profile Image`}
             className={styles.profileImage}
+            width={200} // Replace with the actual width of the image
+            height={200} // Replace with the actual height of the image
           />
           <div className={styles.popup}>
             <p>{member.designation}</p>

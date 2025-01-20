@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./styles.module.css";
 import MagicButton from "../../../common/buttons/magic-button";
 import Link from "next/link";
+import Image from "next/image";
+
 const HeroHome = () => {
   return (
     <div className={styles.main}>
@@ -29,10 +31,13 @@ const HeroHome = () => {
           </div>
         </div>
         <div className={styles.imageContainer}>
-          <img
+          <Image
             className={styles.heroImage}
             src="/images/banner/portal.png"
             alt="Course preview"
+            width={600} // Replace with the actual width of the image
+            height={400} // Replace with the actual height of the image
+            priority // Ensures the image is loaded eagerly
           />
         </div>
       </div>

@@ -18,6 +18,8 @@ const Card: React.FC<CardProps> = ({ image, title, link }) => {
   const cardRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const currentCardRef = cardRef.current; // Capture the current ref value in a local variable
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -33,13 +35,13 @@ const Card: React.FC<CardProps> = ({ image, title, link }) => {
       }
     );
 
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
+    if (currentCardRef) {
+      observer.observe(currentCardRef);
     }
 
     return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
+      if (currentCardRef) {
+        observer.unobserve(currentCardRef);
       }
     };
   }, []);

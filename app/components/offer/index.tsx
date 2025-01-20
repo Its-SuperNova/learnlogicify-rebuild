@@ -1,14 +1,16 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion"; // Framer Motion for animations
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "./styles.module.css";
 import { RxCross1 } from "react-icons/rx";
 import confetti from "canvas-confetti";
-import Link from "next/link"; // Import Link from Next.js
-import EnrollBtn from "./enrollBtn"
+import Link from "next/link";
+import Image from "next/image";
+import EnrollBtn from "./enrollBtn";
+
 interface OfferProps {
-  setOfferVisible: (isVisible: boolean) => void; // Prop to notify parent
+  setOfferVisible: (isVisible: boolean) => void;
 }
 
 const Offer: React.FC<OfferProps> = ({ setOfferVisible }) => {
@@ -23,13 +25,11 @@ const Offer: React.FC<OfferProps> = ({ setOfferVisible }) => {
   const confettiInterval = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    // Show the offer after 3 seconds
     const timer = setTimeout(() => {
       setIsVisible(true);
       setOfferVisible(true);
     }, 3000);
 
-    // Start countdown calculation
     calculateTimeLeft();
     const countdownTimer = setInterval(calculateTimeLeft, 1000);
 
@@ -40,7 +40,7 @@ const Offer: React.FC<OfferProps> = ({ setOfferVisible }) => {
         clearInterval(confettiInterval.current);
       }
     };
-  }, []);
+  }, [setOfferVisible]);
 
   const calculateTimeLeft = (): void => {
     const webinarDate = new Date("2025-01-23T20:00:00").getTime();
@@ -104,10 +104,13 @@ const Offer: React.FC<OfferProps> = ({ setOfferVisible }) => {
         >
           <canvas ref={canvasRef} className={styles.confettiCanvas}></canvas>
           <div className={styles.leftSection}>
-            <img
+            <Image
               src="/SVG/icons/giftbox.svg"
               alt="Gift Icon"
               className={styles.giftIcon}
+              width={50}
+              height={50}
+              priority
             />
             <div className={styles.timer}>
               {timeLeft.days}d : {timeLeft.hours}h : {timeLeft.minutes}m :{" "}

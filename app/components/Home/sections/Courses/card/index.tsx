@@ -5,8 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Styles from "./styles.module.css";
-import { FiArrowRightCircle } from "react-icons/fi";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
+
 type CardProps = {
   image?: string;
   title: string;
@@ -18,6 +18,8 @@ const Card: React.FC<CardProps> = ({ image, title, link }) => {
   const cardRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const currentCardRef = cardRef.current; // Capture the current ref value in a local variable
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -33,16 +35,16 @@ const Card: React.FC<CardProps> = ({ image, title, link }) => {
       }
     );
 
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
+    if (currentCardRef) {
+      observer.observe(currentCardRef);
     }
 
     return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
+      if (currentCardRef) {
+        observer.unobserve(currentCardRef);
       }
     };
-  }, []);
+  }, []); // The dependency array remains empty
 
   const cardVariants = {
     hidden: { opacity: 0, y: 20 }, // Start hidden and slightly below

@@ -2,14 +2,17 @@ import React from "react";
 import styles from "./styles.module.css";
 import Link from "next/link";
 import Image from "next/image";
+
 const Certificate = () => {
   return (
     <div className={styles.container}>
       <div className={styles.certificate}>
-        <img
+        <Image
           className={styles.image}
           src="/images/certificate/c-1.png"
-          alt="certificate"
+          alt="Certificate of the course"
+          width={600} // Specify the width of the image
+          height={400} // Specify the height of the image
         />
       </div>
       <div className={styles.content}>
@@ -25,13 +28,15 @@ const Certificate = () => {
             learning and your ability to apply advanced skills. It will be a
             valuable addition to your professional portfolio, helping you stand
             out to potential employers and opening doors to new career
-            opportunities
+            opportunities.
           </p>
         </div>
         <div>
-          <button className={styles.btn}>
-            <Link href="/images/certificate/c-1.png">View Certificate</Link>
-          </button>
+          <Link href="/images/certificate/c-1.png" passHref>
+            <a target="_blank" rel="noopener noreferrer" className={styles.btn}>
+              View Certificate
+            </a>
+          </Link>
         </div>
       </div>
     </div>

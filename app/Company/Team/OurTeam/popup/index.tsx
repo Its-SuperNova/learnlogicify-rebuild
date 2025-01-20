@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image"; // Import the Image component
 import styles from "./styles.module.css";
 import { FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
@@ -15,7 +16,7 @@ type PopupProps = {
     instagram: string;
     whatsapp: string;
     linkedin: string;
-    backgroundColor:string;
+    backgroundColor: string;
     mail: string;
     bio: string;
   };
@@ -32,10 +33,12 @@ const Popup: React.FC<PopupProps> = ({ isOpen, onClose, member }) => {
         </button>
         <div className={styles.content}>
           <div className={styles.left}>
-            <img
+            <Image
               src={member.image}
               alt={`${member.name} Profile Image`}
               className={styles.profileImage}
+              width={150} // Specify the width of the image
+              height={150} // Specify the height of the image
               style={{ backgroundColor: member.backgroundColor }}
             />
             <div className={styles.socialIcons}>
@@ -64,7 +67,7 @@ const Popup: React.FC<PopupProps> = ({ isOpen, onClose, member }) => {
                 <FaWhatsapp size={20} />
               </a>
               <a
-                href={member.mail}
+                href={`mailto:${member.mail}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.iconG}

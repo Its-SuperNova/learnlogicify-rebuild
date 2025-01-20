@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"; // Import Image from next/image
 import styles from "./Styles.module.css";
 import Button from "@/app/components/common/buttons/magic-button";
 
@@ -25,10 +26,12 @@ const JoinUs = () => {
           fontSize="14px"
         />
       </div>
-      <img
+      <Image
         src="/images/banner/Frame 11.png"
-        alt=""
+        alt="Join Us Banner"
         className={styles.bannerImage}
+        width={800} // Specify the width of the image
+        height={400} // Specify the height of the image
       />
     </div>
   );

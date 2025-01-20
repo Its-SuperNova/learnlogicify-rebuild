@@ -2,6 +2,7 @@
 import React from "react";
 import styles from "./Styles.module.css";
 import Video from "./components/video section";
+import Image from "next/image"; // Import Image from next/image
 import CodeIcon from "@/public/SVG/icons/code.svg";
 import BarIcon from "@/public/SVG/icons/bar.svg";
 import GraphIcon from "@/public/SVG/icons/graph.svg";
@@ -35,20 +36,26 @@ const AboutPortal = () => {
           />
         </div>
         <div className={styles.background}>
-          <img
-            src={CodeIcon.src}
+          <Image
+            src={CodeIcon}
             alt="Code Icon"
             className={`${styles.icon} ${styles.icon1}`}
+            width={50} // Replace with the actual width of the icon
+            height={50} // Replace with the actual height of the icon
           />
-          <img
-            src={BarIcon.src}
+          <Image
+            src={BarIcon}
             alt="Bar Icon"
             className={`${styles.icon} ${styles.icon2}`}
+            width={50}
+            height={50}
           />
-          <img
-            src={GraphIcon.src}
+          <Image
+            src={GraphIcon}
             alt="Graph Icon"
             className={`${styles.icon} ${styles.icon3}`}
+            width={50}
+            height={50}
           />
           <GiCircle className={`${styles.icon} ${styles.icon4}`} />
           <GiSquare className={`${styles.icon} ${styles.icon5}`} />

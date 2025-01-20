@@ -3,10 +3,12 @@ import React from "react";
 import styles from "./styles.module.css";
 import Header from "../components/common/HeaderDark";
 import Footer from "../components/common/Footer";
-import ContactForm from "./components/form";
-import ReachOut from "./components/reachOut";
-import Lottie from "lottie-react";
-import animationData from "./components/lottie/Chatting.json"; // Ensure the path is correct
+import dynamic from "next/dynamic";
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+const ContactForm = dynamic(() => import("./components/form"), { ssr: false });
+const ReachOut = dynamic(() => import("./components/reachOut"), { ssr: false });
+import animationData from "./components/lottie/Chatting.json";
 
 const Contact = () => {
   return (
