@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import OurTeam from "./OurTeam";
 import JoinUs from "./JoinUs";
