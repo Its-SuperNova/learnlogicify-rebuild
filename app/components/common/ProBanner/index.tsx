@@ -3,10 +3,11 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import styles from "./styles.module.css";
-import ProStar from "../SVG/icons/ProStar"
+import ProStar from "../SVG/icons/ProStar";
 import Link from "next/link";
-import LogoIcon from "../SVG/logo/ComanyIcon"
-import Sparkle from "@/app/components/common/buttons/sparkleBtn"
+import LogoIcon from "../SVG/logo/ComanyIcon";
+import Sparkle from "@/app/components/common/buttons/sparkleBtn";
+
 const Probanner = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({ triggerOnce: false });
