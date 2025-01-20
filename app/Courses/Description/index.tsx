@@ -48,8 +48,8 @@ export default function Index() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [offsetMultiplier]);
-
-  const title = ["Discover Courses Tailored ", "for Your Career Goals"];
+  const title = ["Featured Courses"];
+  
   return (
     <div ref={descriptionRef} className={styles.description}>
         <SlideUpWord
