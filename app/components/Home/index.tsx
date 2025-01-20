@@ -12,7 +12,7 @@ import GetToKnow from "./sections/GetToKnow";
 import Courses from "./sections/Courses";
 import Stats from "./sections/Stats";
 import Testimonials from "./sections/Testimonial";
-import Banner from "@/app/components/common/ProBanner"
+import Banner from "@/app/components/common/WebinarBanner"
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 

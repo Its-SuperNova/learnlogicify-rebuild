@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image"; // Import the Image component
 import styles from "./styles.module.css";
 
 interface MagicButtonProps {
@@ -32,48 +31,35 @@ const MagicButton: React.FC<MagicButtonProps> = ({
           <div className={styles.buttonReflection2}></div>
         </div>
 
-        {/* Replace img tags with Image component */}
-        <Image
+        <img
           src="/components/Image/star.png"
-          alt="Star"
+          alt=""
           className={styles.buttonStar1}
-          width={24} // Replace with the actual width of the image
-          height={24} // Replace with the actual height of the image
         />
-        <Image
+        <img
           src="/components/Image/star.png"
-          alt="Star"
+          alt=""
           className={styles.buttonStar2}
-          width={24}
-          height={24}
         />
-        <Image
+        <img
           src="/components/Image/circle.png"
-          alt="Circle"
+          alt=""
           className={styles.buttonCircle1}
-          width={24}
-          height={24}
         />
-        <Image
+        <img
           src="/components/Image/circle.png"
-          alt="Circle"
+          alt=""
           className={styles.buttonCircle2}
-          width={24}
-          height={24}
         />
-        <Image
+        <img
           src="/components/Image/diamond.png"
-          alt="Diamond"
+          alt=""
           className={styles.buttonDiamond}
-          width={24}
-          height={24}
         />
-        <Image
+        <img
           src="/components/Image/triangle.png"
-          alt="Triangle"
+          alt=""
           className={styles.buttonTriangle}
-          width={24}
-          height={24}
         />
 
         <div className={styles.buttonShadow}></div>
