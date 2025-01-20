@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import styles from "./styles.module.css";
-import Spotlight from "../../common/buttons/spotlight"
 import ProStar from "../SVG/icons/ProStar"
 import Link from "next/link";
 import LogoIcon from "../SVG/logo/ComanyIcon"
