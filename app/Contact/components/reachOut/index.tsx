@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import styles from "./styles.module.css";
@@ -10,11 +11,18 @@ const ReachOut = () => {
   const locationIconRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Dynamically load the Lordicon script
     const loadLordiconScript = () => {
-      const script = document.createElement("script");
-      script.src = "https://cdn.lordicon.com/lordicon.js";
-      script.async = true;
-      document.body.appendChild(script);
+      const existingScript = document.querySelector(
+        "script[src='https://cdn.lordicon.com/lordicon.js']"
+      );
+
+      if (!existingScript) {
+        const script = document.createElement("script");
+        script.src = "https://cdn.lordicon.com/lordicon.js";
+        script.async = true;
+        document.body.appendChild(script);
+      }
     };
 
     loadLordiconScript();
@@ -25,7 +33,6 @@ const ReachOut = () => {
       if (lordIcon) {
         const handleMouseEnter = () => {
           lordIcon.setAttribute("trigger", "hover");
-          lordIcon.dispatchEvent(new Event("mouseenter"));
         };
 
         const handleMouseLeave = () => {

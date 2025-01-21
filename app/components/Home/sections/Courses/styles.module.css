@@ -20,14 +20,12 @@
     font-size: 60px;
     line-height: 65px;
     text-align: left;
-    font-family: "Wix Madefor Text";
 }
 
 .descriptionText {
     font-size: 22px;
     text-align: left;
     font-weight: 400;
-    font-family: "Wix Madefor Text";
     margin-top: 20px;
 }
 
@@ -42,7 +40,6 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-family: "Wix Madefor Text";
     font-weight: 500;
     margin-top: 10px;
     transition: color 0.3s ease;

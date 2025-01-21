@@ -9,10 +9,9 @@ import styles from "./styles.module.css";
 import dynamic from "next/dynamic";
 const ScrollHandler = dynamic(
   () => import("@/app/components/Home/ScrollHandler"),
-  {
-    ssr: false,
-  }
+  { ssr: false }
 );
+
 
 const LMSPortal: React.FC = () => {
   return (

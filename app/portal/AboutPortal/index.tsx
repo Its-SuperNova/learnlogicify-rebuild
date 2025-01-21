@@ -1,15 +1,24 @@
 "use client";
+
 import React from "react";
 import styles from "./Styles.module.css";
-import Video from "./components/video section";
+import dynamic from "next/dynamic";
 import Image from "next/image"; // Import Image from next/image
 import CodeIcon from "@/public/SVG/icons/code.svg";
 import BarIcon from "@/public/SVG/icons/bar.svg";
 import GraphIcon from "@/public/SVG/icons/graph.svg";
-import { GiCircle } from "react-icons/gi";
-import { GiSquare } from "react-icons/gi";
-import Lottie from "lottie-react";
+import { GiCircle, GiSquare } from "react-icons/gi";
+
+// Dynamically import Lottie with SSR disabled
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+
+// Import Lottie Animation
 import GearAnimation from "@/public/SVG/icons/gear.json";
+
+// Import Video Section
+const Video = dynamic(() => import("./components/video section"), {
+  ssr: false,
+});
 
 const AboutPortal = () => {
   return (
@@ -40,8 +49,8 @@ const AboutPortal = () => {
             src={CodeIcon}
             alt="Code Icon"
             className={`${styles.icon} ${styles.icon1}`}
-            width={50} // Replace with the actual width of the icon
-            height={50} // Replace with the actual height of the icon
+            width={50}
+            height={50}
           />
           <Image
             src={BarIcon}

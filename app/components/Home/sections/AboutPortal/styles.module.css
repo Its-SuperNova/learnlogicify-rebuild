@@ -35,14 +35,12 @@
 .title {
     font-size: 50px;
     line-height: 60px;
-    font-family: "Wix Madefor Text";
     text-align: left;
 }
 
 .description {
     font-size: 20px;
     line-height: 30px;
-    font-family: "Wix Madefor Text";
     font-weight: 400;
     text-align: left;
 }
@@ -54,7 +52,6 @@
 }
 
 .btn {
-    font-family: "Wix Madefor Text";
     z-index: 9999;
     width: 200px;
     height: 50px;

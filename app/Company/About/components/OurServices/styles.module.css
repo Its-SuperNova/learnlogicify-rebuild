@@ -64,7 +64,6 @@
 .title {
     font-size: 34px !important;
     line-height: 38px !important;
-    font-family: "Wix Madefor Text";
     text-align: left;
 }
 .imageContainer {
@@ -94,7 +93,6 @@
 .description2 {
     font-size: 20px !important;
     line-height: 30px !important;
-    font-family: "Wix Madefor Text";
     font-weight: 300;
     text-align: left;
 
@@ -107,7 +105,6 @@
 }
 
 .btn {
-    font-family: "Wix Madefor Text";
     z-index: 9999;
     width: 160px;
     height: 45px;
