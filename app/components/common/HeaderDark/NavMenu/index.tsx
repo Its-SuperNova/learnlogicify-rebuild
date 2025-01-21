@@ -17,7 +17,7 @@ const Header = () => {
         </div>
       </div>
       <div>
-        <Link href={"/courses"}>Courses</Link>
+        <Link href={"/course"}>Courses</Link>
       </div>
       <div>
         <Link href={"/portal"}>LMS Portal</Link>

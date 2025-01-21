@@ -10,7 +10,7 @@ import Preloader from "./components/Preloader"; // Import the Preloader componen
 
 const inter = Inter({
   subsets: ["latin"],
-  display: "swap", // Ensure font fallback during loading
+  display: "swap", 
 });
 
 export default function RootLayout({
