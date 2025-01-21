@@ -9,10 +9,10 @@ const Header = () => {
         <Link href={"/"}>Company</Link>
         <div className={styles.dropdownContent}>
           <li>
-            <Link href="/company/about">About Us</Link>
+            <Link href="/our-company/about-us">About Us</Link>
           </li>
           <li>
-            <Link href="/company/team">Team</Link>
+            <Link href="/company/our-team">Team</Link>
           </li>
         </div>
       </div>
@@ -23,7 +23,7 @@ const Header = () => {
         <Link href={"/portal"}>LMS Portal</Link>
       </div>
       <div>
-        <Link href={"/contact"}>Contact</Link>
+        <Link href={"/contact-us"}>Contact</Link>
       </div>
     </div>
   );
