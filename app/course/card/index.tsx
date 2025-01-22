@@ -1,84 +1,88 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { gsap } from "gsap";
+
+import SlideUpWord from "@/app/components/common/Animations/slideUpWord";
+import { ScrollTrigger } from "gsap/ScrollTrigger"; // Import ScrollTrigger
 import Styles from "./styles.module.css";
-import { FiArrowRightCircle } from "react-icons/fi";
+import { HiArrowRight } from "react-icons/hi2";
+
+gsap.registerPlugin(ScrollTrigger); // Register ScrollTrigger plugin
 
 type CardProps = {
   image?: string;
   title: string;
-  link: string; // New prop for the link
+  link: string;
 };
 
 const Card: React.FC<CardProps> = ({ image, title, link }) => {
-  const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement | null>(null);
+  const imageRef = useRef<HTMLImageElement | null>(null); // Reference for the image inside the container
+  const [arrowSize, setArrowSize] = useState(45); // State to manage arrow size
+  const [titleInView, setTitleInView] = useState(false); // Track title visibility
+
+  const { ref: inViewRef, inView } = useInView({
+    triggerOnce: false, // Allow the animation to repeat
+    threshold: 0.1, // Trigger animation when 10% of the title is visible
+  });
 
   useEffect(() => {
-    const currentCardRef = cardRef.current; // Capture the current ref value in a local variable
+    setTitleInView(inView); // Update state based on visibility
+  }, [inView]);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          } else {
-            setIsVisible(false);
-          }
-        });
-      },
-      {
-        threshold: 0.5, // Reveal when 50% of the card is visible
-      }
-    );
-
-    if (currentCardRef) {
-      observer.observe(currentCardRef);
-    }
-
-    return () => {
-      if (currentCardRef) {
-        observer.unobserve(currentCardRef);
+  useEffect(() => {
+    const updateArrowSize = () => {
+      if (window.innerWidth < 768) {
+        setArrowSize(25); // Smaller arrow for screens below 768px
+      } else {
+        setArrowSize(45); // Default arrow size for larger screens
       }
     };
+
+    // Initial check
+    updateArrowSize();
+
+    // Add resize event listener
+    window.addEventListener("resize", updateArrowSize);
+
+    // Cleanup listener on unmount
+    return () => window.removeEventListener("resize", updateArrowSize);
   }, []);
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 }, // Start hidden and slightly below
-    visible: {
-      opacity: 1,
-      y: 0, // Fade in and slide up
-      transition: {
-        duration: 0.4, // Reveal each card quickly
-        ease: "easeOut",
-      },
-    },
-  };
+  useEffect(() => {
+    const imageElement = imageRef.current;
+
+    if (imageElement) {
+      // Apply GSAP zoom in animation to the image inside the container
+      gsap.fromTo(
+        imageElement,
+        { scale: 1.2 }, // Start state: zoomed in
+        {
+          scale: 1, // End state: original size
+          duration: 1.5, // Slightly longer duration for smoother animation
+          ease: "power2.out", // Smooth easing function
+          scrollTrigger: {
+            trigger: imageElement,
+            start: "top 90%", // Animation starts when the image enters the viewport
+            toggleActions: "play none none reset", // Play animation and reset when it exits
+          },
+        }
+      );
+    }
+  }, []);
 
   return (
     <Link href={link} passHref>
-      <motion.div
-        ref={cardRef}
-        className={Styles.main}
-        variants={cardVariants}
-        initial="hidden"
-        animate={isVisible ? "visible" : "hidden"} // Trigger animation based on visibility
-      >
-        <motion.div
-          className={Styles.banner}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.4,
-            ease: "easeOut",
-          }}
-        >
+      <div ref={cardRef} className={Styles.main}>
+        <div className={Styles.banner}>
           {image ? (
             <div className={Styles.aspectRatio}>
               <Image
+                ref={imageRef} // Attach the ref to the image
                 src={image}
                 alt={title}
                 className={Styles.content}
@@ -92,12 +96,19 @@ const Card: React.FC<CardProps> = ({ image, title, link }) => {
               style={{ backgroundColor: "gray" }}
             ></div>
           )}
-        </motion.div>
-        <div className={Styles.stats}>
-          <FiArrowRightCircle size={30} />
-          <p>{title}</p>
         </div>
-      </motion.div>
+        <div className={Styles.stats}>
+          <HiArrowRight size={arrowSize} /> {/* Dynamically set arrow size */}
+          {/* Apply SlideUpWord animation to the title */}
+          <div ref={inViewRef}>
+            <SlideUpWord
+              title={[title]} // Pass the title as an array for animation
+              isInView={titleInView} // Trigger animation based on visibility
+              className={Styles.title}
+            />
+          </div>
+        </div>
+      </div>
     </Link>
   );
 };

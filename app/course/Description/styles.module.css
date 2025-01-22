@@ -1,13 +1,9 @@
 /* Import DM Sans font */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
-
 .description {
     height: 100%;
     display: flex;
-    justify-content: flex-start
-    ;
+    justify-content: flex-start;
     align-items: center;
-    background-color: white;
     position: relative;
     padding-bottom: 0;
 }
@@ -20,17 +16,20 @@
     gap: 20px;
 }
 
-/* Styling for title */
 .title {
     font-size: 80px;
-    line-height: 65px;
+    line-height: 90px;
     margin-bottom: 20px;
     text-align: left;
     z-index: 2;
-    font-family: "DM Sans", !important;
-    /* Apply DM Sans */
+    flex: 1;
 }
-
+.subTitle{
+    font-size: 14px;
+    line-height: 19px;
+    width: 300px;
+    font-weight: 400;
+}
 .title div {
     margin-bottom: 10px;
     z-index: 2;
@@ -104,6 +103,7 @@
         margin-bottom: 10px;
         text-align: left;
         z-index: 2;
+        margin-bottom: 30px;
     }
 
     .body {
@@ -139,10 +139,7 @@
         line-height: 40px;
     }
 
-    .descriptionText {
-        font-size: 20px;
-        padding-right: 0;
-    }
+   
 
     .buttonContainer {
         padding: 0;
@@ -155,9 +152,20 @@
 }
 
 @media (max-width: 480px) {
+    .description {
+        flex-direction: column;
+        align-items: flex-start;
+    }
     .title {
-        font-size: 30px;
-        line-height: 36px;
+        font-size: 50px;
+        line-height: 58px;
         font-weight: 500;
+        text-align: left;
+    }
+    .subTitle {
+        font-size: 14px;
+        line-height: 19px;
+        width: 100%;
+        font-weight: 400;
     }
 }

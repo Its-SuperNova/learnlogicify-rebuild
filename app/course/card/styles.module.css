@@ -9,7 +9,6 @@
 
 .main:hover {
     transform: scale(1.02);
-    /* Slight zoom on hover */
 }
 
 .banner {
@@ -56,24 +55,23 @@
     gap: 10px;
     align-items: center;
     justify-content: flex-start;
-    /* Align title and icon to the left */
     position: relative;
 }
 
-.stats p {
-    font-size: 28px;
+.title {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 400;
     margin: 0;
     transition: transform 0.3s ease, color 0.3s ease;
     transform: translateX(-38px);
 }
 
 .stats svg {
+    font-weight: 100;
     transform: translateX(-50px);
-    /* Move icon out of view to the left */
     opacity: 0;
-    /* Make it invisible initially */
     transition: transform 0.3s ease, opacity 0.3s ease;
-    /* Smooth entrance */
 }
 
 .main:hover .stats svg {
@@ -81,6 +79,41 @@
     opacity: 1;
 }
 
-.main:hover .stats p {
+.main:hover .title {
     transform: translateX(0px);
+}
+
+@media (max-width: 768px) {
+    .main {
+        gap: 16px;
+    }
+
+    .banner {
+        border-radius: 20px;
+    }
+
+    .title {
+        font-size: 20px;
+        line-height: 28px;
+        transform: translateX(-38px);
+        transition: none;
+        font-weight: 500;
+        padding-left: 10px;
+    }
+
+    .stats svg {
+        transform: translateX(-50px);
+        opacity: 0;
+        transition: none;
+        font-size: 20px;
+    }
+
+    .main:hover .stats svg {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+
+    .main:hover .title {
+        transform: translateX(-38px);
+    }
 }

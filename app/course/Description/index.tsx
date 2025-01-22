@@ -2,7 +2,15 @@
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import SlideUpWord from "@/app/components/common/Animations/slideUpWord";
+import { DM_Sans } from "next/font/google"; // Correct import name
 import styles from "./styles.module.css";
+
+// Load DM Sans with Latin subset and swap display
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"], // Optional: Load specific font weights
+  display: "swap",
+});
 
 export default function Index() {
   const { ref: descriptionRef, inView: isInView } = useInView({
@@ -48,15 +56,26 @@ export default function Index() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [offsetMultiplier]);
-  const title = ["Featured Courses"];
-  
+
+  const title = ["Explore Our Programs"];
+  const subTitle = [
+    "A CURATED SELECTION OF COURSES TO EMPOWER LEARNERS WITH ADVANCED SKILLS AND KNOWLEDGE.",
+  ];
+
   return (
     <div ref={descriptionRef} className={styles.description}>
-        <SlideUpWord
-          title={title}
-          isInView={isInView}
-          className={styles.title}
-        />
+      {/* Apply DM Sans font to title only */}
+      <SlideUpWord
+        title={title}
+        isInView={isInView}
+        className={`${styles.title} ${dmSans.className}`}
+      />
+      {/* Subtitle without DM Sans font */}
+      <SlideUpWord
+        title={subTitle}
+        isInView={isInView}
+        className={styles.subTitle}
+      />
     </div>
   );
 }
