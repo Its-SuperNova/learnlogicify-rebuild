@@ -4,6 +4,7 @@
     gap: 20px;
     cursor: pointer;
     transition: transform 0.3s ease;
+    /* Optional: Add a slight scaling effect */
 }
 
 .main:hover {
@@ -57,14 +58,17 @@
     position: relative;
 }
 
-.stats p {
-    font-size: 28px;
+.title {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 400;
     margin: 0;
     transition: transform 0.3s ease, color 0.3s ease;
     transform: translateX(-38px);
 }
 
 .stats svg {
+    font-weight: 100;
     transform: translateX(-50px);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -75,21 +79,41 @@
     opacity: 1;
 }
 
-.main:hover .stats p {
+.main:hover .title {
     transform: translateX(0px);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
+    .main {
+        gap: 16px;
+    }
+
     .banner {
-        border-radius: 24px;
+        border-radius: 20px;
     }
-    .stats p {
-        font-size: 22px;
-        margin: 0;
-        transform: translateX(0px);
+
+    .title {
+        font-size: 20px;
+        line-height: 28px;
+        transform: translateX(-38px);
+        transition: none;
+        font-weight: 500;
+        padding-left: 10px;
     }
+
     .stats svg {
-        opacity: 1;
-        transform: translateX(0);
+        transform: translateX(-50px);
+        opacity: 0;
+        transition: none;
+        font-size: 20px;
+    }
+
+    .main:hover .stats svg {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+
+    .main:hover .title {
+        transform: translateX(-38px);
     }
 }
