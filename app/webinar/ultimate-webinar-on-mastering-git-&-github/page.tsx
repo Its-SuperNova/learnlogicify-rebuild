@@ -8,6 +8,7 @@ import Cards from "./sections/cards";
 import Syllabus from "./sections/syllabus";
 import Footer from "@/app/components/common/Footer";
 import VideoSection from "./sections/Videosection";
+import Mentor from "./sections/Mentor"
 const Webinar = () => {
   // Define the content for the two cards
 
@@ -15,9 +16,12 @@ const Webinar = () => {
     <div className={styles.main}>
       <Header />
       <Hero />
+      <Desc/>
       <VideoSection />
       <Cards />
       <Syllabus />
+
+
       <Footer />
     </div>
   );
