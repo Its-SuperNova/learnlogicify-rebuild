@@ -20,7 +20,7 @@
 }
 
 .tit {
-  font-size: 60px;
+  font-size: 50px;
   line-height: 65px;
   margin-bottom: 20px;
   text-align: left;
@@ -53,8 +53,7 @@
 .SyllabusArea {
   height: 100%;
   width: 100%;
-  padding-bottom: 80px;
-  border-bottom: 2px solid rgb(66, 66, 66);
+  padding-bottom: 50px;
 }
 
 .list {
