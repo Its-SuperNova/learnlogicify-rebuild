@@ -9,23 +9,44 @@ import { syllabusData } from "./data";
 
 const Syllabus: React.FC = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [currentTitle, setCurrentTitle] = useState<string[]>([]);
   const contentRefs = useRef<HTMLDivElement[]>([]);
 
   const toggleExpand = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
-   const { ref: descriptionRef, inView: isInView } = useInView({
-     triggerOnce: false,
-     threshold: 0.1,
-   });
-   const title = ["What You'll Learn,", "in This Git & GitHub Workshop"];
-   const titlep = ["What You'll Learn,in This Git & GitHub Workshop"];
+
+  const { ref: descriptionRef, inView: isInView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+
+  const title = ["What You'll Learn,", "in This Git & GitHub Workshop"];
+  const titlep = ["What You'll Learn,in This Git & GitHub Workshop"];
+
+  useEffect(() => {
+    const updateTitle = () => {
+      if (window.innerWidth > 600) {
+        setCurrentTitle(title);
+      } else {
+        setCurrentTitle(titlep);
+      }
+    };
+
+    updateTitle(); // Initial check
+    window.addEventListener("resize", updateTitle); // Listen for screen resize
+
+    return () => {
+      window.removeEventListener("resize", updateTitle); // Cleanup on unmount
+    };
+  }, []);
+
   return (
     <div className={styles.container}>
       <div ref={descriptionRef} className={styles.description}>
         <div className={styles.body}>
           <SlideUpWord
-            title={titlep}
+            title={currentTitle}
             isInView={isInView}
             className={styles.tit}
           />
@@ -36,9 +57,9 @@ const Syllabus: React.FC = () => {
           Workshop Syllabus
         </div>
         <div className={styles.subtitle}>
-          <div>4 Modules  -</div>
+          <div>4 Modules -</div>
           <div className={styles.line}></div>
-          <div>16 Topics  -</div>
+          <div>16 Topics -</div>
           <div className={styles.line}></div>
           <div>Hands-on Exercises</div>
         </div>

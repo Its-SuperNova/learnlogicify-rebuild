@@ -43,6 +43,9 @@
     color: white;
     width: 160px;
     height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .btn:hover{
     background-color: #5e00da;

@@ -34,9 +34,7 @@ const Certificate = () => {
         <div>
           <button className={styles.btn}>
             <Link href="/images/certificate/c-1.png" passHref>
-              <a target="_blank" rel="noopener noreferrer">
-                View Certificate
-              </a>
+              <div className={styles.btn}>View Certificate</div>
             </Link>
           </button>
         </div>
