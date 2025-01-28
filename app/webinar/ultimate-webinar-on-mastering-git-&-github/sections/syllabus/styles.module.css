@@ -2,26 +2,23 @@
   padding: 50px 160px;
   padding-bottom: 0;
 }
+
 .description {
   height: 100%;
   display: flex;
   justify-content: flex-start;
   position: relative;
   padding-bottom: 0;
-  
 }
 
-/* Body container for text and buttons */
 .body {
   max-width: 1400px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
-  
 }
 
-/* Styling for title */
 .tit {
   font-size: 60px;
   line-height: 65px;
@@ -29,6 +26,7 @@
   text-align: left;
   z-index: 2;
 }
+
 .header {
   display: flex;
   flex-direction: column;
@@ -42,13 +40,6 @@
   align-items: center;
   gap: 10px;
   color: #a0a0a0;
-  /* Muted text for the subtitle */
-}
-
-.line {
-  width: 1px;
-  height: 20px;
-  /* Darker line separator */
 }
 
 .content {
@@ -63,40 +54,25 @@
   height: 100%;
   width: 100%;
   padding-bottom: 80px;
-  border-bottom:2px solid rgb(66, 66, 66);
+  border-bottom: 2px solid rgb(66, 66, 66);
 }
 
 .list {
   cursor: pointer;
   border: 2px solid transparent;
-  /* Transparent border to allow gradient overlay */
   border-radius: 10px;
-  /* Rounded corners */
-  background-image: linear-gradient(#1e1e1e, #1e1e1e),
-    /* Inner background color */
-      linear-gradient(90deg, #2e1558, #6b2c93, #2e1558);
-  /* Subtle gradient for border */
+  background-image: linear-gradient(#1e1e1e, #1e1e1e), linear-gradient(90deg, #2e1558, #6b2c93, #2e1558);
   background-origin: border-box;
-  /* Ensures gradient applies to the border */
   background-clip: padding-box, border-box;
-  /* Separates border and content */
   padding: 10px;
-  /* Space inside the list item */
   color: #e0e0e0;
-  /* Light gray text for readability */
   transition: box-shadow 0.2s ease;
-  /* Faster transition for hover effect */
   margin-bottom: 10px;
-  /* Space between list items */
   background-color: #1e1e1e;
-  /* Dark inner background for contrast */
 }
 
-/* Add hover effect for better interactivity */
 .list:hover {
   box-shadow: 0 0 6px 1px rgba(107, 44, 147, 0.4);
-  /* Subtle purple glow effect */
-  /* Adjust the glow intensity and size for minimalism */
 }
 
 .listRow {
@@ -111,7 +87,6 @@
   height: 70px;
   width: 79px;
   background-color: #333;
-  /* Dark icon background */
   border-radius: 10px;
   color: #a43cff;
   display: flex;
@@ -119,7 +94,6 @@
   align-items: center;
 }
 
-/* Content and Dropdown Styles */
 .lisContent {
   display: flex;
   flex-direction: row;
@@ -138,7 +112,6 @@
 
 .module {
   color: #ffffff;
-  /* Bright white for module title */
   font-weight: 500;
 }
 
@@ -146,15 +119,12 @@
   font-weight: 600;
   font-size: 22px;
   color: #e0e0e0;
-  /* Light gray for the topic subtitle */
 }
 
 .DropdownIcon {
   color: #b882ff;
-  /* Light blue icon for expand/collapse */
 }
 
-/* Dropdown Content */
 .dropdownContent {
   width: 100%;
   overflow: hidden;
@@ -166,11 +136,9 @@
 .contentlist {
   margin-top: 15px;
   border-top: 1px solid #444;
-  /* Subtle border between main topics */
   padding: 20px;
 }
 
-/* Main Topic Styles */
 .mainTopic {
   display: flex;
   align-items: center;
@@ -179,29 +147,24 @@
   font-weight: 600;
   margin-bottom: 15px;
   color: #ffffff;
-  /* White for main topic titles */
 }
 
 .mainTopicIcon {
   padding: 10px;
   border-radius: 10px;
   background-color: #444;
-  /* Dark icon background */
   color: #82a1ff;
-  /* Light blue icon color */
 }
 
 .mainTopic span {
   margin-left: 10px;
 }
 
-/* Subtopics Styles */
 .subTopics {
   padding-left: 20px;
   overflow: hidden;
   transition: max-height 0.6s ease;
   margin-bottom: 20px;
-  /* Space between subtopic sections */
 }
 
 .subTopics h4 {
@@ -209,15 +172,12 @@
   font-weight: 500;
   margin-top: 10px;
   margin-bottom: 15px;
-  /* Space below the subtopic title */
   color: #bdbdbd;
-  /* Light gray for subtopic titles */
 }
 
 .subTopics ul {
   margin-left: 20px;
   margin-top: 10px;
-  /* Space between the title and the list */
 }
 
 .subTopics li {
@@ -225,66 +185,48 @@
   align-items: center;
   gap: 10px;
   margin: 8px 0;
-  /* Space between list items */
   font-size: 14px;
   color: #9e9e9e;
-  /* Subtle gray for subtopic list items */
 }
 
-/* Message Square Icon for Subtopics */
 .subTopics li svg {
   color: #b53fa9;
   font-size: 18px;
 }
 
-/* Responsive Styles */
-@media screen and (max-width: 1170px) {
-  .content {
-    flex-direction: column;
+@media screen and (max-width: 500px) {
+  .container {
+    padding: 50px 20px;
   }
 
-  .right {
-    width: 100%;
+  .tit {
+    font-size: 36px;
+    line-height: 42px;
   }
 
-  .cardContainer {
-    flex-direction: row;
-    gap: 30px;
+  .subtitle {
+    gap: 4px;
+    font-size: 14px;
   }
-}
 
-@media screen and (max-width: 920px) {
-  .cardContainer {
-    flex-direction: column;
-    gap: 30px;
+  .icon {
+    height: 55px;
+    width: 70px;
   }
-}
 
-@media screen and (max-width: 600px) {
   .module {
-    color: #ffffff;
-    font-weight: 500;
     font-size: 14px;
   }
 
   .topic {
-    font-weight: 650;
     font-size: 18px;
   }
 
-  .mainTopic {
-    font-size: 16px;
+  .dropdownContent {
+    padding: 0px;
   }
 
-  .contentlist h4 {
-    font-size: 14px;
-  }
-
-  .subTopics li {
-    font-size: 12px;
-  }
-
-  .subTopics li svg {
-    font-size: 16px;
+  .contentlist {
+    padding: 20px 10px;
   }
 }

@@ -19,13 +19,13 @@ const Syllabus: React.FC = () => {
      threshold: 0.1,
    });
    const title = ["What You'll Learn,", "in This Git & GitHub Workshop"];
-  
+   const titlep = ["What You'll Learn,in This Git & GitHub Workshop"];
   return (
     <div className={styles.container}>
       <div ref={descriptionRef} className={styles.description}>
         <div className={styles.body}>
           <SlideUpWord
-            title={title}
+            title={titlep}
             isInView={isInView}
             className={styles.tit}
           />
@@ -36,9 +36,9 @@ const Syllabus: React.FC = () => {
           Workshop Syllabus
         </div>
         <div className={styles.subtitle}>
-          <div>4 Modules</div>
+          <div>4 Modules  -</div>
           <div className={styles.line}></div>
-          <div>16 Topics</div>
+          <div>16 Topics  -</div>
           <div className={styles.line}></div>
           <div>Hands-on Exercises</div>
         </div>
@@ -61,7 +61,7 @@ const Syllabus: React.FC = () => {
                   onClick={() => toggleExpand(index)}
                 >
                   <div className={styles.icon}>
-                    <Icon size={35} />
+                    <Icon size={25} />
                   </div>
                   <div className={styles.lisContent}>
                     <div className={styles.listStats}>
