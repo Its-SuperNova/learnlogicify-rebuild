@@ -1,11 +1,11 @@
-"use client"
+"use client";
 import { useScroll, useSpring, motion, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import styles from "./styles.module.scss";
 
 interface ParagraphProps {
   paragraph: string;
-  useGradient?: boolean; // New prop to toggle gradient
+  useGradient?: boolean;
 }
 
 export default function Character({
@@ -50,7 +50,7 @@ interface WordProps {
   children: string;
   progress: any;
   range: [number, number];
-  useGradient?: boolean; // New prop to toggle gradient
+  useGradient?: boolean;
 }
 
 const Word: React.FC<WordProps> = React.memo(
@@ -79,11 +79,14 @@ const Word: React.FC<WordProps> = React.memo(
   }
 );
 
+// ✅ Fix: Assign displayName to `Word`
+Word.displayName = "Word";
+
 interface CharProps {
   children: string;
   progress: any;
   range: [number, number];
-  useGradient?: boolean; // New prop to toggle gradient
+  useGradient?: boolean;
 }
 
 const Char: React.FC<CharProps> = React.memo(
@@ -108,3 +111,6 @@ const Char: React.FC<CharProps> = React.memo(
     );
   }
 );
+
+// ✅ Fix: Assign displayName to `Char`
+Char.displayName = "Char";
