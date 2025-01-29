@@ -107,12 +107,18 @@
 @media (max-width: 1024px){
     .container{
         flex-direction: column;
-        padding: 50px 70px;
+        padding: 50px;
         gap: 30px;
         align-items: center;
     }
     .right{
         padding: 0;
+        max-width: 100%;
+    }
+    .left{
+        max-width: 100%;
+        width: 100%;
+        height: auto;
     }
 }
 
