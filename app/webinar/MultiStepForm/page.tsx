@@ -7,8 +7,7 @@ import Step3 from "./components/steps/Step3";
 import Step4 from "./components/steps/Step4";
 import Step5 from "./components/steps/Step5";
 import MobileView from "./mobile";
-import styles from "./styles.module.css";
-import submitFormToGoogleSheet from "./utils/submitFormToGoogleSheet"; // Adjust the path based on your project structure
+import styles from "./styles.module.css"; // Adjust the path based on your project structure
 
 const MultiStepForm: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -20,24 +19,19 @@ const MultiStepForm: React.FC = () => {
       setIsMobile(window.innerWidth < 820);
     };
 
-    // Initial check
     handleResize();
-
-    // Add resize event listener
     window.addEventListener("resize", handleResize);
-
-    // Cleanup event listener on component unmount
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Step 1 state
+  // Step 1: Personal Details
   const [step1Data, setStep1Data] = useState({
     fullName: "",
     email: "",
     phone: "",
   });
 
-  // Step 2 state
+  // Step 2: Educational Details
   const [step2Data, setStep2Data] = useState({
     yearOfStudy: "",
     graduationYear: "",
@@ -46,14 +40,14 @@ const MultiStepForm: React.FC = () => {
     address: "",
   });
 
-  // Step 3 state
+  // Step 3: Workshop Interest
   const [step3Data, setStep3Data] = useState({
     fullstack: "yes",
     joinWorkshop: "yes",
     priceRange: "",
   });
 
-  // Step 4 state
+  // Step 4: Workshop Expectations
   const [step4Data, setStep4Data] = useState({
     expectations: "",
     setupHelp: "yes",
@@ -65,7 +59,7 @@ const MultiStepForm: React.FC = () => {
     },
   });
 
-  // Validation logic for each step
+  // Step Validation
   const isStepValid = (): boolean => {
     switch (currentStep) {
       case 1:
@@ -94,8 +88,8 @@ const MultiStepForm: React.FC = () => {
     }
   };
 
-  // Handle form submission
-  const handleSubmit = async (): Promise<void> => {
+  // Form Submission to Google Sheets
+  const handleSubmit = async () => {
     const formData = {
       fullName: step1Data.fullName,
       email: step1Data.email,
@@ -105,18 +99,42 @@ const MultiStepForm: React.FC = () => {
       collegeName: step2Data.collegeName,
       department: step2Data.department,
       address: step2Data.address,
-      fullstackInterest: step3Data.fullstack,
-      workshopInterest: step3Data.joinWorkshop,
+      fullstack: step3Data.fullstack,
+      joinWorkshop: step3Data.joinWorkshop,
       priceRange: step3Data.priceRange,
       setupHelp: step4Data.setupHelp,
-      topicsInterested: step4Data.topics,
+      topics: step4Data.topics,
     };
 
-    await submitFormToGoogleSheet(formData);
-    setCurrentStep(1); // Reset to Step 1 after successful submission
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbyiVWbBIAKTl5fwd4KHoT01AxlKFdChHp7JnC5GTdRy2HAZOvbpozua83nj7zRbKiKV/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const result = await response.json();
+      console.log("API Response:", result);
+
+      if (result.status === "success") {
+        alert("✅ Form submitted successfully!");
+      } else {
+        console.error("Submission failed:", result);
+        alert("❌ Submission failed. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("⚠️ Network error! Check console for details.");
+    }
   };
 
-  // Function to render the current step dynamically
+
+  // Render current step dynamically
   const renderStep = () => {
     switch (currentStep) {
       case 1:
@@ -134,7 +152,7 @@ const MultiStepForm: React.FC = () => {
     }
   };
 
-  // Render mobile or desktop view
+  // Mobile View Handling
   if (isMobile) {
     return (
       <MobileView
@@ -156,7 +174,7 @@ const MultiStepForm: React.FC = () => {
 
         {/* Form Area */}
         <section className={styles.formArea}>
-          {/* For Step 5: Place the Back button at the top */}
+          {/* Back Button on Step 5 */}
           {currentStep === 5 && (
             <div className={styles.step5Navigation}>
               <button
