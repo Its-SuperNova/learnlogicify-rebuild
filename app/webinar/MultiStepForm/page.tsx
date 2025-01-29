@@ -13,7 +13,6 @@ const MultiStepForm: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Detect screen width and toggle between desktop and mobile view
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 820);
