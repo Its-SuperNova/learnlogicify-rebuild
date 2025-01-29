@@ -67,7 +67,7 @@
 
 .content {
     display: grid;
-    grid-template-columns: repeat(4, 255px);
+    grid-template-columns: repeat(3, 255px);
     gap: 30px;
     justify-content: center;
     width: 100%;
