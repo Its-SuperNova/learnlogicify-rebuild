@@ -73,7 +73,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               <Link href="/contact">Contact us</Link>
             </li>
             <li>
-              <Link href="/courses">Courses</Link>
+              <Link href="/course">Courses</Link>
             </li>
           </ul>
         </div>

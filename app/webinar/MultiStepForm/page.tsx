@@ -107,7 +107,7 @@ const MultiStepForm: React.FC = () => {
 
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbzhOPOzQtXkfqc59J_iPjxXYJGglqC6x7dlhu5VWF6GDFkIM6ckFd7hbzk-jX52tHM/exec",
+        "https://script.google.com/macros/s/AKfycbxuZ8sFak0a_66knvSdH1KM1-Z62dkygLFWrG88KRrB_ZUvjXhjp9JU84kiICFTAGlJ/exec", // <-- Make sure this is your latest deployment URL
         {
           method: "POST",
           headers: {
@@ -118,19 +118,19 @@ const MultiStepForm: React.FC = () => {
       );
 
       const result = await response.json();
-      console.log("API Response:", result);
+      console.log("Response:", result);
 
       if (result.status === "success") {
-        alert("✅ Form submitted successfully!");
+        alert("✅ Data submitted successfully!");
       } else {
-        console.error("Submission failed:", result);
-        alert("❌ Submission failed. Please try again.");
+        alert("⚠️ Submission failed: " + result.message);
       }
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("⚠️ Network error! Check console for details.");
     }
   };
+
 
 
   // Render current step dynamically

@@ -20,7 +20,7 @@ const HeroHome = () => {
             your skills.
           </p>
           <div className={styles.btn}>
-            <Link href={"/courses"}>
+            <Link href={"/course"}>
               <MagicButton
                 buttonText="View Courses"
                 width="180px"
