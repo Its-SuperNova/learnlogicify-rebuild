@@ -4,7 +4,7 @@ import React, { Suspense } from "react";
 import styles from "./styles.module.css";
 import Header from "@/app/components/common/HeaderDark";
 import Footer from "@/app/components/common/Footer";
-import LegalPoliciesBox from "./components/box";
+import Terms from "../components/terms&Conditions";
 
 const LegalPage = () => {
   return (
@@ -14,9 +14,7 @@ const LegalPage = () => {
           <Header />
         </header>
         <section className={styles.container}>
-          <Suspense fallback={<div>Loading...</div>}>
-            <LegalPoliciesBox />
-          </Suspense>
+          <Terms />
         </section>
         <footer>
           <Footer />

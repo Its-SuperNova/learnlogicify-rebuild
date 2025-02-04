@@ -11,7 +11,7 @@
 .title {
     font-size: 26px;
     font-weight: 700;
-    color: #0077ff;
+    color: #000000;
 }
 
 .lastUpdatedContainer {
@@ -80,7 +80,7 @@
 
 .emailLink,
 .phoneLink {
-    color: #0077ff;
+    color: #000000;
     text-decoration: none;
     font-weight: 500;
 }
@@ -106,7 +106,7 @@
 }
 
 .bullet {
-    color: blue;
+    color: rgb(0, 0, 0);
     /* Adjust color as needed */
     font-weight: bold;
     margin-right: 8px;

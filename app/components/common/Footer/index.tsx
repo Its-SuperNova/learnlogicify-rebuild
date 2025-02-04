@@ -83,10 +83,10 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           <h4>Legal & Policies</h4>
           <ul>
             <li>
-              <Link href="/legal?tab=terms">Terms & Conditions</Link>
+              <Link href="/legal/privacy-policy">Terms & Conditions</Link>
             </li>
             <li>
-              <Link href="/legal?tab=privacy">Privacy Policy</Link>
+              <Link href="/legal/terms-&-condition">Privacy Policy</Link>
             </li>
           </ul>
         </div>

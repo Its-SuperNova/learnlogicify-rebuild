@@ -18,19 +18,15 @@ export default function Index() {
   const [offsetMultiplier, setOffsetMultiplier] = useState(0.2); // Default for larger screens
 
   useEffect(() => {
-    // Update the offsetMultiplier based on window size
     const updateOffsetMultiplier = () => {
       if (window.innerWidth < 730) {
-        setOffsetMultiplier(0.1); // Mild parallax effect on mobile
+        setOffsetMultiplier(0.1); 
       } else {
-        setOffsetMultiplier(0.2); // Original effect for larger screens
+        setOffsetMultiplier(0.2);
       }
     };
-
-    // Initial check
     updateOffsetMultiplier();
 
-    // Event listener for window resize
     window.addEventListener("resize", updateOffsetMultiplier);
     return () => {
       window.removeEventListener("resize", updateOffsetMultiplier);
