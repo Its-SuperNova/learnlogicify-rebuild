@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./styles.module.css";
+import Link from "next/link";
 
 const Refund = () => {
   return (
@@ -67,12 +68,12 @@ const Refund = () => {
           <p className={styles.paragraph}>
             If you meet the eligibility criteria, you can request a refund by
             contacting our support team at{" "}
-            <a
+            <Link
               href="mailto:support@learnlogicify.com"
               className={styles.emailLink}
             >
               support@learnlogicify.com
-            </a>
+            </Link>
             . Please include your order details and the reason for your refund
             request. Our team will review your request and respond within 5-7
             business days.
@@ -167,21 +168,21 @@ const Refund = () => {
             Coimbatore, Tamil Nadu - 641602
             <br />
             Email:{" "}
-            <a
+            <Link
               href="mailto:support@learnlogicify.com"
               className={styles.emailLink}
             >
               support@learnlogicify.com
-            </a>
+            </Link>
             <br />
             WhatsApp:{" "}
-            <a
+            <Link
               href="https://wa.me/919876543210"
               target="_blank"
               className={styles.phoneLink}
             >
               +91 98765 43210
-            </a>
+            </Link>
           </p>
         </div>
       </div>

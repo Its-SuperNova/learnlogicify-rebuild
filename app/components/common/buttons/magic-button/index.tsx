@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image"; // Import Next.js Image component
 import styles from "./styles.module.css";
+import Link from "next/link";
 
 interface MagicButtonProps {
   buttonText: string;
@@ -17,7 +18,7 @@ const MagicButton: React.FC<MagicButtonProps> = ({
 }) => {
   return (
     <div className={styles.container}>
-      <a
+      <Link
         href="#"
         className={styles.button}
         style={{
@@ -76,7 +77,7 @@ const MagicButton: React.FC<MagicButtonProps> = ({
         />
 
         <div className={styles.buttonShadow}></div>
-      </a>
+      </Link>
     </div>
   );
 };

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
@@ -8,7 +9,9 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({ text }) => {
   return (
     <StyledWrapper>
-      <a className="menu__link">{text}</a>
+      <Link href={"#"} className="menu__link">
+        {text}
+      </Link>
     </StyledWrapper>
   );
 };

@@ -5,6 +5,7 @@ import styles from "./styles.module.css";
 import { FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { IoCloseOutline } from "react-icons/io5";
+import Link from "next/link";
 
 type PopupProps = {
   isOpen: boolean;
@@ -42,38 +43,38 @@ const Popup: React.FC<PopupProps> = ({ isOpen, onClose, member }) => {
               style={{ backgroundColor: member.backgroundColor }}
             />
             <div className={styles.socialIcons}>
-              <a
+              <Link
                 href={member.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.iconI}
               >
                 <FaInstagram size={20} />
-              </a>
-              <a
+              </Link>
+              <Link
                 href={member.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.iconL}
               >
                 <FaLinkedinIn size={20} />
-              </a>
-              <a
+              </Link>
+              <Link
                 href={member.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.iconW}
               >
                 <FaWhatsapp size={20} />
-              </a>
-              <a
+              </Link>
+              <Link
                 href={`mailto:${member.mail}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.iconG}
               >
                 <SiGmail size={20} />
-              </a>
+              </Link>
             </div>
           </div>
           <div className={styles.textContent}>

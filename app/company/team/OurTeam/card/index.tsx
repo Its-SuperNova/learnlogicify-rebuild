@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import Popup from "../popup";
 import { TeamMember } from "../../data/teamData"; // Import the types
+import Link from "next/link";
 
 type CardProps = {
   member: TeamMember;
@@ -64,30 +65,30 @@ const Card: React.FC<CardProps> = ({ member }) => {
                 visibility: isOpen ? "visible" : "hidden",
               }}
             >
-              <a
+              <Link
                 href={member.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.iconStyle}
               >
                 <FaInstagram />
-              </a>
-              <a
+              </Link>
+              <Link
                 href={member.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.iconStyle}
               >
                 <FaLinkedinIn />
-              </a>
-              <a
+              </Link>
+              <Link
                 href={member.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.iconStyle}
               >
                 <FaWhatsapp />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

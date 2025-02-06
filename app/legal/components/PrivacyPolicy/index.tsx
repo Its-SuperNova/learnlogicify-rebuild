@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./styles.module.css";
+import Link from "next/link";
 
 const Privacy = () => {
   return (
@@ -293,21 +294,21 @@ const Privacy = () => {
             Coimbatore, Tamil Nadu - 641602
             <br />
             Email:{" "}
-            <a
+            <Link
               href="mailto:support@learnlogicify.com"
               className={styles.emailLink}
             >
               support@learnlogicify.com
-            </a>
+            </Link>
             <br />
             WhatsApp:{" "}
-            <a
+            <Link
               href="https://wa.me/919876543210"
               target="_blank"
               className={styles.phoneLink}
             >
               +91 98765 43210
-            </a>
+            </Link>
           </p>
         </div>
       </div>

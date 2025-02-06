@@ -1,6 +1,7 @@
 // components/SocialLink/index.tsx
 import React from "react";
 import styles from "./styles.module.css";
+import Link from "next/link";
 
 type SocialLinkProps = {
   href: string;
@@ -10,7 +11,7 @@ type SocialLinkProps = {
 
 const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, alt }) => {
   return (
-    <a
+    <Link
       href={href}
       className={styles.link}
       target="_blank"
@@ -19,7 +20,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, alt }) => {
     >
       {" "}
       <div className={styles.icon}> {icon}</div>{" "}
-    </a>
+    </Link>
   );
 };
 
