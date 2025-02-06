@@ -19,6 +19,7 @@
     "@react-three/drei": "^9.120.5",
     "@react-three/fiber": "^8.17.10",
     "@studio-freight/react-lenis": "^0.0.47",
+    "axios": "^1.7.9",
     "boxicons": "^2.1.4",
     "canvas-confetti": "^1.9.3",
     "class-variance-authority": "^0.7.1",

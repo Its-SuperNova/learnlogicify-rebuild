@@ -25,21 +25,7 @@ export default function RootLayout({
     const timeout = setTimeout(() => setIsLoading(false), 2000);
     return () => clearTimeout(timeout);
   }, []);
-  // useEffect(() => {
-  //   const handleStart = () => setIsLoading(true); // Show preloader on navigation start
-  //   const handleComplete = () => setTimeout(() => setIsLoading(false), 0); // Hide preloader
 
-  //   handleStart();
-  //   const startTime = Date.now();
-
-  //   const simulateLoading = setTimeout(() => {
-  //     const elapsedTime = Date.now() - startTime;
-  //     const remainingTime = Math.max(0, 3000 - elapsedTime); // Ensure preloader lasts 3s
-  //     setTimeout(() => handleComplete(), remainingTime);
-  //   }, 800);
-
-  //   return () => clearTimeout(simulateLoading); // Cleanup on unmount
-  // }, [pathname]);
 
   const isCoursePage = pathname === "/CoursePage";
 

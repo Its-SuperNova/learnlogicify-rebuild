@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./styles.module.css";
 
 interface Step5Props {
-  onSubmit: () => void; // Function to handle submission
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => Promise<void>; // Function to handle submission
 }
 
 const Step5: React.FC<Step5Props> = ({ onSubmit }) => {
@@ -33,7 +33,15 @@ const Step5: React.FC<Step5Props> = ({ onSubmit }) => {
         By Proceeding, you agree to the terms and conditions of the workshop.
       </p>
 
-      <button className={styles.button} onClick={onSubmit}>
+      <button
+        className={styles.button}
+        onClick={(e) => {
+          e.preventDefault();
+          const formEvent = new Event("submit", { bubbles: true, cancelable: true });
+          e.currentTarget.dispatchEvent(formEvent);
+          onSubmit(formEvent as unknown as React.FormEvent<HTMLFormElement>);
+        }}
+      >
         Proceed to payment
       </button>
     </div>
