@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import styles from "./styles.module.css" 
+
 const Loader = () => {
   return (
-    <main className={styles.main}>
+    <main className="flex items-center justify-center w-screen h-screen">
       <StyledWrapper>
         <div className="boxes">
           <div className="box">

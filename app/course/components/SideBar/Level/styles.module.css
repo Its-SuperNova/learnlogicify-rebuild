@@ -1,0 +1,89 @@
+.LangContainer {
+    height: auto;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #161616;
+    display: flex;
+    flex-direction: column;
+}
+
+.langHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #282828;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.c {
+    width: 23px;
+}
+
+.languages {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding-top 0.5s ease;
+    padding-top: 0;
+}
+
+.languages.visible {
+    max-height: 500px;
+    padding-top: 10px;
+}
+
+.lang {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.lang:hover {
+    background-color: #2a2a2a;
+}
+
+/* Highlight selected language with blue background */
+
+.langName {
+    font-size: 18px;
+}
+
+.lang:hover .icon {
+    background-color: #2a2a2a;
+}
+
+.selected {
+    background-color: #0004ff;
+    color: white;
+}
+
+.selected .icon {
+    background-color: #0004ff;
+}
+
+.selected:hover {
+    background-color: #0004ff;
+}
+
+.selected:hover .icon {
+    background-color: #0004ff;
+}

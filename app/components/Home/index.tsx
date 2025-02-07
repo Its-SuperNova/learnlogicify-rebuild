@@ -28,12 +28,9 @@ const HomePage: React.FC = () => {
   const pathRef = useRef<SVGPathElement>(null);
 
   useEffect(() => {
-    // Function to check screen size
     const handleResize = () => {
       setIsDesktopView(window.innerWidth >= 840);
     };
-
-    // Initialize on mount and add resize listener
     handleResize();
     window.addEventListener("resize", handleResize);
 
@@ -43,15 +40,11 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     if (pathRef.current) {
       const pathLength = pathRef.current.getTotalLength();
-
-      // Set initial stroke state
       gsap.set(pathRef.current, {
         strokeDasharray: pathLength,
         strokeDashoffset: pathLength,
         strokeLinecap: "round",
       });
-
-      // Animate the path on scroll
       gsap.to(pathRef.current, {
         strokeDashoffset: 0,
         ease: "none",

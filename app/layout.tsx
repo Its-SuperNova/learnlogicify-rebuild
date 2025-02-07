@@ -5,7 +5,7 @@ import "./globals.css";
 import SmoothScroll from "./components/hooks/smoothscroll";
 import CustomCursor from "./components/CustomCursor";
 import { usePathname } from "next/navigation";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Preloader from "./components/Preloader";
 
 const inter = Inter({
@@ -26,19 +26,24 @@ export default function RootLayout({
     return () => clearTimeout(timeout);
   }, []);
 
-
-  const isCoursePage = pathname === "/CoursePage";
+  const isCoursePage = pathname === "/course";
 
   return (
     <html lang="en">
       <body className={inter.className}>
-        {isLoading && <Preloader />} 
-        <SmoothScroll>
+        {isLoading && <Preloader />}
+        {isCoursePage ? (
           <div className={isLoading ? "opacity-0" : "opacity-100"}>
             {children}
           </div>
-          <CustomCursor />
-        </SmoothScroll>
+        ) : (
+          <SmoothScroll>
+            <div className={isLoading ? "opacity-0" : "opacity-100"}>
+              {children}
+            </div>
+            <CustomCursor />
+          </SmoothScroll>
+        )}
       </body>
     </html>
   );

@@ -1,27 +1,110 @@
-"use client"
-import React from 'react'
-import styles from "./styles.module.css"
-import Header from "@/app/components/common/HeaderDark";
-import Description from "./Description"
-import Footer from '../components/common/Footer';
-import Grid from "./grid"
-import dynamic from "next/dynamic";
-const ScrollHandler = dynamic(
-  () => import("@/app/components/Home/ScrollHandler"),
-  { ssr: false }
-);
-const CoursePage: React.FC = () => {
+"use client";
+import React, { useState, useCallback } from "react";
+import styles from "./styles.module.css";
+import { RxCross1 } from "react-icons/rx";
+import Sidebar from "./components/SideBar"; // Full Sidebar
+import CollapsedSidebar from "./components/SidebarCollapsed"; // Collapsed Sidebar
+import Header from "./components/Header"; // Importing the header component
+import CourseBody from "./components/CourseBody"; // Component displaying courses
+import Mobile from "./Mobile";
+
+const Course = () => {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isMobileSidebarVisible, setIsMobileSidebarVisible] = useState(false);
+
+  // State to store the selected filters (language, topic, level)
+  const [filters, setFilters] = useState({
+    language: "All",
+    topic: "All",
+    level: "All",
+  });
+
+  // State to manage availability toggle
+  const [isAvailableOnly, setIsAvailableOnly] = useState(false);
+
+  // Function to handle the collapse toggle
+  const toggleSidebar = () => {
+    setIsCollapsed((prev) => !prev);
+  };
+
+  // Function to handle mobile sidebar toggle
+  const toggleMobileSidebar = () => {
+    setIsMobileSidebarVisible((prev) => !prev);
+  };
+
+  // Function to handle availability toggle
+  const toggleAvailability = () => {
+    setIsAvailableOnly((prev) => !prev); // Toggle the availability state
+  };
+
+  // ✅ Optimized function to update filters only when there is an actual change
+  const handleFilterChange = useCallback(
+    (newFilters: { language: string; topic: string; level: string }) => {
+      setFilters((prevFilters) => {
+        if (
+          prevFilters.language === newFilters.language &&
+          prevFilters.topic === newFilters.topic &&
+          prevFilters.level === newFilters.level
+        ) {
+          return prevFilters; // No change, prevent unnecessary update
+        }
+        return newFilters; // Update state only if values change
+      });
+    },
+    []
+  );
+
   return (
-    <div>
-      <ScrollHandler />
-      <Header />
-      <div className={styles.main}>
-        <Description />
-        <Grid />
+    <>
+      <div className={styles.container}>
+        {/* Sidebar */}
+        <div
+          className={`${styles.sidebar} ${
+            isCollapsed ? styles.collapsed : ""
+          } ${isMobileSidebarVisible ? styles.mobileSidebarVisible : ""}`}
+        >
+          <button
+            className={styles.closeMobileSidebar}
+            onClick={toggleMobileSidebar}
+          >
+            <RxCross1 size={20} />
+          </button>
+
+          {/* Dynamically switch between full sidebar and collapsed sidebar */}
+          {isCollapsed ? (
+            <CollapsedSidebar onFilterChange={handleFilterChange} /> // Pass handleFilterChange to CollapsedSidebar
+          ) : (
+            <Sidebar onFilterChange={handleFilterChange} /> // Pass handleFilterChange to Sidebar
+          )}
+        </div>
+
+        {/* Main Content */}
+        <div className={styles.main}>
+          {/* Import and use the Header component */}
+          <Header
+            isCollapsed={isCollapsed}
+            toggleSidebar={toggleSidebar}
+            toggleMobileSidebar={toggleMobileSidebar}
+            toggleAvailability={toggleAvailability} // Pass toggleAvailability
+            isAvailableOnly={isAvailableOnly} // Pass isAvailableOnly state
+          />
+          <div className={styles.body}>
+            {/* Pass the filters, availability toggle, and collapsed state to CourseBody */}
+            <CourseBody
+              selectedLanguage={filters.language}
+              selectedTopic={filters.topic}
+              selectedLevel={filters.level}
+              isAvailableOnly={isAvailableOnly} // Pass isAvailableOnly state
+              isCollapsed={isCollapsed} // Pass isCollapsed state
+            />
+          </div>
+        </div>
       </div>
-      <Footer />
-    </div>
+      <div className={styles.mobile}>
+        <Mobile />
+      </div>
+    </>
   );
 };
 
-export default CoursePage
+export default Course;
