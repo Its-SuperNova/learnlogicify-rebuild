@@ -1,6 +1,4 @@
-// components/SocialLink/index.tsx
 import React from "react";
-import styles from "./styles.module.css";
 import Link from "next/link";
 
 type SocialLinkProps = {
@@ -13,13 +11,14 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, alt }) => {
   return (
     <Link
       href={href}
-      className={styles.link}
+      className="inline-block  rounded-full transition-colors duration-300 ease-in-out"
       target="_blank"
       rel="noopener noreferrer"
       aria-label={alt}
     >
-      {" "}
-      <div className={styles.icon}> {icon}</div>{" "}
+      <div className="mt-[30px] flex items-center justify-center w-[42px] h-[42px] rounded-full bg-[rgb(50,51,53)] text-[#dcdcdc] transition-colors duration-300 ease-in-out hover:bg-[#a600ff] hover:text-white">
+        {icon}
+      </div>
     </Link>
   );
 };

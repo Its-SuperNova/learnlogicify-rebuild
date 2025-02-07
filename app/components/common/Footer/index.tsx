@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./styles.module.css";
 import Logo from "../../images/logo/darkLogo";
 import { FaLinkedinIn } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
@@ -19,20 +18,19 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
-    <div className={`${styles.container} ${className || ""}`}>
-      {" "}
-      {/* Merge className with styles.container */}
-      <div className={styles.top}>
-        {/* Section 1 - Left (Logo, Description, Social Media Links) */}
-        <div className={styles.section1}>
+    <div className="h-auto bg-black px-[100px] py-[30px] flex flex-col text-white font-light justify-between gap-[70px] max-md:px-[50px] max-md:py[30px] max-md:gap-[30px]">
+      {/* Top Section - Main Grid */}
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(230px,1fr))] gap-[30px] mt-[40px] w-full mb-[40px] max-md:grid-cols-[repeat(auto-fit,minmax(100%,1fr))]">
+        {/* Section 1 - Company Info & Social Media */}
+        <div className="max-w-[250px]">
           <Logo />
-          <div className={styles.desc}>
+          <div>
             <p>
               Building futures with top-tier placement training and extensive
               programming courses.
             </p>
           </div>
-          <div className={styles.socialMedia}>
+          <div className="flex space-x-3">
             <SocialLink
               href="https://wa.me/yournumber"
               icon={<FaWhatsapp />}
@@ -57,52 +55,54 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
         </div>
 
         {/* Section 2 - Company Links */}
-        <div className={styles.section2}>
-          <h4>Company</h4>
-          <ul>
-            <li>
+        <div className="pl-[40px] mt-[25px] min-w-[230px] max-md:mt-0 max-md:pt-[20px] max-md:pl-0 max-md:border-t max-md:border-gray-500">
+          <h4 className="font-semibold mb-[10px] text-[21px]">Company</h4>
+          <ul className="list-none p-0">
+            <li className="relative pl-[15px] mb-[5px]">
               <Link href="/company/about">About us</Link>
             </li>
-            <li>
+            <li className="relative pl-[15px] mb-[5px]">
               <Link href="/company/team">Team</Link>
             </li>
-            <li>
+            <li className="relative pl-[15px] mb-[5px]">
               <Link href="/portal">Portal</Link>
             </li>
-            <li>
+            <li className="relative pl-[15px] mb-[5px]">
               <Link href="/contact">Contact us</Link>
             </li>
-            <li>
+            <li className="relative pl-[15px] mb-[5px]">
               <Link href="/course">Courses</Link>
             </li>
           </ul>
         </div>
 
-        {/* Section 4 - Legal & Policies Links */}
-        <div className={styles.section4}>
-          <h4>Legal & Policies</h4>
-          <ul>
-            <li>
+        {/* Section 3 - Legal & Policies */}
+        <div className="mt-[25px] min-w-[230px] border-r border-gray-500 pr-[15px] max-lg:border-none max-md:mt-0">
+          <h4 className="font-semibold mb-[10px] text-[21px]">
+            Legal & Policies
+          </h4>
+          <ul className="list-none p-0">
+            <li className="relative pl-[15px] mb-[5px]">
               <Link href="/legal/privacy-policy">Terms & Conditions</Link>
             </li>
-            <li>
+            <li className="relative pl-[15px] mb-[5px]">
               <Link href="/legal/terms-&-condition">Privacy Policy</Link>
             </li>
           </ul>
         </div>
 
-        {/* Section 5 - Contact Details */}
-        <div className={styles.section5}>
-          <div className={styles.contactItem}>
-            <IoMail size={20} className={styles.icon} />
+        {/* Section 4 - Contact Details */}
+        <div className="mt-[25px] max-w-[310px] pl-[10px] max-md:mt-0 max-md:border-t max-md:border-gray-500 max-md:pt-[30px] max-md:max-w-full max-lg:pl-0">
+          <div className="flex items-start gap-[10px] mb-[15px]">
+            <IoMail size={20} className="mt-[1px]" />
             <span>help@learnlogicify.com</span>
           </div>
-          <div className={styles.contactItem}>
-            <FaPhone size={19} className={styles.icon} />
+          <div className="flex items-start gap-[10px] mb-[15px]">
+            <FaPhone size={19} className="mt-[1px]" />
             <span>+91 89250 84608</span>
           </div>
-          <div className={styles.contactItem}>
-            <FaLocationDot size={20} className={styles.icon} />
+          <div className="flex items-start gap-[10px] mb-[15px]">
+            <FaLocationDot size={20} className="mt-[1px]" />
             <span>
               LearnLogicify Technologies LLP,
               <br />
@@ -111,14 +111,15 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           </div>
         </div>
       </div>
-      {/* Bottom Section */}
-      <div className={styles.bottom}>
+
+      {/* Bottom Section - Copyright */}
+      <div className="w-full h-[45px] bg-[#323335] rounded-[30px] flex flex-row items-center justify-center text-[#d3d3d3] font-light gap-[5px] max-md:h-[40px] max-md:text-[11px]">
         <div>
           <FaRegCopyright />
         </div>
         <p>
           2024{" "}
-          <span className={styles.bold}>
+          <span className="font-semibold">
             <Link href="/">LearnLogicify</Link>
           </span>{" "}
           All Rights Reserved.
