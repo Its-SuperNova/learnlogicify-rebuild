@@ -9,9 +9,9 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({ text }) => {
   return (
     <StyledWrapper>
-      <Link href={"#"} className="menu__link">
+      <button className="menu__link">
         {text}
-      </Link>
+      </button>
     </StyledWrapper>
   );
 };

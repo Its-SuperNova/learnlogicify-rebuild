@@ -1,32 +1,29 @@
 // header/index.tsx
 "use client";
 import React, { useState } from "react";
-import styles from "./styles.module.css";
 import NavMenu from "./NavMenu";
-import sideNav from "../../hamburger/nav";
 import Logo from "../../images/logo/darkLogoheader";
 import AnimatedButton from "../buttons/login";
 import Link from "next/link";
-import MenuIcon from "../SVG/icons/hamburger";
 const Header = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.left}>
+    <header className="h-[100px] w-full flex px-[80px] items-center justify-between max-md:px-[30px]">
+      <div className="h-[100%] z-[9]">
         <Link href="/">
           <Logo />
         </Link>
       </div>
-      <div className={styles.middle}>
+      <nav className="flex flex-row justify-center h-[42px] w-[500px] z-[9999] max-lg:hidden">
         <NavMenu />
-      </div>
-      <div className={styles.right}>
-        <div className={styles.login}>
+      </nav>
+      <div className="h-full flex flex-row justify-end items-center p-0 max-md:pr-[20px]">
+        <div className="max-md:hidden z-10">
           <Link href={"https://learnlogicify.com/login/index.php"}>
             <AnimatedButton />
           </Link>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
