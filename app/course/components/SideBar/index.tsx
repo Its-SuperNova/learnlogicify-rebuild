@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import Languages from "./Languages";
 import Topics from "./Topics";
 import Level from "./Level";
+import Image from "next/image";
 
 interface SidebarProps {
   onFilterChange: (filters: {
@@ -41,7 +42,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
     <div className={styles.main}>
       <div className={styles.header}>
         <div className={styles.logoContainer}>
-          <img
+          <Image
             className={styles.logo}
             src="SVG/logo/logo-icon.svg"
             alt="Learnlogicify icon"

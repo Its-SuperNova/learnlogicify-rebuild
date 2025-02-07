@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Card from "../../CourseCard";
 import coursesData, { Course } from "../../data/courseData";
 import CourseNotFound from "../CourseNotFound";
 import styles from "./styles.module.css";
-import SkeletonCourseCard from "../../skeletonCourseCard"; // Already created SkeletonCourseCard
+import SkeletonCourseCard from "../../skeletonCourseCard";
 
 interface AllCoursesProps {
   selectedLanguage: string;
@@ -21,33 +21,28 @@ const AllCourses: React.FC<AllCoursesProps> = ({
   searchTerm,
 }) => {
   const [filteredCourses, setFilteredCourses] = useState<Course[]>([]);
-  const [loading, setLoading] = useState<boolean>(true); // Add loading state
+  const [loading, setLoading] = useState<boolean>(true);
 
-  useEffect(() => {
-    // Simulate loading delay (1.5s) for skeleton
-    setLoading(true);
-    const timer = setTimeout(() => {
-      applyFilters();
-      setLoading(false); // After data is filtered, stop the loading
-    }, 1500);
-
-    // Cleanup the timer when component is unmounted or filters change
-    return () => clearTimeout(timer);
-  }, [searchTerm, selectedLanguage, selectedTopic, selectedLevel, isAvailableOnly]);
-
-  const applyFilters = () => {
+  // Wrap applyFilters with useCallback to prevent re-renders
+  const applyFilters = useCallback(() => {
     let filtered = coursesData;
 
     if (selectedLanguage && selectedLanguage !== "All") {
-      filtered = filtered.filter((course: Course) => course.languageId === selectedLanguage);
+      filtered = filtered.filter(
+        (course: Course) => course.languageId === selectedLanguage
+      );
     }
 
     if (selectedTopic && selectedTopic !== "All") {
-      filtered = filtered.filter((course: Course) => course.topicId === selectedTopic);
+      filtered = filtered.filter(
+        (course: Course) => course.topicId === selectedTopic
+      );
     }
 
     if (selectedLevel && selectedLevel !== "All") {
-      filtered = filtered.filter((course: Course) => course.Level === selectedLevel);
+      filtered = filtered.filter(
+        (course: Course) => course.Level === selectedLevel
+      );
     }
 
     if (searchTerm) {
@@ -65,16 +60,33 @@ const AllCourses: React.FC<AllCoursesProps> = ({
     }
 
     setFilteredCourses(filtered);
-  };
+  }, [
+    selectedLanguage,
+    selectedTopic,
+    selectedLevel,
+    isAvailableOnly,
+    searchTerm,
+  ]); // Include dependencies
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => {
+      applyFilters();
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, [applyFilters]); // Now applyFilters is a stable function
 
   return (
     <div
       className={`${styles.container} ${
-        filteredCourses.length === 0 && !loading ? styles.noCoursesGrid : styles.grid
+        filteredCourses.length === 0 && !loading
+          ? styles.noCoursesGrid
+          : styles.grid
       }`}
     >
       {loading ? (
-        // Show skeleton while loading
         Array(6)
           .fill(0)
           .map((_, index) => <SkeletonCourseCard key={index} />)

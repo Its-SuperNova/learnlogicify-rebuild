@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Card from "../../../components/CourseCard";
 import coursesData, { Course } from "../../components/data/courseData";
 import CourseNotFound from "../../../components/CourseBody/CourseNotFound";
@@ -23,49 +23,28 @@ const AllCourses: React.FC<AllCoursesProps> = ({
   const [filteredCourses, setFilteredCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
-  useEffect(() => {
-    // Simulate loading delay (1.5s) for skeleton
-    setLoading(true);
-    const timer = setTimeout(() => {
-      applyFilters();
-      setLoading(false); // After data is filtered, stop the loading
-    }, 1500);
-
-    // Cleanup the timer when component is unmounted or filters change
-    return () => clearTimeout(timer);
-  }, [
-    searchTerm,
-    selectedLanguage,
-    selectedTopic,
-    selectedLevel,
-    isAvailableOnly,
-  ]);
-
-  const applyFilters = () => {
+  // Wrap applyFilters in useCallback to maintain a stable function reference
+  const applyFilters = useCallback(() => {
     let filtered = coursesData;
 
-    // Filter by selected languages
     if (selectedLanguage.length > 0) {
       filtered = filtered.filter((course) =>
         selectedLanguage.includes(course.languageId)
       );
     }
 
-    // Filter by selected topics
     if (selectedTopic.length > 0) {
       filtered = filtered.filter((course) =>
         selectedTopic.includes(course.topicId)
       );
     }
 
-    // Filter by selected levels
     if (selectedLevel.length > 0) {
       filtered = filtered.filter((course) =>
         selectedLevel.includes(course.Level.toLowerCase())
       );
     }
 
-    // Filter by search term
     if (searchTerm) {
       const search = searchTerm.toLowerCase();
       filtered = filtered.filter(
@@ -76,13 +55,28 @@ const AllCourses: React.FC<AllCoursesProps> = ({
       );
     }
 
-    // Filter by availability
     if (isAvailableOnly) {
       filtered = filtered.filter((course) => course.available);
     }
 
     setFilteredCourses(filtered);
-  };
+  }, [
+    selectedLanguage,
+    selectedTopic,
+    selectedLevel,
+    isAvailableOnly,
+    searchTerm,
+  ]); // Include dependencies
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => {
+      applyFilters();
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, [applyFilters]); // Now applyFilters is a stable function
 
   return (
     <div

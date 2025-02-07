@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import { FaPython, FaJava, FaJsSquare } from "react-icons/fa";
 import { SiCplusplus } from "react-icons/si";
 import { IoLogoHtml5 } from "react-icons/io";
+import Image from "next/image";
 
 interface CollapseSidebarProps {
   onFilterChange: (filters: {
@@ -49,7 +50,7 @@ const CollapseSidebar: React.FC<CollapseSidebarProps> = ({
   return (
     <div className={styles.main}>
       <div className={styles.logoContainer}>
-        <img
+        <Image
           className={styles.logo}
           src="SVG/logo/logo-icon.svg"
           alt="Learnlogicify icon"
@@ -72,7 +73,7 @@ const CollapseSidebar: React.FC<CollapseSidebarProps> = ({
           data-name="C"
           onClick={() => handleLanguageClick("c")}
         >
-          <img className={styles.c} src="SVG/icons/c-program.svg" alt="C" />
+          <Image className={styles.c} src="SVG/icons/c-program.svg" alt="C" />
         </div>
         <div
           className={`${styles.icon} ${

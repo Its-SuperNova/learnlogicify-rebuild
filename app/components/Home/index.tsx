@@ -60,6 +60,7 @@ const HomePage: React.FC = () => {
 
   return (
     <>
+      {isDesktopView && <Offer setOfferVisible={setOfferVisible} />}
       <main
         className={styles.main}
         style={{

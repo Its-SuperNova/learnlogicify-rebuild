@@ -2,7 +2,7 @@
 import React from "react";
 import styles from "./styles.module.css";
 import { FaArrowLeft, FaArrowRight, FaBars } from "react-icons/fa6";
-
+import Image from "next/image";
 interface HeaderProps {
   isCollapsed: boolean;
   toggleSidebar: () => void;
@@ -54,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
       <div className={styles.middle}>
-        <img src="SVG/logo/logo-icon.svg" alt="" />
+        <Image src="SVG/logo/logo-icon.svg" alt="" />
       </div>
 
       <div className={styles.rightContainer}>

@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const HeroHome = () => {
   return (
-    <div className={styles.main}>
+    <div className="p-[10px]">
       <div className={styles.container}>
         <div className={styles.textContent}>
           <div className={styles.logo}>LearnLogicify Technologies</div>

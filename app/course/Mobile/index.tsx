@@ -5,6 +5,7 @@ import Filter from "./components/filter";
 import { IoIosSearch } from "react-icons/io";
 import AllCourse from "./components/AllCourses";
 import CookingCourse from "../components/CourseBody/CookingCourse";
+import Image from "next/image";
 
 const Mobile = () => {
   const [activeTab, setActiveTab] = useState("All Courses");
@@ -60,7 +61,7 @@ const Mobile = () => {
     <div className={styles.main}>
       <div className={styles.header}>
         <div className={styles.logo}>
-          <img src="SVG/logo/logo-icon.svg" alt="" />
+          <Image src="SVG/logo/logo-icon.svg" alt="" />
         </div>
       </div>
       <div className={styles.body}>

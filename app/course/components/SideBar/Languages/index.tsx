@@ -4,7 +4,7 @@ import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import { FaPython, FaJava, FaJsSquare } from "react-icons/fa";
 import { SiCplusplus } from "react-icons/si";
 import { IoLogoHtml5 } from "react-icons/io";
-
+import Image from "next/image";
 interface LanguagesProps {
   isExpanded: boolean;
   onToggle: () => void;
@@ -58,7 +58,7 @@ const Languages: React.FC<LanguagesProps> = ({
           onClick={() => handleLanguageClick("c")}
         >
           <div className={styles.icon}>
-            <img className={styles.c} src="SVG/icons/c-program.svg" alt="C" />
+            <Image className={styles.c} src="SVG/icons/c-program.svg" alt="C" />
           </div>
           <p className={styles.langName}>C</p>
         </div>

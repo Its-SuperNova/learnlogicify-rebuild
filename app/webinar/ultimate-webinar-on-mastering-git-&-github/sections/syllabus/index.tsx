@@ -1,10 +1,10 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import SlideUpWord from "@/app/components/common/Animations/slideUpWord";
 import { useInView } from "react-intersection-observer";
 import styles from "./styles.module.css";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
-import { BiMessageSquareDots } from "react-icons/bi"; // Import the icon
+import { BiMessageSquareDots } from "react-icons/bi";
 import { syllabusData } from "./data";
 
 const Syllabus: React.FC = () => {
@@ -21,8 +21,14 @@ const Syllabus: React.FC = () => {
     threshold: 0.1,
   });
 
-  const title = ["What You'll Learn,", "in This Git & GitHub Workshop"];
-  const titlep = ["What You'll Learn,in This Git & GitHub Workshop"];
+  const title = useMemo(
+    () => ["What You'll Learn,", "in This Git & GitHub Workshop"],
+    []
+  );
+  const titlep = useMemo(
+    () => ["What You'll Learn,in This Git & GitHub Workshop"],
+    []
+  );
 
   useEffect(() => {
     const updateTitle = () => {
@@ -33,13 +39,13 @@ const Syllabus: React.FC = () => {
       }
     };
 
-    updateTitle(); // Initial check
-    window.addEventListener("resize", updateTitle); // Listen for screen resize
+    updateTitle();
+    window.addEventListener("resize", updateTitle);
 
     return () => {
-      window.removeEventListener("resize", updateTitle); // Cleanup on unmount
+      window.removeEventListener("resize", updateTitle);
     };
-  }, []);
+  }, [title, titlep]);
 
   return (
     <div className={styles.container}>
