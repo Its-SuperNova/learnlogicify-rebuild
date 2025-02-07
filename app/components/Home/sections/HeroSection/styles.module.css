@@ -4,6 +4,7 @@
 }
 
 .container {
+    min-height: 700px;
     height: 100vh;
     margin-top: -120px;
     background-color: #0e0e0e;

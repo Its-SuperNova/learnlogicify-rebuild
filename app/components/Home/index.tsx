@@ -67,13 +67,12 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      {/* Render Offer component only in desktop view */}
       {isDesktopView && <Offer setOfferVisible={setOfferVisible} />}
       <main
         className={styles.main}
         style={{
-          paddingTop: offerVisible && isDesktopView ? "70px" : "0px", // Adjust padding dynamically
-          transition: "padding-top 0.6s ease-in-out", // Smooth transition
+          paddingTop: offerVisible && isDesktopView ? "70px" : "0px", 
+          transition: "padding-top 0.6s ease-in-out", 
         }}
       >
         <Header />
