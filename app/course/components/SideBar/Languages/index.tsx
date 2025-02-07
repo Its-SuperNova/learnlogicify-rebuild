@@ -58,7 +58,9 @@ const Languages: React.FC<LanguagesProps> = ({
           onClick={() => handleLanguageClick("c")}
         >
           <div className={styles.icon}>
-            <Image className={styles.c} src="SVG/icons/c-program.svg" alt="C" />
+            <Image className={styles.c} src="SVG/icons/c-program.svg" alt="C" 
+            height={30}
+            width={30}/>
           </div>
           <p className={styles.langName}>C</p>
         </div>

@@ -61,7 +61,12 @@ const Mobile = () => {
     <div className={styles.main}>
       <div className={styles.header}>
         <div className={styles.logo}>
-          <Image src="SVG/logo/logo-icon.svg" alt="" />
+          <Image
+            src="/SVG/logo/logo-icon.svg"
+            alt="Logo Icon"
+            width={50}
+            height={50}
+          />
         </div>
       </div>
       <div className={styles.body}>

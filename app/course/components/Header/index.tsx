@@ -54,7 +54,12 @@ const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
       <div className={styles.middle}>
-        <Image src="SVG/logo/logo-icon.svg" alt="" />
+        <Image
+          src="/SVG/logo/logo-icon.svg"
+          alt="Logo Icon"
+          width={30}
+          height={30}
+        />
       </div>
 
       <div className={styles.rightContainer}>

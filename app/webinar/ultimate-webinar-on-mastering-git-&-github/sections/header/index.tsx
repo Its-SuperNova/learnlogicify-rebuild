@@ -30,18 +30,18 @@ const Header = () => {
           </div>
           <div className="hidden md:block">
             <nav className="flex gap-8 text-sm">
-              <a href="" className="text-white/70 hover:text-white transition">
+              <Link href="" className="text-white/70 hover:text-white transition">
                 Company
-              </a>
-              <a href="" className="text-white/70 hover:text-white transition">
+              </Link>
+              <Link href="" className="text-white/70 hover:text-white transition">
                 Courses
-              </a>
-              <a href="" className="text-white/70 hover:text-white transition">
+              </Link>
+              <Link href="" className="text-white/70 hover:text-white transition">
                 Portal
-              </a>
-              <a href="" className="text-white/70 hover:text-white transition">
+              </Link>
+              <Link href="" className="text-white/70 hover:text-white transition">
                 Contact
-              </a>
+              </Link>
             </nav>
           </div>
           <div className="flex gap-4 items-center">

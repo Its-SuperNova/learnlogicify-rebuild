@@ -1,10 +1,17 @@
-import React from "react";
+"use client"; 
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import MagicButton from "../../../common/buttons/magic-button";
 import Link from "next/link";
 import Image from "next/image";
 
 const HeroHome = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <div className="p-[10px]">
       <div className={styles.container}>
@@ -21,12 +28,14 @@ const HeroHome = () => {
           </p>
           <div className={styles.btn}>
             <Link href={"/course"}>
-              <MagicButton
-                buttonText="View Courses"
-                width="180px"
-                height="50px"
-                fontSize="14px"
-              />
+              {isClient && (
+                <MagicButton
+                  buttonText="View Courses"
+                  width="180px"
+                  height="50px"
+                  fontSize="14px"
+                />
+              )}
             </Link>
           </div>
         </div>
@@ -35,9 +44,9 @@ const HeroHome = () => {
             className={styles.heroImage}
             src="/images/banner/portal.png"
             alt="Course preview"
-            width={600} // Replace with the actual width of the image
-            height={400} // Replace with the actual height of the image
-            priority // Ensures the image is loaded eagerly
+            width={600}
+            height={400}
+            priority
           />
         </div>
       </div>

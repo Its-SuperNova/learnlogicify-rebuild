@@ -54,6 +54,8 @@ const CollapseSidebar: React.FC<CollapseSidebarProps> = ({
           className={styles.logo}
           src="SVG/logo/logo-icon.svg"
           alt="Learnlogicify icon"
+          height={30}
+          width={30}
         />
       </div>
       <div className={styles.langContainer}>
@@ -73,7 +75,9 @@ const CollapseSidebar: React.FC<CollapseSidebarProps> = ({
           data-name="C"
           onClick={() => handleLanguageClick("c")}
         >
-          <Image className={styles.c} src="SVG/icons/c-program.svg" alt="C" />
+          <Image className={styles.c} src="SVG/icons/c-program.svg" alt="C" 
+          height={20}
+          width={20}/>
         </div>
         <div
           className={`${styles.icon} ${

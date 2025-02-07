@@ -46,6 +46,8 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
             className={styles.logo}
             src="SVG/logo/logo-icon.svg"
             alt="Learnlogicify icon"
+            width={30}
+            height={30}
           />
         </div>
         <div className={styles.title}>
