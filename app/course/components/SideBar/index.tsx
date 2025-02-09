@@ -7,8 +7,8 @@ import { IoLogoHtml5 } from "react-icons/io";
 import { IoExtensionPuzzle } from "react-icons/io5";
 import { SlGraph } from "react-icons/sl";
 import { FaGear } from "react-icons/fa6";
-import { FaChalkboardUser } from "react-icons/fa6"; // Correct icon
-
+import { FaChalkboardUser } from "react-icons/fa6"; 
+import SearchBox from "./searchbox";
 import { MdOutlineCategory, MdComputer } from "react-icons/md";
 
 interface SidebarProps {
@@ -56,7 +56,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
   return (
     <div className="h-screen flex flex-col gap-2">
       {/* Catalog Header */}
-      <div className="w-full h-[45px] bg-darkGray rounded-lg p-2 flex items-center">
+      <div className="w-full h-[55px] bg-darkGray rounded-lg p-2 flex items-center">
         <div className="w-11">
           <Image
             src="SVG/logo/logo-icon.svg"
@@ -69,36 +69,22 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
           <p>Catalog</p>
         </div>
       </div>
-      {/* Learning Tracks Dropdown (NEW) */}
-      <DropdownFilter
-        title="Learning Tracks"
-        isExpanded={expandedSections.includes("Learning Tracks")}
-        onToggle={() => handleToggle("Learning Tracks")}
-        selectedItem={selectedLearningTrack}
-        setSelectedItem={setSelectedLearningTrack}
-        options={[
-          {
-            name: "Technical",
-            key: "technical",
-            icon: <MdComputer size={18} />,
-          },
-          {
-            name: "Aptitude",
-            key: "aptitude",
-            icon: <MdOutlineCategory size={18} />,
-          },
-          {
-            name: "Placement Preparation",
-            key: "placement-prep",
-            icon: <FaChalkboardUser size={18} />,
-          },
-          {
-            name: "Competitive Programming",
-            key: "competitive-programming",
-            icon: <SlGraph size={18} />,
-          },
+
+      <SearchBox
+        catalogOptions={[
+          { name: "Python", key: "python" },
+          { name: "C", key: "c" },
+          { name: "Java", key: "java" },
+          { name: "Problem Solving", key: "problem-solving" },
+          { name: "Data Structures", key: "data-structures" },
+          { name: "Beginner", key: "beginner" },
+          { name: "Intermediate", key: "intermediate" },
+          { name: "Technical", key: "technical" },
+          { name: "Competitive Programming", key: "competitive-programming" },
         ]}
+        onSearchSelect={(key) => console.log("Selected:", key)}
       />
+
       {/* Languages Dropdown */}
       <DropdownFilter
         title="Languages"
@@ -134,7 +120,36 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
           },
         ]}
       />
-
+      {/* Learning Tracks Dropdown (NEW) */}
+      <DropdownFilter
+        title="Learning Tracks"
+        isExpanded={expandedSections.includes("Learning Tracks")}
+        onToggle={() => handleToggle("Learning Tracks")}
+        selectedItem={selectedLearningTrack}
+        setSelectedItem={setSelectedLearningTrack}
+        options={[
+          {
+            name: "Technical",
+            key: "technical",
+            icon: <MdComputer size={18} />,
+          },
+          {
+            name: "Aptitude",
+            key: "aptitude",
+            icon: <MdOutlineCategory size={18} />,
+          },
+          {
+            name: "Placement Preparation",
+            key: "placement-prep",
+            icon: <FaChalkboardUser size={18} />,
+          },
+          {
+            name: "Competitive Programming",
+            key: "competitive-programming",
+            icon: <SlGraph size={18} />,
+          },
+        ]}
+      />
       {/* Topics Dropdown */}
       <DropdownFilter
         title="Topics"
