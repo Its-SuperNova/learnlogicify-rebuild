@@ -1,59 +1,60 @@
-"use client";
 import React from "react";
-import styles from "./styles.module.css";
 import { FaArrowLeft, FaArrowRight, FaBars } from "react-icons/fa6";
+import {
+  TbLayoutSidebarLeftExpand,
+  TbLayoutSidebarLeftCollapse,
+} from "react-icons/tb";
 import Image from "next/image";
+import { Switch } from "@/components/ui/switch";
+
 interface HeaderProps {
   isCollapsed: boolean;
   toggleSidebar: () => void;
   toggleMobileSidebar: () => void;
-  toggleAvailability: () => void; // Function to handle availability toggle
-  isAvailableOnly: boolean; // Boolean state for available courses toggle
+  toggleAvailability: () => void;
+  isAvailableOnly: boolean;
 }
 
 const Header: React.FC<HeaderProps> = ({
   isCollapsed,
   toggleSidebar,
   toggleMobileSidebar,
-  toggleAvailability, // Prop for handling availability toggle
-  isAvailableOnly, // Current availability state
+  toggleAvailability,
+  isAvailableOnly,
 }) => {
   return (
-    <div
-      className={`${styles.header} ${
-        isCollapsed ? styles.collapsedHeader : styles.expandedHeader
-      }`}
-    >
-      <div className={styles.left}>
-        <div className={styles.collapseContainer}>
-          {/* Menu Button for Mobile Screens */}
-          <button
-            className={styles.collapseButtonMobile}
-            onClick={toggleMobileSidebar}
-          >
-            <FaBars size={20} />
-          </button>
+    <div className="bg-white p-2 mb-3 rounded-md h-auto flex justify-between items-center transition-all max-md:mb-0">
+      {/* Left Section */}
+      <div className="flex justify-left gap-3 items-center">
+        {/* Mobile Menu Button */}
+        <button
+          className="hidden h-[45px] w-[45px] bg-[#e5e5ff] rounded-[10px] border-none cursor-pointer justify-center items-center text-blue-600 max-md:flex"
+          onClick={toggleMobileSidebar}
+        >
+          <FaBars size={20} />
+        </button>
 
-          {/* Collapse Button for Desktop Screens */}
-          <button
-            className={styles.collapseButtonDesktop}
-            onClick={toggleSidebar}
-          >
-            {isCollapsed ? (
-              <FaArrowRight size={20} />
-            ) : (
-              <FaArrowLeft size={20} />
-            )}
-          </button>
-        </div>
-        <div className={styles.title}>
+        {/* Always Visible Collapse Button */}
+        <button
+          className="h-9 w-9 bg-[#e5e5ff] rounded-md border-none cursor-pointer flex justify-center items-center text-blue-600"
+          onClick={toggleSidebar}
+        >
+          {isCollapsed ? (
+            <TbLayoutSidebarLeftExpand size={20}/>
+          ) : (
+            <TbLayoutSidebarLeftCollapse size={20}/>
+          )}
+        </button>
+
+        <div className="text-[20px] font-semibold max-sm:hidden">
           <h1>
-            Discover our Courses{" "}
-            <span className={styles.entite}>&#127919;</span>
+            Discover our Courses <span className="text-[24px]">&#127919;</span>
           </h1>
         </div>
       </div>
-      <div className={styles.middle}>
+
+      {/* Middle Section (Logo) */}
+      <div className="hidden max-[670px]:flex h-[55px]">
         <Image
           src="/SVG/logo/logo-icon.svg"
           alt="Logo Icon"
@@ -62,18 +63,13 @@ const Header: React.FC<HeaderProps> = ({
         />
       </div>
 
-      <div className={styles.rightContainer}>
-        <div className={styles.right}>
-          <p>Available Courses</p>
-          <label className={styles.switch}>
-            <input
-              type="checkbox"
-              checked={isAvailableOnly} // Reflect the current state
-              onChange={toggleAvailability} // Handle availability toggle
-            />
-            <span className={styles.slider}></span>
-          </label>
-        </div>
+      {/* Right Section */}
+      <div className="relative z-[1] flex gap-[12px] justify-end items-center border border-gray-300 h-9 px-3 rounded-md max-[670px]:hidden max-md:mr-[65px]">
+        <p className="text-gray-700 text-sm">Available Courses</p>
+        <Switch
+          checked={isAvailableOnly}
+          onCheckedChange={toggleAvailability}
+        />
       </div>
     </div>
   );

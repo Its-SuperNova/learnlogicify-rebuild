@@ -1,16 +1,16 @@
+"use client";
 import React, { useState } from "react";
-import styles from "./styles.module.css";
 import { IoIosSearch } from "react-icons/io";
-import AllCourses from "./AllCourses"; // Import the AllCourses component
-import AllBootCamps from "./AllBootcamps"; // Placeholder for bootcamps
-import CompanySpecific from "./CompanySpesific"; // Placeholder for company-specific courses
+import AllCourses from "./AllCourses";
+import AllBootCamps from "./AllBootcamps";
+import CompanySpecific from "./CompanySpesific";
 
 interface CourseMainProps {
   selectedLanguage: string;
   selectedTopic: string;
   selectedLevel: string;
   isAvailableOnly: boolean;
-  isCollapsed: boolean; // New prop to determine the sidebar state
+  isCollapsed: boolean;
 }
 
 const CourseMain: React.FC<CourseMainProps> = ({
@@ -18,91 +18,75 @@ const CourseMain: React.FC<CourseMainProps> = ({
   selectedTopic,
   selectedLevel,
   isAvailableOnly,
-  isCollapsed, // Receive isCollapsed prop
+  isCollapsed,
 }) => {
   const [activeTab, setActiveTab] = useState("All Courses");
-  const [searchTerm, setSearchTerm] = useState(""); // State to store the search term
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);
   };
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value); // Update search term as user types
+    setSearchTerm(e.target.value);
   };
 
   const renderGridContent = () => {
-    if (activeTab === "All Courses") {
-      return (
-        <AllCourses
-          selectedLanguage={selectedLanguage}
-          selectedTopic={selectedTopic}
-          selectedLevel={selectedLevel}
-          isAvailableOnly={isAvailableOnly}
-          searchTerm={searchTerm} // Pass search term to AllCourses
-        />
-      );
+    switch (activeTab) {
+      case "All Courses":
+        return (
+          <AllCourses
+            selectedLanguage={selectedLanguage}
+            selectedTopic={selectedTopic}
+            selectedLevel={selectedLevel}
+            isAvailableOnly={isAvailableOnly}
+            searchTerm={searchTerm}
+          />
+        );
+      case "Technical":
+        return <AllBootCamps />;
+      case "Aptitude":
+        return <CompanySpecific />;
+      case "Placement Preparation":
+        return <CompanySpecific />;
+      case "Competitive Programming":
+        return <CompanySpecific />;
+      default:
+        return null;
     }
-
-    if (activeTab === "All BootCamps") {
-      return <AllBootCamps />;
-    }
-
-    if (activeTab === "Company Specific") {
-      return <CompanySpecific />;
-    }
-
-    return null;
   };
 
   return (
     <div
-      className={`${styles.container} ${
-        isCollapsed ? styles.collapsedContent : styles.expandedContent
+      className={`p-3 w-full transition-[margin-left] duration-300 ease-in-out rounded-md ${
+        isCollapsed ? "ml-0" : "ml-[your-value]"
       }`}
     >
-      <div className={styles.header}>
+      <div className="flex justify-between items-center mb-5 border-b border-gray-300 pb-4">
         {/* Tab Section */}
-        <div className={`${styles.tabContainer}`}>
-          <div
-            className={`${styles.tab} ${
-              activeTab === "All Courses" ? styles.activeTab : ""
-            }`}
-            onClick={() => handleTabClick("All Courses")}
-          >
-            All Courses
-          </div>
-          <div
-            className={`${styles.tab} ${
-              activeTab === "All BootCamps" ? styles.activeTab : ""
-            }`}
-            onClick={() => handleTabClick("All BootCamps")}
-          >
-            All BootCamps
-          </div>
-          <div
-            className={`${styles.tab} ${
-              activeTab === "Company Specific" ? styles.activeTab : ""
-            }`}
-            onClick={() => handleTabClick("Company Specific")}
-          >
-            Company Specific
-          </div>
-        </div>
-
-        {/* Search Box */}
-        <div className={styles.searchBox}>
-          <input
-            type="text"
-            placeholder="Search Courses"
-            className={styles.searchInput}
-            value={searchTerm}
-            onChange={handleSearchChange} // Handle search input change
-          />
-          <IoIosSearch className={styles.searchIcon} />
+        <div className="flex gap-3 border border-gray-300 p-2 h-auto text-sm rounded-full">
+          {[
+            "All Courses",
+            "Technical",
+            "Aptitude",
+            "Placement Preparation",
+            "Competitive Programming",
+          ].map((tabName) => (
+            <div
+              key={tabName}
+              className={`px-4 py-2 cursor-pointer rounded-full transition-colors ${
+                activeTab === tabName
+                  ? "bg-blue-500 text-white border-blue-500"
+                  : "bg-transparent text-black border-gray-300"
+              }`}
+              onClick={() => handleTabClick(tabName)}
+            >
+              {tabName}
+            </div>
+          ))}
         </div>
       </div>
-      {renderGridContent()} {/* Render the filtered content */}
+      {renderGridContent()}
     </div>
   );
 };

@@ -1,10 +1,7 @@
 "use client";
 import React, { useState, useCallback } from "react";
 import dynamic from "next/dynamic";
-import styles from "./styles.module.css";
-import { RxCross1 } from "react-icons/rx";
 
-// Dynamically import components with SSR disabled
 const Sidebar = dynamic(() => import("./components/SideBar"), { ssr: false });
 const CollapsedSidebar = dynamic(
   () => import("./components/SidebarCollapsed"),
@@ -58,18 +55,14 @@ const Course = () => {
 
   return (
     <>
-      <div className={styles.container}>
+      <div className="flex bg-[#ececec] h-screen p-[10px] overflow-hidden">
+        {/* Sidebar */}
         <div
-          className={`${styles.sidebar} ${
-            isCollapsed ? styles.collapsed : ""
-          } ${isMobileSidebarVisible ? styles.mobileSidebarVisible : ""}`}
+          className={`bg-black text-white p-2.5 flex flex-col justify-start rounded-2xl transition-all duration-300 relative overflow-auto scrollbar-hide ${
+            isCollapsed ? "w-[74px]" : "w-[270px]"
+          } ${isMobileSidebarVisible ? "block" : "hidden md:block"}`}
         >
-          <button
-            className={styles.closeMobileSidebar}
-            onClick={toggleMobileSidebar}
-          >
-            <RxCross1 size={20} />
-          </button>
+          
 
           {isCollapsed ? (
             <CollapsedSidebar onFilterChange={handleFilterChange} />
@@ -78,7 +71,8 @@ const Course = () => {
           )}
         </div>
 
-        <div className={styles.main}>
+        {/* Main Content */}
+        <div className="flex-1 flex flex-col pl-[20px] pr-[10px] transition-all duration-300">
           <Header
             isCollapsed={isCollapsed}
             toggleSidebar={toggleSidebar}
@@ -86,7 +80,7 @@ const Course = () => {
             toggleAvailability={toggleAvailability}
             isAvailableOnly={isAvailableOnly}
           />
-          <div className={styles.body}>
+          <div className="flex flex-wrap bg-white h-full w-full gap-5 overflow-auto scrollbar-hide rounded-md">
             <CourseBody
               selectedLanguage={filters.language}
               selectedTopic={filters.topic}
@@ -96,9 +90,11 @@ const Course = () => {
             />
           </div>
         </div>
-      </div>
-      <div className={styles.mobile}>
-        <Mobile />
+
+        {/* Mobile View */}
+        <div className="hidden opacity-0 md:hidden">
+          <Mobile />
+        </div>
       </div>
     </>
   );
