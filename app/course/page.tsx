@@ -80,7 +80,7 @@ const Course = () => {
             toggleAvailability={toggleAvailability}
             isAvailableOnly={isAvailableOnly}
           />
-          <div className="flex flex-wrap bg-white h-full w-full gap-5 overflow-auto scrollbar-hide rounded-md">
+          <div className="flex flex-wrap bg-white h-full w-full gap-5 overflow-auto scrollbar-hide rounded-2xl">
             <CourseBody
               selectedLanguage={filters.language}
               selectedTopic={filters.topic}

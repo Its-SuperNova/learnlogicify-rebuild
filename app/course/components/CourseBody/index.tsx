@@ -20,40 +20,10 @@ const CourseMain: React.FC<CourseMainProps> = ({
   isAvailableOnly,
   isCollapsed,
 }) => {
-  const [activeTab, setActiveTab] = useState("All Courses");
   const [searchTerm, setSearchTerm] = useState("");
-
-  const handleTabClick = (tab: string) => {
-    setActiveTab(tab);
-  };
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
-  };
-
-  const renderGridContent = () => {
-    switch (activeTab) {
-      case "All Courses":
-        return (
-          <AllCourses
-            selectedLanguage={selectedLanguage}
-            selectedTopic={selectedTopic}
-            selectedLevel={selectedLevel}
-            isAvailableOnly={isAvailableOnly}
-            searchTerm={searchTerm}
-          />
-        );
-      case "Technical":
-        return <AllBootCamps />;
-      case "Aptitude":
-        return <CompanySpecific />;
-      case "Placement Preparation":
-        return <CompanySpecific />;
-      case "Competitive Programming":
-        return <CompanySpecific />;
-      default:
-        return null;
-    }
   };
 
   return (
@@ -62,31 +32,16 @@ const CourseMain: React.FC<CourseMainProps> = ({
         isCollapsed ? "ml-0" : "ml-[your-value]"
       }`}
     >
-      <div className="flex justify-between items-center mb-5 border-b border-gray-300 pb-4">
-        {/* Tab Section */}
-        <div className="flex gap-3 border border-gray-300 p-2 h-auto text-sm rounded-full">
-          {[
-            "All Courses",
-            "Technical",
-            "Aptitude",
-            "Placement Preparation",
-            "Competitive Programming",
-          ].map((tabName) => (
-            <div
-              key={tabName}
-              className={`px-4 py-2 cursor-pointer rounded-full transition-colors ${
-                activeTab === tabName
-                  ? "bg-blue-500 text-white border-blue-500"
-                  : "bg-transparent text-black border-gray-300"
-              }`}
-              onClick={() => handleTabClick(tabName)}
-            >
-              {tabName}
-            </div>
-          ))}
-        </div>
-      </div>
-      {renderGridContent()}
+      
+
+      {/* Render Course Content */}
+      <AllCourses
+        selectedLanguage={selectedLanguage}
+        selectedTopic={selectedTopic}
+        selectedLevel={selectedLevel}
+        isAvailableOnly={isAvailableOnly}
+        searchTerm={searchTerm}
+      />
     </div>
   );
 };
