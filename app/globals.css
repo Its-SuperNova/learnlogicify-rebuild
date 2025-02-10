@@ -36,3 +36,26 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Custom minimalist scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  /* Thin scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #2b2b2b;
+  /* Dark track */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #555;
+  /* Darker thumb */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #777;
+  /* Lighter on hover */
+}

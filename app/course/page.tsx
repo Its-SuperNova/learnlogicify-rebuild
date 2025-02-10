@@ -59,7 +59,7 @@ const Course = () => {
         {/* Sidebar */}
         <div
           className={`bg-black text-white p-2.5 flex flex-col justify-start rounded-2xl transition-all duration-300 relative overflow-auto scrollbar-hide ${
-            isCollapsed ? "w-[74px]" : "w-[270px]"
+            isCollapsed ? "w-[65px]" : "w-[270px]"
           } ${isMobileSidebarVisible ? "block" : "hidden md:block"}`}
         >
           

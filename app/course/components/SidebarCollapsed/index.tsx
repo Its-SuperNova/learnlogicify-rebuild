@@ -1,181 +1,185 @@
+"use client";
 import React, { useState } from "react";
-import styles from "./styles.module.css";
-import { FaPython, FaJava, FaJsSquare } from "react-icons/fa";
+import Image from "next/image";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { FaPython, FaJava, FaJsSquare, FaDatabase } from "react-icons/fa";
 import { SiCplusplus } from "react-icons/si";
 import { IoLogoHtml5 } from "react-icons/io";
-import Image from "next/image";
+import { IoExtensionPuzzle } from "react-icons/io5";
+import { SlGraph } from "react-icons/sl";
+import { FaGear, FaChalkboardUser } from "react-icons/fa6";
+import { MdOutlineCategory, MdComputer } from "react-icons/md";
 
 interface CollapseSidebarProps {
   onFilterChange: (filters: {
     language: string;
     topic: string;
     level: string;
-  }) => void; // Function to handle filter change
+    learningTrack: string;
+  }) => void;
 }
 
 const CollapseSidebar: React.FC<CollapseSidebarProps> = ({
   onFilterChange,
 }) => {
-  // State to keep track of the selected filters
-  const [selectedFilter, setSelectedFilter] = useState({
+  const [selectedFilter, setSelectedFilter] = useState<{
+    language: string;
+    topic: string;
+    level: string;
+    learningTrack: string;
+  }>({
     language: "All",
     topic: "All",
     level: "All",
+    learningTrack: "All",
   });
 
-  // Function to handle when a language is selected or deselected
-  const handleLanguageClick = (language: string) => {
-    const newLanguage = selectedFilter.language === language ? "All" : language;
-    const updatedFilters = { ...selectedFilter, language: newLanguage };
+  // Function to handle selection
+  const handleFilterClick = (
+    category: "language" | "topic" | "level" | "learningTrack",
+    key: string
+  ) => {
+    const newValue = selectedFilter[category] === key ? "All" : key;
+    const updatedFilters = { ...selectedFilter, [category]: newValue };
     setSelectedFilter(updatedFilters);
-    onFilterChange(updatedFilters); // Pass all selected filters
+    onFilterChange(updatedFilters);
   };
 
-  // Function to handle when a topic is selected or deselected
-  const handleTopicClick = (topic: string) => {
-    const newTopic = selectedFilter.topic === topic ? "All" : topic;
-    const updatedFilters = { ...selectedFilter, topic: newTopic };
-    setSelectedFilter(updatedFilters);
-    onFilterChange(updatedFilters); // Pass all selected filters
-  };
-
-  // Function to handle when a level is selected or deselected
-  const handleLevelClick = (level: string) => {
-    const newLevel = selectedFilter.level === level ? "All" : level;
-    const updatedFilters = { ...selectedFilter, level: newLevel };
-    setSelectedFilter(updatedFilters);
-    onFilterChange(updatedFilters); // Pass all selected filters
-  };
+  // Data for each section
+  const filterData = [
+    {
+      title: "Languages",
+      category: "language" as const,
+      options: [
+        { name: "Python", key: "python", icon: <FaPython size={18} /> },
+        {
+          name: "C",
+          key: "c",
+          icon: (
+            <Image
+              src="SVG/icons/c-program.svg"
+              alt="C"
+              height={18}
+              width={18}
+            />
+          ),
+        },
+        { name: "C++", key: "cpp", icon: <SiCplusplus size={18} /> },
+        { name: "Java", key: "java", icon: <FaJava size={18} /> },
+        {
+          name: "JavaScript",
+          key: "javascript",
+          icon: <FaJsSquare size={18} />,
+        },
+        {
+          name: "HTML / CSS",
+          key: "html-css",
+          icon: <IoLogoHtml5 size={18} />,
+        },
+      ],
+    },
+    {
+      title: "Learning Tracks",
+      category: "learningTrack" as const,
+      options: [
+        { name: "Technical", key: "technical", icon: <MdComputer size={18} /> },
+        {
+          name: "Aptitude",
+          key: "aptitude",
+          icon: <MdOutlineCategory size={18} />,
+        },
+        {
+          name: "Placement Preparation",
+          key: "placement-prep",
+          icon: <FaChalkboardUser size={18} />,
+        },
+        {
+          name: "Competitive Programming",
+          key: "competitive-programming",
+          icon: <SlGraph size={18} />,
+        },
+      ],
+    },
+    {
+      title: "Topics",
+      category: "topic" as const,
+      options: [
+        {
+          name: "Problem Solving",
+          key: "problem-solving",
+          icon: <IoExtensionPuzzle size={18} />,
+        },
+        {
+          name: "Data Structures",
+          key: "data-structure",
+          icon: <SlGraph size={18} />,
+        },
+        { name: "Algorithms", key: "algorithms", icon: <FaGear size={18} /> },
+        { name: "DBMS", key: "dbms", icon: <FaDatabase size={18} /> },
+      ],
+    },
+    {
+      title: "Levels",
+      category: "level" as const,
+      options: [
+        { name: "Beginner", key: "Beginner", icon: <FaPython size={18} /> },
+        {
+          name: "Intermediate",
+          key: "Intermediate",
+          icon: <SiCplusplus size={18} />,
+        },
+        { name: "Advanced", key: "Advanced", icon: <FaJava size={18} /> },
+      ],
+    },
+  ];
 
   return (
-    <div className={styles.main}>
-      <div className={styles.logoContainer}>
+    <div className="flex flex-col gap-2 items-center">
+      {/* Logo */}
+      <div className="w-full h-11 p-1 rounded-lg bg-darkGray flex items-center justify-center">
         <Image
-          className={styles.logo}
           src="SVG/logo/logo-icon.svg"
           alt="Learnlogicify icon"
           height={30}
           width={30}
         />
       </div>
-      <div className={styles.langContainer}>
-        <div
-          className={`${styles.icon} ${
-            selectedFilter.language === "python" ? styles.selected : ""
-          }`}
-          data-name="Python"
-          onClick={() => handleLanguageClick("python")}
-        >
-          <FaPython size={23} />
-        </div>
-        <div
-          className={`${styles.icon} ${
-            selectedFilter.language === "c" ? styles.selected : ""
-          }`}
-          data-name="C"
-          onClick={() => handleLanguageClick("c")}
-        >
-          <Image className={styles.c} src="SVG/icons/c-program.svg" alt="C" 
-          height={20}
-          width={20}/>
-        </div>
-        <div
-          className={`${styles.icon} ${
-            selectedFilter.language === "cpp" ? styles.selected : ""
-          }`}
-          data-name="C++"
-          onClick={() => handleLanguageClick("cpp")}
-        >
-          <SiCplusplus size={23} />
-        </div>
-        <div
-          className={`${styles.icon} ${
-            selectedFilter.language === "java" ? styles.selected : ""
-          }`}
-          data-name="Java"
-          onClick={() => handleLanguageClick("java")}
-        >
-          <FaJava size={23} />
-        </div>
-        <div
-          className={`${styles.icon} ${
-            selectedFilter.language === "javascript" ? styles.selected : ""
-          }`}
-          data-name="JavaScript"
-          onClick={() => handleLanguageClick("javascript")}
-        >
-          <FaJsSquare size={23} />
-        </div>
-        <div
-          className={`${styles.icon} ${
-            selectedFilter.language === "html-css" ? styles.selected : ""
-          }`}
-          data-name="HTML / CSS"
-          onClick={() => handleLanguageClick("html-css")}
-        >
-          <IoLogoHtml5 size={23} />
-        </div>
-      </div>
 
-      <div className={styles.TopicContainer}>
+      {/* Map through filters */}
+      {filterData.map(({ title, category, options }) => (
         <div
-          className={`${styles.icon} ${
-            selectedFilter.topic === "problem-solving" ? styles.selected : ""
-          }`}
-          data-name="Problem Solving"
-          onClick={() => handleTopicClick("problem-solving")}
+          key={category}
+          className="bg-[#181818] w-full flex flex-col items-center p-1.5 rounded-lg gap-2"
         >
-          <FaPython size={23} />
+          <TooltipProvider>
+            {options.map(({ name, key, icon }) => (
+              <Tooltip key={key}>
+                <TooltipTrigger asChild>
+                  <div
+                    className={`flex justify-center items-center w-full h-[33px] bg-[#313131] cursor-pointer transition-all duration-300 rounded-md ${
+                      selectedFilter[category] === key
+                        ? "bg-blue-500 text-white"
+                        : "hover:bg-[#3c00ff]"
+                    }`}
+                    onClick={() => handleFilterClick(category, key)}
+                    data-name={name}
+                  >
+                    {icon}
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{name}</p>
+                </TooltipContent>
+              </Tooltip>
+            ))}
+          </TooltipProvider>
         </div>
-        <div
-          className={`${styles.icon} ${
-            selectedFilter.topic === "data-structure" ? styles.selected : ""
-          }`}
-          data-name="Data Structures"
-          onClick={() => handleTopicClick("data-structure")}
-        >
-          <SiCplusplus size={23} />
-        </div>
-        <div
-          className={`${styles.icon} ${
-            selectedFilter.topic === "algorithms" ? styles.selected : ""
-          }`}
-          data-name="Algorithms"
-          onClick={() => handleTopicClick("algorithms")}
-        >
-          <FaJava size={23} />
-        </div>
-      </div>
-
-      <div className={styles.LevelContainer}>
-        <div
-          className={`${styles.icon} ${
-            selectedFilter.level === "Beginner" ? styles.selected : ""
-          }`}
-          data-name="Beginner"
-          onClick={() => handleLevelClick("Beginner")}
-        >
-          <FaPython size={23} />
-        </div>
-        <div
-          className={`${styles.icon} ${
-            selectedFilter.level === "Intermediate" ? styles.selected : ""
-          }`}
-          data-name="Intermediate"
-          onClick={() => handleLevelClick("Intermediate")}
-        >
-          <SiCplusplus size={23} />
-        </div>
-        <div
-          className={`${styles.icon} ${
-            selectedFilter.level === "Advanced" ? styles.selected : ""
-          }`}
-          data-name="Advanced"
-          onClick={() => handleLevelClick("Advanced")}
-        >
-          <FaJava size={23} />
-        </div>
-      </div>
+      ))}
     </div>
   );
 };

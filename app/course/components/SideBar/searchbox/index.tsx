@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { IoIosSearch } from "react-icons/io";
-import { RxCross1 } from "react-icons/rx";
 
 interface SearchBoxProps {
   catalogOptions: { name: string; key: string }[];
@@ -18,7 +17,6 @@ const SearchBox: React.FC<SearchBoxProps> = ({
   const [isOpen, setIsOpen] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
-  // Update filtered options as user types
   useEffect(() => {
     setFilteredOptions(
       catalogOptions.filter((option) =>
@@ -27,7 +25,6 @@ const SearchBox: React.FC<SearchBoxProps> = ({
     );
   }, [searchTerm, catalogOptions]);
 
-  // Close modal on click outside or pressing Escape
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
       if (
@@ -72,19 +69,11 @@ const SearchBox: React.FC<SearchBoxProps> = ({
 
       {/* Popup Search Modal */}
       {isOpen && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center  z-50">
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50">
           <div
             ref={modalRef}
-            className="bg-[#1e1e1e] h-[300px] text-white w-[90%] max-w-md p-5 rounded-lg shadow-lg"
+            className="bg-[#1e1e1e] h-[300px] text-white w-[90%] max-w-md p-5 rounded-lg shadow-lg relative"
           >
-            {/* Close Button */}
-            <button
-              className="absolute top-3 right-3 text-gray-400 hover:text-white"
-              onClick={() => setIsOpen(false)}
-            >
-              <RxCross1 size={20} />
-            </button>
-
             {/* Search Input */}
             <input
               type="text"
@@ -94,8 +83,8 @@ const SearchBox: React.FC<SearchBoxProps> = ({
               onChange={(e) => setSearchTerm(e.target.value)}
             />
 
-            {/* Search Suggestions */}
-            <div className="mt-3 max-h-[200px] overflow-y-auto">
+            {/* Search Suggestions with Custom Scrollbar */}
+            <div className="mt-3 max-h-[200px] overflow-y-auto custom-scrollbar">
               {filteredOptions.length > 0 ? (
                 filteredOptions.map((option) => (
                   <div
