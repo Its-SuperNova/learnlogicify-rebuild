@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import DropdownFilter from "./dropdown";
@@ -6,10 +8,9 @@ import { SiCplusplus } from "react-icons/si";
 import { IoLogoHtml5 } from "react-icons/io";
 import { IoExtensionPuzzle } from "react-icons/io5";
 import { SlGraph } from "react-icons/sl";
-import { FaGear } from "react-icons/fa6";
-import { FaChalkboardUser } from "react-icons/fa6"; 
-import SearchBox from "./searchbox";
+import { FaGear, FaChalkboardUser } from "react-icons/fa6";
 import { MdOutlineCategory, MdComputer } from "react-icons/md";
+import SearchBox from "./searchbox";
 
 interface SidebarProps {
   onFilterChange: (filters: {
@@ -43,7 +44,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
       language: selectedLanguage,
       topic: selectedTopic,
       level: selectedLevel,
-      learningTrack: selectedLearningTrack,
+      learningTrack: selectedLearningTrack, // Pass Learning Track Filter
     });
   }, [
     selectedLanguage,
@@ -70,6 +71,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
         </div>
       </div>
 
+      {/* Search Box */}
       <SearchBox
         catalogOptions={[
           { name: "Python", key: "python" },
@@ -85,42 +87,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
         onSearchSelect={(key) => console.log("Selected:", key)}
       />
 
-      {/* Languages Dropdown */}
-      <DropdownFilter
-        title="Languages"
-        isExpanded={expandedSections.includes("Languages")}
-        onToggle={() => handleToggle("Languages")}
-        selectedItem={selectedLanguage}
-        setSelectedItem={setSelectedLanguage}
-        options={[
-          { name: "Python", key: "python", icon: <FaPython size={18} /> },
-          {
-            name: "C",
-            key: "c",
-            icon: (
-              <Image
-                src="SVG/icons/c-program.svg"
-                alt="C"
-                height={18}
-                width={18}
-              />
-            ),
-          },
-          { name: "C++", key: "cpp", icon: <SiCplusplus size={18} /> },
-          { name: "Java", key: "java", icon: <FaJava size={18} /> },
-          {
-            name: "JavaScript",
-            key: "javascript",
-            icon: <FaJsSquare size={18} />,
-          },
-          {
-            name: "HTML / CSS",
-            key: "html-css",
-            icon: <IoLogoHtml5 size={18} />,
-          },
-        ]}
-      />
-      {/* Learning Tracks Dropdown (NEW) */}
+      {/* Learning Tracks Dropdown */}
       <DropdownFilter
         title="Learning Tracks"
         isExpanded={expandedSections.includes("Learning Tracks")}
@@ -150,6 +117,34 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
           },
         ]}
       />
+
+      {/* Languages Dropdown */}
+      <DropdownFilter
+        title="Languages"
+        isExpanded={expandedSections.includes("Languages")}
+        onToggle={() => handleToggle("Languages")}
+        selectedItem={selectedLanguage}
+        setSelectedItem={setSelectedLanguage}
+        options={[
+          { name: "Python", key: "python", icon: <FaPython size={18} /> },
+          { name: "C", key: "c", icon: <SiCplusplus size={18} /> },
+          { name: "C++", key: "cpp", icon: <SiCplusplus size={18} /> },
+          { name: "Java", key: "java", icon: <FaJava size={18} /> },
+          {
+            name: "JavaScript",
+            key: "javascript",
+            icon: <FaJsSquare size={18} />,
+          },
+          {
+            name: "HTML / CSS",
+            key: "html-css",
+            icon: <IoLogoHtml5 size={18} />,
+          },
+          { name: "SQL", key: "sql", icon: <FaDatabase size={18} /> },
+          { name: "MongoDB", key: "mongodb", icon: <FaDatabase size={18} /> },
+        ]}
+      />
+
       {/* Topics Dropdown */}
       <DropdownFilter
         title="Topics"
@@ -170,6 +165,9 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
           },
           { name: "Algorithms", key: "algorithms", icon: <FaGear size={18} /> },
           { name: "DBMS", key: "dbms", icon: <FaDatabase size={18} /> },
+          { name: "OOP", key: "oop", icon: <FaGear size={18} /> },
+          { name: "Operating Systems", key: "os", icon: <FaGear size={18} /> },
+          { name: "Networking", key: "networking", icon: <FaGear size={18} /> },
         ]}
       />
 
@@ -187,11 +185,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
             key: "intermediate",
             icon: <SiCplusplus size={18} />,
           },
-          {
-            name: "Advanced",
-            key: "advanced",
-            icon: <SiCplusplus size={18} />,
-          },
+          { name: "Advanced", key: "advanced", icon: <FaJava size={18} /> },
         ]}
       />
     </div>

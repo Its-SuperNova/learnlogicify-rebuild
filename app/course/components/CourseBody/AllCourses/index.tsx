@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../../CourseCard";
 import coursesData, { Course } from "../../data/courseData";
 import CourseNotFound from "../CourseNotFound";
@@ -9,6 +9,7 @@ interface AllCoursesProps {
   selectedLanguage: string;
   selectedTopic: string;
   selectedLevel: string;
+  selectedLearningTrack: string; // ✅ Added learning track filter
   isAvailableOnly: boolean;
   searchTerm: string;
 }
@@ -17,32 +18,40 @@ const AllCourses: React.FC<AllCoursesProps> = ({
   selectedLanguage,
   selectedTopic,
   selectedLevel,
+  selectedLearningTrack, // ✅ Added
   isAvailableOnly,
   searchTerm,
 }) => {
   const [filteredCourses, setFilteredCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
-  // Wrap applyFilters with useCallback to prevent re-renders
-  const applyFilters = useCallback(() => {
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => {
+      applyFilters();
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, [searchTerm, selectedLanguage, selectedTopic, selectedLevel, selectedLearningTrack, isAvailableOnly]); 
+
+  const applyFilters = () => {
     let filtered = coursesData;
 
     if (selectedLanguage && selectedLanguage !== "All") {
-      filtered = filtered.filter(
-        (course: Course) => course.languageId === selectedLanguage
-      );
+      filtered = filtered.filter((course: Course) => course.languageId === selectedLanguage);
     }
 
     if (selectedTopic && selectedTopic !== "All") {
-      filtered = filtered.filter(
-        (course: Course) => course.topicId === selectedTopic
-      );
+      filtered = filtered.filter((course: Course) => course.topicId === selectedTopic);
     }
 
     if (selectedLevel && selectedLevel !== "All") {
-      filtered = filtered.filter(
-        (course: Course) => course.Level === selectedLevel
-      );
+      filtered = filtered.filter((course: Course) => course.Level === selectedLevel);
+    }
+
+    if (selectedLearningTrack && selectedLearningTrack !== "All") { // ✅ Added learning track filtering
+      filtered = filtered.filter((course: Course) => course.learningTrack === selectedLearningTrack);
     }
 
     if (searchTerm) {
@@ -60,36 +69,16 @@ const AllCourses: React.FC<AllCoursesProps> = ({
     }
 
     setFilteredCourses(filtered);
-  }, [
-    selectedLanguage,
-    selectedTopic,
-    selectedLevel,
-    isAvailableOnly,
-    searchTerm,
-  ]); // Include dependencies
-
-  useEffect(() => {
-    setLoading(true);
-    const timer = setTimeout(() => {
-      applyFilters();
-      setLoading(false);
-    }, 1500);
-
-    return () => clearTimeout(timer);
-  }, [applyFilters]); // Now applyFilters is a stable function
+  };
 
   return (
     <div
       className={`${styles.container} ${
-        filteredCourses.length === 0 && !loading
-          ? styles.noCoursesGrid
-          : styles.grid
+        filteredCourses.length === 0 && !loading ? styles.noCoursesGrid : styles.grid
       }`}
     >
       {loading ? (
-        Array(6)
-          .fill(0)
-          .map((_, index) => <SkeletonCourseCard key={index} />)
+        Array(6).fill(0).map((_, index) => <SkeletonCourseCard key={index} />)
       ) : filteredCourses.length > 0 ? (
         filteredCourses.map((course: Course) => (
           <Card

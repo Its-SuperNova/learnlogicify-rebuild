@@ -21,34 +21,23 @@ const Course = () => {
     language: "All",
     topic: "All",
     level: "All",
+    learningTrack: "All", // ✅ Added Learning Track
   });
 
   const [isAvailableOnly, setIsAvailableOnly] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsCollapsed((prev) => !prev);
-  };
-
-  const toggleMobileSidebar = () => {
-    setIsMobileSidebarVisible((prev) => !prev);
-  };
-
-  const toggleAvailability = () => {
-    setIsAvailableOnly((prev) => !prev);
-  };
+  const toggleSidebar = () => setIsCollapsed((prev) => !prev);
+  const toggleMobileSidebar = () => setIsMobileSidebarVisible((prev) => !prev);
+  const toggleAvailability = () => setIsAvailableOnly((prev) => !prev);
 
   const handleFilterChange = useCallback(
-    (newFilters: { language: string; topic: string; level: string }) => {
-      setFilters((prevFilters) => {
-        if (
-          prevFilters.language === newFilters.language &&
-          prevFilters.topic === newFilters.topic &&
-          prevFilters.level === newFilters.level
-        ) {
-          return prevFilters;
-        }
-        return newFilters;
-      });
+    (newFilters: {
+      language: string;
+      topic: string;
+      level: string;
+      learningTrack: string;
+    }) => {
+      setFilters((prevFilters) => ({ ...prevFilters, ...newFilters }));
     },
     []
   );
@@ -62,8 +51,6 @@ const Course = () => {
             isCollapsed ? "w-[65px]" : "w-[270px]"
           } ${isMobileSidebarVisible ? "block" : "hidden md:block"}`}
         >
-          
-
           {isCollapsed ? (
             <CollapsedSidebar onFilterChange={handleFilterChange} />
           ) : (
@@ -85,6 +72,7 @@ const Course = () => {
               selectedLanguage={filters.language}
               selectedTopic={filters.topic}
               selectedLevel={filters.level}
+              selectedLearningTrack={filters.learningTrack} // ✅ Added Learning Track
               isAvailableOnly={isAvailableOnly}
               isCollapsed={isCollapsed}
             />
