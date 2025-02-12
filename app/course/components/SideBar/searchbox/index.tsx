@@ -5,7 +5,12 @@ import { IoIosSearch } from "react-icons/io";
 
 interface SearchBoxProps {
   catalogOptions: { name: string; key: string }[];
-  onSearchSelect: (key: string) => void;
+  onSearchSelect: (filters: {
+    language?: string;
+    topic?: string;
+    level?: string;
+    learningTrack?: string;
+  }) => void;
 }
 
 const SearchBox: React.FC<SearchBoxProps> = ({
@@ -52,6 +57,55 @@ const SearchBox: React.FC<SearchBoxProps> = ({
     };
   }, [isOpen]);
 
+  const handleTagClick = (key: string) => {
+    let filterType = "";
+
+    // Determine the filter type based on the key
+    if (
+      [
+        "python",
+        "c",
+        "cpp",
+        "java",
+        "javascript",
+        "html-css",
+        "sql",
+        "mongodb",
+      ].includes(key)
+    ) {
+      filterType = "language";
+    } else if (
+      [
+        "problem-solving",
+        "data-structures",
+        "algorithms",
+        "dbms",
+        "oop",
+        "os",
+        "networking",
+      ].includes(key)
+    ) {
+      filterType = "topic";
+    } else if (["beginner", "intermediate", "advanced"].includes(key)) {
+      filterType = "level";
+    } else if (
+      [
+        "technical",
+        "aptitude",
+        "placement-prep",
+        "competitive-programming",
+      ].includes(key)
+    ) {
+      filterType = "learningTrack";
+    }
+
+    // Apply the filter based on the identified type
+    if (filterType) {
+      onSearchSelect({ [filterType]: key });
+      setIsOpen(false);
+    }
+  };
+
   return (
     <div className="relative">
       {/* Search Icon Trigger */}
@@ -90,10 +144,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({
                   <div
                     key={option.key}
                     className="p-2 hover:bg-[#444] cursor-pointer rounded-md"
-                    onClick={() => {
-                      onSearchSelect(option.key);
-                      setIsOpen(false);
-                    }}
+                    onClick={() => handleTagClick(option.key)}
                   >
                     {option.name}
                   </div>

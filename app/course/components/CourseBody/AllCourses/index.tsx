@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import Card from "../../CourseCard";
 import coursesData, { Course } from "../../data/courseData";
 import CourseNotFound from "../CourseNotFound";
-import styles from "./styles.module.css";
 import SkeletonCourseCard from "../../skeletonCourseCard";
 
 interface AllCoursesProps {
   selectedLanguage: string;
   selectedTopic: string;
   selectedLevel: string;
-  selectedLearningTrack: string; // ✅ Added learning track filter
+  selectedLearningTrack: string;
   isAvailableOnly: boolean;
   searchTerm: string;
 }
@@ -18,7 +17,7 @@ const AllCourses: React.FC<AllCoursesProps> = ({
   selectedLanguage,
   selectedTopic,
   selectedLevel,
-  selectedLearningTrack, // ✅ Added
+  selectedLearningTrack,
   isAvailableOnly,
   searchTerm,
 }) => {
@@ -27,60 +26,92 @@ const AllCourses: React.FC<AllCoursesProps> = ({
 
   useEffect(() => {
     setLoading(true);
+
     const timer = setTimeout(() => {
-      applyFilters();
+      console.log("Filters Applied:", {
+        selectedLanguage,
+        selectedTopic,
+        selectedLevel,
+        selectedLearningTrack,
+        isAvailableOnly,
+        searchTerm,
+      });
+
+      let filtered = [...coursesData]; // ✅ Prevent modifying the original array
+
+      // ✅ Apply filters only if a value is selected
+      if (selectedLanguage !== "All") {
+        filtered = filtered.filter(
+          (course) =>
+            course.languageId.toLowerCase() === selectedLanguage.toLowerCase()
+        );
+      }
+
+      if (selectedTopic !== "All") {
+        filtered = filtered.filter(
+          (course) =>
+            course.topicId.toLowerCase() === selectedTopic.toLowerCase()
+        );
+      }
+
+      if (selectedLevel !== "All") {
+        filtered = filtered.filter(
+          (course) => course.Level.toLowerCase() === selectedLevel.toLowerCase()
+        );
+      }
+
+      if (selectedLearningTrack !== "All") {
+        filtered = filtered.filter(
+          (course) =>
+            course.learningTrack.toLowerCase() ===
+            selectedLearningTrack.toLowerCase()
+        );
+      }
+
+      if (searchTerm.trim() !== "") {
+        filtered = filtered.filter(
+          (course) =>
+            course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            course.desc.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            course.Level.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      }
+
+      if (isAvailableOnly) {
+        filtered = filtered.filter((course) => course.available);
+      }
+
+      console.log("Filtered Courses:", filtered);
+
+      // ✅ Prevent empty filter results from breaking UI
+      setFilteredCourses(filtered.length > 0 ? filtered : []);
       setLoading(false);
-    }, 1500);
+    }, 300); // 🔥 Faster UI updates with 300ms debounce
 
     return () => clearTimeout(timer);
-  }, [searchTerm, selectedLanguage, selectedTopic, selectedLevel, selectedLearningTrack, isAvailableOnly]); 
-
-  const applyFilters = () => {
-    let filtered = coursesData;
-
-    if (selectedLanguage && selectedLanguage !== "All") {
-      filtered = filtered.filter((course: Course) => course.languageId === selectedLanguage);
-    }
-
-    if (selectedTopic && selectedTopic !== "All") {
-      filtered = filtered.filter((course: Course) => course.topicId === selectedTopic);
-    }
-
-    if (selectedLevel && selectedLevel !== "All") {
-      filtered = filtered.filter((course: Course) => course.Level === selectedLevel);
-    }
-
-    if (selectedLearningTrack && selectedLearningTrack !== "All") { // ✅ Added learning track filtering
-      filtered = filtered.filter((course: Course) => course.learningTrack === selectedLearningTrack);
-    }
-
-    if (searchTerm) {
-      const search = searchTerm.toLowerCase();
-      filtered = filtered.filter(
-        (course: Course) =>
-          course.title.toLowerCase().includes(search) ||
-          course.desc.toLowerCase().includes(search) ||
-          course.Level.toLowerCase().includes(search)
-      );
-    }
-
-    if (isAvailableOnly) {
-      filtered = filtered.filter((course: Course) => course.available);
-    }
-
-    setFilteredCourses(filtered);
-  };
+  }, [
+    selectedLanguage,
+    selectedTopic,
+    selectedLevel,
+    selectedLearningTrack,
+    isAvailableOnly,
+    searchTerm,
+  ]);
 
   return (
     <div
-      className={`${styles.container} ${
-        filteredCourses.length === 0 && !loading ? styles.noCoursesGrid : styles.grid
+      className={`w-full h-full p-2 ${
+        filteredCourses.length === 0 && !loading
+          ? "flex flex-col items-center justify-center h-full"
+          : "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center"
       }`}
     >
       {loading ? (
-        Array(6).fill(0).map((_, index) => <SkeletonCourseCard key={index} />)
+        Array(10)
+          .fill(0)
+          .map((_, index) => <SkeletonCourseCard key={index} />)
       ) : filteredCourses.length > 0 ? (
-        filteredCourses.map((course: Course) => (
+        filteredCourses.map((course) => (
           <Card
             key={course.url}
             url={course.url}

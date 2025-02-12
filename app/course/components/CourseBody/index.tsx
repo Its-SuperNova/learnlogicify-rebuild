@@ -34,19 +34,21 @@ const CourseMain: React.FC<CourseMainProps> = ({
       {/* Title & Search Bar */}
       <div className="flex justify-between items-center mb-5 border-b border-gray-300 pb-4">
         {/* Left - Title */}
-        <h2 className="text-xl font-semibold text-gray-800">All Courses</h2>
+        <h2 className="text-2xl font-semibold text-gray-800 p-2">
+          Explore Our Course Library
+        </h2>
 
         {/* Right - Search Bar */}
         <div className="relative w-[250px]">
           <input
             type="text"
-            placeholder="Search courses..."
-            className="w-full bg-gray-200 text-gray-800 p-1 pl-8 rounded-md outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Search courses"
+            className="w-full text-sm bg-[#ecf6ff] text-gray-800 py-2 px-3  pl-8 rounded-lg outline-none focus:ring-1 focus:ring-blue-400"
             value={searchTerm}
             onChange={handleSearchChange}
           />
           <IoIosSearch
-            className="absolute left-2 top-2 text-[#9CA3AF]"
+            className="absolute left-2.5 top-[9.5px] text-[#9CA3AF]"
             size={18}
           />
         </div>
@@ -57,7 +59,7 @@ const CourseMain: React.FC<CourseMainProps> = ({
         selectedLanguage={selectedLanguage}
         selectedTopic={selectedTopic}
         selectedLevel={selectedLevel}
-        selectedLearningTrack={selectedLearningTrack} // ✅ Pass Learning Track
+        selectedLearningTrack={selectedLearningTrack}
         isAvailableOnly={isAvailableOnly}
         searchTerm={searchTerm}
       />

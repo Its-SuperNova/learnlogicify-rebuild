@@ -25,11 +25,22 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
   const [expandedSections, setExpandedSections] = useState<string[]>([
     "Languages",
   ]);
-  const [selectedLanguage, setSelectedLanguage] = useState<string>("All");
-  const [selectedTopic, setSelectedTopic] = useState<string>("All");
-  const [selectedLevel, setSelectedLevel] = useState<string>("All");
-  const [selectedLearningTrack, setSelectedLearningTrack] =
-    useState<string>("All");
+
+  const [filters, setFilters] = useState({
+    language: "All",
+    topic: "All",
+    level: "All",
+    learningTrack: "All",
+  });
+
+  const handleFilterChange = (newFilters: Partial<typeof filters>) => {
+    setFilters((prevFilters) => ({
+      language: newFilters.language ?? prevFilters.language,
+      topic: newFilters.topic ?? prevFilters.topic,
+      level: newFilters.level ?? prevFilters.level,
+      learningTrack: newFilters.learningTrack ?? prevFilters.learningTrack,
+    }));
+  };
 
   const handleToggle = (section: string) => {
     setExpandedSections((prevSections) =>
@@ -40,23 +51,13 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
   };
 
   useEffect(() => {
-    onFilterChange({
-      language: selectedLanguage,
-      topic: selectedTopic,
-      level: selectedLevel,
-      learningTrack: selectedLearningTrack, // Pass Learning Track Filter
-    });
-  }, [
-    selectedLanguage,
-    selectedTopic,
-    selectedLevel,
-    selectedLearningTrack,
-    onFilterChange,
-  ]);
+    console.log("Applied Filters:", filters);
+    onFilterChange(filters);
+  }, [filters, onFilterChange]);
 
   return (
     <div className="h-screen flex flex-col gap-2">
-      {/* Catalog Header */}
+      {/* Sidebar Header */}
       <div className="w-full h-[55px] bg-darkGray rounded-lg p-2 flex items-center">
         <div className="w-11">
           <Image
@@ -76,13 +77,12 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
         catalogOptions={[
           { name: "Python", key: "python" },
           { name: "C", key: "c" },
+          { name: "C++", key: "cpp" },
           { name: "Java", key: "java" },
-          { name: "Problem Solving", key: "problem-solving" },
-          { name: "Data Structures", key: "data-structures" },
-          { name: "Beginner", key: "beginner" },
-          { name: "Intermediate", key: "intermediate" },
-          { name: "Technical", key: "technical" },
-          { name: "Competitive Programming", key: "competitive-programming" },
+          { name: "JavaScript", key: "javascript" },
+          { name: "HTML / CSS", key: "html-css" },
+          { name: "SQL", key: "sql" },
+          { name: "MongoDB", key: "mongodb" },
         ]}
         onSearchSelect={(key) => console.log("Selected:", key)}
       />
@@ -92,8 +92,15 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
         title="Learning Tracks"
         isExpanded={expandedSections.includes("Learning Tracks")}
         onToggle={() => handleToggle("Learning Tracks")}
-        selectedItem={selectedLearningTrack}
-        setSelectedItem={setSelectedLearningTrack}
+        selectedItem={filters.learningTrack}
+        setSelectedItem={(newTrack) =>
+          setFilters({
+            language: "All",
+            topic: "All",
+            level: "All",
+            learningTrack: newTrack,
+          })
+        }
         options={[
           {
             name: "Technical",
@@ -123,8 +130,15 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
         title="Languages"
         isExpanded={expandedSections.includes("Languages")}
         onToggle={() => handleToggle("Languages")}
-        selectedItem={selectedLanguage}
-        setSelectedItem={setSelectedLanguage}
+        selectedItem={filters.language}
+        setSelectedItem={(newLanguage) =>
+          setFilters({
+            language: newLanguage,
+            topic: "All",
+            level: "All",
+            learningTrack: "All",
+          })
+        }
         options={[
           { name: "Python", key: "python", icon: <FaPython size={18} /> },
           { name: "C", key: "c", icon: <SiCplusplus size={18} /> },
@@ -150,8 +164,15 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
         title="Topics"
         isExpanded={expandedSections.includes("Topics")}
         onToggle={() => handleToggle("Topics")}
-        selectedItem={selectedTopic}
-        setSelectedItem={setSelectedTopic}
+        selectedItem={filters.topic}
+        setSelectedItem={(newTopic) =>
+          setFilters({
+            language: "All",
+            topic: newTopic,
+            level: "All",
+            learningTrack: "All",
+          })
+        }
         options={[
           {
             name: "Problem Solving",
@@ -168,6 +189,11 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
           { name: "OOP", key: "oop", icon: <FaGear size={18} /> },
           { name: "Operating Systems", key: "os", icon: <FaGear size={18} /> },
           { name: "Networking", key: "networking", icon: <FaGear size={18} /> },
+          {
+            name: "Web Development",
+            key: "web-development",
+            icon: <IoLogoHtml5 size={18} />,
+          },
         ]}
       />
 
@@ -176,8 +202,15 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
         title="Level"
         isExpanded={expandedSections.includes("Level")}
         onToggle={() => handleToggle("Level")}
-        selectedItem={selectedLevel}
-        setSelectedItem={setSelectedLevel}
+        selectedItem={filters.level}
+        setSelectedItem={(newLevel) =>
+          setFilters({
+            language: "All",
+            topic: "All",
+            level: newLevel,
+            learningTrack: "All",
+          })
+        }
         options={[
           { name: "Beginner", key: "beginner", icon: <FaPython size={18} /> },
           {
