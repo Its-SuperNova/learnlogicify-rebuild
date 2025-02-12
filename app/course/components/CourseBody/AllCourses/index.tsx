@@ -1,8 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
+import dynamic from "next/dynamic";
 import Card from "../../CourseCard";
 import coursesData, { Course } from "../../data/courseData";
 import CourseNotFound from "../CourseNotFound";
-import SkeletonCourseCard from "../../skeletonCourseCard";
+
+// Dynamically import SkeletonCourseCard with SSR disabled for performance
+const SkeletonCourseCard = dynamic(() => import("../../skeletonCourseCard"), {
+  ssr: false,
+});
 
 interface AllCoursesProps {
   selectedLanguage: string;
@@ -103,13 +108,17 @@ const AllCourses: React.FC<AllCoursesProps> = ({
       className={`w-full h-full p-2 ${
         filteredCourses.length === 0 && !loading
           ? "flex flex-col items-center justify-center h-full"
-          : "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center"
+          : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center"
       }`}
     >
       {loading ? (
-        Array(10)
-          .fill(0)
-          .map((_, index) => <SkeletonCourseCard key={index} />)
+        <Suspense fallback={<p>Loading courses...</p>}>
+          {Array(10)
+            .fill(0)
+            .map((_, index) => (
+              <SkeletonCourseCard key={index} />
+            ))}
+        </Suspense>
       ) : filteredCourses.length > 0 ? (
         filteredCourses.map((course) => (
           <Card
