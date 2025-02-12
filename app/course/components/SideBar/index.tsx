@@ -3,14 +3,20 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import DropdownFilter from "./dropdown";
-import { FaPython, FaJava, FaJsSquare, FaDatabase } from "react-icons/fa";
+import SearchBox from "./searchbox";
+import {
+  FaPython,
+  FaJava,
+  FaJsSquare,
+  FaDatabase,
+  FaBrain,
+} from "react-icons/fa";
 import { SiCplusplus } from "react-icons/si";
 import { IoLogoHtml5 } from "react-icons/io";
 import { IoExtensionPuzzle } from "react-icons/io5";
 import { SlGraph } from "react-icons/sl";
 import { FaGear, FaChalkboardUser } from "react-icons/fa6";
 import { MdOutlineCategory, MdComputer } from "react-icons/md";
-import SearchBox from "./searchbox";
 
 interface SidebarProps {
   onFilterChange: (filters: {
@@ -22,10 +28,7 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
-  const [expandedSections, setExpandedSections] = useState<string[]>([
-    "Languages",
-  ]);
-
+  const [expandedSections, setExpandedSections] = useState<string[]>([]);
   const [filters, setFilters] = useState({
     language: "All",
     topic: "All",
@@ -33,6 +36,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
     learningTrack: "All",
   });
 
+  // ✅ Handle Filter Updates
   const handleFilterChange = (newFilters: Partial<typeof filters>) => {
     setFilters((prevFilters) => ({
       language: newFilters.language ?? prevFilters.language,
@@ -42,6 +46,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
     }));
   };
 
+  // ✅ Toggle Dropdown Expansion
   const handleToggle = (section: string) => {
     setExpandedSections((prevSections) =>
       prevSections.includes(section)
@@ -50,8 +55,8 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
     );
   };
 
+  // ✅ Sync Filters to Parent Component
   useEffect(() => {
-    console.log("Applied Filters:", filters);
     onFilterChange(filters);
   }, [filters, onFilterChange]);
 
@@ -74,20 +79,11 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
 
       {/* Search Box */}
       <SearchBox
-        catalogOptions={[
-          { name: "Python", key: "python" },
-          { name: "C", key: "c" },
-          { name: "C++", key: "cpp" },
-          { name: "Java", key: "java" },
-          { name: "JavaScript", key: "javascript" },
-          { name: "HTML / CSS", key: "html-css" },
-          { name: "SQL", key: "sql" },
-          { name: "MongoDB", key: "mongodb" },
-        ]}
-        onSearchSelect={(key) => console.log("Selected:", key)}
+        setFilters={setFilters}
+        setExpandedSections={setExpandedSections}
       />
 
-      {/* Learning Tracks Dropdown */}
+      {/* 🔹 Learning Tracks Dropdown */}
       <DropdownFilter
         title="Learning Tracks"
         isExpanded={expandedSections.includes("Learning Tracks")}
@@ -125,7 +121,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
         ]}
       />
 
-      {/* Languages Dropdown */}
+      {/* 🔹 Languages Dropdown */}
       <DropdownFilter
         title="Languages"
         isExpanded={expandedSections.includes("Languages")}
@@ -159,7 +155,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
         ]}
       />
 
-      {/* Topics Dropdown */}
+      {/* 🔹 Topics Dropdown */}
       <DropdownFilter
         title="Topics"
         isExpanded={expandedSections.includes("Topics")}
@@ -194,10 +190,15 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
             key: "web-development",
             icon: <IoLogoHtml5 size={18} />,
           },
+          {
+            name: "AI & Data Science",
+            key: "ai-data-science",
+            icon: <FaBrain size={18} />,
+          },
         ]}
       />
 
-      {/* Level Dropdown */}
+      {/* 🔹 Levels Dropdown */}
       <DropdownFilter
         title="Level"
         isExpanded={expandedSections.includes("Level")}

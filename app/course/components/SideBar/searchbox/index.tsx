@@ -4,23 +4,61 @@ import React, { useState, useEffect, useRef } from "react";
 import { IoIosSearch } from "react-icons/io";
 
 interface SearchBoxProps {
-  catalogOptions: { name: string; key: string }[];
-  onSearchSelect: (filters: {
-    language?: string;
-    topic?: string;
-    level?: string;
-    learningTrack?: string;
-  }) => void;
+  setFilters: React.Dispatch<React.SetStateAction<any>>;
+  setExpandedSections: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 const SearchBox: React.FC<SearchBoxProps> = ({
-  catalogOptions,
-  onSearchSelect,
+  setFilters,
+  setExpandedSections,
 }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredOptions, setFilteredOptions] = useState(catalogOptions);
+  const [filteredOptions, setFilteredOptions] = useState<any[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
+
+  // ✅ Full List of Searchable Options from Sidebar
+  const catalogOptions = [
+    // 🔹 Languages
+    { name: "Python", key: "python", type: "language" },
+    { name: "C", key: "c", type: "language" },
+    { name: "C++", key: "cpp", type: "language" },
+    { name: "Java", key: "java", type: "language" },
+    { name: "JavaScript", key: "javascript", type: "language" },
+    { name: "HTML / CSS", key: "html-css", type: "language" },
+    { name: "SQL", key: "sql", type: "language" },
+    { name: "MongoDB", key: "mongodb", type: "language" },
+
+    // 🔹 Topics
+    { name: "Problem Solving", key: "problem-solving", type: "topic" },
+    { name: "Data Structures", key: "data-structures", type: "topic" },
+    { name: "Algorithms", key: "algorithms", type: "topic" },
+    { name: "DBMS", key: "dbms", type: "topic" },
+    { name: "OOP", key: "oop", type: "topic" },
+    { name: "Operating Systems", key: "os", type: "topic" },
+    { name: "Networking", key: "networking", type: "topic" },
+    { name: "Web Development", key: "web-development", type: "topic" },
+    { name: "AI & Data Science", key: "ai-data-science", type: "topic" },
+
+    // 🔹 Levels
+    { name: "Beginner", key: "beginner", type: "level" },
+    { name: "Intermediate", key: "intermediate", type: "level" },
+    { name: "Advanced", key: "advanced", type: "level" },
+
+    // 🔹 Learning Tracks
+    { name: "Technical", key: "technical", type: "learningTrack" },
+    { name: "Aptitude", key: "aptitude", type: "learningTrack" },
+    {
+      name: "Placement Preparation",
+      key: "placement-prep",
+      type: "learningTrack",
+    },
+    {
+      name: "Competitive Programming",
+      key: "competitive-programming",
+      type: "learningTrack",
+    },
+  ];
 
   useEffect(() => {
     setFilteredOptions(
@@ -28,7 +66,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({
         option.name.toLowerCase().includes(searchTerm.toLowerCase())
       )
     );
-  }, [searchTerm, catalogOptions]);
+  }, [searchTerm]);
 
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
@@ -57,53 +95,27 @@ const SearchBox: React.FC<SearchBoxProps> = ({
     };
   }, [isOpen]);
 
-  const handleTagClick = (key: string) => {
-    let filterType = "";
+  // ✅ Handle Search Option Click & Ensure Only One Selection at a Time
+  const handleTagClick = (key: string, type: string) => {
+    setFilters({
+      language: type === "language" ? key : "All",
+      topic: type === "topic" ? key : "All",
+      level: type === "level" ? key : "All",
+      learningTrack: type === "learningTrack" ? key : "All",
+    });
 
-    // Determine the filter type based on the key
-    if (
-      [
-        "python",
-        "c",
-        "cpp",
-        "java",
-        "javascript",
-        "html-css",
-        "sql",
-        "mongodb",
-      ].includes(key)
-    ) {
-      filterType = "language";
-    } else if (
-      [
-        "problem-solving",
-        "data-structures",
-        "algorithms",
-        "dbms",
-        "oop",
-        "os",
-        "networking",
-      ].includes(key)
-    ) {
-      filterType = "topic";
-    } else if (["beginner", "intermediate", "advanced"].includes(key)) {
-      filterType = "level";
-    } else if (
-      [
-        "technical",
-        "aptitude",
-        "placement-prep",
-        "competitive-programming",
-      ].includes(key)
-    ) {
-      filterType = "learningTrack";
-    }
+    // ✅ Expand only the relevant dropdown
+    setExpandedSections([
+      type === "language"
+        ? "Languages"
+        : type === "topic"
+        ? "Topics"
+        : type === "level"
+        ? "Level"
+        : "Learning Tracks",
+    ]);
 
-    // Apply the filter based on the identified type
-    if (filterType) {
-      onSearchSelect({ [filterType]: key });
-      setIsOpen(false);
-    }
+    setIsOpen(false);
   };
 
   return (
@@ -123,28 +135,28 @@ const SearchBox: React.FC<SearchBoxProps> = ({
 
       {/* Popup Search Modal */}
       {isOpen && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50">
+        <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-50">
           <div
             ref={modalRef}
-            className="bg-[#1e1e1e] h-[300px] text-white w-[90%] max-w-md p-5 rounded-lg shadow-lg relative"
+            className="bg-[#1e1e1e] h-[350px] text-white w-[90%] max-w-md p-5 rounded-lg"
           >
             {/* Search Input */}
             <input
               type="text"
               placeholder="Search catalog..."
-              className="w-full bg-[#333] text-white p-2 rounded-md outline-none"
+              className="w-full bg-[#333] text-white p-2 rounded-md"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
 
             {/* Search Suggestions with Custom Scrollbar */}
-            <div className="mt-3 max-h-[200px] overflow-y-auto custom-scrollbar">
+            <div className="mt-3 max-h-[250px] overflow-y-auto custom-scrollbar">
               {filteredOptions.length > 0 ? (
                 filteredOptions.map((option) => (
                   <div
                     key={option.key}
                     className="p-2 hover:bg-[#444] cursor-pointer rounded-md"
-                    onClick={() => handleTagClick(option.key)}
+                    onClick={() => handleTagClick(option.key, option.type)}
                   >
                     {option.name}
                   </div>
