@@ -36,7 +36,7 @@ const Card = (props: Props) => {
   } = props;
 
   return (
-    <div className="h-full w-full max-h-[330px] max-w-[350px] p-2 border border-gray-300 rounded-[17px] flex flex-col items-center pb-0 transition-all duration-300 relative hover:shadow-lg hover:-translate-y-1 cursor-pointer">
+    <div className="h-auto w-full  p-2 border border-gray-300 rounded-[17px] flex flex-col items-center pb-0 transition-all duration-300 relative hover:shadow-lg hover:-translate-y-1 cursor-pointer">
       {/* Banner */}
       <div
         className="h-full w-full rounded-[20px] p-4 flex flex-col justify-start"

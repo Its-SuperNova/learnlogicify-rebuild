@@ -45,11 +45,11 @@ const Course = () => {
   return (
     <>
       <div className="flex bg-[#ececec] h-screen p-[10px] overflow-hidden">
-        {/* Sidebar */}
+        {/* Sidebar (Hidden on Small Screens) */}
         <div
           className={`bg-black text-white p-2.5 flex flex-col justify-start rounded-2xl transition-all duration-300 relative overflow-auto scrollbar-hide ${
             isCollapsed ? "w-[65px]" : "w-[270px]"
-          } ${isMobileSidebarVisible ? "block" : "hidden md:block"}`}
+          } hidden md:flex`}
         >
           {isCollapsed ? (
             <CollapsedSidebar onFilterChange={handleFilterChange} />
@@ -58,8 +58,8 @@ const Course = () => {
           )}
         </div>
 
-        {/* Main Content */}
-        <div className="flex-1 flex flex-col pl-[20px] pr-[10px] transition-all duration-300">
+        {/* Main Content (Hidden on Small Screens) */}
+        <div className="flex-1 flex flex-col pl-[20px] pr-[10px] transition-all duration-300 hidden md:flex">
           <Header
             isCollapsed={isCollapsed}
             toggleSidebar={toggleSidebar}
@@ -79,8 +79,8 @@ const Course = () => {
           </div>
         </div>
 
-        {/* Mobile View */}
-        <div className="hidden opacity-0 md:hidden">
+        {/* Mobile View (Hidden on Larger Screens) */}
+        <div className="flex w-full h-full md:hidden">
           <Mobile />
         </div>
       </div>
