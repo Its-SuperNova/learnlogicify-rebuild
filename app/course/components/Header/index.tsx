@@ -57,14 +57,14 @@ const Header: React.FC<HeaderProps> = ({
 
       {/* Right Section */}
       <div className="flex items-center gap-2">
-        <div className="relative z-[1] flex gap-[12px] justify-end items-center border border-gray-300 h-9 px-3 rounded-md max-[670px]:hidden max-md:mr-[65px]">
+        <div className="relative z-[1]  hidden  mg:flex gap-[12px] justify-end items-center border border-gray-300 h-9 px-3 rounded-md max-[670px]:hidden max-md:mr-[65px]">
           <p className="text-gray-700 text-sm">Available Courses</p>
           <Switch
             checked={isAvailableOnly}
             onCheckedChange={toggleAvailability}
           />
         </div>
-        <HamburgerMenu/>
+        <HamburgerMenu />
       </div>
     </div>
   );

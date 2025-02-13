@@ -32,14 +32,14 @@ const CourseMain: React.FC<CourseMainProps> = ({
       }`}
     >
       {/* Title & Search Bar */}
-      <div className="flex justify-between items-center mb-5 border-b border-gray-300 pb-4">
+      <div className="flex flex-col items-start mg:flex-row justify-between mg:items-center mb-5 border-b gap-1 mg:gap-0 border-gray-300 pb-4">
         {/* Left - Title */}
         <h2 className="text-2xl font-semibold text-gray-800 p-2">
           Explore Our Course Library
         </h2>
 
         {/* Right - Search Bar */}
-        <div className="relative w-[250px]">
+        <div className="relative w-full pl-2 mg:pl-0 mg:w-[250px]">
           <input
             type="text"
             placeholder="Search courses"
@@ -48,7 +48,7 @@ const CourseMain: React.FC<CourseMainProps> = ({
             onChange={handleSearchChange}
           />
           <IoIosSearch
-            className="absolute left-2.5 top-[9.5px] text-[#9CA3AF]"
+            className="absolute left-4 mg:left-2.5 top-[9.5px] text-[#9CA3AF]"
             size={18}
           />
         </div>
