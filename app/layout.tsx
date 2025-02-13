@@ -30,6 +30,12 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="kuk6j7jHAji8Fhp6VCTVitu9SCYU_B4M9dCNhNS9OZE"
+        />
+      </head>
       <body className={inter.className}>
         {isLoading && <Preloader />}
         {isCoursePage ? (
