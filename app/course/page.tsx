@@ -59,7 +59,7 @@ const Course = () => {
         </div>
 
         {/* Main Content (Hidden on Small Screens) */}
-        <div className="flex-1 flex flex-col pl-[20px] pr-[10px] transition-all duration-300 hidden md:flex">
+        <div className="flex-1 flex-col pl-[20px] pr-[10px] transition-all duration-300 hidden md:flex">
           <Header
             isCollapsed={isCollapsed}
             toggleSidebar={toggleSidebar}
