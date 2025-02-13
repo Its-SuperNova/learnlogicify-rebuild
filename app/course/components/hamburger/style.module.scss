@@ -1,0 +1,72 @@
+.header {
+    z-index: 1000;
+}
+
+.header .btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background-color: black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 3px;
+}
+
+.header .burger {
+    width: 100%;
+}
+
+.header .burger::after,
+.header .burger::before {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 40%;
+    margin: auto;
+    background-color: white;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.header .burger::after {
+    top: -5px;
+}
+
+.header .burger::before {
+    top: 5px;
+}
+
+.header .burgerActive::after {
+    transform: rotate(45deg);
+    top: -1px;
+}
+
+.header .burgerActive::before {
+    transform: rotate(-45deg);
+    top: 0px;
+}
+
+@media (max-width: 1199px) {
+    .header .button {
+            width: 40px;
+            height: 40px; 
+    }
+    .header{
+        padding-right: 25px;
+        padding-top: 20px;
+    }
+}
+@media (max-width: 720px) {
+    .header .button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .header {
+        top: 5px;
+        padding-right: 20px;
+        padding-top: 22px;
+    }
+}
