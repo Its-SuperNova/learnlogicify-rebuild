@@ -61,7 +61,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
   }, [filters, onFilterChange]);
 
   return (
-    <div className="h-screen flex flex-col gap-2">
+    <div className="h-500px md:h-screen flex flex-col gap-2">
       {/* Sidebar Header */}
       <div className="w-full h-[55px] bg-darkGray rounded-lg p-2 flex items-center">
         <div className="w-11">

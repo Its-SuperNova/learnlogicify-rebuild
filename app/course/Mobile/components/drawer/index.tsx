@@ -1,101 +1,107 @@
-import React, { useState } from "react";
-import { IoFilterSharp } from "react-icons/io5";
-import useMeasure from "react-use-measure";
-import {
-  useDragControls,
-  useMotionValue,
-  useAnimate,
-  motion,
-} from "framer-motion";
-import styles from "./styles.module.css";
+"use client";
 
-interface DrawerProps {
-  content: React.ReactNode; // Accept the drawer content via props
+import React, { useState } from "react";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+import { Button } from "@/components/ui/button";
+import Sidebar from "../../../components/SideBar"; // Importing Sidebar
+import { FaFilter } from "react-icons/fa";
+import { IoMdCloseCircle } from "react-icons/io"; // Clear Icon
+import { IoFilter } from "react-icons/io5";
+
+interface MobileFilterDrawerProps {
+  onFilterChange: (filters: {
+    language: string;
+    topic: string;
+    level: string;
+    learningTrack: string;
+  }) => void;
 }
 
-export const Drawer: React.FC<DrawerProps> = ({ content }) => {
+const MobileFilterDrawer: React.FC<MobileFilterDrawerProps> = ({
+  onFilterChange,
+}) => {
   const [open, setOpen] = useState(false);
-  const [scope, animate] = useAnimate();
-  const [drawerRef, { height }] = useMeasure();
 
-  const y = useMotionValue(0);
-  const controls = useDragControls();
+  // ✅ Function to Close Drawer
+  const closeDrawer = () => setOpen(false);
 
-  const handleClose = async () => {
-    animate(scope.current, {
-      opacity: [1, 0],
+  // ✅ Function to Clear Filters
+  const clearFilters = () => {
+    onFilterChange({
+      language: "All",
+      topic: "All",
+      level: "All",
+      learningTrack: "All",
     });
-
-    const yStart = typeof y.get() === "number" ? y.get() : 0;
-
-    await animate("#drawer", {
-      y: [yStart, height],
-    });
-
-    setOpen(false);
   };
 
   return (
     <>
-      {/* Filter button at the bottom of the screen */}
-      <button
-        onClick={() => setOpen(true)}
-        className={styles.filterButton} // Adjusted style for bottom button
-      >
-        <IoFilterSharp className={styles.filterIcon} />
-        <span className={styles.filterText}>Filter</span>
-      </button>
+      {/* Floating Filter Button */}
+      <div className="fixed bottom-5 left-1/2 transform -translate-x-1/2 z-50">
+        <Drawer open={open} onOpenChange={setOpen}>
+          <DrawerTrigger>
+            <Button
+              size="lg"
+              className="bg-black text-white flex items-center gap-2 px-5"
+            >
+              <IoFilter size={30} />
+              Filters
+            </Button>
+          </DrawerTrigger>
 
-      {open && (
-        <motion.div
-          ref={scope}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          onClick={handleClose}
-          className={styles.backdrop}
-        >
-          <motion.div
-            id="drawer"
-            ref={drawerRef}
-            onClick={(e) => e.stopPropagation()}
-            initial={{ y: "100%" }}
-            animate={{ y: "0%" }}
-            transition={{
-              ease: "easeInOut",
-            }}
-            className={styles.drawerContainer}
-            style={{ y }}
-            drag="y"
-            dragControls={controls}
-            onDragEnd={() => {
-              if (y.get() >= 100) {
-                handleClose();
-              }
-            }}
-            dragListener={false}
-            dragConstraints={{
-              top: 0,
-              bottom: 0,
-            }}
-            dragElastic={{
-              top: 0,
-              bottom: 0.5,
-            }}
-          >
-            <div className={styles.drawerHandle}>
+          {/* Drawer Content */}
+          <DrawerContent className="p-4 bg-black">
+            <DrawerHeader className="flex items-center justify-between">
+              {/* Title */}
+              <DrawerTitle className="text-lg text-white">
+                Filter Courses
+              </DrawerTitle>
+
+              {/* Clear Filters Button */}
               <button
-                onPointerDown={(e) => {
-                  controls.start(e);
-                }}
-                className={styles.handleButton}
-              ></button>
+                onClick={clearFilters}
+                className="flex items-center gap-1 text-sm text-gray-400 hover:text-white transition"
+              >
+                <IoMdCloseCircle size={20} /> Clear
+              </button>
+            </DrawerHeader>
+
+            {/* ✅ Sidebar Filters inside Drawer */}
+            <div className="text-white">
+              <Sidebar onFilterChange={onFilterChange} />
             </div>
-            <div className={styles.drawerContent}>{content}</div>
-          </motion.div>
-        </motion.div>
-      )}
+
+            {/* Action Buttons (Submit on Right, Close on Left) */}
+            <div className="flex gap-2 mt-4">
+              <DrawerClose asChild>
+                <Button
+                  variant="outline"
+                  className="w-1/2 text-black border-gray-400 rounded-md"
+                >
+                  Close
+                </Button>
+              </DrawerClose>
+
+              <Button
+                onClick={closeDrawer}
+                className="w-1/2 bg-blue-600 text-white rounded-md"
+              >
+                Submit
+              </Button>
+            </div>
+          </DrawerContent>
+        </Drawer>
+      </div>
     </>
   );
 };
 
-export default Drawer;
+export default MobileFilterDrawer;
