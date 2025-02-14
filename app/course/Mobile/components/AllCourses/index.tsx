@@ -1,14 +1,19 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, Suspense } from "react";
+import dynamic from "next/dynamic";
 import Card from "../../../components/CourseCard";
-import coursesData, { Course } from "../../components/data/courseData";
+import coursesData, { Course } from "../../../components/data/courseData";
 import CourseNotFound from "../../../components/CourseBody/CourseNotFound";
-import styles from "./styles.module.css";
-import SkeletonCourseCard from "../../../components/skeletonCourseCard";
+
+// Dynamically import SkeletonCourseCard with SSR disabled for performance
+const SkeletonCourseCard = dynamic(() => import("../../../components/skeletonCourseCard"), {
+  ssr: false,
+});
 
 interface AllCoursesProps {
-  selectedLanguage: string[];
-  selectedTopic: string[];
-  selectedLevel: string[];
+  selectedLanguage: string;
+  selectedTopic: string;
+  selectedLevel: string;
+  selectedLearningTrack: string;
   isAvailableOnly: boolean;
   searchTerm: string;
 }
@@ -17,81 +22,105 @@ const AllCourses: React.FC<AllCoursesProps> = ({
   selectedLanguage,
   selectedTopic,
   selectedLevel,
+  selectedLearningTrack,
   isAvailableOnly,
   searchTerm,
 }) => {
   const [filteredCourses, setFilteredCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
-  // Wrap applyFilters in useCallback to maintain a stable function reference
-  const applyFilters = useCallback(() => {
-    let filtered = coursesData;
+  useEffect(() => {
+    setLoading(true);
 
-    if (selectedLanguage.length > 0) {
-      filtered = filtered.filter((course) =>
-        selectedLanguage.includes(course.languageId)
-      );
-    }
+    const timer = setTimeout(() => {
+      console.log("Filters Applied:", {
+        selectedLanguage,
+        selectedTopic,
+        selectedLevel,
+        selectedLearningTrack,
+        isAvailableOnly,
+        searchTerm,
+      });
 
-    if (selectedTopic.length > 0) {
-      filtered = filtered.filter((course) =>
-        selectedTopic.includes(course.topicId)
-      );
-    }
+      let filtered = [...coursesData]; // ✅ Prevent modifying the original array
 
-    if (selectedLevel.length > 0) {
-      filtered = filtered.filter((course) =>
-        selectedLevel.includes(course.Level.toLowerCase())
-      );
-    }
+      // ✅ Apply filters only if a value is selected
+      if (selectedLanguage !== "All") {
+        filtered = filtered.filter(
+          (course) =>
+            course.languageId.toLowerCase() === selectedLanguage.toLowerCase()
+        );
+      }
 
-    if (searchTerm) {
-      const search = searchTerm.toLowerCase();
-      filtered = filtered.filter(
-        (course) =>
-          course.title.toLowerCase().includes(search) ||
-          course.desc.toLowerCase().includes(search) ||
-          course.Level.toLowerCase().includes(search)
-      );
-    }
+      if (selectedTopic !== "All") {
+        filtered = filtered.filter(
+          (course) =>
+            course.topicId.toLowerCase() === selectedTopic.toLowerCase()
+        );
+      }
 
-    if (isAvailableOnly) {
-      filtered = filtered.filter((course) => course.available);
-    }
+      if (selectedLevel !== "All") {
+        filtered = filtered.filter(
+          (course) => course.Level.toLowerCase() === selectedLevel.toLowerCase()
+        );
+      }
 
-    setFilteredCourses(filtered);
+      if (selectedLearningTrack !== "All") {
+        filtered = filtered.filter(
+          (course) =>
+            course.learningTrack.toLowerCase() ===
+            selectedLearningTrack.toLowerCase()
+        );
+      }
+
+      if (searchTerm.trim() !== "") {
+        filtered = filtered.filter(
+          (course) =>
+            course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            course.desc.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            course.Level.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      }
+
+      if (isAvailableOnly) {
+        filtered = filtered.filter((course) => course.available);
+      }
+
+      console.log("Filtered Courses:", filtered);
+
+      // ✅ Prevent empty filter results from breaking UI
+      setFilteredCourses(filtered.length > 0 ? filtered : []);
+      setLoading(false);
+    }, 300); // 🔥 Faster UI updates with 300ms debounce
+
+    return () => clearTimeout(timer);
   }, [
     selectedLanguage,
     selectedTopic,
     selectedLevel,
+    selectedLearningTrack,
     isAvailableOnly,
     searchTerm,
-  ]); // Include dependencies
-
-  useEffect(() => {
-    setLoading(true);
-    const timer = setTimeout(() => {
-      applyFilters();
-      setLoading(false);
-    }, 1500);
-
-    return () => clearTimeout(timer);
-  }, [applyFilters]); // Now applyFilters is a stable function
+  ]);
 
   return (
     <div
-      className={`${styles.container} ${
+      className={`w-full h-auto p-2 ${
         filteredCourses.length === 0 && !loading
-          ? styles.noCoursesGrid
-          : styles.grid
+          ? "flex flex-col items-center justify-center h-full"
+          : "grid grid-cols-1  md:grid-cols-1 mg:grid-cols-2 lx:grid-cols-3 xxl:grid-cols-4 xxxl:grid-cols-5 xxll:grid-cols-6 xlll:grid-cols-7  gap-6 justify-items-center"
       }`}
     >
       {loading ? (
-        Array(6)
-          .fill(0)
-          .map((_, index) => <SkeletonCourseCard key={index} />)
+        <Suspense fallback={<p>Loading courses...</p>}>
+          {Array(10)
+            .fill(0)
+            .map((_, index) => (
+              <SkeletonCourseCard key={index} />
+            ))}
+        </Suspense>
       ) : filteredCourses.length > 0 ? (
-        filteredCourses.map((course: Course) => (
+        filteredCourses.map((course) => (
           <Card
             key={course.url}
             url={course.url}

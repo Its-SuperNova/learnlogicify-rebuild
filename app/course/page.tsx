@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useCallback } from "react";
 import dynamic from "next/dynamic";
+import HeaderMobile from "./Mobile/components/Header";
 
 const Sidebar = dynamic(() => import("./components/SideBar"), { ssr: false });
 const CollapsedSidebar = dynamic(
@@ -12,6 +13,7 @@ const CourseBody = dynamic(() => import("./components/CourseBody"), {
   ssr: false,
 });
 const Mobile = dynamic(() => import("./Mobile"), { ssr: false });
+
 
 const Course = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -44,7 +46,7 @@ const Course = () => {
 
   return (
     <>
-      <div className="flex bg-[#ececec] h-screen p-[10px] overflow-hidden">
+      <div className="flex bg-white md:bg-[#ececec] h-auto md:h-screen p-[10px] overflow-hidden">
         {/* Sidebar (Hidden on Small Screens) */}
         <div
           className={`bg-black text-white p-2.5 flex flex-col justify-start rounded-2xl transition-all duration-300 relative overflow-auto scrollbar-hide ${
@@ -80,8 +82,22 @@ const Course = () => {
         </div>
 
         {/* Mobile View (Hidden on Larger Screens) */}
-        <div className="flex w-full h-full md:hidden">
-          <Mobile />
+        <div className="w-full md:hidden">
+          <HeaderMobile
+            isCollapsed={isCollapsed}
+            toggleSidebar={toggleSidebar}
+            toggleMobileSidebar={toggleMobileSidebar}
+            toggleAvailability={toggleAvailability}
+            isAvailableOnly={isAvailableOnly}
+            />
+          <Mobile
+            selectedLanguage={filters.language}
+            selectedTopic={filters.topic}
+            selectedLevel={filters.level}
+            selectedLearningTrack={filters.learningTrack} // ✅ Added Learning Track
+            isAvailableOnly={isAvailableOnly}
+            isCollapsed={isCollapsed}
+          />
         </div>
       </div>
     </>
