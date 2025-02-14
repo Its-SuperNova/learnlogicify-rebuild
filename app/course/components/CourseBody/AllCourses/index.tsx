@@ -105,7 +105,7 @@ const AllCourses: React.FC<AllCoursesProps> = ({
 
   return (
     <div
-      className={`w-full h-full p-2 ${
+      className={`w-full h-full  p-2 ${
         filteredCourses.length === 0 && !loading
           ? "flex flex-col items-center justify-center h-full"
           : "grid grid-cols-1  md:grid-cols-1 mg:grid-cols-2 lx:grid-cols-3 xxl:grid-cols-4 xxxl:grid-cols-5 xxll:grid-cols-6 xlll:grid-cols-7  gap-6 justify-items-center"

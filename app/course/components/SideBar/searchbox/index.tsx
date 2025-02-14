@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { IoIosSearch } from "react-icons/io";
 
 interface SearchBoxProps {
@@ -17,48 +17,47 @@ const SearchBox: React.FC<SearchBoxProps> = ({
   const [isOpen, setIsOpen] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
-  // ✅ Full List of Searchable Options from Sidebar
-  const catalogOptions = [
-    // 🔹 Languages
-    { name: "Python", key: "python", type: "language" },
-    { name: "C", key: "c", type: "language" },
-    { name: "C++", key: "cpp", type: "language" },
-    { name: "Java", key: "java", type: "language" },
-    { name: "JavaScript", key: "javascript", type: "language" },
-    { name: "HTML / CSS", key: "html-css", type: "language" },
-    { name: "SQL", key: "sql", type: "language" },
-    { name: "MongoDB", key: "mongodb", type: "language" },
+  // ✅ Memoized List of Searchable Options
+  const catalogOptions = useMemo(
+    () => [
+      { name: "Python", key: "python", type: "language" },
+      { name: "C", key: "c", type: "language" },
+      { name: "C++", key: "cpp", type: "language" },
+      { name: "Java", key: "java", type: "language" },
+      { name: "JavaScript", key: "javascript", type: "language" },
+      { name: "HTML / CSS", key: "html-css", type: "language" },
+      { name: "SQL", key: "sql", type: "language" },
+      { name: "MongoDB", key: "mongodb", type: "language" },
 
-    // 🔹 Topics
-    { name: "Problem Solving", key: "problem-solving", type: "topic" },
-    { name: "Data Structures", key: "data-structures", type: "topic" },
-    { name: "Algorithms", key: "algorithms", type: "topic" },
-    { name: "DBMS", key: "dbms", type: "topic" },
-    { name: "OOP", key: "oop", type: "topic" },
-    { name: "Operating Systems", key: "os", type: "topic" },
-    { name: "Networking", key: "networking", type: "topic" },
-    { name: "Web Development", key: "web-development", type: "topic" },
-    { name: "AI & Data Science", key: "ai-data-science", type: "topic" },
+      { name: "Problem Solving", key: "problem-solving", type: "topic" },
+      { name: "Data Structures", key: "data-structures", type: "topic" },
+      { name: "Algorithms", key: "algorithms", type: "topic" },
+      { name: "DBMS", key: "dbms", type: "topic" },
+      { name: "OOP", key: "oop", type: "topic" },
+      { name: "Operating Systems", key: "os", type: "topic" },
+      { name: "Networking", key: "networking", type: "topic" },
+      { name: "Web Development", key: "web-development", type: "topic" },
+      { name: "AI & Data Science", key: "ai-data-science", type: "topic" },
 
-    // 🔹 Levels
-    { name: "Beginner", key: "beginner", type: "level" },
-    { name: "Intermediate", key: "intermediate", type: "level" },
-    { name: "Advanced", key: "advanced", type: "level" },
+      { name: "Beginner", key: "beginner", type: "level" },
+      { name: "Intermediate", key: "intermediate", type: "level" },
+      { name: "Advanced", key: "advanced", type: "level" },
 
-    // 🔹 Learning Tracks
-    { name: "Technical", key: "technical", type: "learningTrack" },
-    { name: "Aptitude", key: "aptitude", type: "learningTrack" },
-    {
-      name: "Placement Preparation",
-      key: "placement-prep",
-      type: "learningTrack",
-    },
-    {
-      name: "Competitive Programming",
-      key: "competitive-programming",
-      type: "learningTrack",
-    },
-  ];
+      { name: "Technical", key: "technical", type: "learningTrack" },
+      { name: "Aptitude", key: "aptitude", type: "learningTrack" },
+      {
+        name: "Placement Preparation",
+        key: "placement-prep",
+        type: "learningTrack",
+      },
+      {
+        name: "Competitive Programming",
+        key: "competitive-programming",
+        type: "learningTrack",
+      },
+    ],
+    []
+  );
 
   useEffect(() => {
     setFilteredOptions(
@@ -66,61 +65,41 @@ const SearchBox: React.FC<SearchBoxProps> = ({
         option.name.toLowerCase().includes(searchTerm.toLowerCase())
       )
     );
-  }, [searchTerm]);
+  }, [searchTerm, catalogOptions]);
 
-  useEffect(() => {
-    const handleOutsideClick = (event: MouseEvent) => {
-      if (
-        modalRef.current &&
-        !modalRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    };
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setIsOpen(false);
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener("mousedown", handleOutsideClick);
-      document.addEventListener("keydown", handleKeyDown);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [isOpen]);
-
-  // ✅ Handle Search Option Click & Ensure Only One Selection at a Time
+  // ✅ Handle Selection and Trigger Sidebar Filtering
   const handleTagClick = (key: string, type: string) => {
-    setFilters({
+    const updatedFilters = {
       language: type === "language" ? key : "All",
       topic: type === "topic" ? key : "All",
       level: type === "level" ? key : "All",
       learningTrack: type === "learningTrack" ? key : "All",
-    });
+    };
 
-    // ✅ Expand only the relevant dropdown
-    setExpandedSections([
+    setFilters(updatedFilters);
+
+    // ✅ Expand the relevant sidebar section
+    const expandedSection =
       type === "language"
         ? "Languages"
         : type === "topic"
         ? "Topics"
         : type === "level"
         ? "Level"
-        : "Learning Tracks",
-    ]);
+        : "Learning Tracks";
 
-    setIsOpen(false);
+    setExpandedSections((prevSections) =>
+      prevSections.includes(expandedSection)
+        ? prevSections
+        : [...prevSections, expandedSection]
+    );
+
+    setIsOpen(false); // Close search modal
   };
 
   return (
     <div className="relative">
-      {/* Search Icon Trigger */}
+      {/* Search Input */}
       <div
         className="flex items-center gap-2 bg-[#313131] text-gray-300 p-2.5 rounded-lg cursor-text"
         style={{
@@ -133,7 +112,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({
         <span className="text-sm">Search</span>
       </div>
 
-      {/* Popup Search Modal */}
+      {/* Search Modal */}
       {isOpen && (
         <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-50">
           <div
@@ -149,7 +128,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({
               onChange={(e) => setSearchTerm(e.target.value)}
             />
 
-            {/* Search Suggestions with Custom Scrollbar */}
+            {/* Search Suggestions */}
             <div className="mt-3 max-h-[250px] overflow-y-auto custom-scrollbar">
               {filteredOptions.length > 0 ? (
                 filteredOptions.map((option) => (
