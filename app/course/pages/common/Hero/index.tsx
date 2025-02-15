@@ -1,7 +1,7 @@
 import React from "react";
 import { FaStar } from "react-icons/fa6";
-import Overview from "../../../common/OverviewCard";
-import Video from "../../../common/VideoSection";
+import Overview from "../OverviewCard";
+import Video from "../VideoSection";
 import {
   Breadcrumb,
   BreadcrumbItem,

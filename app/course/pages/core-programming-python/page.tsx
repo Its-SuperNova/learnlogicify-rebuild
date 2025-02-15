@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import Hero from "./components/Hero";
+import Hero from "../common/Hero";
 import Header from "@/app/components/common/HeaderDark";
-import Syllabus from "./components/Syllabus";
+import Syllabus from "../common/Syllabus";
 import CertificateSection from "../common/CertificateSection";
-import CertificateProcess from "./components/CertificationProcess";
+import CertificateProcess from "../common/CertificationProcess";
 import Footer from "@/app/components/common/Footer";
 import dynamic from "next/dynamic";
 
