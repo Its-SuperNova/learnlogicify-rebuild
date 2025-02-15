@@ -1,23 +1,21 @@
 import React from "react";
-import styles from "./styles.module.css";
 import Link from "next/link";
 import Icon from "@/app/components/common/SVG/icons/Certificate";
-import { FaArrowRightLong } from "react-icons/fa6";
 
 const CertificationProcessPython = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <div className={styles.left}>
-          <div className={styles.icon}>
+    <div className="flex flex-col gap-5 border border-gray-400 rounded-2xl p-10">
+      <div className="flex justify-between items-center">
+        <div className="flex h-auto items-center gap-3">
+          <div className="">
             <Icon />
           </div>
-          <div className={styles.title}>
+          <div className="text-2xl font-semibold max-w-[750px]">
             Certification Process and Requirements
           </div>
         </div>
       </div>
-      <div className={styles.content}>
+      <div className="flex flex-col gap-4 text-lg font-light">
         <p>
           Upon successfully completing the Core Programming - Python course, you
           will be required to take a final assessment to qualify for
@@ -37,7 +35,7 @@ const CertificationProcessPython = () => {
           To be eligible for the certificate, you must meet the following
           criteria:
         </p>
-        <ul className={styles.customList}>
+        <ul className="list-disc pl-10 text-lg text-gray-700">
           <li>Achieve a score of 50% or more in the final assessment.</li>
         </ul>
         <p>

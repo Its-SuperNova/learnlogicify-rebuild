@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useRef } from "react";
-import styles from "./styles.module.css";
 
 interface VideoProps {
   src: string;
@@ -28,13 +27,16 @@ const Video: React.FC<VideoProps> = ({
   };
 
   return (
-    <div className={styles.videoWrapper}>
+    <div className="relative overflow-hidden rounded-2xl w-full pt-[56.25%]">
       {!isPlaying && (
         <div
-          className={styles.thumbnail}
+          className="absolute top-0 left-0 w-full h-full flex justify-center items-center bg-cover bg-center cursor-pointer"
           style={{ backgroundImage: `url(${poster})` }}
         >
-          <button className={styles.playButton} onClick={handlePlay}>
+          <button
+            className="text-5xl text-black bg-white border-none rounded-full w-20 h-20 flex justify-center items-center pl-1 cursor-pointer transition-all duration-300 hover:bg-black hover:text-white md:text-4xl md:w-16 md:h-16 sm:text-3xl sm:w-14 sm:h-14 xs:text-2xl xs:w-12 xs:h-12"
+            onClick={handlePlay}
+          >
             &#9658;
           </button>
         </div>
@@ -45,7 +47,7 @@ const Video: React.FC<VideoProps> = ({
         controls={controls}
         loop={loop}
         muted={muted}
-        className={styles.videoElement}
+        className="absolute top-0 left-0 w-full h-full"
         style={{ display: isPlaying ? "block" : "none" }} // Control visibility with inline styles
       />
     </div>
