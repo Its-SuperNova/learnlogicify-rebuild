@@ -8,12 +8,12 @@ import Link from "next/link";
 const Header = () => {
   return (
     <header className="h-[100px] w-full flex px-[80px] items-center justify-between max-md:px-[30px]">
-      <div className="h-[100%] z-[9]">
+      <div className="h-[100%] z-10">
         <Link href="/">
           <Logo />
         </Link>
       </div>
-      <nav className="flex flex-row justify-center h-[42px] w-[500px] z-[9999] max-lg:hidden">
+      <nav className="flex flex-row justify-center h-[42px] w-[500px] z-10 max-lg:hidden">
         <NavMenu />
       </nav>
       <div className="h-full flex flex-row justify-end items-center p-0 max-md:pr-[20px]">
