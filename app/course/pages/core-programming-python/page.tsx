@@ -25,6 +25,7 @@ const CoursePage = () => {
           <Hero />
           <Syllabus />
           <CertificateSection />
+          <CertificateProcess />
         </div>
       </div>
       <Footer />

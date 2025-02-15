@@ -1,11 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import logo from "@/public/SVG/icons/certificate.svg";
-import styles from "./styles.module.css";
 const Rocket = () => {
   return (
-    <div className={styles.main}>
-      <Image className={styles.logo} src={logo} alt="Light Logo" />
+    <div className="h-[50px] w-[50px] md:w-[65px] md:h-[65px]">
+      <Image src={logo} alt="Light Logo" />
     </div>
   );
 };

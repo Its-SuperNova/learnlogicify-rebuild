@@ -4,18 +4,18 @@ import Icon from "@/app/components/common/SVG/icons/Certificate";
 
 const CertificationProcessPython = () => {
   return (
-    <div className="flex flex-col gap-5 border border-gray-400 rounded-2xl p-10">
+    <div className="flex flex-col gap-5 border border-gray-300 rounded-2xl p-4 py-5 md:py-10 md:p-10">
       <div className="flex justify-between items-center">
         <div className="flex h-auto items-center gap-3">
-          <div className="">
-            <Icon />
+          <div>
+            <Icon/>
           </div>
-          <div className="text-2xl font-semibold max-w-[750px]">
+          <div className="text-lg md:text-2xl font-semibold max-w-[750px]">
             Certification Process and Requirements
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-4 text-lg font-light">
+      <div className="flex flex-col gap-4 text-sm md:text-lg font-light">
         <p>
           Upon successfully completing the Core Programming - Python course, you
           will be required to take a final assessment to qualify for
@@ -35,7 +35,7 @@ const CertificationProcessPython = () => {
           To be eligible for the certificate, you must meet the following
           criteria:
         </p>
-        <ul className="list-disc pl-10 text-lg text-gray-700">
+        <ul className="list-disc pl-10 text-sm md:text-lg">
           <li>Achieve a score of 50% or more in the final assessment.</li>
         </ul>
         <p>
