@@ -1,4 +1,3 @@
-/* Container and Layout Styles */
 .container {
     height: 100%;
     width: 100%;
@@ -44,7 +43,14 @@
     width: 100%;
 }
 
-/* List Styles */
+.right {
+    height: 100%;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .list {
     width: 100%;
     border: 1px solid rgb(167, 167, 167);
@@ -53,13 +59,8 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 10px;
-    transition: border-color 0.6s ease;
+    transition: max-height 0.6s ease, border-color 0.6s ease;
     margin-bottom: 10px;
-    cursor: pointer;
-}
-
-.list:hover {
-    border-color: rgb(0, 64, 255);
 }
 
 .listRow {
@@ -71,7 +72,7 @@
 }
 
 .expanded {
-    border-color: rgb(0, 64, 255);
+    height: auto;
 }
 
 .icon {
@@ -85,7 +86,6 @@
     align-items: center;
 }
 
-/* Content and Dropdown Styles */
 .lisContent {
     display: flex;
     flex-direction: row;
@@ -114,84 +114,54 @@
 
 .DropdownIcon {
     color: blue;
+    cursor: pointer;
 }
 
-/* Dropdown Content */
 .dropdownContent {
     width: 100%;
-    overflow: hidden;
+    padding: 10px;
+    border-top: 1px solid rgb(167, 167, 167);
+    margin-top: 10px;
     transition: max-height 0.6s ease, opacity 0.6s ease;
 }
 
-.contentlist {
-    margin-top: 15px;
-    border-top: 1px solid rgb(211, 211, 211);
-    padding: 20px;
-    background-color: #f9f9f9;
-}
-
-/* Main Topic Styles */
-.mainTopic {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #333;
-}
-.mainTopicIcon{
-    padding: 10px;
-    border-radius: 10px;
-}
-.mainTopic span {
-    margin-left: 10px;
-}
-
-/* Subtopics Styles */
-.subTopics {
+.dropdownContent ul {
     padding-left: 20px;
-    overflow: hidden;
-    transition: max-height 0.6s ease;
-    margin-bottom: 20px; /* Space between subtopic sections */
 }
 
-.subTopics h4 {
-    font-size: 16px;
-    font-weight: 500;
-    margin-top: 10px;
-    margin-bottom: 15px; /* Space below the subtopic title */
-    color: #555;
-}
-
-.subTopics ul {
-    margin-left: 20px;
-    margin-top: 10px; /* Space between the title and the list */
-}
-
-.subTopics li {
+.dropdownContent li {
+    list-style-type: none;
     display: flex;
     align-items: center;
     gap: 10px;
-    margin: 8px 0; /* Space between list items */
-    font-size: 14px;
-    color: #666;
+    margin: 5px 0;
 }
 
-/* Message Square Icon for Subtopics */
-.subTopics li svg {
-    color: blue;
-    font-size: 18px;
+.why {
+    margin-top: 20px;
+    padding: 10px;
 }
 
-/* Responsive Styles */
+.tit {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 @media screen and (max-width: 1170px) {
     .content {
         flex-direction: column;
     }
+
     .right {
         width: 100%;
     }
+
     .cardContainer {
         flex-direction: row;
         gap: 30px;
@@ -215,21 +185,5 @@
     .topic {
         font-weight: 650;
         font-size: 18px;
-    }
-
-    .mainTopic {
-        font-size: 16px;
-    }
-
-    .contentlist h4 {
-        font-size: 14px;
-    }
-
-    .subTopics li {
-        font-size: 12px;
-    }
-
-    .subTopics li svg {
-        font-size: 16px;
     }
 }

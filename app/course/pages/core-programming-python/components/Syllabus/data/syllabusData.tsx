@@ -1,440 +1,223 @@
-import {
-  FaPython,
-  FaCalculator,
-  FaDatabase,
-  FaDiagramProject, // Correct icon from fa6
-  FaLaptopCode,
-  FaRegFolderOpen,
-} from "react-icons/fa6";
-
-import { SiC, SiDjango, SiFlask } from "react-icons/si";
-
-interface SubTopic {
-  title: string;
-  points: string[];
-}
-
+import { FaCode } from "react-icons/fa6";
+import { FaPython } from "react-icons/fa6";
+import { IoCubeOutline } from "react-icons/io5";
+import { PiMathOperationsBold } from "react-icons/pi";
+import { FaQuestion } from "react-icons/fa";
+import { RiLoopLeftFill } from "react-icons/ri";
+import { TbMathFunction } from "react-icons/tb";
+import { FaRegFolderOpen } from "react-icons/fa";
+import { AiOutlineExclamationCircle } from "react-icons/ai";
 interface SyllabusModule {
   icon: React.ElementType;
   title: string;
   subtitle: string;
-  mainTopics: {
-    icon: React.ElementType;
-    title: string;
-    subTopics: SubTopic[];
-  }[];
+  topics: string[];
 }
 
 export const syllabusData: SyllabusModule[] = [
   {
-    icon: SiC,
-    title: "Semester 1",
-    subtitle: "Foundations of Programming",
-    mainTopics: [
-      {
-        icon: SiC,
-        title: "Introduction to Programming (C)",
-        subTopics: [
-          {
-            title: "Programming Basics",
-            points: [
-              "Introduction to Programming Languages",
-              "Understanding Compilers and Interpreters",
-              "Basic Syntax and Variables in C",
-              "Control Structures: Loops and Conditionals",
-            ],
-          },
-          {
-            title: "Advanced Concepts in C",
-            points: [
-              "Functions and Modular Programming",
-              "Arrays and Strings in C",
-              "Pointers and Memory Management",
-              "File Handling in C",
-            ],
-          },
-        ],
-      },
-      {
-        icon: FaCalculator,
-        title: "Mathematics for Computer Science",
-        subTopics: [
-          {
-            title: "Mathematics Essentials",
-            points: [
-              "Basic Arithmetic and Algebra",
-              "Discrete Mathematics Basics",
-              "Set Theory and Boolean Algebra",
-              "Introduction to Graph Theory",
-            ],
-          },
-          {
-            title: "Applications in Programming",
-            points: [
-              "Number Systems and Conversions",
-              "Matrix Operations",
-              "Understanding Modular Arithmetic",
-              "Applications of Mathematics in Algorithms",
-            ],
-          },
-        ],
-      },
-      {
-        icon: FaRegFolderOpen,
-        title: "Soft Skills Class",
-        subTopics: [
-          {
-            title: "Professional Skills",
-            points: [
-              "Effective Communication Techniques",
-              "Time Management and Productivity Skills",
-              "Team Collaboration and Problem Solving",
-              "Building Confidence in Presentations",
-            ],
-          },
-        ],
-      },
+    icon: FaCode,
+    title: "Module 1",
+    subtitle: "Introduction to Computers",
+    topics: [
+      "Overview of computer systems",
+      "The role of Programming Language",
+      "Understanding binary and data representation",
+      "Number Conversions",
     ],
   },
   {
     icon: FaPython,
-    title: "Semester 2",
-    subtitle: "Programming with Python",
-    mainTopics: [
-      {
-        icon: FaPython,
-        title: "Introduction to Python",
-        subTopics: [
-          {
-            title: "Python Basics",
-            points: [
-              "Understanding Python Syntax",
-              "Variables and Data Types",
-              "Control Structures: Loops and Conditionals",
-              "Functions and Modular Programming in Python",
-            ],
-          },
-          {
-            title: "Advanced Python Concepts",
-            points: [
-              "Error Handling and Debugging",
-              "File Handling in Python",
-              "Introduction to Python Libraries (NumPy, Pandas)",
-              "Working with JSON and APIs in Python",
-            ],
-          },
-        ],
-      },
-      {
-        icon: FaDiagramProject,
-        title: "Data Structures and Algorithms with Python",
-        subTopics: [
-          {
-            title: "Data Structures Basics",
-            points: [
-              "Understanding Arrays and Lists",
-              "Working with Dictionaries and Sets",
-              "Stacks, Queues, and Linked Lists",
-              "Trees and Graphs Basics",
-            ],
-          },
-          {
-            title: "Algorithmic Problem Solving",
-            points: [
-              "Searching and Sorting Algorithms",
-              "Understanding Recursion",
-              "Dynamic Programming Basics",
-              "Applications of Graph Algorithms",
-            ],
-          },
-        ],
-      },
-      {
-        icon: FaRegFolderOpen,
-        title: "Soft Skills Class",
-        subTopics: [
-          {
-            title: "Building Confidence",
-            points: [
-              "Critical Thinking and Decision-Making",
-              "Handling Feedback Effectively",
-              "Professional Networking Techniques",
-              "Conflict Resolution in Teams",
-            ],
-          },
-        ],
-      },
+    title: "Module 2",
+    subtitle: "Introduction to Python",
+    topics: [
+      "Overview of Python",
+      "Setting up the Python environment",
+      "Writing and running your first Python program",
+      "Understanding Python’s syntax and structure",
     ],
   },
   {
-    icon: FaDatabase,
-    title: "Semester 3",
-    subtitle: "Database Management and OOP with Python",
-    mainTopics: [
-      {
-        icon: FaDatabase,
-        title: "Database Management Systems",
-        subTopics: [
-          {
-            title: "Introduction to DBMS",
-            points: [
-              "Relational Databases and SQL Basics",
-              "CRUD Operations in SQL",
-              "Joins and Query Optimization",
-              "Database Normalization",
-            ],
-          },
-          {
-            title: "Advanced DBMS Concepts",
-            points: [
-              "Working with NoSQL Databases (MongoDB)",
-              "Indexes and Performance Tuning",
-              "Backup and Recovery Techniques",
-              "Database Security Principles",
-            ],
-          },
-        ],
-      },
-      {
-        icon: FaPython,
-        title: "Object-Oriented Programming (OOP) with Python",
-        subTopics: [
-          {
-            title: "OOP Basics",
-            points: [
-              "Understanding Classes and Objects",
-              "Inheritance and Polymorphism",
-              "Encapsulation and Abstraction",
-              "Using Constructors and Destructors",
-            ],
-          },
-          {
-            title: "Advanced OOP Concepts",
-            points: [
-              "Working with Dunder Methods",
-              "Creating Custom Exceptions",
-              "Using Decorators and Metaclasses",
-              "Best Practices in OOP Design",
-            ],
-          },
-        ],
-      },
-      {
-        icon: FaRegFolderOpen,
-        title: "Soft Skills Class",
-        subTopics: [
-          {
-            title: "Leadership and Teamwork",
-            points: [
-              "Developing Leadership Skills",
-              "Building Effective Professional Relationships",
-              "Handling Workplace Dynamics",
-              "Creative Problem-Solving Techniques",
-            ],
-          },
-        ],
-      },
+    icon: IoCubeOutline,
+    title: "Module 3",
+    subtitle: "Variables and Data Types",
+    topics: [
+      "Introduction to Variables",
+      "Primitive Data Types",
+      "Composite Data Types",
+      "Type Conversion",
+      "Mutable and Immutable Types",
     ],
   },
   {
-    icon: FaLaptopCode,
-    title: "Semester 4",
-    subtitle: "Advanced Programming Concepts",
-    mainTopics: [
-      {
-        icon: FaLaptopCode,
-        title: "Computer Architecture",
-        subTopics: [
-          {
-            title: "Core Concepts",
-            points: [
-              "Understanding CPU and Memory Hierarchy",
-              "Introduction to Operating Systems",
-              "Virtual Memory and Paging",
-              "I/O Systems and File Management",
-            ],
-          },
-          {
-            title: "Advanced Topics",
-            points: [
-              "Instruction Set Architectures",
-              "Pipelining and Parallel Processing",
-              "Cache Memory Optimization",
-              "Applications in Modern Computing",
-            ],
-          },
-        ],
-      },
-      {
-        icon: SiDjango,
-        title: "Data Engineering Basics",
-        subTopics: [
-          {
-            title: "Data Pipelines",
-            points: [
-              "Introduction to Data Engineering",
-              "Building ETL Pipelines",
-              "Data Transformation Techniques",
-              "Data Validation and Quality Checks",
-            ],
-          },
-          {
-            title: "Data Storage",
-            points: [
-              "Working with Data Lakes",
-              "Cloud Storage Solutions",
-              "Data Partitioning and Indexing",
-              "Optimizing Data Retrieval",
-            ],
-          },
-        ],
-      },
-      {
-        icon: FaRegFolderOpen,
-        title: "Soft Skills Class",
-        subTopics: [
-          {
-            title: "Advanced Communication",
-            points: [
-              "Persuasive Communication Techniques",
-              "Public Speaking for Impact",
-              "Managing Team Conflicts",
-              "Building Empathy in Leadership",
-            ],
-          },
-        ],
-      },
+    icon: PiMathOperationsBold,
+    title: "Module 4",
+    subtitle: "Operators and Expressions",
+    topics: [
+      "Arithmetic Operators",
+      "Comparison Operators",
+      "Logical Operators",
+      "Bitwise Operators",
+      "Expressions in Python",
     ],
   },
   {
-    icon: SiFlask,
-    title: "Semester 5",
-    subtitle: "Applied Programming and System Design",
-    mainTopics: [
-      {
-        icon: FaLaptopCode,
-        title: "Operating Systems Basics",
-        subTopics: [
-          {
-            title: "Understanding Operating Systems",
-            points: [
-              "Processes and Threads",
-              "Scheduling Algorithms",
-              "Deadlocks and Prevention Techniques",
-              "File Systems Basics",
-            ],
-          },
-          {
-            title: "Systems Programming",
-            points: [
-              "Introduction to Shell Scripting",
-              "Working with Linux Commands",
-              "Networking Basics",
-              "System Call Programming",
-            ],
-          },
-        ],
-      },
-      {
-        icon: SiDjango,
-        title: "Data Engineering Applications",
-        subTopics: [
-          {
-            title: "Real-World Data Engineering",
-            points: [
-              "Building Scalable Pipelines",
-              "Data Cleaning at Scale",
-              "Real-Time Data Processing",
-              "Integrating with Machine Learning Models",
-            ],
-          },
-        ],
-      },
-      {
-        icon: FaRegFolderOpen,
-        title: "Soft Skills Class",
-        subTopics: [
-          {
-            title: "Professional Development",
-            points: [
-              "Career Planning and Goal Setting",
-              "Building Personal Branding",
-              "Networking and Industry Etiquette",
-              "Coping with Stress and Burnout",
-            ],
-          },
-        ],
-      },
+    icon: FaQuestion,
+    title: "Module 5",
+    subtitle: "Conditional Statements",
+    topics: [
+      "The if Statement",
+      "The else Statement",
+      "The elif Statement",
+      "Nested Conditionals",
+      "Ternary Operators",
     ],
   },
   {
-    icon: FaDiagramProject,
-    title: "Semester 6",
-    subtitle: "Capstone Project and Portfolio Development",
-    mainTopics: [
-      {
-        icon: FaDiagramProject,
-        title: "Capstone Projects",
-        subTopics: [
-          {
-            title: "Project Development",
-            points: [
-              "Defining Objectives and Scope",
-              "Developing Full-Stack Applications",
-              "Testing and Debugging Final Projects",
-              "Showcasing Results and Outcomes",
-            ],
-          },
-          {
-            title: "Team Collaboration",
-            points: [
-              "Version Control with Git and GitHub",
-              "Peer Reviews and Feedback",
-              "Working in Collaborative Teams",
-              "Presentation of Final Deliverables",
-            ],
-          },
-        ],
-      },
-      {
-        icon: FaRegFolderOpen,
-        title: "Portfolio Development",
-        subTopics: [
-          {
-            title: "Creating a Portfolio",
-            points: [
-              "Highlighting Projects on GitHub",
-              "Writing Technical Blogs",
-              "Building a Personal Website",
-              "Recording Project Demonstrations",
-            ],
-          },
-          {
-            title: "Job Readiness",
-            points: [
-              "Preparing for Technical Interviews",
-              "Mastering Negotiation Skills",
-              "Understanding Global Industry Trends",
-              "Continuous Learning and Upskilling",
-            ],
-          },
-        ],
-      },
-      {
-        icon: FaRegFolderOpen,
-        title: "Soft Skills Class",
-        subTopics: [
-          {
-            title: "Industry Readiness",
-            points: [
-              "Developing an Entrepreneurial Mindset",
-              "Mastering Workplace Dynamics",
-              "Adapting to Emerging Technologies",
-              "Building Long-Term Career Vision",
-            ],
-          },
-        ],
-      },
+    icon: RiLoopLeftFill,
+    title: "Module 6",
+    subtitle: "Loops",
+    topics: [
+      "The for Loop",
+      "The while Loop",
+      "Nested Loops",
+      "Loop Control Statements",
+      "Iterators",
+    ],
+  },
+  {
+    icon: TbMathFunction,
+    title: "Module 7",
+    subtitle: "Functions",
+    topics: [
+      "Defining Functions",
+      "Function Arguments",
+      "Return Values",
+      "Scope and Lifetime",
+      "Lambda Functions",
+    ],
+  },
+  {
+    icon: FaCode,
+    title: "Module 8",
+    subtitle: "Number Crunching",
+    topics: [
+      "Mathematical Functions",
+      "Random Numbers",
+      "Statistics",
+      "NumPy Library",
+    ],
+  },
+  {
+    icon: FaCode,
+    title: "Module 9",
+    subtitle: "Patterns",
+    topics: [
+      "Pattern Matching",
+      "Regular Expressions",
+      "Wildcards",
+      "String Patterns",
+    ],
+  },
+  {
+    icon: FaCode,
+    title: "Module 10",
+    subtitle: "Arrays",
+    topics: [
+      "Introduction to Arrays",
+      "Array Operations",
+      "Multidimensional Arrays",
+      "Array Libraries",
+    ],
+  },
+  {
+    icon: FaCode,
+    title: "Module 11",
+    subtitle: "2D Arrays",
+    topics: [
+      "Introduction to 2D Arrays",
+      "2D Array Operations",
+      "Matrix Manipulations",
+      "Applications of 2D Arrays",
+    ],
+  },
+  {
+    icon: FaCode,
+    title: "Module 12",
+    subtitle: "Strings",
+    topics: [
+      "Introduction to Strings",
+      "String Operations",
+      "String Methods",
+      "String Formatting",
+    ],
+  },
+  {
+    icon: FaCode,
+    title: "Module 13",
+    subtitle: "Tuples",
+    topics: [
+      "Introduction to Tuples",
+      "Tuple Operations",
+      "Nested Tuples",
+      "Applications of Tuples",
+    ],
+  },
+  {
+    icon: FaCode,
+    title: "Module 14",
+    subtitle: "Dictionaries",
+    topics: [
+      "Introduction to Dictionaries",
+      "Dictionary Operations",
+      "Nested Dictionaries",
+      "Applications of Dictionaries",
+    ],
+  },
+  {
+    icon: FaCode,
+    title: "Module 15",
+    subtitle: "Sets",
+    topics: [
+      "Introduction to Sets",
+      "Set Operations",
+      "Set Methods",
+      "Applications of Sets",
+    ],
+  },
+  {
+    icon: FaCode,
+    title: "Module 16",
+    subtitle: "Working with Modules",
+    topics: [
+      "Introduction to Modules",
+      "Importing Modules",
+      "Creating Modules",
+      "Using Standard Library Modules",
+    ],
+  },
+  {
+    icon: FaRegFolderOpen,
+    title: "Module 17",
+    subtitle: "File Handling",
+    topics: [
+      "Introduction to File Handling",
+      "Reading Files",
+      "Writing to Files",
+      "Working with CSV Files",
+    ],
+  },
+  {
+    icon: AiOutlineExclamationCircle,
+    title: "Module 18",
+    subtitle: "Exception Handling",
+    topics: [
+      "Introduction to Exception Handling",
+      "Try and Except Blocks",
+      "Handling Multiple Exceptions",
+      "Creating Custom Exceptions",
     ],
   },
 ];
+
+export default syllabusData;

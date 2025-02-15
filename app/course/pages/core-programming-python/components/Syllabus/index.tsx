@@ -1,9 +1,8 @@
 "use client";
-import React, { useRef, useState } from "react";
-import styles from "./styles.module.css";
+import React, { useState, useRef } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
-import { BiMessageSquareDots } from "react-icons/bi"; // Import the icon
 import { syllabusData } from "./data/syllabusData";
+import { BiMessageSquareDots } from "react-icons/bi";
 
 const Syllabus: React.FC = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
@@ -13,119 +12,98 @@ const Syllabus: React.FC = () => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
 
-  // Function to determine the styles for main topic icons
-  const getMainTopicIconStyle = (mainIndex: number) => {
-    const styles = [
-      {
-        backgroundColor: "rgb(255, 221, 170)", // Light orange
-        color: "rgb(255, 157, 37)", // Orange
-      },
-      {
-        backgroundColor: "rgb(170, 255, 221)", // Light green
-        color: "rgb(0, 160, 107)", // Green
-      },
-      {
-        backgroundColor: "rgb(221, 214, 255)", // Light purple
-        color: "rgb(101, 78, 163)", // Purple
-      },
-    ];
-    return styles[mainIndex % styles.length]; // Cycle through styles
-  };
-
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <div className={styles.title}>Course Syllabus</div>
-        <div className={styles.subtitle}>
-          <div>10 Modules</div>
-          <div className={styles.line}></div>
-          <div>46 Topics</div>
-          <div className={styles.line}></div>
-          <div>500 problems</div>
+    <div className="w-full h-full flex flex-col">
+      {/* Header */}
+      <div className="flex flex-col gap-2">
+        <h2 className="text-2xl font-semibold">Course Syllabus</h2>
+        <div className="flex items-center gap-4 text-gray-500">
+          <span>{syllabusData.length} Modules</span>
+          <div className="h-5 w-px bg-gray-500"></div>
+          <span>
+            {syllabusData.reduce(
+              (acc, module) => acc + module.topics.length,
+              0
+            )}{" "}
+            Topics
+          </span>
         </div>
       </div>
-      <div className={styles.content}>
-        <div className={styles.SyllabusArea}>
-          {syllabusData.map((module, index) => {
-            const Icon = module.icon;
-            const isExpanded = expandedIndex === index;
 
-            return (
+      {/* Modules List */}
+      <div className="mt-6 flex flex-col gap-4 md:gap-6 w-full">
+        {syllabusData.map((module, index) => {
+          const Icon = module.icon;
+          const isExpanded = expandedIndex === index;
+
+          return (
+            <div
+              key={index}
+              className={`border border-gray-400 rounded-xl md:rounded-2xl p-2 md:p-3  transition duration-300 ${
+                isExpanded ? "border-blue-500" : "hover:border-blue-500"
+              }`}
+            >
+              {/* Module Header */}
               <div
-                key={index}
-                className={`${styles.list} ${
-                  isExpanded ? styles.expanded : ""
-                }`}
+                className="flex items-center gap-3 md:gap-4 cursor-pointer"
+                onClick={() => toggleExpand(index)}
               >
-                <div
-                  className={styles.listRow}
-                  onClick={() => toggleExpand(index)}
-                >
-                  <div className={styles.icon}>
-                    <Icon size={35} />
-                  </div>
-                  <div className={styles.lisContent}>
-                    <div className={styles.listStats}>
-                      <div className={styles.module}>{module.title}</div>
-                      <div className={styles.topic}>{module.subtitle}</div>
-                    </div>
-                    <div className={styles.DropdownIcon}>
-                      {isExpanded ? <FaAngleUp /> : <FaAngleDown />}
-                    </div>
-                  </div>
+                <div className=" p-3 md:p-4 flex items-center justify-center bg-blue-200 text-blue-600 rounded-lg md:rounded-xl">
+                  {/* Small screen (below md) - Icon size 25 */}
+                  <Icon className="block md:hidden" size={25} />
+
+                  {/* Large screen (md and above) - Icon size 35 */}
+                  <Icon className="hidden md:block" size={35} />
                 </div>
-                <div
-                  ref={(el) => {
-                    if (el) contentRefs.current[index] = el;
-                  }}
-                  className={styles.dropdownContent}
-                  style={{
-                    maxHeight: isExpanded
-                      ? contentRefs.current[index]?.scrollHeight
-                      : 0,
-                  }}
-                >
-                  {module.mainTopics.map((mainTopic, mainIndex) => {
-                    const iconStyle = getMainTopicIconStyle(mainIndex); // Get styles for the icon
-                    return (
-                      <div key={mainIndex} className={styles.contentlist}>
-                        <div className={styles.mainTopic}>
-                          <div
-                            className={styles.mainTopicIcon}
-                            style={{
-                              backgroundColor: iconStyle.backgroundColor,
-                              color: iconStyle.color,
-                            }}
-                          >
-                            <mainTopic.icon size={25} />
-                          </div>
-                          <span>{mainTopic.title}</span>
-                        </div>
-                        {mainTopic.subTopics.map((subTopic, subIndex) => (
-                          <div key={subIndex} className={styles.subTopics}>
-                            <h4>{subTopic.title}</h4>
-                            <ul>
-                              {subTopic.points.map((point, pointIndex) => (
-                                <li key={pointIndex}>
-                                  <BiMessageSquareDots
-                                    color="blue"
-                                    size={18}
-                                    style={{ marginRight: "8px" }}
-                                  />
-                                  {point}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </div>
-                    );
-                  })}
+
+                <div className="flex-1 flex justify-between items-center">
+                  <div>
+                    <h3 className="text-sm md:text-lg font-medium text-blue-700">
+                      {module.title}
+                    </h3>
+                    <p className="text-md md:text-xl font-semibold">
+                      {module.subtitle}
+                    </p>
+                  </div>
+                  <div className="text-blue-600 mr-1">
+                    {isExpanded ? (
+                      <FaAngleUp size={20} />
+                    ) : (
+                      <FaAngleDown size={20} />
+                    )}
+                  </div>
                 </div>
               </div>
-            );
-          })}
-        </div>
+
+              {/* Dropdown Content */}
+              <div
+                ref={(el) => {
+                  if (el) contentRefs.current[index] = el;
+                }}
+                className={`overflow-hidden transition-all duration-700 ease-in-out ${
+                  isExpanded
+                    ? "max-h-[500px] opacity-100 py-4"
+                    : "max-h-0 opacity-0 py-0"
+                }`}
+              >
+                {/* Topics List */}
+                <div className="p-4 rounded-lg shadow-sm">
+                  <ul className="space-y-2">
+                    {module.topics.map((topic, topicIndex) => (
+                      <li
+                        key={topicIndex}
+                        className="text-gray-700 text-sm md:text-lg flex gap-2 items-center"
+                      >
+                        <BiMessageSquareDots color="blue" />
+                        {topic}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
