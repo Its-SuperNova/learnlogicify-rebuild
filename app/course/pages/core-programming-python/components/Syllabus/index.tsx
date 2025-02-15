@@ -31,7 +31,7 @@ const Syllabus: React.FC = () => {
       </div>
 
       {/* Modules List */}
-      <div className="mt-6 flex flex-col gap-4 md:gap-6 w-full">
+      <div className="mt-6 flex flex-col gap-4 md:gap-5 w-full">
         {syllabusData.map((module, index) => {
           const Icon = module.icon;
           const isExpanded = expandedIndex === index;
@@ -39,7 +39,7 @@ const Syllabus: React.FC = () => {
           return (
             <div
               key={index}
-              className={`border border-gray-400 rounded-xl md:rounded-2xl p-2 md:p-3  transition duration-300 ${
+              className={`border border-gray-300 rounded-xl md:rounded-2xl p-2 md:p-3  transition duration-300 ${
                 isExpanded ? "border-blue-500" : "hover:border-blue-500"
               }`}
             >
