@@ -11,7 +11,31 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-const Hero = () => {
+interface HeroProps {
+  courseTitle: string;
+  instructor: string;
+  rating: number;
+  reviews: string;
+  courseIcon: React.ReactNode;
+  level: string;
+  liveClasses: string;
+  weekdays: string;
+  weekends: string;
+  totalHours: string;
+  topicsCount: string;
+  problemsCount: string;
+  projectsCount: string;
+  portalAccess: string;
+  sessionRecordings: string;
+  certificate: string;
+  originalPrice: number;
+  discountedPrice: number;
+  discountPercentage: number;
+  courseIntroVideo: string;
+  videoPoster: string;
+}
+
+const Hero: React.FC<HeroProps> = (props) => {
   return (
     <div className="w-full h-full flex flex-col gap-6 pt-4">
       <div className="flex flex-col">
@@ -26,30 +50,48 @@ const Hero = () => {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage className="font-medium">Python</BreadcrumbPage>
+              <BreadcrumbPage className="font-medium">
+                {props.courseTitle}
+              </BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
         <div className="text-2xl md:text-4xl font-semibold sm:text-3xl mt-2">
-          <p>Complete Python Mastery</p>
+          <p>{props.courseTitle}</p>
         </div>
         <div className="flex text-sm items-center mt-1 md:mt-2 ml-[3px]">
-          <p className="font-extrabold text-[#7A47FF]">Sachin</p>
+          <p className="font-extrabold text-[#7A47FF]">{props.instructor}</p>
           <div className="ml-2 flex items-center">
             <FaStar color="#FFD600" />
           </div>
           <div className="flex ml-2 gap-1">
-            <p className="font-medium">4.9</p>
-            <p className="font-normal text-gray-500">(5.2k Ratings)</p>
+            <p className="font-medium">{props.rating}</p>
+            <p className="font-normal text-gray-500">({props.reviews})</p>
           </div>
         </div>
       </div>
       <div className="flex gap-8 flex-col-reverse lg:flex-row">
         <div className="w-full lg:w-[400px]">
-          <Overview />
+          <Overview
+            courseIcon={props.courseIcon}
+            level={props.level}
+            liveClasses={props.liveClasses}
+            weekdays={props.weekdays}
+            weekends={props.weekends}
+            totalHours={props.totalHours}
+            topicsCount={props.topicsCount}
+            problemsCount={props.problemsCount}
+            projectsCount={props.projectsCount}
+            portalAccess={props.portalAccess}
+            sessionRecordings={props.sessionRecordings}
+            certificate={props.certificate}
+            originalPrice={props.originalPrice}
+            discountedPrice={props.discountedPrice}
+            discountPercentage={props.discountPercentage}
+          />
         </div>
         <div className="flex-1">
-          <Video src="/course-intro.mp4" poster="/images/thumbnail/image.png" />
+          <Video src={props.courseIntroVideo} poster={props.videoPoster} />
         </div>
       </div>
       <div className="opacity-1 mt-4">
@@ -81,35 +123,6 @@ const Hero = () => {
             <p className="text-md leading-6 md:text-lg md:leading-7">
               - Weekdays: 1 Hour per Day - Weekends: 3 Hours per Day - Total
               Duration: 90 Hours of Live Training
-            </p>
-          </div>
-        </div>
-        <div className="opacity-1">
-          <div className="flex flex-col gap-4">
-            <div className="text-2xl font-semibold">
-              Pre-requisites for this Course
-            </div>
-            <p className="text-md leading-6 md:text-lg md:leading-7">
-              Complete Python Mastery is designed for absolute beginners, so no
-              prior programming experience is required. However, a basic
-              understanding of mathematics and logical thinking can help grasp
-              programming concepts more efficiently.
-            </p>
-            <p className="text-md leading-6 md:text-lg md:leading-7">
-              To make the most of this course, students are expected to:
-            </p>
-            <p className="text-md leading-6 md:text-lg md:leading-7">
-              - Attend live classes regularly to actively participate in
-              discussions and hands-on coding. Complete weekly assignments and
-              work on 10+ real-world projects to reinforce learning. Utilize
-              the LMS portal to access session recordings, coding exercises, and
-              additional study materials for continuous learning.
-            </p>
-            <p className="text-md leading-6 md:text-lg md:leading-7">
-              Whether you are a beginner exploring Python for the first time or
-              someone looking to strengthen your programming skills, this course
-              will guide you step-by-step toward becoming a proficient Python
-              developer.
             </p>
           </div>
         </div>
