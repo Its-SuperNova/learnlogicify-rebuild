@@ -18,7 +18,7 @@ const Mobile = dynamic(() => import("./Mobile"), { ssr: false });
 const Course = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobileSidebarVisible, setIsMobileSidebarVisible] = useState(false);
-
+  
   const [filters, setFilters] = useState({
     language: "All",
     topic: "All",

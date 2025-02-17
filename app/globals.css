@@ -27,7 +27,18 @@ body {
     --radius: 0.5rem;
   }
 }
+/* Hide scrollbar for all browsers */
+::-webkit-scrollbar {
+  display: none;
+  /* Hide scrollbar in Webkit browsers */
+}
 
+html {
+  scrollbar-width: none;
+  /* Hide scrollbar in Firefox */
+  overflow-y: scroll;
+  /* Prevent layout shifting */
+}
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }

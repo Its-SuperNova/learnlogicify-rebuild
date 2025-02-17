@@ -7,7 +7,7 @@ import CertificateSection from "../common/CertificateSection";
 import CertificateProcess from "../common/CertificationProcess";
 import Footer from "@/app/components/common/Footer";
 import dynamic from "next/dynamic";
-
+import Faq from "../common/FAQ"
 const ScrollHandler = dynamic(
   () => import("@/app/components/Home/ScrollHandler"),
   {
@@ -26,6 +26,7 @@ const CoursePage = () => {
           <Syllabus />
           <CertificateSection />
           <CertificateProcess />
+          <Faq />
         </div>
       </div>
       <Footer />
