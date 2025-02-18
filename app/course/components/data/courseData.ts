@@ -42,7 +42,7 @@ export interface Course {
 
 const coursesData: Course[] = [
   {
-    url: "/courses/pages/c-programming",
+    url: "/course/pages/c-programming",
     Level: "Beginner",
     languageId: "c",
     topicId: "problem-solving", // ✅ Updated
@@ -60,7 +60,7 @@ const coursesData: Course[] = [
   },
 
   {
-    url: "/courses/pages/cpp-programming",
+    url: "/course/pages/cpp-programming",
     Level: "Beginner",
     languageId: "cpp",
     topicId: "problem-solving", // ✅ Updated

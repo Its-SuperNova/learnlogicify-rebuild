@@ -2,6 +2,7 @@ import React from "react";
 import { FaStar } from "react-icons/fa6";
 import Overview from "../OverviewCard";
 import Video from "../VideoSection";
+import { IoCaretForwardCircleOutline } from "react-icons/io5";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -16,7 +17,7 @@ interface HeroProps {
   instructor: string;
   rating: number;
   reviews: string;
-  courseIcon: React.ReactNode;
+  courseIcon: string;
   level: string;
   liveClasses: string;
   weekdays: string;
@@ -33,6 +34,11 @@ interface HeroProps {
   discountPercentage: number;
   courseIntroVideo: string;
   videoPoster: string;
+  aboutData: {
+    description: string[];
+    structure: string[];
+  };
+  prerequisites?: { text: string; link?: string; linkText?: string }[];
 }
 
 const Hero: React.FC<HeroProps> = (props) => {
@@ -72,61 +78,73 @@ const Hero: React.FC<HeroProps> = (props) => {
       </div>
       <div className="flex gap-8 flex-col-reverse lg:flex-row">
         <div className="w-full lg:w-[400px]">
-          <Overview
-            courseIcon={props.courseIcon}
-            level={props.level}
-            liveClasses={props.liveClasses}
-            weekdays={props.weekdays}
-            weekends={props.weekends}
-            totalHours={props.totalHours}
-            topicsCount={props.topicsCount}
-            problemsCount={props.problemsCount}
-            projectsCount={props.projectsCount}
-            portalAccess={props.portalAccess}
-            sessionRecordings={props.sessionRecordings}
-            certificate={props.certificate}
-            originalPrice={props.originalPrice}
-            discountedPrice={props.discountedPrice}
-            discountPercentage={props.discountPercentage}
-          />
+          <Overview {...props} />
         </div>
         <div className="flex-1">
           <Video src={props.courseIntroVideo} poster={props.videoPoster} />
         </div>
       </div>
-      <div className="opacity-1 mt-4">
-        <div className="opacity-1">
-          <div className="flex flex-col gap-4 mb-8">
-            <div className="text-2xl font-semibold">About This Course</div>
-            <p className="text-md leading-6 md:text-lg md:leading-7">
-              Complete Python Mastery is a live online training program designed
-              to take you from a beginner to an advanced-level Python developer.
-              This interactive course focuses on hands-on coding, real-world
-              projects, and problem-solving skills essential for mastering
-              Python.
+
+      {/* About This Course Section */}
+      <div className="mt-4">
+        <div className="flex flex-col gap-4">
+          <div className="text-2xl font-semibold">About This Course</div>
+          {props.aboutData.description.map((paragraph, index) => (
+            <p
+              key={index}
+              className="text-md leading-6 md:text-lg md:leading-7"
+            >
+              {paragraph}
             </p>
-            <p className="text-md leading-6 md:text-lg md:leading-7">
-              Unlike pre-recorded courses, this program offers live classes with
-              real-time instructor guidance, Q&A sessions, and coding exercises
-              to ensure an immersive learning experience.
-            </p>
-            <p className="text-md leading-6 md:text-lg md:leading-7">
-              The curriculum covers core programming concepts, data structures,
-              algorithms, object-oriented programming, and real-world
-              applications like database management, automation, and web
-              development. You will also work on 10+ industry-relevant projects
-              to build practical expertise.
-            </p>
-            <p className="text-md leading-6 md:text-lg md:leading-7">
-              Course Structure:
-            </p>
-            <p className="text-md leading-6 md:text-lg md:leading-7">
-              - Weekdays: 1 Hour per Day - Weekends: 3 Hours per Day - Total
-              Duration: 90 Hours of Live Training
-            </p>
+          ))}
+          <div className="flex flex-col gap-3">
+            <h1 className="text-lg font-semibold">Course Structure</h1>
+            <div className="flex flex-col gap-2">
+              {props.aboutData.structure.map((point, index) => (
+                <div key={index} className="flex items-center gap-1">
+                  <IoCaretForwardCircleOutline
+                    size={20}
+                    className="text-blue-500"
+                  />
+                  <p>{point}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Pre-requirements Section */}
+      {props.prerequisites && props.prerequisites.length > 0 && (
+        <div className="mt-6">
+          <div className="flex flex-col gap-4">
+            <div className="text-2xl font-semibold">Pre-requirements</div>
+            <div className="flex flex-col gap-2">
+              {props.prerequisites.map((requirement, index) => (
+                <div
+                  key={index}
+                  className="text-md leading-6 md:text-lg md:leading-7"
+                >
+                  {requirement.link ? (
+                    <p>
+                      {requirement.text}{" "}
+                      <a
+                        href={requirement.link}
+                        className="text-blue-500 underline hover:text-blue-700"
+                      >
+                        {requirement.linkText || "Learn More"}{" "}
+                        {/* <-- Dynamically use linkText */}
+                      </a>
+                    </p>
+                  ) : (
+                    <p>{requirement.text}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

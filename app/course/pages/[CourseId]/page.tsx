@@ -15,7 +15,7 @@ export default async function Page({
 }: {
   params: Promise<{ CourseId: string }>;
 }) {
-  const CourseArray = ["python"];
+  const CourseArray = ["c-programming","cpp-programming","python"];
   const CourseId = (await params).CourseId;
 
   const heroData = CourseData[CourseArray.indexOf(CourseId)];
@@ -25,7 +25,7 @@ export default async function Page({
       <Header />
       <div className="flex flex-col justify-center items-center pb-24">
         <div className="px-5 max-w-[1500px] flex flex-col gap-16 lg:px-[100px]">
-          <Hero {...heroData} />
+          <Hero {...heroData} aboutData={heroData.aboutData}/>
           <Syllabus syllabusData={heroData.syllabusData} />
           <Certificate
             imageUrl={heroData.certificateData.imageUrl}

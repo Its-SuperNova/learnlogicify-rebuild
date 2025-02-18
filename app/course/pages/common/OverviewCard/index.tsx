@@ -25,7 +25,6 @@ interface OverviewProps {
   discountedPrice: number;
   discountPercentage: number;
 }
-const IconArray = [<IoLogoPython size={25} />];
 const iconMap: Record<string, React.ElementType> = {
   FaCode,
   IoLogoPython,
@@ -54,7 +53,7 @@ const Overview: React.FC<OverviewProps> = ({
         <div className="flex justify-between items-center">
           <div className="text-xl font-semibold ml-2">Course Overview</div>
           <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-            {IconComponent && <IconComponent size={30} />}
+            {IconComponent && <IconComponent size={25} />}
           </div>
         </div>
         <div className="pt-2 pl-5 flex md:gap-8 flex-col md:flex-row lg:flex-col lg:gap-0 text-md">

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
-import { FaCode, FaPython, FaQuestion, FaRegFolderOpen } from "react-icons/fa";
+import { FaCode, FaProjectDiagram, FaPython, FaQuestion, FaRegFolderOpen } from "react-icons/fa";
 import { IoCubeOutline, IoLogoPython } from "react-icons/io5";
 import { PiMathOperationsBold } from "react-icons/pi";
 import { RiLoopLeftFill } from "react-icons/ri";
@@ -17,7 +17,7 @@ import { RiBracketsLine } from "react-icons/ri";
 import { TbListNumbers } from "react-icons/tb";
 import { GoDatabase } from "react-icons/go";
 import { MdOutlineLibraryBooks } from "react-icons/md";
-
+import { HiMiniComputerDesktop } from "react-icons/hi2";
 // **STEP 1: Define Icon Mapping**
 const iconMap: Record<string, React.ElementType> = {
   FaCode,
@@ -38,6 +38,8 @@ const iconMap: Record<string, React.ElementType> = {
   TbListNumbers,
   GoDatabase,
   MdOutlineLibraryBooks,
+  FaProjectDiagram,
+  HiMiniComputerDesktop,
 };
 
 interface SyllabusModule {
