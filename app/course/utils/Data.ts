@@ -308,9 +308,9 @@ export const CourseData = [
     },
     prerequisites: [
       {
-        text: "For a strong foundation in programming, we recommend completing the 'C Programming for Beginners' course.",
-        link: "/course/c-programming",
-        linkText: "Check C Programming Course",
+        text: "No prior programming experience is required for this course, making it ideal for complete beginners. However, if you want to develop a solid understanding of fundamental programming concepts, such as variables, data types, control structures, and basic problem-solving techniques, before diving into C++, we highly recommend starting with a foundational course. Strengthening your core programming skills can make it easier to grasp C++'s advanced concepts and syntax. To build a strong base and ensure a smooth learning journey, you may Check out our",
+        link: "/course/pages/c-programming",
+        linkText: "C Programming Course",
       },
     ],
     certificateData: {
@@ -599,6 +599,13 @@ export const CourseData = [
         "Total Duration: 90 Hours of Live Training",
       ],
     },
+    prerequisites: [
+      {
+        text: "No prior programming experience is required for this course, making it ideal for complete beginners. However, if you want to develop a solid understanding of fundamental programming concepts, such as variables, data types, control structures, and basic problem-solving techniques, before diving into Python, we highly recommend starting with a foundational course. Strengthening your core programming skills can make it easier to grasp Python’s advanced concepts and syntax. To build a strong base and ensure a smooth learning journey, you may Check out our",
+        link: "/course/pages/c-programming",
+        linkText: "C Programming Course",
+      },
+    ],
     certificateData: {
       imageUrl: "/images/certificate/c-1.png",
       title: "Certificate of the Course",
@@ -633,7 +640,7 @@ export const CourseData = [
       {
         title: "What are the prerequisites for this course?",
         description:
-          "This course is beginner-friendly and requires no prior programming experience. However, basic logical thinking and problem-solving skills will be helpful in understanding Python concepts.",
+          "This course is designed for absolute beginners and requires no prior programming experience. However, if you want to strengthen your understanding of fundamental programming concepts such as variables, data types, control structures, and basic problem-solving techniques before learning Python, we recommend starting with a foundational course. Developing logical thinking and problem-solving skills will help you grasp Python concepts more effectively. You may Check out our C Programming Course for a strong foundation.",
       },
       {
         title: "Will I get access to recorded sessions?",
@@ -872,7 +879,7 @@ export const CourseData = [
       },
       {
         icon: "FaProjectDiagram",
-        title: "Module 16",
+        title: "Module 19",
         subtitle: "Project Building",
         topics: [
           "Understanding Project Requirements",

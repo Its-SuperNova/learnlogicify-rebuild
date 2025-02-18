@@ -27,7 +27,7 @@ const FAQ: React.FC<FAQProps> = ({ faqs }) => {
       <h1 className="uppercase text-center text-4xl font-bold pt-2 pb-4">
         FAQ
       </h1>
-      <div className="h-fit border rounded-lg p-2">
+      <div className="h-fit border rounded-lg p-3">
         {faqs.map((tab, index) => (
           <motion.div
             key={index}
@@ -36,7 +36,7 @@ const FAQ: React.FC<FAQProps> = ({ faqs }) => {
             }`}
             onClick={() => handleClick(index)}
           >
-            <button className="p-3 px-2 w-full cursor-pointer sm:text-base text-xs items-center transition-all font-normal text-black flex gap-2">
+            <button className="p-4 px-2 w-full cursor-pointer md:text-xl text-sm items-center transition-all font-normal text-black flex gap-2">
               <Plus
                 className={`${
                   activeIndex === index ? "rotate-45" : "rotate-0"
@@ -56,7 +56,7 @@ const FAQ: React.FC<FAQProps> = ({ faqs }) => {
                     delay: 0.14,
                   }}
                 >
-                  <p className="font-light text-black p-3 xl:text-base sm:text-sm text-xs pt-0 w-[90%]">
+                  <p className="font-light text-black p-3 md:text-lg  text-sm pt-0 w-[90%]">
                     {tab.description}
                   </p>
                 </motion.div>

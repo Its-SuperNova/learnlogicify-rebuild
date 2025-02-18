@@ -113,8 +113,6 @@ const Hero: React.FC<HeroProps> = (props) => {
           </div>
         </div>
       </div>
-
-      {/* Pre-requirements Section */}
       {props.prerequisites && props.prerequisites.length > 0 && (
         <div className="mt-6">
           <div className="flex flex-col gap-4">
@@ -133,7 +131,6 @@ const Hero: React.FC<HeroProps> = (props) => {
                         className="text-blue-500 underline hover:text-blue-700"
                       >
                         {requirement.linkText || "Learn More"}{" "}
-                        {/* <-- Dynamically use linkText */}
                       </a>
                     </p>
                   ) : (
