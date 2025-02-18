@@ -17,7 +17,6 @@ import {
 } from "react-icons/fa";
 import { SiCplusplus, SiGoland, SiRuby, SiMongodb } from "react-icons/si";
 import { MdComputer, MdCalculate, MdOutlineCategory } from "react-icons/md";
-import { IoExtensionPuzzle } from "react-icons/io5";
 import { SlGraph } from "react-icons/sl";
 import { FaChalkboardUser } from "react-icons/fa6";
 import { IoLogoHtml5 } from "react-icons/io";
@@ -150,7 +149,7 @@ const coursesData: Course[] = [
   },
 
   {
-    url: "/courses/pages/dsa-java",
+    url: "/course/pages/ds-java",
     Level: "Intermediate",
     languageId: "java",
     topicId: "data-structures",

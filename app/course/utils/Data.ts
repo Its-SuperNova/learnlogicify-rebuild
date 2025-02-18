@@ -2474,4 +2474,247 @@ export const CourseData = [
     ],
   },
   // Ds-java
+  {
+    courseTitle: "Data Structures in Java",
+    instructor: "Sachin",
+    rating: 4.9,
+    reviews: "4.8k Ratings",
+    courseIcon: "FaJava",
+    level: "Intermediate",
+    liveClasses: "Live Classes",
+    weekdays: "Weekdays: 1 Hour/Day",
+    weekends: "Weekends: 3 Hours/Day",
+    totalHours: "Total: 100 Hours",
+    topicsCount: "15 Topics",
+    problemsCount: "350+ Problems",
+    projectsCount: "5+ Projects using Java",
+    portalAccess: "LMS Portal Access (6 Months)",
+    sessionRecordings: "Session Recordings in LMS",
+    certificate: "Certificate of Completion",
+    originalPrice: 5999,
+    discountedPrice: 2999,
+    discountPercentage: 50,
+    courseIntroVideo: "/course-intro.mp4",
+    videoPoster: "/images/thumbnail/image.png",
+    aboutData: {
+      description: [
+        "The Data Structures in Java course is designed to help learners build a strong foundation in fundamental and advanced data structures using the Java programming language. This course will introduce students to arrays, linked lists, stacks, queues, trees, graphs, and advanced Java concepts such as collections framework and multi-threading.",
+        "This course focuses on hands-on coding exercises, real-world applications, and algorithmic problem-solving using Java.",
+        "By the end of this course, you will have a solid foundation in data structures and algorithms, which is essential for acing coding interviews and improving problem-solving skills.",
+      ],
+      structure: [
+        "Weekdays: 1 Hour per Day",
+        "Weekends: 3 Hours per Day",
+        "Total Duration: 100 Hours of Live Training",
+      ],
+    },
+    prerequisites: [
+      {
+        text: "A basic understanding of Java programming is required for this course, including knowledge of variables, loops, functions, and object-oriented programming (OOP) concepts. If you're new to Java, we recommend starting with our",
+        link: "/course/pages/java-programming",
+        linkText: "Java Programming for Beginners Course",
+      },
+    ],
+    certificateData: {
+      imageUrl: "/images/certificate/c-1.png",
+      title: "Certificate of the Course",
+      description:
+        "Upon successfully completing the course, you will be awarded the prestigious Certificate of Excellence from LearnLogicify Technologies. This certificate is a testament to your dedication and mastery of Java data structures, showcasing your commitment to continuous learning and problem-solving. It will be a valuable addition to your professional portfolio, helping you stand out to potential employers and opening doors to new career opportunities.",
+      certificateLink: "/images/certificate/c-1.png",
+    },
+    certificationProcessData: {
+      title: "Certification Process and Requirements",
+      description: [
+        "Upon successfully completing the Data Structures in Java course, you will be required to take a final assessment to qualify for certification.",
+        "This assessment evaluates your understanding of data structures, memory management, and problem-solving skills using Java programming.",
+        "It is conducted under structured guidelines to ensure fairness and integrity.",
+      ],
+      assessmentDetails:
+        "The final assessment is for 100 marks and contributes 100% to your certification score. Throughout the course, students are encouraged to solve practice problems and complete exercises to strengthen their understanding, but these do not contribute to the final certification score.",
+      criteriaTitle:
+        "To be eligible for the certificate, you must meet the following criteria",
+      criteria: ["Achieve a score of 50% or more in the final assessment."],
+      retakeInfo:
+        "If this condition is met, you will receive a certificate of completion for the Data Structures in Java course. If you do not achieve the required score, you will have the opportunity to retake the final assessment once.",
+      finalNote:
+        "This structured evaluation ensures that only those who demonstrate a solid understanding of the course material and its applications are awarded the certificate, maintaining the integrity and value of the certification.",
+    },
+    faqData: [
+      {
+        title: "What is the format of this course?",
+        description:
+          "Data Structures in Java is a live online training program with interactive sessions. Classes are conducted in real-time with hands-on coding, Q&A sessions, and instructor-led discussions.",
+      },
+      {
+        title: "What are the prerequisites for this course?",
+        description:
+          "A basic understanding of Java programming is required. You should be familiar with OOP concepts, functions, and loops before starting this course.",
+      },
+      {
+        title: "Will I get access to recorded sessions?",
+        description:
+          "Yes! All live session recordings will be available in the LMS portal. You can revisit them anytime within the 6-month access period.",
+      },
+      {
+        title: "What projects will I work on?",
+        description:
+          "You will work on 5+ real-world projects covering data structure implementations like linked lists, trees, stacks, queues, graphs, and sorting algorithms.",
+      },
+      {
+        title: "How long is the course and schedule?",
+        description:
+          "The course spans 100 hours: 1-hour sessions on weekdays and 3-hour sessions on weekends. This ensures a balanced learning experience.",
+      },
+      {
+        title: "Do I get a certificate upon completion?",
+        description:
+          "Yes! After successfully completing the course and assessment, you will receive a Certificate of Completion from LearnLogicify Technologies.",
+      },
+      {
+        title: "What kind of support will I receive?",
+        description:
+          "You will receive 24/7 LMS access, live Q&A sessions, community discussions, and mentor support for doubt resolution.",
+      },
+      {
+        title: "Is there a final assessment?",
+        description:
+          "Yes, you will take a final assessment to qualify for the certificate. It consists of coding challenges and a project submission.",
+      },
+    ],
+    syllabusData: [
+      {
+        icon: "FaJava",
+        title: "Module 1",
+        subtitle: "Pointers and Memory Management",
+        topics: [
+          "Introduction to Pointers in Java",
+          "Understanding Heap and Stack Memory",
+          "Garbage Collection in Java",
+          "Java Memory Management Techniques",
+        ],
+      },
+      {
+        icon: "IoCubeOutline",
+        title: "Module 2",
+        subtitle: "OOP in Java",
+        topics: [
+          "Encapsulation and Data Hiding",
+          "Inheritance and Polymorphism",
+          "Interfaces and Abstract Classes",
+          "Exception Handling in Java",
+          "Java Collections Framework",
+        ],
+      },
+      {
+        icon: "FaCode",
+        title: "Module 3",
+        subtitle: "Recursion",
+        topics: [
+          "Understanding Recursion",
+          "Tail Recursion vs Head Recursion",
+          "Backtracking Problems",
+          "Real-world Applications of Recursion",
+        ],
+      },
+      {
+        icon: "TbBinaryTree2",
+        title: "Module 4",
+        subtitle: "Singly Linked List",
+        topics: [
+          "Introduction to Linked Lists",
+          "Insertion and Deletion Operations",
+          "Reversing a Linked List",
+          "Detecting Loops in Linked List",
+        ],
+      },
+      {
+        icon: "TbBinaryTree2",
+        title: "Module 5",
+        subtitle: "Doubly Linked List",
+        topics: [
+          "Introduction to Doubly Linked List",
+          "Insertion and Deletion in Doubly Linked List",
+          "Traversal in Both Directions",
+          "Applications of Doubly Linked List",
+        ],
+      },
+      {
+        icon: "FaCode",
+        title: "Module 6",
+        subtitle: "Stacks",
+        topics: [
+          "Understanding Stack Data Structure",
+          "Stack Operations (Push, Pop, Peek)",
+          "Stack Implementation using Arrays and Linked Lists",
+          "Applications of Stack (Expression Evaluation, Backtracking)",
+        ],
+      },
+      {
+        icon: "IoCubeOutline",
+        title: "Module 7",
+        subtitle: "Queues",
+        topics: [
+          "Introduction to Queue",
+          "Queue Operations (Enqueue, Dequeue, Front, Rear)",
+          "Circular Queue Implementation",
+          "Priority Queue and Applications",
+        ],
+      },
+      {
+        icon: "TbBinaryTree2",
+        title: "Module 8",
+        subtitle: "Trees",
+        topics: [
+          "Binary Trees & Binary Search Trees",
+          "Tree Traversal Techniques (Inorder, Preorder, Postorder)",
+          "AVL Trees & Red-Black Trees",
+          "Applications of Trees",
+        ],
+      },
+      {
+        icon: "RiLoopLeftFill",
+        title: "Module 9",
+        subtitle: "Graphs",
+        topics: [
+          "Graph Representations (Adjacency List & Matrix)",
+          "Graph Traversal Algorithms (DFS & BFS)",
+          "Shortest Path Algorithms (Dijkstra, Floyd-Warshall)",
+          "Minimum Spanning Trees (Kruskal, Prim’s Algorithm)",
+        ],
+      },
+      {
+        icon: "TbBinaryTree2",
+        title: "Module 10",
+        subtitle: "Hashing & Hash Tables",
+        topics: [
+          "Introduction to Hashing",
+          "Hash Tables and Collision Handling",
+          "Open Addressing vs Chaining",
+          "Applications of Hashing in Java",
+        ],
+      },
+      {
+        icon: "PiMathOperationsBold",
+        title: "Module 11",
+        subtitle: "Sorting and Searching Algorithms",
+        topics: [
+          "Bubble Sort, Merge Sort, Quick Sort",
+          "Binary Search vs Linear Search",
+          "Heap Sort and Radix Sort",
+          "Time Complexity Analysis",
+        ],
+      },
+      {
+        icon: "FaProjectDiagram",
+        title: "Module 12",
+        subtitle: "Project Building",
+        topics: [
+          "Building a Data Structure-Based Java Application",
+          "Solving Real-World Problems using Java",
+          "Performance Optimization Techniques",
+          "Final Project Review and Submission",
+        ],
+      },
+    ],
+  },
 ];
