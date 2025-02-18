@@ -1,6 +1,6 @@
 import React from "react";
 import { BiSolidBarChartAlt2 } from "react-icons/bi";
-import { FaBook, FaCode } from "react-icons/fa";
+import { FaBook, FaCode, FaJava } from "react-icons/fa";
 import { IoExtensionPuzzleSharp, IoLogoPython } from "react-icons/io5";
 import { PiSidebarFill, PiCertificate } from "react-icons/pi";
 import { MdOutlineAccessTimeFilled, MdOutlineLiveTv } from "react-icons/md";
@@ -28,6 +28,7 @@ interface OverviewProps {
 const iconMap: Record<string, React.ElementType> = {
   FaCode,
   IoLogoPython,
+  FaJava,
 };
 const Overview: React.FC<OverviewProps> = ({
   courseIcon,

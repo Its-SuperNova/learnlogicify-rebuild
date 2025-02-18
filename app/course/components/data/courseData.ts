@@ -78,7 +78,7 @@ const coursesData: Course[] = [
   },
 
   {
-    url: "/courses/pages/java",
+    url: "/course/pages/java",
     Level: "Beginner",
     languageId: "java",
     topicId: "problem-solving", // ✅ Updated
@@ -114,7 +114,7 @@ const coursesData: Course[] = [
   },
 
   {
-    url: "/courses/pages/go",
+    url: "/course/pages/go-programming",
     Level: "Beginner",
     languageId: "go",
     topicId: "problem-solving", // ✅ Updated

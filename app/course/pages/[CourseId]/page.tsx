@@ -15,7 +15,13 @@ export default async function Page({
 }: {
   params: Promise<{ CourseId: string }>;
 }) {
-  const CourseArray = ["c-programming","cpp-programming","python"];
+  const CourseArray = [
+    "c-programming",
+    "cpp-programming",
+    "java",
+    "python",
+    "go-programming",
+  ];
   const CourseId = (await params).CourseId;
 
   const heroData = CourseData[CourseArray.indexOf(CourseId)];
