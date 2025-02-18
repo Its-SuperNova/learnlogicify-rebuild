@@ -9,6 +9,7 @@ import Footer from "@/app/components/common/Footer";
 import ScrollHandlerWrapper from "@/app/components/Home/ScrollHandler";
 import FAQ from "../common/FAQ";
 import { CourseData } from "../../utils/Data";
+
 export default async function Page({
   params,
 }: {
@@ -25,7 +26,7 @@ export default async function Page({
       <div className="flex flex-col justify-center items-center pb-24">
         <div className="px-5 max-w-[1500px] flex flex-col gap-16 lg:px-[100px]">
           <Hero {...heroData} />
-          <Syllabus/>
+          <Syllabus syllabusData={heroData.syllabusData} />
           <Certificate
             imageUrl={heroData.certificateData.imageUrl}
             title={heroData.certificateData.title}

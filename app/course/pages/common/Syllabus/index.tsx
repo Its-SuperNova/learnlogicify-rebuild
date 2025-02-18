@@ -1,130 +1,53 @@
 "use client";
 import React, { useState, useRef } from "react";
-import { FaAngleDown, FaAngleUp, FaCode, FaPython } from "react-icons/fa6";
-import { IoCubeOutline } from "react-icons/io5";
+import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
+import { FaCode, FaPython, FaQuestion, FaRegFolderOpen } from "react-icons/fa";
+import { IoCubeOutline, IoLogoPython } from "react-icons/io5";
 import { PiMathOperationsBold } from "react-icons/pi";
-import { FaQuestion } from "react-icons/fa";
 import { RiLoopLeftFill } from "react-icons/ri";
 import { TbMathFunction } from "react-icons/tb";
-import { FaRegFolderOpen } from "react-icons/fa";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import { BiMessageSquareDots } from "react-icons/bi";
+import { MdOutlineCalculate } from "react-icons/md";
+import { TbBinaryTree2 } from "react-icons/tb";
+import { IoMdApps } from "react-icons/io";
+import { BsBraces } from "react-icons/bs";
+import { VscRegex } from "react-icons/vsc";
+import { RiBracketsLine } from "react-icons/ri";
+import { TbListNumbers } from "react-icons/tb";
+import { GoDatabase } from "react-icons/go";
+import { MdOutlineLibraryBooks } from "react-icons/md";
+
+// **STEP 1: Define Icon Mapping**
+const iconMap: Record<string, React.ElementType> = {
+  FaCode,
+  FaPython,
+  IoCubeOutline,
+  PiMathOperationsBold,
+  FaQuestion,
+  RiLoopLeftFill,
+  TbMathFunction,
+  FaRegFolderOpen,
+  AiOutlineExclamationCircle,
+  MdOutlineCalculate,
+  TbBinaryTree2,
+  IoMdApps,
+  BsBraces,
+  VscRegex,
+  RiBracketsLine,
+  TbListNumbers,
+  GoDatabase,
+  MdOutlineLibraryBooks,
+};
 
 interface SyllabusModule {
-  icon: React.ElementType;
+  icon: string; // icon name as a string
   title: string;
   subtitle: string;
   topics: string[];
 }
 
-const syllabusData: SyllabusModule[] = [
-  {
-    icon: FaCode,
-    title: "Module 1",
-    subtitle: "Introduction to Computers",
-    topics: [
-      "Overview of computer systems",
-      "The role of Programming Language",
-      "Understanding binary and data representation",
-      "Number Conversions",
-    ],
-  },
-  {
-    icon: FaPython,
-    title: "Module 2",
-    subtitle: "Introduction to Python",
-    topics: [
-      "Overview of Python",
-      "Setting up the Python environment",
-      "Writing and running your first Python program",
-      "Understanding Python’s syntax and structure",
-    ],
-  },
-  {
-    icon: IoCubeOutline,
-    title: "Module 3",
-    subtitle: "Variables and Data Types",
-    topics: [
-      "Introduction to Variables",
-      "Primitive Data Types",
-      "Composite Data Types",
-      "Type Conversion",
-      "Mutable and Immutable Types",
-    ],
-  },
-  {
-    icon: PiMathOperationsBold,
-    title: "Module 4",
-    subtitle: "Operators and Expressions",
-    topics: [
-      "Arithmetic Operators",
-      "Comparison Operators",
-      "Logical Operators",
-      "Bitwise Operators",
-      "Expressions in Python",
-    ],
-  },
-  {
-    icon: FaQuestion,
-    title: "Module 5",
-    subtitle: "Conditional Statements",
-    topics: [
-      "The if Statement",
-      "The else Statement",
-      "The elif Statement",
-      "Nested Conditionals",
-      "Ternary Operators",
-    ],
-  },
-  {
-    icon: RiLoopLeftFill,
-    title: "Module 6",
-    subtitle: "Loops",
-    topics: [
-      "The for Loop",
-      "The while Loop",
-      "Nested Loops",
-      "Loop Control Statements",
-      "Iterators",
-    ],
-  },
-  {
-    icon: TbMathFunction,
-    title: "Module 7",
-    subtitle: "Functions",
-    topics: [
-      "Defining Functions",
-      "Function Arguments",
-      "Return Values",
-      "Scope and Lifetime",
-      "Lambda Functions",
-    ],
-  },
-  {
-    icon: FaRegFolderOpen,
-    title: "Module 17",
-    subtitle: "File Handling",
-    topics: [
-      "Introduction to File Handling",
-      "Reading Files",
-      "Writing to Files",
-      "Working with CSV Files",
-    ],
-  },
-  {
-    icon: AiOutlineExclamationCircle,
-    title: "Module 18",
-    subtitle: "Exception Handling",
-    topics: [
-      "Introduction to Exception Handling",
-      "Try and Except Blocks",
-      "Handling Multiple Exceptions",
-      "Creating Custom Exceptions",
-    ],
-  },
-];
-
-const Syllabus: React.FC = () => {
+const Syllabus = ({ syllabusData }: { syllabusData: SyllabusModule[] }) => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const contentRefs = useRef<HTMLDivElement[]>([]);
 
@@ -151,8 +74,8 @@ const Syllabus: React.FC = () => {
 
       <div className="mt-6 flex flex-col gap-4 md:gap-5 w-full">
         {syllabusData.map((module, index) => {
-          const Icon = module.icon;
           const isExpanded = expandedIndex === index;
+          const IconComponent = iconMap[module.icon]; // Get icon component from mapping
 
           return (
             <div
@@ -166,8 +89,7 @@ const Syllabus: React.FC = () => {
                 onClick={() => toggleExpand(index)}
               >
                 <div className="p-3 md:p-4 flex items-center justify-center bg-blue-200 text-blue-600 rounded-lg md:rounded-xl">
-                  <Icon className="block md:hidden" size={25} />
-                  <Icon className="hidden md:block" size={35} />
+                  {IconComponent && <IconComponent size={30} />}
                 </div>
                 <div className="flex-1 flex justify-between items-center">
                   <div>

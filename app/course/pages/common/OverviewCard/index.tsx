@@ -1,6 +1,6 @@
 import React from "react";
 import { BiSolidBarChartAlt2 } from "react-icons/bi";
-import { FaBook } from "react-icons/fa";
+import { FaBook, FaCode } from "react-icons/fa";
 import { IoExtensionPuzzleSharp, IoLogoPython } from "react-icons/io5";
 import { PiSidebarFill, PiCertificate } from "react-icons/pi";
 import { MdOutlineAccessTimeFilled, MdOutlineLiveTv } from "react-icons/md";
@@ -9,7 +9,7 @@ import { TbCube } from "react-icons/tb";
 import Link from "next/link";
 
 interface OverviewProps {
-  courseIcon: React.ReactNode;
+  courseIcon: string;
   level: string;
   liveClasses: string;
   weekdays: string;
@@ -26,6 +26,10 @@ interface OverviewProps {
   discountPercentage: number;
 }
 const IconArray = [<IoLogoPython size={25} />];
+const iconMap: Record<string, React.ElementType> = {
+  FaCode,
+  IoLogoPython,
+};
 const Overview: React.FC<OverviewProps> = ({
   courseIcon,
   level,
@@ -43,13 +47,14 @@ const Overview: React.FC<OverviewProps> = ({
   discountedPrice,
   discountPercentage,
 }) => {
+  const IconComponent = iconMap[courseIcon];
   return (
     <div className="w-full lg:w-[400px] border border-gray-300 rounded-2xl p-3 flex flex-col">
       <div className="w-full h-auto rounded-2xl bg-[#E2D8FC] px-3 py-7">
         <div className="flex justify-between items-center">
           <div className="text-xl font-semibold ml-2">Course Overview</div>
           <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-            {IconArray[courseIcon as number]}
+            {IconComponent && <IconComponent size={30} />}
           </div>
         </div>
         <div className="pt-2 pl-5 flex md:gap-8 flex-col md:flex-row lg:flex-col lg:gap-0 text-md">
