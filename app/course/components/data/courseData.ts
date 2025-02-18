@@ -96,7 +96,7 @@ const coursesData: Course[] = [
   },
 
   {
-    url: "/courses/pages/python",
+    url: "/course/pages/python",
     Level: "Beginner",
     languageId: "python",
     topicId: "problem-solving", // ✅ Updated

@@ -1,7 +1,7 @@
 import React from "react";
 import { BiSolidBarChartAlt2 } from "react-icons/bi";
 import { FaBook } from "react-icons/fa";
-import { IoExtensionPuzzleSharp } from "react-icons/io5";
+import { IoExtensionPuzzleSharp, IoLogoPython } from "react-icons/io5";
 import { PiSidebarFill, PiCertificate } from "react-icons/pi";
 import { MdOutlineAccessTimeFilled, MdOutlineLiveTv } from "react-icons/md";
 import { IoMdTime } from "react-icons/io";
@@ -25,7 +25,7 @@ interface OverviewProps {
   discountedPrice: number;
   discountPercentage: number;
 }
-
+const IconArray = [<IoLogoPython size={25} />];
 const Overview: React.FC<OverviewProps> = ({
   courseIcon,
   level,
@@ -49,7 +49,7 @@ const Overview: React.FC<OverviewProps> = ({
         <div className="flex justify-between items-center">
           <div className="text-xl font-semibold ml-2">Course Overview</div>
           <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-            {courseIcon}
+            {IconArray[courseIcon as number]}
           </div>
         </div>
         <div className="pt-2 pl-5 flex md:gap-8 flex-col md:flex-row lg:flex-col lg:gap-0 text-md">
@@ -128,6 +128,3 @@ const Overview: React.FC<OverviewProps> = ({
 };
 
 export default Overview;
-
-
-
