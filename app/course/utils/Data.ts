@@ -1734,4 +1734,239 @@ export const CourseData = [
       },
     ],
   },
+
+  {
+    courseTitle: "Data Structures in Python",
+    instructor: "Sachin",
+    rating: 4.9,
+    reviews: "6.2k Ratings",
+    courseIcon: "FaPython",
+    level: "Intermediate",
+    liveClasses: "Live Classes",
+    weekdays: "Weekdays: 1 Hour/Day",
+    weekends: "Weekends: 3 Hours/Day",
+    totalHours: "Total: 100 Hours",
+    topicsCount: "20+ Topics",
+    problemsCount: "300+ Problems",
+    projectsCount: "12+ Projects using Python",
+    portalAccess: "LMS Portal Access (6 Months)",
+    sessionRecordings: "Session Recordings in LMS",
+    certificate: "Certificate of Completion",
+    originalPrice: 5999,
+    discountedPrice: 2999,
+    discountPercentage: 50,
+    courseIntroVideo: "/course-intro.mp4",
+    videoPoster: "/images/thumbnail/image.png",
+    aboutData: {
+      description: [
+        "Data Structures in Python is an in-depth course designed to teach students the fundamental and advanced concepts of data structures using Python. This course focuses on hands-on coding, real-world problem-solving, and algorithmic thinking.",
+        "Through interactive live classes, students will learn how to efficiently store, retrieve, and manipulate data using various data structures. Concepts such as arrays, linked lists, stacks, queues, trees, graphs, hash tables, and heaps will be covered in detail.",
+        "In addition, students will work on real-world projects and competitive programming challenges to solidify their understanding and prepare for coding interviews.",
+      ],
+      structure: [
+        "Weekdays: 1 Hour per Day",
+        "Weekends: 3 Hours per Day",
+        "Total Duration: 100 Hours of Live Training",
+      ],
+    },
+    prerequisites: [
+      {
+        text: "A basic understanding of Python programming is required for this course. If you're new to Python, we recommend starting with a beginner-level course to grasp essential programming concepts before diving into data structures. A strong foundation in variables, loops, functions, and object-oriented programming will be beneficial. To prepare, you can check out our",
+        link: "/course/pages/python-for-beginners",
+        linkText: "Python for Beginners Course",
+      },
+    ],
+    certificateData: {
+      imageUrl: "/images/certificate/c-1.png",
+      title: "Certificate of the Course",
+      description:
+        "Upon successfully completing this course, you will be awarded the prestigious Certificate of Excellence from LearnLogicify Technologies. This certificate showcases your expertise in Python Data Structures, making you stand out to potential employers.",
+      certificateLink: "/images/certificate/c-1.png",
+    },
+    certificationProcessData: {
+      title: "Certification Process and Requirements",
+      description: [
+        "Upon completing the Data Structures in Python course, students must take a final assessment to qualify for certification.",
+        "The final assessment evaluates your proficiency in implementing and optimizing data structures, along with algorithmic problem-solving skills.",
+        "Students are encouraged to participate in live problem-solving sessions and complete exercises throughout the course.",
+      ],
+      assessmentDetails:
+        "The final assessment consists of multiple coding challenges and contributes 100% to your certification score.",
+      criteriaTitle:
+        "To be eligible for the certificate, you must meet the following criteria",
+      criteria: ["Achieve a score of 50% or more in the final assessment."],
+      retakeInfo:
+        "If you do not achieve the required score, you will have the opportunity to retake the assessment once.",
+      finalNote:
+        "This certification ensures that only students who demonstrate a strong grasp of data structures and their applications receive the certificate.",
+    },
+    faqData: [
+      {
+        title: "What is the format of this course?",
+        description:
+          "Data Structures in Python is a live, interactive training program with real-time instructor guidance, Q&A sessions, and hands-on coding exercises.",
+      },
+      {
+        title: "What are the prerequisites for this course?",
+        description:
+          "A basic understanding of Python programming is recommended. If you are new to Python, consider taking our 'Python for Beginners' course first.",
+      },
+      {
+        title: "Will I get access to recorded sessions?",
+        description:
+          "Yes! All live session recordings will be available in the LMS portal for six months.",
+      },
+      {
+        title: "What projects will I work on?",
+        description:
+          "You will work on 12+ real-world projects covering topics like data analysis, automation, web scraping, and algorithm optimization.",
+      },
+      {
+        title: "How long is the course and schedule?",
+        description:
+          "The course spans 100 hours: 1-hour sessions on weekdays and 3-hour sessions on weekends.",
+      },
+      {
+        title: "Do I get a certificate upon completion?",
+        description:
+          "Yes! After successfully completing the course and assessment, you will receive a Certificate of Completion from LearnLogicify Technologies.",
+      },
+      {
+        title: "What kind of support will I receive?",
+        description:
+          "You will receive 24/7 LMS access, live Q&A sessions, community discussions, and mentor support for doubt resolution.",
+      },
+      {
+        title: "Is there a final assessment?",
+        description:
+          "Yes, the final assessment consists of coding challenges and real-world problem-solving tasks.",
+      },
+    ],
+    syllabusData: [
+      {
+        icon: "FaPython",
+        title: "Module 1",
+        subtitle: "Object-Oriented Programming (OOP) in Python",
+        topics: [
+          "Introduction to OOP",
+          "Classes and Objects",
+          "Instance and Class Variables",
+          "Encapsulation, Inheritance, and Polymorphism",
+          "Abstract Classes and Interfaces",
+          "Method Overriding and Magic Methods",
+          "Working with Modules and Packages",
+        ],
+      },
+      {
+        icon: "FaCode",
+        title: "Module 2",
+        subtitle: "Arrays and Lists",
+        topics: [
+          "Introduction to Arrays",
+          "List Operations in Python",
+          "Slicing and Indexing",
+          "Sorting and Searching Algorithms",
+        ],
+      },
+      {
+        icon: "IoCubeOutline",
+        title: "Module 3",
+        subtitle: "Stacks",
+        topics: [
+          "Understanding Stack Data Structure",
+          "Implementation of Stack using Lists",
+          "Stack Operations (Push, Pop, Peek)",
+          "Applications of Stack",
+        ],
+      },
+      {
+        icon: "IoCubeOutline",
+        title: "Module 4",
+        subtitle: "Queues",
+        topics: [
+          "Understanding Queue Data Structure",
+          "Implementation of Queue using Lists",
+          "Circular Queue and Deque",
+          "Priority Queue and Applications",
+        ],
+      },
+      {
+        icon: "PiMathOperationsBold",
+        title: "Module 5",
+        subtitle: "Singly Linked List",
+        topics: [
+          "Introduction to Linked Lists",
+          "Creating and Traversing a Linked List",
+          "Insertion and Deletion Operations",
+          "Reversing a Linked List",
+        ],
+      },
+      {
+        icon: "PiMathOperationsBold",
+        title: "Module 6",
+        subtitle: "Doubly Linked List",
+        topics: [
+          "Introduction to Doubly Linked Lists",
+          "Insertion and Deletion in Doubly Linked List",
+          "Reversing a Doubly Linked List",
+          "Applications of Linked Lists",
+        ],
+      },
+      {
+        icon: "FaQuestion",
+        title: "Module 7",
+        subtitle: "Recursion and Backtracking",
+        topics: [
+          "Introduction to Recursion",
+          "Recursion vs Iteration",
+          "Backtracking Algorithms",
+          "Applications of Recursion",
+        ],
+      },
+      {
+        icon: "TbBinaryTree2",
+        title: "Module 8",
+        subtitle: "Trees",
+        topics: [
+          "Binary Trees and Binary Search Trees",
+          "Tree Traversal Techniques",
+          "AVL Trees and Red-Black Trees",
+          "Applications of Trees",
+        ],
+      },
+      {
+        icon: "TbBinaryTree2",
+        title: "Module 9",
+        subtitle: "Graphs",
+        topics: [
+          "Graph Representations (Adjacency List & Matrix)",
+          "Graph Traversal Algorithms (DFS & BFS)",
+          "Shortest Path Algorithms (Dijkstra, Floyd-Warshall)",
+          "Topological Sorting and Applications",
+        ],
+      },
+      {
+        icon: "RiLoopLeftFill",
+        title: "Module 10",
+        subtitle: "Sorting and Searching Algorithms",
+        topics: [
+          "Bubble Sort, Merge Sort, Quick Sort",
+          "Binary Search vs Linear Search",
+          "Heap Sort and Radix Sort",
+          "Time Complexity Analysis",
+        ],
+      },
+      {
+        icon: "FaProjectDiagram",
+        title: "Module 11",
+        subtitle: "Project Building",
+        topics: [
+          "Building a Data Structure-Based Application",
+          "Solving Real-World Problems using Python",
+          "Performance Optimization Techniques",
+          "Final Project Review and Assessment",
+        ],
+      },
+    ],
+  },
 ];

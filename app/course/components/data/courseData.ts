@@ -168,7 +168,7 @@ const coursesData: Course[] = [
   },
 
   {
-    url: "/courses/pages/dsa-python",
+    url: "/course/pages/ds-python",
     Level: "Intermediate",
     languageId: "python",
     topicId: "data-structures",
