@@ -1447,4 +1447,291 @@ export const CourseData = [
       },
     ],
   },
+  //ruby
+  {
+    courseTitle: "Ruby for Beginners",
+    instructor: "Sachin",
+    rating: 4.7,
+    reviews: "3.8k Ratings",
+    courseIcon: "SiRuby",
+    level: "Beginner",
+    liveClasses: "Live Classes",
+    weekdays: "Weekdays: 1 Hour/Day",
+    weekends: "Weekends: 3 Hours/Day",
+    totalHours: "Total: 90 Hours",
+    topicsCount: "20 Topics",
+    problemsCount: "200+ Problems",
+    projectsCount: "6+ Projects using Ruby",
+    portalAccess: "LMS Portal Access (6 Months)",
+    sessionRecordings: "Session Recordings in LMS",
+    certificate: "Certificate of Completion",
+    originalPrice: 4499,
+    discountedPrice: 2299,
+    discountPercentage: 50,
+    courseIntroVideo: "/course-intro.mp4",
+    videoPoster: "/images/thumbnail/image.png",
+
+    aboutData: {
+      description: [
+        "Ruby for Beginners is a live online training program designed to introduce students to the fundamentals of Ruby programming. This interactive course focuses on hands-on learning, providing a smooth introduction to the language’s syntax, features, and use cases.",
+        "Unlike pre-recorded courses, this program offers live sessions with real-time instructor support, Q&A sessions, and coding exercises to enhance understanding and retention.",
+        "The curriculum covers Ruby fundamentals, including variables, loops, functions, object-oriented programming (OOP), and error handling. Additionally, students will gain practical experience by working on real-world projects and exercises.",
+      ],
+      structure: [
+        "Weekdays: 1 Hour per Day",
+        "Weekends: 3 Hours per Day",
+        "Total Duration: 90 Hours of Live Training",
+      ],
+    },
+
+    prerequisites: [
+      {
+        text: "No prior programming experience is required for this course, making it ideal for complete beginners. However, if you want to develop a solid understanding of fundamental programming concepts, such as variables, data types, control structures, and basic problem-solving techniques before diving into Ruby, we recommend starting with a foundational course. To build a strong base, you may Check out our",
+        link: "/course/pages/c-programming",
+        linkText: "C Programming Course",
+      },
+    ],
+
+    certificateData: {
+      imageUrl: "/images/certificate/c-1.png",
+      title: "Certificate of the Course",
+      description:
+        "Upon successfully completing the course, you will be awarded the prestigious Certificate of Excellence from LearnLogicify Technologies. This certificate is a testament to your dedication and mastery of Ruby programming, showcasing your commitment to continuous learning and your ability to apply advanced skills. It will be a valuable addition to your professional portfolio, helping you stand out to potential employers and opening doors to new career opportunities.",
+      certificateLink: "/images/certificate/c-1.png",
+    },
+
+    certificationProcessData: {
+      title: "Certification Process and Requirements",
+      description: [
+        "Upon successfully completing the Ruby Programming course, you will be required to take a final assessment to qualify for certification.",
+        "This assessment evaluates your understanding of Ruby programming fundamentals, object-oriented concepts, and real-world problem-solving skills covered in the course.",
+        "It is conducted under structured guidelines to ensure fairness and integrity.",
+      ],
+      assessmentDetails:
+        "The final assessment is for 100 marks and contributes 100% to your certification score. Throughout the course, students are encouraged to solve practice problems and complete exercises to strengthen their understanding, but these do not contribute to the final certification score.",
+      criteriaTitle:
+        "To be eligible for the certificate, you must meet the following criteria",
+      criteria: ["Achieve a score of 50% or more in the final assessment."],
+      retakeInfo:
+        "If this condition is met, you will receive a certificate of completion for the Ruby Programming course. If you do not achieve the required score, you will have the opportunity to retake the final assessment once.",
+      finalNote:
+        "This structured evaluation ensures that only those who demonstrate a solid understanding of the course material and its applications are awarded the certificate, maintaining the integrity and value of the certification.",
+    },
+
+    faqData: [
+      {
+        title: "What is the format of this course?",
+        description:
+          "Ruby for Beginners is a live online training program with interactive sessions. Classes are conducted in real-time with hands-on coding, Q&A sessions, and instructor-led discussions.",
+      },
+      {
+        title: "What are the prerequisites for this course?",
+        description:
+          "This course is beginner-friendly and requires no prior programming experience. However, basic logical thinking and problem-solving skills will be helpful in understanding Ruby concepts.",
+      },
+      {
+        title: "Will I get access to recorded sessions?",
+        description:
+          "Yes! All live session recordings will be available in the LMS portal. You can revisit them anytime within the 6-month access period.",
+      },
+      {
+        title: "What projects will I work on?",
+        description:
+          "You will work on 6+ real-world projects covering web development, automation, scripting, and more to solidify your learning.",
+      },
+      {
+        title: "How long is the course and schedule?",
+        description:
+          "The course spans 90 hours: 1-hour sessions on weekdays and 3-hour sessions on weekends. This ensures a balanced learning experience.",
+      },
+      {
+        title: "Do I get a certificate upon completion?",
+        description:
+          "Yes! After successfully completing the course and assessment, you will receive a Certificate of Completion from LearnLogicify Technologies.",
+      },
+      {
+        title: "What kind of support will I receive?",
+        description:
+          "You will receive 24/7 LMS access, live Q&A sessions, community discussions, and mentor support for doubt resolution.",
+      },
+      {
+        title: "Is there a final assessment?",
+        description:
+          "Yes, you will take a final assessment to qualify for the certificate. It consists of coding challenges and a project submission.",
+      },
+    ],
+
+    syllabusData: [
+      {
+        icon: "HiMiniComputerDesktop",
+        title: "Module 1",
+        subtitle: "Introduction to Computers",
+        topics: [
+          "Overview of Computer Systems",
+          "The Role of Programming Languages",
+          "Understanding Binary and Data Representation",
+          "Number Conversions",
+        ],
+      },
+      {
+        icon: "SiRuby",
+        title: "Module 2",
+        subtitle: "Introduction to Ruby",
+        topics: [
+          "Overview of Ruby Language",
+          "Setting up the Ruby Environment",
+          "Compiling and Running a Ruby Program",
+          "Understanding Ruby's Syntax and Structure",
+        ],
+      },
+      {
+        icon: "IoCubeOutline",
+        title: "Module 3",
+        subtitle: "Data Types and Variables",
+        topics: [
+          "Primitive Data Types in Ruby",
+          "Declaring Variables",
+          "Constants and Literals",
+          "Type Conversion and Type Casting",
+        ],
+      },
+      {
+        icon: "PiMathOperationsBold",
+        title: "Module 4",
+        subtitle: "Operators and Expressions",
+        topics: [
+          "Arithmetic Operators",
+          "Relational Operators",
+          "Logical Operators",
+          "Bitwise Operators",
+          "Ternary Operator",
+        ],
+      },
+      {
+        icon: "FaQuestion",
+        title: "Module 5",
+        subtitle: "Conditional Statements",
+        topics: [
+          "The if Statement",
+          "The else Statement",
+          "The case Statement",
+          "Nested Conditionals",
+          "Ternary Operators",
+        ],
+      },
+      {
+        icon: "RiLoopLeftFill",
+        title: "Module 6",
+        subtitle: "Loops in Ruby",
+        topics: [
+          "The for Loop",
+          "The while Loop",
+          "The until Loop",
+          "Break and Continue Statements",
+          "Nested Loops",
+        ],
+      },
+      {
+        icon: "MdOutlineLibraryBooks",
+        title: "Module 7",
+        subtitle: "Arrays in Ruby",
+        topics: [
+          "Introduction to Arrays",
+          "Array Declaration and Initialization",
+          "Array Operations (Insert, Delete, Update, Search)",
+          "Iterating Through Arrays",
+          "Multi-Dimensional Arrays",
+        ],
+      },
+      {
+        icon: "BsBraces",
+        title: "Module 8",
+        subtitle: "Strings in Ruby",
+        topics: [
+          "Introduction to Strings",
+          "String Operations and Manipulations",
+          "String Methods in Ruby",
+          "Regular Expressions and Pattern Matching",
+          "String Formatting and Interpolation",
+        ],
+      },
+      {
+        icon: "TbBinaryTree2",
+        title: "Module 9",
+        subtitle: "Hashes and Symbols in Ruby",
+        topics: [
+          "Introduction to Hashes",
+          "Key-Value Pairs and Hash Operations",
+          "Iterating Through Hashes",
+          "Understanding Symbols",
+          "Difference Between Symbols and Strings",
+        ],
+      },
+      {
+        icon: "MdOutlineLibraryBooks",
+        title: "Module 10",
+        subtitle: "Object-Oriented Programming (OOP) in Ruby",
+        topics: [
+          "Introduction to OOP",
+          "Classes and Objects",
+          "Constructors and Destructors",
+          "Encapsulation, Inheritance, and Polymorphism",
+          "Mixins and Modules",
+        ],
+      },
+      {
+        icon: "FaRegFolderOpen",
+        title: "Module 11",
+        subtitle: "File Handling in Ruby",
+        topics: [
+          "Reading and Writing Files",
+          "Working with CSV and JSON Files",
+          "Error Handling in File Operations",
+        ],
+      },
+      {
+        icon: "GoDatabase",
+        title: "Module 12",
+        subtitle: "Working with Databases",
+        topics: [
+          "Introduction to Databases in Ruby",
+          "Using SQLite and ActiveRecord",
+          "Performing CRUD Operations",
+        ],
+      },
+      {
+        icon: "RiLoopLeftFill",
+        title: "Module 13",
+        subtitle: "Error Handling and Debugging",
+        topics: [
+          "Understanding Ruby Errors and Exceptions",
+          "Using Begin, Rescue, and Ensure",
+          "Best Practices for Debugging in Ruby",
+        ],
+      },
+      {
+        icon: "VscRegex",
+        title: "Module 14",
+        subtitle: "Patterns in Ruby",
+        topics: [
+          "Introduction to Pattern Matching",
+          "Number and Star Patterns",
+          "Regular Expressions",
+          "Advanced Pattern Programs",
+        ],
+      },
+      {
+        icon: "FaProjectDiagram",
+        title: "Module 15",
+        subtitle: "Project Building",
+        topics: [
+          "Understanding Project Requirements",
+          "Structuring a Ruby Project",
+          "Implementing Core Features",
+          "Debugging and Optimization",
+          "Final Project Submission and Review",
+        ],
+      },
+    ],
+  },
 ];

@@ -18,7 +18,7 @@ import { TbListNumbers } from "react-icons/tb";
 import { GoDatabase } from "react-icons/go";
 import { MdOutlineLibraryBooks } from "react-icons/md";
 import { HiMiniComputerDesktop } from "react-icons/hi2";
-import { SiGo } from "react-icons/si";
+import { SiGo, SiRuby } from "react-icons/si";
 // **STEP 1: Define Icon Mapping**
 const iconMap: Record<string, React.ElementType> = {
   FaCode,
@@ -44,6 +44,7 @@ const iconMap: Record<string, React.ElementType> = {
   FaJava,
   FaNetworkWired,
   SiGo,
+  SiRuby,
 };
 
 interface SyllabusModule {

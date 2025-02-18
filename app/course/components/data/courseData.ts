@@ -132,7 +132,7 @@ const coursesData: Course[] = [
   },
 
   {
-    url: "/courses/pages/ruby",
+    url: "/course/pages/ruby",
     Level: "Beginner",
     languageId: "ruby",
     topicId: "problem-solving", // ✅ Updated
