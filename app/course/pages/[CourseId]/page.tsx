@@ -24,6 +24,7 @@ export default async function Page({
     "ruby",
     "ds-python",
     "ds-c-programming",
+    "ds-cpp-programming",
   ];
   const CourseId = (await params).CourseId;
 

@@ -200,9 +200,8 @@ const coursesData: Course[] = [
     bannerColor: "#F5E6CC",
     available: true,
   },
-
   {
-    url: "/courses/pages/dsa-cpp",
+    url: "/course/pages/ds-cpp-programming",
     Level: "Intermediate",
     languageId: "cpp",
     topicId: "data-structures",
@@ -223,7 +222,7 @@ const coursesData: Course[] = [
     url: "/courses/pages/algorithms-java",
     Level: "Advanced",
     languageId: "java",
-    topicId: "algorithms", // ✅ NEW
+    topicId: "algorithms",
     learningTrack: "technical",
     icon: FaJava,
     title: "Algorithms using Java",
