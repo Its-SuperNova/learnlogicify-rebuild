@@ -28,6 +28,7 @@ export default async function Page({
     "ds-java",
     "algorithms-java",
     "algorithms-python",
+    "algorithms-cpp",
   ];
   const CourseId = (await params).CourseId;
 
