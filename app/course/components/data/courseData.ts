@@ -236,7 +236,7 @@ const coursesData: Course[] = [
   },
 
   {
-    url: "/courses/pages/algorithms-python",
+    url: "/course/pages/algorithms-python",
     Level: "Advanced",
     languageId: "python",
     topicId: "algorithms", // ✅ NEW
