@@ -26,7 +26,7 @@ export interface Course {
   Level: string;
   languageId: string;
   topicId: string;
-  learningTrack: string; // 🔥 NEW ATTRIBUTE ADDED
+  learningTrack: string; 
   icon: IconType;
   title: string;
   topics: number;
@@ -218,7 +218,7 @@ const coursesData: Course[] = [
   },
 
   {
-    url: "/courses/pages/algorithms-java",
+    url: "/course/pages/algorithms-java",
     Level: "Advanced",
     languageId: "java",
     topicId: "algorithms",

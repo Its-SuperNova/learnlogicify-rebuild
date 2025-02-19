@@ -38,8 +38,12 @@ interface HeroProps {
     description: string[];
     structure: string[];
   };
-  prerequisites?: { text: string; link?: string; linkText?: string }[];
+  prerequisites?: {
+    text: string;
+    links?: { link: string; linkText: string }[];
+  }[];
 }
+
 
 const Hero: React.FC<HeroProps> = (props) => {
   return (
@@ -123,19 +127,25 @@ const Hero: React.FC<HeroProps> = (props) => {
                   key={index}
                   className="text-md leading-6 md:text-lg md:leading-7"
                 >
-                  {requirement.link ? (
-                    <p>
-                      {requirement.text}{" "}
-                      <a
-                        href={requirement.link}
-                        className="text-blue-500 underline hover:text-blue-700"
-                      >
-                        {requirement.linkText || "Learn More"}{" "}
-                      </a>
-                    </p>
-                  ) : (
-                    <p>{requirement.text}</p>
-                  )}
+                  <p>
+                    {requirement.text}
+                    {requirement.links && requirement.links.length > 0 && (
+                      <span>
+                        {" "}
+                        {requirement.links.map((course, linkIndex) => (
+                          <span key={linkIndex}>
+                            <a
+                              href={course.link}
+                              className="text-blue-500 underline hover:text-blue-700"
+                            >
+                              {course.linkText}
+                            </a>
+                            {requirement.links && linkIndex !== requirement.links.length - 1 && ", "}
+                          </span>
+                        ))}
+                      </span>
+                    )}
+                  </p>
                 </div>
               ))}
             </div>

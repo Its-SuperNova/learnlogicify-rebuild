@@ -1,5 +1,7 @@
 import { IoLogoPython } from "react-icons/io";
 export const CourseData = [
+  //Problem solving
+
   //C-Programming
   {
     courseTitle: "C Programming for Beginners",
@@ -1734,6 +1736,9 @@ export const CourseData = [
       },
     ],
   },
+
+  //Data Structure
+
   //Ds-Python
   {
     courseTitle: "Data Structures in Python",
@@ -2713,6 +2718,271 @@ export const CourseData = [
           "Solving Real-World Problems using Java",
           "Performance Optimization Techniques",
           "Final Project Review and Submission",
+        ],
+      },
+    ],
+  },
+
+  // Algorithms
+
+  //algorithms-java
+  {
+    courseTitle: "Algorithms Using Java",
+    instructor: "Sachin",
+    rating: 4.9,
+    reviews: "5.1k Ratings",
+    courseIcon: "FaJava",
+    level: "Advanced",
+    liveClasses: "Live Classes",
+    weekdays: "Weekdays: 1 Hour/Day",
+    weekends: "Weekends: 3 Hours/Day",
+    totalHours: "Total: 120 Hours",
+    topicsCount: "20 Topics",
+    problemsCount: "400+ Problems",
+    projectsCount: "50+ algorithms",
+    portalAccess: "LMS Portal Access (6 Months)",
+    sessionRecordings: "Session Recordings in LMS",
+    certificate: "Certificate of Completion",
+    originalPrice: 6999,
+    discountedPrice: 3499,
+    discountPercentage: 50,
+    courseIntroVideo: "/course-intro.mp4",
+    videoPoster: "/images/thumbnail/image.png",
+    aboutData: {
+      description: [
+        "The Algorithms Using Java course is designed to provide learners with a comprehensive understanding of fundamental and advanced algorithms implemented in the Java programming language. This course covers a wide range of topics, including sorting and searching algorithms, dynamic programming, graph algorithms, and more.",
+        "Emphasizing hands-on coding exercises and real-world applications, this course aims to enhance your problem-solving skills and algorithmic thinking.",
+        "By the end of this course, you will have a deep understanding of various algorithms and their implementations in Java, preparing you for competitive programming and technical interviews.",
+      ],
+      structure: [
+        "Weekdays: 1 Hour per Day",
+        "Weekends: 3 Hours per Day",
+        "Total Duration: 120 Hours of Live Training",
+      ],
+    },
+    prerequisites: [
+      {
+        text: "To get the most out of this course, a strong foundation in Java programming is highly recommended. You should be familiar with key object-oriented programming (OOP) concepts such as encapsulation, inheritance, polymorphism, and abstraction. Additionally, a basic understanding of data structures, including arrays, linked lists, stacks, queues, and trees, along with familiarity with fundamental algorithms like sorting and searching, will help you grasp advanced topics more effectively. If you're new to Java or want to strengthen your fundamentals before diving into algorithms, we recommend completing the following courses first:",
+        links: [
+          {
+            link: "/course/pages/java-programming",
+            linkText: "Java Programming for Beginners",
+          },
+          {
+            link: "/course/pages/data-structures-java",
+            linkText: "Data Structures in Java",
+          },
+        ],
+      },
+    ],
+
+    certificateData: {
+      imageUrl: "/images/certificate/c-1.png",
+      title: "Certificate of Excellence",
+      description:
+        "Upon successfully completing the course, you will be awarded the Certificate of Excellence from LearnLogicify Technologies. This certification validates your expertise in algorithm development using Java, demonstrating your problem-solving skills and proficiency in efficient coding. It enhances your professional profile, making you stand out in job applications and career opportunities in software development and competitive programming.",
+      certificateLink: "/images/certificate/c-1.png",
+    },
+    certificationProcessData: {
+      title: "Certification Process and Requirements",
+      description: [
+        "To qualify for certification, you must complete the Algorithms Using Java course and pass a final assessment.",
+        "The assessment evaluates your understanding of algorithmic concepts, problem-solving abilities, and proficiency in Java implementations.",
+        "It is conducted under strict guidelines to ensure fairness and integrity.",
+      ],
+      assessmentDetails:
+        "The final assessment consists of a 100-mark examination, accounting for 100% of your certification score. While practice problems and exercises throughout the course are encouraged to reinforce learning, they do not contribute to the final certification score.",
+      criteriaTitle: "Certification Eligibility Criteria",
+      criteria: ["Achieve a minimum score of 60% in the final assessment."],
+      retakeInfo:
+        "If you do not meet the required score, you will have the opportunity to retake the final assessment once.",
+      finalNote:
+        "This rigorous evaluation process ensures that only individuals who demonstrate a thorough understanding of the course material are awarded the certificate, maintaining its credibility and value.",
+    },
+    faqData: [
+      {
+        title: "What is the format of this course?",
+        description:
+          "Algorithms Using Java is a live online training program featuring interactive sessions. Classes are conducted in real-time, including hands-on coding, Q&A sessions, and instructor-led discussions.",
+      },
+      {
+        title: "What are the prerequisites for this course?",
+        description:
+          "A strong foundation in Java programming is required. Familiarity with OOP concepts, data structures, and basic algorithms is essential before enrolling in this course.",
+      },
+      {
+        title: "Will I have access to recorded sessions?",
+        description:
+          "Yes! All live session recordings will be accessible through the LMS portal, allowing you to revisit them anytime within the 6-month access period.",
+      },
+      {
+        title: "What projects will I work on?",
+        description:
+          "You will engage in 6+ real-world projects, focusing on algorithm implementations such as sorting algorithms, graph traversals, dynamic programming solutions, and more.",
+      },
+      {
+        title: "How long is the course and what is the schedule?",
+        description:
+          "The course encompasses 120 hours: 1-hour sessions on weekdays and 3-hour sessions on weekends, providing a balanced and comprehensive learning experience.",
+      },
+      {
+        title: "Do I receive a certificate upon completion?",
+        description:
+          "Yes! Upon successfully completing the course and passing the assessment, you will receive a Certificate of Excellence from LearnLogicify Technologies.",
+      },
+      {
+        title: "What kind of support is available during the course?",
+        description:
+          "You will have 24/7 access to the LMS portal, live Q&A sessions, community forums, and mentor support to address any questions or challenges you may encounter.",
+      },
+      {
+        title: "Is there a final assessment?",
+        description:
+          "Yes, a final assessment is required to qualify for the certificate. It includes coding challenges and a project submission to evaluate your understanding and application of the course material.",
+      },
+    ],
+    syllabusData: [
+      {
+        icon: "FaJava",
+        title: "Module 1",
+        subtitle: "Introduction to Algorithms",
+        topics: [
+          "Understanding Algorithms and Their Importance",
+          "Algorithm Analysis and Big O Notation",
+          "Time and Space Complexity",
+          "Introduction to Java for Algorithm Implementation",
+        ],
+      },
+      {
+        icon: "IoCubeOutline",
+        title: "Module 2",
+        subtitle: "Sorting Algorithms",
+        topics: [
+          "Bubble Sort, Selection Sort, Insertion Sort",
+          "Merge Sort and Quick Sort",
+          "Heap Sort and Counting Sort",
+          "Radix Sort and Bucket Sort",
+        ],
+      },
+      {
+        icon: "FaCode",
+        title: "Module 3",
+        subtitle: "Searching Algorithms",
+        topics: [
+          "Linear Search and Binary Search",
+          "Interpolation Search",
+          "Exponential Search",
+          "Search Algorithms in Java Collections",
+        ],
+      },
+      {
+        icon: "TbBinaryTree2",
+        title: "Module 4",
+        subtitle: "Dynamic Programming",
+        topics: [
+          "Introduction to Dynamic Programming",
+          "Memoization vs Tabulation",
+          "Solving Fibonacci and Knapsack Problems",
+          "Longest Common Subsequence and Matrix Chain Multiplication",
+        ],
+      },
+      {
+        icon: "RiLoopLeftFill",
+        title: "Module 5",
+        subtitle: "Graph Algorithms",
+        topics: [
+          "Graph Representation (Adjacency Matrix & List)",
+          "Breadth-First Search (BFS) and Depth-First Search (DFS)",
+          "Dijkstra’s Algorithm for Shortest Path",
+          "Bellman-Ford Algorithm and Floyd-Warshall Algorithm",
+        ],
+      },
+      {
+        icon: "TbBinaryTree2",
+        title: "Module 6",
+        subtitle: "Minimum Spanning Trees",
+        topics: [
+          "Prim’s Algorithm",
+          "Kruskal’s Algorithm",
+          "Union-Find Data Structure",
+          "Applications of MST in Real-World Scenarios",
+        ],
+      },
+      {
+        icon: "PiMathOperationsBold",
+        title: "Module 7",
+        subtitle: "Backtracking Algorithms",
+        topics: [
+          "Understanding Backtracking and Recursive Trees",
+          "N-Queens Problem",
+          "Sudoku Solver using Backtracking",
+          "Hamiltonian Cycle and Knight’s Tour Problem",
+        ],
+      },
+      {
+        icon: "FaProjectDiagram",
+        title: "Module 8",
+        subtitle: "Greedy Algorithms",
+        topics: [
+          "Concept of Greedy Strategy",
+          "Activity Selection Problem",
+          "Huffman Encoding",
+          "Greedy Algorithms for Graphs",
+        ],
+      },
+      {
+        icon: "TbBinaryTree2",
+        title: "Module 9",
+        subtitle: "String Algorithms",
+        topics: [
+          "Naive Pattern Searching",
+          "KMP Algorithm and Rabin-Karp Algorithm",
+          "Z Algorithm for Pattern Matching",
+          "Suffix Arrays and LCP Arrays",
+        ],
+      },
+      {
+        icon: "TbBinaryTree2",
+        title: "Module 10",
+        subtitle: "Mathematical and Number Theory Algorithms",
+        topics: [
+          "GCD, LCM, and Extended Euclidean Algorithm",
+          "Sieve of Eratosthenes",
+          "Modular Exponentiation",
+          "Chinese Remainder Theorem",
+        ],
+      },
+      {
+        icon: "TbBinaryTree2",
+        title: "Module 11",
+        subtitle: "Bit Manipulation Algorithms",
+        topics: [
+          "Understanding Bitwise Operations",
+          "Counting Set Bits",
+          "Finding Unique Numbers in an Array",
+          "Bitwise Tricks for Competitive Programming",
+        ],
+      },
+      {
+        icon: "TbBinaryTree2",
+        title: "Module 12",
+        subtitle: "Graph Coloring and Network Flow",
+        topics: [
+          "Graph Coloring using Greedy Algorithm",
+          "Ford-Fulkerson Algorithm for Maximum Flow",
+          "Bipartite Graphs and Matching Algorithms",
+          "Real-Life Applications of Network Flow",
+        ],
+      },
+      {
+        icon: "FaProjectDiagram",
+        title: "Module 13",
+        subtitle: "Project Building and Optimization",
+        topics: [
+          "Designing Efficient Algorithm-Based Applications",
+          "Optimizing Java Implementations for Performance",
+          "Advanced Debugging Techniques",
+          "Final Project Review and Assessment",
         ],
       },
     ],
