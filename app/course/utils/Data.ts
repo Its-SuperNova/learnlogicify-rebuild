@@ -4285,4 +4285,222 @@ export const CourseData = [
       },
     ],
   },
+
+  {
+    courseTitle: "Advanced JavaScript",
+    instructor: "Sachin",
+    rating: 4.9,
+    reviews: "4.7k Ratings",
+    courseIcon: "FaJsSquare",
+    level: "Advanced",
+    liveClasses: "Live Classes",
+    weekdays: "Weekdays: 1 Hour/Day",
+    weekends: "Weekends: 3 Hours/Day",
+    totalHours: "Total: 100 Hours",
+    topicsCount: "7 Modules",
+    problemsCount: "250+ Advanced JavaScript Exercises",
+    projectsCount: "5+ Real-World JavaScript Projects",
+    portalAccess: "LMS Portal Access (6 Months)",
+    sessionRecordings: "Session Recordings in LMS",
+    certificate: "Certificate of Completion",
+    originalPrice: 5999,
+    discountedPrice: 2999,
+    discountPercentage: 50,
+    courseIntroVideo: "/course-intro.mp4",
+    videoPoster: "/images/thumbnail/image.png",
+    aboutData: {
+      description: [
+        "The Advanced JavaScript course is designed to help developers master modern JavaScript concepts, including Object-Oriented Programming (OOP), Prototypical Inheritance, ES6 features, and JavaScript tooling.",
+        "This course takes a deep dive into the inner workings of JavaScript and provides hands-on exercises to solidify your understanding of advanced concepts.",
+        "By the end of this course, you will be confident in writing scalable and optimized JavaScript code, leveraging ES6+ features, and structuring JavaScript applications effectively.",
+      ],
+      structure: [
+        "Weekdays: 1 Hour per Day",
+        "Weekends: 3 Hours per Day",
+        "Total Duration: 100 Hours of Live Training",
+      ],
+    },
+    prerequisites: [
+      {
+        text: "To get the most out of this course, you should have a strong understanding of JavaScript fundamentals, including variables, functions, loops, and arrays. No prior experience with object-oriented programming is required, as we will cover it from the ground up. However, familiarity with HTML and CSS will be beneficial in certain sections. If you’re looking to strengthen your foundation before diving in, check out our:",
+        links: [
+          {
+            link: "/course/pages/html-basics",
+            linkText: "Ultimate HTML and CSS",
+          },
+          {
+            link: "/course/pages/js-fundamentals",
+            linkText: "JavaScript Fundamentals",
+          },
+        ],
+      },
+    ],
+    certificateData: {
+      imageUrl: "/images/certificate/c-1.png",
+      title: "Certificate of Excellence",
+      description:
+        "Upon successfully completing the course, you will be awarded the Certificate of Excellence from LearnLogicify Technologies. This certificate validates your expertise in modern JavaScript, making you stand out in job applications and software development roles.",
+      certificateLink: "/images/certificate/c-1.png",
+    },
+    certificationProcessData: {
+      title: "Certification Process and Requirements",
+      description: [
+        "To qualify for certification, you must complete the Advanced JavaScript course and pass a final assessment.",
+        "The assessment evaluates your ability to write efficient JavaScript code, implement advanced patterns, and work with modern JavaScript concepts.",
+        "It is conducted under structured guidelines to ensure fairness and integrity.",
+      ],
+      assessmentDetails:
+        "The final assessment consists of a 100-mark JavaScript exam, contributing 100% to your certification score. Hands-on coding challenges and project-based tasks will help strengthen your skills.",
+      criteriaTitle: "Certification Eligibility Criteria",
+      criteria: ["Achieve a minimum score of 60% in the final assessment."],
+      retakeInfo:
+        "If you do not meet the required score, you will have the opportunity to retake the final assessment once.",
+      finalNote:
+        "This evaluation ensures that only individuals who demonstrate strong JavaScript skills and problem-solving abilities receive the certificate.",
+    },
+    faqData: [
+      {
+        title: "What is the format of this course?",
+        description:
+          "Advanced JavaScript is a live online training program featuring interactive sessions, hands-on exercises, Q&A discussions, and instructor-led deep dives.",
+      },
+      {
+        title: "What are the prerequisites for this course?",
+        description:
+          "A basic understanding of JavaScript, including variables, functions, and loops, is required before enrolling in this course.",
+      },
+      {
+        title: "Will I have access to recorded sessions?",
+        description:
+          "Yes! All live session recordings will be available in the LMS portal for 6 months.",
+      },
+      {
+        title: "What projects will I work on?",
+        description:
+          "You will work on 5+ real-world projects, covering JavaScript OOP, prototypical inheritance, ES6 modules, and performance optimizations.",
+      },
+      {
+        title: "How long is the course and what is the schedule?",
+        description:
+          "The course includes 100 hours of training: 1-hour sessions on weekdays and 3-hour sessions on weekends.",
+      },
+      {
+        title: "Do I receive a certificate upon completion?",
+        description:
+          "Yes! You will receive a Certificate of Excellence upon successfully completing the course and passing the assessment.",
+      },
+      {
+        title: "What kind of support is available during the course?",
+        description:
+          "You will have 24/7 access to the LMS portal, live Q&A sessions, community forums, and mentor support.",
+      },
+      {
+        title: "Is there a final assessment?",
+        description:
+          "Yes, a final assessment is required to earn the certification. It consists of advanced JavaScript exercises and hands-on coding challenges.",
+      },
+    ],
+    syllabusData: [
+      {
+        icon: "FaJsSquare",
+        title: "Module 1",
+        subtitle: "Getting Started",
+        topics: [
+          "What is OOP",
+          "Four Pillars of OOP",
+          "Setting Up the Development Environment",
+          "Course Structure",
+          "Follow Me Around",
+          "Learning Paths",
+        ],
+      },
+      {
+        icon: "IoCubeOutline",
+        title: "Module 2",
+        subtitle: "Objects & Object-Oriented Programming",
+        topics: [
+          "Introduction",
+          "Object Literals",
+          "Factories",
+          "Constructors",
+          "Constructor Property",
+          "Functions are Objects",
+          "Value vs Reference Types",
+          "Adding or Removing Properties",
+          "Enumerating Properties",
+          "Abstraction",
+          "Private Properties and Methods",
+          "Getters and Setters",
+          "Exercise - Stopwatch",
+          "Solution - Stopwatch",
+        ],
+      },
+      {
+        icon: "FaCode",
+        title: "Module 3",
+        subtitle: "Prototypes and Inheritance",
+        topics: [
+          "Inheritance",
+          "Prototypes and Prototypical Inheritance",
+          "Multilevel Inheritance",
+          "Property Descriptors",
+          "Constructor Prototypes",
+          "Prototype vs Instance Members",
+          "Iterating Instance and Prototype Members",
+          "Avoid Extending the Built-in Objects",
+          "Exercise",
+        ],
+      },
+      {
+        icon: "RiLoopLeftFill",
+        title: "Module 4",
+        subtitle: "Prototypical Inheritance",
+        topics: [
+          "Creating Your Own Prototypical Inheritance",
+          "Resetting the Constructor",
+          "Calling the Super Constructor",
+          "Intermediate Function Inheritance",
+          "Method Overriding",
+          "Polymorphism",
+          "When to Use Inheritance",
+          "Mixins",
+          "Exercise - Prototypical Inheritance",
+          "Solution - Prototypical Inheritance",
+          "Exercise - Polymorphism",
+          "Solution - Polymorphism",
+        ],
+      },
+      {
+        icon: "TbBinaryTree2",
+        title: "Module 5",
+        subtitle: "ES6 Classes",
+        topics: [
+          "ES6 Classes",
+          "Hoisting",
+          "Static Methods",
+          "The This Keyword",
+          "Private Members Using Symbols",
+          "Private Members Using WeakMaps",
+          "Getters and Setters",
+          "Inheritance",
+          "Method Overriding",
+          "Exercise",
+        ],
+      },
+      {
+        icon: "FaTools",
+        title: "Module 6",
+        subtitle: "ES6 Tooling",
+        topics: [
+          "Modules",
+          "CommonJS Modules",
+          "ES6 Modules",
+          "ES6 Tooling",
+          "Babel",
+          "Webpack",
+          "What to Learn Next",
+        ],
+      },
+    ],
+  },
 ];

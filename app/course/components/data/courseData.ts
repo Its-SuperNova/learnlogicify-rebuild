@@ -306,7 +306,7 @@ const coursesData: Course[] = [
     available: true,
   },
   {
-    url: "/courses/pages/js-advanced",
+    url: "/course/pages/advanced-js",
     Level: "Advanced",
     languageId: "Javascript",
     topicId: "web-development",

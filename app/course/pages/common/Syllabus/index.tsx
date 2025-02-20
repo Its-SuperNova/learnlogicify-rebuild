@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6"; 
-import { FaCode, FaDatabase, FaFileArchive, FaJava, FaJs, FaJsSquare, FaNetworkWired, FaProjectDiagram, FaPython, FaQuestion, FaRegFolderOpen, FaSyncAlt, FaTree, FaUserShield } from "react-icons/fa";
+import { FaCode, FaDatabase, FaFileArchive, FaJava, FaJs, FaJsSquare, FaNetworkWired, FaProjectDiagram, FaPython, FaQuestion, FaRegFolderOpen, FaSyncAlt, FaTools, FaTree, FaUserShield } from "react-icons/fa";
 import { IoCubeOutline, IoLogoPython } from "react-icons/io5";
 import { PiMathOperationsBold } from "react-icons/pi";
 import { RiDatabase2Fill, RiDatabase2Line, RiLoopLeftFill, RiTableFill } from "react-icons/ri";
@@ -66,6 +66,7 @@ const iconMap: Record<string, React.ElementType> = {
   RiDatabase2Fill,
   FaJs,
   FaJsSquare,
+  FaTools,
 };
 
 interface SyllabusModule {
