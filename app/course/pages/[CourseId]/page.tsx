@@ -29,6 +29,7 @@ export default async function Page({
     "algorithms-java",
     "algorithms-python",
     "algorithms-cpp",
+    "sql-mastery",
   ];
   const CourseId = (await params).CourseId;
 

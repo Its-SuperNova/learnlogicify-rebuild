@@ -1,24 +1,25 @@
 "use client";
 import React, { useState, useRef } from "react";
-import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
-import { FaCode, FaJava, FaNetworkWired, FaProjectDiagram, FaPython, FaQuestion, FaRegFolderOpen, FaTree } from "react-icons/fa";
+import { FaAngleDown, FaAngleUp } from "react-icons/fa6"; 
+import { FaCode, FaDatabase, FaFileArchive, FaJava, FaNetworkWired, FaProjectDiagram, FaPython, FaQuestion, FaRegFolderOpen, FaSyncAlt, FaTree, FaUserShield } from "react-icons/fa";
 import { IoCubeOutline, IoLogoPython } from "react-icons/io5";
 import { PiMathOperationsBold } from "react-icons/pi";
-import { RiLoopLeftFill } from "react-icons/ri";
+import { RiDatabase2Line, RiLoopLeftFill, RiTableFill } from "react-icons/ri";
 import { TbMathFunction } from "react-icons/tb";
-import { AiOutlineExclamationCircle } from "react-icons/ai";
+import { AiOutlineExclamationCircle, AiOutlineFileAdd } from "react-icons/ai";
 import { BiMessageSquareDots } from "react-icons/bi";
 import { MdOutlineCalculate } from "react-icons/md";
 import { TbBinaryTree2 } from "react-icons/tb";
 import { IoMdApps } from "react-icons/io";
-import { BsBraces } from "react-icons/bs";
+import { BsBraces, BsLink45Deg } from "react-icons/bs";
 import { VscRegex } from "react-icons/vsc";
 import { RiBracketsLine } from "react-icons/ri";
 import { TbListNumbers } from "react-icons/tb";
 import { GoDatabase } from "react-icons/go";
 import { MdOutlineLibraryBooks } from "react-icons/md";
 import { HiMiniComputerDesktop } from "react-icons/hi2";
-import { SiGo, SiRuby } from "react-icons/si";
+import { SiGo, SiMysql, SiRuby } from "react-icons/si";
+import { GiBookshelf, GiOrganigram } from "react-icons/gi";
 // **STEP 1: Define Icon Mapping**
 const iconMap: Record<string, React.ElementType> = {
   FaCode,
@@ -46,6 +47,17 @@ const iconMap: Record<string, React.ElementType> = {
   SiGo,
   SiRuby,
   FaTree,
+  FaDatabase,
+  RiTableFill,
+  SiMysql,
+  BsLink45Deg,
+  RiDatabase2Line,
+  AiOutlineFileAdd,
+  FaUserShield,
+  GiOrganigram,
+  GiBookshelf,
+  FaSyncAlt,
+  FaFileArchive,
 };
 
 interface SyllabusModule {

@@ -3476,4 +3476,287 @@ export const CourseData = [
       },
     ],
   },
+
+  // DBMS
+
+  //SQL mastery
+  {
+    courseTitle: "SQL Mastery - From Basics to Advanced",
+    instructor: "Sachin",
+    rating: 4.9,
+    reviews: "5.3k Ratings",
+    courseIcon: "FaDatabase",
+    level: "Intermediate",
+    liveClasses: "Live Classes",
+    weekdays: "Weekdays: 1 Hour/Day",
+    weekends: "Weekends: 3 Hours/Day",
+    totalHours: "Total: 100 Hours",
+    topicsCount: "16 Topics",
+    problemsCount: "300+ SQL Challenges",
+    projectsCount: "6+ Real-World SQL Projects",
+    portalAccess: "LMS Portal Access (6 Months)",
+    sessionRecordings: "Session Recordings in LMS",
+    certificate: "Certificate of Completion",
+    originalPrice: 5999,
+    discountedPrice: 2999,
+    discountPercentage: 50,
+    courseIntroVideo: "/course-intro.mp4",
+    videoPoster: "/images/thumbnail/image.png",
+    aboutData: {
+      description: [
+        "The SQL Mastery course is designed to equip learners with a strong foundation in SQL, covering fundamental concepts, advanced queries, and database management techniques. This course will guide you through creating, managing, and optimizing databases using SQL.",
+        "Emphasizing hands-on learning, the course includes real-world SQL projects, optimization strategies, and best practices for designing efficient databases.",
+        "By the end of this course, you will be proficient in writing complex SQL queries, handling large datasets, and optimizing databases for performance and scalability.",
+      ],
+      structure: [
+        "Weekdays: 1 Hour per Day",
+        "Weekends: 3 Hours per Day",
+        "Total Duration: 100 Hours of Live Training",
+      ],
+    },
+    prerequisites: [
+      {
+        text: "This course is designed for absolute beginners, and no prior database experience is required. It is structured to guide you step by step, making it easy to understand even if you're new to databases. Whether you're a student, aspiring developer, or working professional looking to enhance your skills, you can confidently enroll and start learning from scratch.",
+      },
+    ],
+    certificateData: {
+      imageUrl: "/images/certificate/c-1.png",
+      title: "Certificate of Excellence",
+      description:
+        "Upon successfully completing the course, you will be awarded the Certificate of Excellence from LearnLogicify Technologies. This certification validates your expertise in SQL and database management, demonstrating your ability to handle complex queries and optimize database performance.",
+      certificateLink: "/images/certificate/c-1.png",
+    },
+    certificationProcessData: {
+      title: "Certification Process and Requirements",
+      description: [
+        "To qualify for certification, you must complete the SQL Mastery course and pass a final assessment.",
+        "The assessment evaluates your ability to write efficient SQL queries, manage databases, and optimize database performance.",
+        "It is conducted under strict guidelines to ensure fairness and integrity.",
+      ],
+      assessmentDetails:
+        "The final assessment consists of a 100-mark SQL exam, contributing 100% to your certification score. While practice exercises throughout the course reinforce learning, they do not contribute to the final score.",
+      criteriaTitle: "Certification Eligibility Criteria",
+      criteria: ["Achieve a minimum score of 60% in the final assessment."],
+      retakeInfo:
+        "If you do not meet the required score, you will have the opportunity to retake the final assessment once.",
+      finalNote:
+        "This evaluation ensures that only individuals who demonstrate strong SQL skills and database management proficiency receive the certificate.",
+    },
+    faqData: [
+      {
+        title: "What is the format of this course?",
+        description:
+          "SQL Mastery is a live online training program featuring interactive sessions, hands-on query writing, Q&A discussions, and instructor-led problem-solving.",
+      },
+      {
+        title: "What are the prerequisites for this course?",
+        description:
+          "No prior experience with SQL is required, but familiarity with basic programming concepts will be beneficial.",
+      },
+      {
+        title: "Will I have access to recorded sessions?",
+        description:
+          "Yes! All live session recordings will be available in the LMS portal for 6 months.",
+      },
+      {
+        title: "What projects will I work on?",
+        description:
+          "You will work on 6+ real-world projects, covering database creation, query optimization, data analytics, and performance tuning.",
+      },
+      {
+        title: "How long is the course and what is the schedule?",
+        description:
+          "The course includes 100 hours of training: 1-hour sessions on weekdays and 3-hour sessions on weekends.",
+      },
+      {
+        title: "Do I receive a certificate upon completion?",
+        description:
+          "Yes! You will receive a Certificate of Excellence upon successfully completing the course and passing the assessment.",
+      },
+      {
+        title: "What kind of support is available during the course?",
+        description:
+          "You will have 24/7 access to the LMS portal, live Q&A sessions, community forums, and mentor support.",
+      },
+      {
+        title: "Is there a final assessment?",
+        description:
+          "Yes, a final assessment is required to earn the certification. It consists of practical SQL challenges and optimization problems.",
+      },
+    ],
+    syllabusData: [
+      {
+        icon: "FaDatabase",
+        title: "Module 1",
+        subtitle: "Introduction to DBMS",
+        topics: [
+          "Introduction to the DBMS Course",
+          "Why not simply use files: Files vs DBMS",
+          "Tables and Keys",
+          "Integrity Constraints",
+        ],
+      },
+      {
+        icon: "TbBinaryTree2",
+        title: "Module 2",
+        subtitle: "ER Models and Diagrams",
+        topics: [
+          "Introduction to ER diagrams",
+          "Cardinality of relationships and constructing minimal tables",
+          "Weak and Strong Entities, Self-referential Relationships, and Constructing Tables",
+        ],
+      },
+      {
+        icon: "IoCubeOutline",
+        title: "Module 3",
+        subtitle: "Introduction to Relational Models",
+        topics: [
+          "Mathematical model of Tables",
+          "ER-Relational Model, Constraints and Keys (recap)",
+        ],
+      },
+      {
+        icon: "RiTableFill",
+        title: "Module 4",
+        subtitle: "Relational Algebra",
+        topics: [
+          "Introduction to Relational Algebra and Basic Operators",
+          "Joins and Division Operators",
+          "Problems - Relational Algebra",
+        ],
+      },
+      {
+        icon: "TbBinaryTree2",
+        title: "Module 5",
+        subtitle: "Relational Calculus",
+        topics: [
+          "Tuple Relational Calculus-I",
+          "Safe queries & Domain Relational Calculus",
+          "Problems - Relational Calculus",
+        ],
+      },
+      {
+        icon: "SiMysql",
+        title: "Module 6",
+        subtitle: "[SQL] Introduction",
+        topics: [
+          "Overview of Databases for learning SQL",
+          "Why learn SQL",
+          "Execution of an SQL statement",
+          "IMDB dataset",
+          "Installing MySQL",
+          "Load IMDB data",
+        ],
+      },
+      {
+        icon: "FaCode",
+        title: "Module 7",
+        subtitle: "[SQL] Commands",
+        topics: [
+          "USE, DESCRIBE, SHOW TABLES",
+          "SELECT",
+          "LIMIT, OFFSET",
+          "Order By",
+          "Distinct",
+          "WHERE, Comparison operators, NULL",
+          "Logical Operators",
+          "Aggregate Functions: COUNT, MIN, MAX, AVG, SUM",
+          "GROUP BY",
+          "HAVING",
+          "Order of keywords",
+        ],
+      },
+      {
+        icon: "BsLink45Deg",
+        title: "Module 8",
+        subtitle: "[SQL] Joins",
+        topics: ["Join and Natural Join", "Inner, Left, Right and Outer joins"],
+      },
+      {
+        icon: "FaProjectDiagram",
+        title: "Module 9",
+        subtitle: "[SQL] Advanced Queries",
+        topics: ["Sub Queries/Nested Queries/Inner Queries"],
+      },
+      {
+        icon: "RiDatabase2Line",
+        title: "Module 10",
+        subtitle: "[SQL] Data Manipulation Language",
+        topics: ["INSERT", "UPDATE", "DELETE"],
+      },
+      {
+        icon: "AiOutlineFileAdd",
+        title: "Module 11",
+        subtitle: "[SQL] Data Definition Language",
+        topics: [
+          "CREATE TABLE",
+          "ALTER: ADD, MODIFY, DROP",
+          "DROP TABLE, TRUNCATE, DELETE",
+        ],
+      },
+      {
+        icon: "FaUserShield",
+        title: "Module 12",
+        subtitle: "[SQL] Data Control Language",
+        topics: [
+          "Data Control Language: GRANT, REVOKE",
+          "Learning resources",
+          "Problems",
+        ],
+      },
+      {
+        icon: "GiOrganigram",
+        title: "Module 13",
+        subtitle: "Functional Dependencies and Decomposition",
+        topics: [
+          "Designing tables in a DB",
+          "Functional Dependencies",
+          "Attribute Closure, Keys and Solved problems",
+          "Functional Dependency Sets and Properties + Solved examples",
+          "Minimal/Canonical Covers of FDs + solved problems",
+          "Decompositions with solved problems",
+          "Dependency preserving decomposition + solved examples",
+        ],
+      },
+      {
+        icon: "GiBookshelf",
+        title: "Module 14",
+        subtitle: "Normalization",
+        topics: [
+          "Introduction to Normalization + 1NF and 2NF + examples",
+          "3NF and BCNF",
+          "Solved problems + Properties of Normal Forms",
+          "Multi-Valued Dependencies and 4NF",
+        ],
+      },
+      {
+        icon: "FaSyncAlt",
+        title: "Module 15",
+        subtitle: "Transactions and Concurrency Control",
+        topics: [
+          "Model of a computer for transactions & concurrency",
+          "ACID properties & Concurrency",
+          "Problems due to Concurrency",
+          "Recoverability of Schedules",
+          "Serializability of Schedules - Conflict Serializability",
+          "View Serializability",
+          "Lock-based concurrency control",
+          "Time-stamp-based protocols + Deadlock and Starvation prevention",
+          "Thomas Write Rule",
+        ],
+      },
+      {
+        icon: "FaFileArchive",
+        title: "Module 16",
+        subtitle: "File Structure (B and B+ Trees)",
+        topics: [
+          "Files and Indexing: introduction",
+          "B-Trees and B+ Trees with examples",
+          "More Solved Problems",
+          "Terminology related to Indexes",
+        ],
+      },
+    ],
+  },
 ];
+

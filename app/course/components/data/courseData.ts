@@ -409,7 +409,7 @@ const coursesData: Course[] = [
   },
 
   {
-    url: "/courses/pages/sql-mastery",
+    url: "/course/pages/sql-mastery",
     Level: "Intermediate",
     languageId: "sql",
     topicId: "dbms",
