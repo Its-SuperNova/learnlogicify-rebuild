@@ -33,6 +33,7 @@ export default async function Page({
     "mongodb-mastery",
     "js-fundamentals",
     "advanced-js",
+    "js-unit-testing",
   ];
   const CourseId = (await params).CourseId;
 

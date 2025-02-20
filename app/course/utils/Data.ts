@@ -4503,4 +4503,212 @@ export const CourseData = [
       },
     ],
   },
+  // js unit testing
+  {
+    courseTitle: "JavaScript Unit Testing",
+    instructor: "Sachin",
+    rating: 4.9,
+    reviews: "4.7k Ratings",
+    courseIcon: "FaCode",
+    level: "Intermediate",
+    liveClasses: "Live Classes",
+    weekdays: "Weekdays: 1 Hour/Day",
+    weekends: "Weekends: 3 Hours/Day",
+    totalHours: "Total: 80 Hours",
+    topicsCount: "5 Modules",
+    problemsCount: "100+ Testing Scenarios",
+    projectsCount: "4+ Real-World Testing Projects",
+    portalAccess: "LMS Portal Access (6 Months)",
+    sessionRecordings: "Session Recordings in LMS",
+    certificate: "Certificate of Completion",
+    originalPrice: 4999,
+    discountedPrice: 2499,
+    discountPercentage: 50,
+    courseIntroVideo: "/course-intro.mp4",
+    videoPoster: "/images/thumbnail/image.png",
+    aboutData: {
+      description: [
+        "The JavaScript Unit Testing course is designed to help developers build robust applications by writing and maintaining testable code. This course will introduce you to unit testing concepts, frameworks, and best practices to improve software reliability.",
+        "You will learn to work with testing frameworks like Vitest, write effective test cases, use mocks for dependency isolation, and implement test-driven development (TDD) techniques.",
+        "By the end of this course, you will have hands-on experience in testing JavaScript applications, ensuring high-quality and maintainable code.",
+      ],
+      structure: [
+        "Weekdays: 1 Hour per Day",
+        "Weekends: 3 Hours per Day",
+        "Total Duration: 80 Hours of Live Training",
+      ],
+    },
+    prerequisites: [
+      {
+        text: "To take this course, you should have a basic understanding of JavaScript, including functions, variables, and objects. Knowledge of ES6+ syntax and JavaScript fundamentals is recommended but not mandatory. If you're new to JavaScript or testing concepts, we recommend checking out our",
+        links: [
+          {
+            link: "/course/pages/js-fundamentals",
+            linkText: "JavaScript Fundamentals",
+          },
+          {
+            link: "/course/pages/advanced-javascript",
+            linkText: "Advanced JavaScript",
+          },
+        ],
+      },
+    ],
+    certificateData: {
+      imageUrl: "/images/certificate/c-1.png",
+      title: "Certificate of Excellence",
+      description:
+        "Upon successfully completing the course, you will be awarded the Certificate of Excellence from LearnLogicify Technologies. This certification validates your expertise in JavaScript unit testing, demonstrating your ability to write robust test cases, work with testing frameworks, and implement TDD in real-world applications.",
+      certificateLink: "/images/certificate/c-1.png",
+    },
+    certificationProcessData: {
+      title: "Certification Process and Requirements",
+      description: [
+        "To qualify for certification, you must complete the JavaScript Unit Testing course and pass a final assessment.",
+        "The assessment evaluates your ability to write unit tests, use mocks, and implement TDD techniques.",
+        "It is conducted under structured guidelines to ensure fairness and integrity.",
+      ],
+      assessmentDetails:
+        "The final assessment consists of a 100-mark unit testing challenge, contributing 100% to your certification score. While practice exercises throughout the course reinforce learning, they do not contribute to the final score.",
+      criteriaTitle: "Certification Eligibility Criteria",
+      criteria: ["Achieve a minimum score of 60% in the final assessment."],
+      retakeInfo:
+        "If you do not meet the required score, you will have the opportunity to retake the final assessment once.",
+      finalNote:
+        "This evaluation ensures that only individuals who demonstrate strong JavaScript unit testing skills receive the certificate.",
+    },
+    faqData: [
+      {
+        title: "What is the format of this course?",
+        description:
+          "JavaScript Unit Testing is a live online training program featuring interactive sessions, hands-on testing exercises, Q&A discussions, and instructor-led problem-solving.",
+      },
+      {
+        title: "What are the prerequisites for this course?",
+        description:
+          "A basic understanding of JavaScript, including ES6+ features, is recommended. No prior experience with unit testing is required.",
+      },
+      {
+        title: "Will I have access to recorded sessions?",
+        description:
+          "Yes! All live session recordings will be available in the LMS portal for 6 months.",
+      },
+      {
+        title: "What projects will I work on?",
+        description:
+          "You will work on 4+ real-world testing projects, covering unit testing, test-driven development, mocking dependencies, and code coverage.",
+      },
+      {
+        title: "How long is the course and what is the schedule?",
+        description:
+          "The course includes 80 hours of training: 1-hour sessions on weekdays and 3-hour sessions on weekends.",
+      },
+      {
+        title: "Do I receive a certificate upon completion?",
+        description:
+          "Yes! You will receive a Certificate of Excellence upon successfully completing the course and passing the assessment.",
+      },
+      {
+        title: "What kind of support is available during the course?",
+        description:
+          "You will have 24/7 access to the LMS portal, live Q&A sessions, community forums, and mentor support.",
+      },
+      {
+        title: "Is there a final assessment?",
+        description:
+          "Yes, a final assessment is required to earn the certification. It consists of practical testing challenges and code coverage analysis.",
+      },
+    ],
+    syllabusData: [
+      {
+        icon: "FaCode",
+        title: "Module 1",
+        subtitle: "Getting Started",
+        topics: [
+          "Welcome",
+          "Prerequisites",
+          "Course Structure",
+          "How to Take This Course",
+          "Setting Up the Testing Environment",
+          "Starter Project",
+        ],
+      },
+      {
+        icon: "FaBug",
+        title: "Module 2",
+        subtitle: "Introduction to Unit Testing",
+        topics: [
+          "What is Unit Testing",
+          "Types of Tests",
+          "Choosing a Testing Framework",
+          "Setting Up Vitest",
+          "Writing Your First Tests",
+          "Exercise: Testing fizzBuzz",
+          "Test-driven Development",
+          "Exercise: Testing Factorial",
+          "Running Tests",
+          "Navigating Tests in VSCode",
+          "Code Coverage",
+          "Summary",
+        ],
+      },
+      {
+        icon: "TbBinaryTree2",
+        title: "Module 3",
+        subtitle: "Core Unit Testing Techniques",
+        topics: [
+          "Introduction",
+          "Characteristics of Good Unit Tests",
+          "Using Matchers",
+          "Writing Good Assertions",
+          "Exercise: Testing getCoupons",
+          "Positive and Negative Testing",
+          "Exercise: Testing validateUserInput",
+          "Boundary Testing",
+          "Exercise: Testing isValidUsername",
+          "Exercise: Testing canDrive",
+          "Parameterized Tests",
+          "Exercise: Parameterized Tests",
+          "Testing Asynchronous Code",
+          "Setup and Teardown",
+          "Exercise: Testing a Stack",
+          "Summary",
+        ],
+      },
+      {
+        icon: "RiSpyLine",
+        title: "Module 4",
+        subtitle: "Breaking Dependencies with Mocks",
+        topics: [
+          "Creating Mock Functions",
+          "Exercise: Working with Mock Functions",
+          "Mocking Modules",
+          "Exercise: Testing getShippingInfo",
+          "Interaction Testing",
+          "Exercise: Testing submitOrder",
+          "Partial Mocking",
+          "Spying on Functions",
+          "Clearing, Resetting, and Restoring Mocks",
+          "To Mock or Not to Mock",
+          "Mocking Dates",
+          "Exercise: Testing getDiscount",
+          "Summary",
+        ],
+      },
+      {
+        icon: "AiOutlineSafety",
+        title: "Module 5",
+        subtitle: "Improving Code Quality with Static Analysis Tools",
+        topics: [
+          "What are Static Analysis Tools",
+          "Formatting Code with Prettier",
+          "Linting Code with ESLint",
+          "Catching Type Errors with TypeScript",
+          "Running ESLint on TypeScript",
+          "Automating Code Quality Checks with Husky",
+          "Running Tests on Push",
+          "Summary",
+        ],
+      },
+    ],
+  },
 ];

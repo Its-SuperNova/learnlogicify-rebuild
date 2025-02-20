@@ -1,12 +1,12 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6"; 
-import { FaCode, FaDatabase, FaFileArchive, FaJava, FaJs, FaJsSquare, FaNetworkWired, FaProjectDiagram, FaPython, FaQuestion, FaRegFolderOpen, FaSyncAlt, FaTools, FaTree, FaUserShield } from "react-icons/fa";
+import { FaBug, FaCode, FaDatabase, FaFileArchive, FaJava, FaJs, FaJsSquare, FaNetworkWired, FaProjectDiagram, FaPython, FaQuestion, FaRegFolderOpen, FaSyncAlt, FaTools, FaTree, FaUserShield } from "react-icons/fa";
 import { IoCubeOutline, IoLogoPython } from "react-icons/io5";
 import { PiMathOperationsBold } from "react-icons/pi";
-import { RiDatabase2Fill, RiDatabase2Line, RiLoopLeftFill, RiTableFill } from "react-icons/ri";
+import { RiDatabase2Fill, RiDatabase2Line, RiLoopLeftFill, RiSpyLine, RiTableFill } from "react-icons/ri";
 import { TbMathFunction } from "react-icons/tb";
-import { AiOutlineExclamationCircle, AiOutlineFileAdd } from "react-icons/ai";
+import { AiOutlineExclamationCircle, AiOutlineFileAdd, AiOutlineSafety } from "react-icons/ai";
 import { BiMessageSquareDots } from "react-icons/bi";
 import { MdOutlineCalculate } from "react-icons/md";
 import { TbBinaryTree2 } from "react-icons/tb";
@@ -67,6 +67,9 @@ const iconMap: Record<string, React.ElementType> = {
   FaJs,
   FaJsSquare,
   FaTools,
+  FaBug,
+  RiSpyLine,
+  AiOutlineSafety,
 };
 
 interface SyllabusModule {
