@@ -4052,5 +4052,237 @@ export const CourseData = [
       },
     ],
   },
-];
 
+  //web-Development
+
+  //js-fundamentals
+  {
+    courseTitle: "JavaScript Fundamentals",
+    instructor: "Sachin",
+    rating: 4.9,
+    reviews: "6.2k Ratings",
+    courseIcon: "FaJs",
+    level: "Beginner",
+    liveClasses: "Live Classes",
+    weekdays: "Weekdays: 1 Hour/Day",
+    weekends: "Weekends: 3 Hours/Day",
+    totalHours: "80+ Hours",
+    topicsCount: "7+ Modules",
+    problemsCount: "50+ JavaScript Exercises",
+    projectsCount: "5+ Real-World JavaScript Projects",
+    portalAccess: "LMS Portal Access (6 Months)",
+    sessionRecordings: "Session Recordings in LMS",
+    certificate: "Certificate of Completion",
+    originalPrice: 4999,
+    discountedPrice: 2499,
+    discountPercentage: 50,
+    courseIntroVideo: "/course-intro.mp4",
+    videoPoster: "/images/thumbnail/image.png",
+    aboutData: {
+      description: [
+        "The JavaScript Fundamentals course is designed to build a strong foundation in JavaScript, covering essential concepts such as variables, operators, control flow, functions, objects, and arrays.",
+        "This course focuses on hands-on learning through interactive exercises, quizzes, and real-world applications to make coding fun and practical.",
+        "By the end of this course, you will have the skills to write efficient JavaScript code, understand core programming principles, and prepare yourself for more advanced web development topics.",
+      ],
+      structure: [
+        "Weekdays: 1 Hour per Day",
+        "Weekends: 3 Hours per Day",
+        "Total Duration: 80+ Hours of Live Training",
+      ],
+    },
+    prerequisites: [
+      {
+        text: "You don't need any prior experience with JavaScript to take this course. You'll learn everything from scratch, step-by-step. A basic familiarity with HTML and CSS is helpful but not required. This course is designed for students, aspiring developers, and professionals who want to build a strong foundation in JavaScript. If you are intrested to learn HTML/css ,check out our ",
+        links: [
+          {
+            link: "/course/pages/html-basics",
+            linkText: "Ultimate HTML and CSS",
+          },
+        ],
+      },
+    ],
+    certificateData: {
+      imageUrl: "/images/certificate/c-1.png",
+      title: "Certificate of Excellence",
+      description:
+        "Upon successfully completing the course, you will be awarded the Certificate of Excellence from LearnLogicify Technologies. This certification validates your expertise in JavaScript fundamentals, helping you advance in web development and software programming.",
+      certificateLink: "/images/certificate/c-1.png",
+    },
+    certificationProcessData: {
+      title: "Certification Process and Requirements",
+      description: [
+        "To qualify for certification, you must complete all modules and pass a final assessment.",
+        "The assessment evaluates your JavaScript skills, problem-solving ability, and coding proficiency.",
+        "It is conducted under strict guidelines to ensure fairness and credibility.",
+      ],
+      assessmentDetails:
+        "The final assessment consists of JavaScript coding challenges and a mini-project, contributing 100% to your certification score.",
+      criteriaTitle: "Certification Eligibility Criteria",
+      criteria: ["Achieve a minimum score of 60% in the final assessment."],
+      retakeInfo:
+        "If you do not meet the required score, you will have the opportunity to retake the final assessment once.",
+      finalNote:
+        "This evaluation ensures that only students who demonstrate strong JavaScript skills receive the certification.",
+    },
+    faqData: [
+      {
+        title: "What is the format of this course?",
+        description:
+          "JavaScript Fundamentals is a live online training program featuring interactive sessions, coding exercises, quizzes, and real-world projects.",
+      },
+      {
+        title: "What are the prerequisites?",
+        description:
+          "No prior experience is required. Anyone interested in learning JavaScript can enroll.",
+      },
+      {
+        title: "Will I have access to recorded sessions?",
+        description:
+          "Yes! All live session recordings will be available in the LMS portal for 6 months.",
+      },
+      {
+        title: "What projects will I work on?",
+        description:
+          "You will work on 5+ real-world JavaScript projects covering dynamic web development, data manipulation, and interactive UI development.",
+      },
+      {
+        title: "How long is the course and what is the schedule?",
+        description:
+          "The course includes 80+ hours of training: 1-hour sessions on weekdays and 3-hour sessions on weekends.",
+      },
+      {
+        title: "Do I receive a certificate upon completion?",
+        description:
+          "Yes! You will receive a Certificate of Excellence upon successfully completing the course and passing the assessment.",
+      },
+      {
+        title: "What kind of support is available during the course?",
+        description:
+          "You will have 24/7 access to the LMS portal, live Q&A sessions, community forums, and mentor support.",
+      },
+      {
+        title: "Is there a final assessment?",
+        description:
+          "Yes, a final assessment is required to earn the certification. It consists of practical JavaScript coding challenges and a mini-project.",
+      },
+    ],
+    syllabusData: [
+      {
+        icon: "FaJs",
+        title: "Module 1",
+        subtitle: "Getting Started with JavaScript",
+        topics: [
+          "Welcome",
+          "What is JavaScript?",
+          "Setting Up the Development Environment",
+          "JavaScript in Browsers",
+          "Separation of Concerns",
+          "JavaScript in Node.js",
+          "Source Code Overview",
+          "Follow Me Around",
+          "Learning Paths",
+        ],
+      },
+      {
+        icon: "FaCode",
+        title: "Module 2",
+        subtitle: "JavaScript Basics",
+        topics: [
+          "Variables",
+          "Constants",
+          "Primitive Types",
+          "Dynamic Typing",
+          "Objects",
+          "Arrays",
+          "Functions",
+          "Types of Functions",
+        ],
+      },
+      {
+        icon: "IoCubeOutline",
+        title: "Module 3",
+        subtitle: "Operators in JavaScript",
+        topics: [
+          "JavaScript Operators",
+          "Arithmetic Operators",
+          "Assignment Operators",
+          "Comparison Operators",
+          "Equality Operators",
+          "Ternary Operator",
+          "Logical Operators",
+          "Logical Operators with Non-Booleans",
+          "Bitwise Operators",
+          "Operator Precedence",
+          "Quiz & Exercise: Swapping Variables",
+        ],
+      },
+      {
+        icon: "RiTableFill",
+        title: "Module 4",
+        subtitle: "Control Flow in JavaScript",
+        topics: [
+          "If...else",
+          "Switch Case",
+          "Loops (For, While, Do-While)",
+          "Infinite Loops",
+          "For...in and For...of Loops",
+          "Break and Continue",
+          "Exercises: JavaScript Control Flow Challenges",
+        ],
+      },
+      {
+        icon: "FaJsSquare",
+        title: "Module 5",
+        subtitle: "Working with Objects",
+        topics: [
+          "Basics of Objects",
+          "Factory & Constructor Functions",
+          "Value vs Reference Types",
+          "Enumerating Object Properties",
+          "Cloning Objects",
+          "Garbage Collection",
+          "String and Date Manipulation",
+          "Exercises on Object Manipulation",
+        ],
+      },
+      {
+        icon: "FaJsSquare",
+        title: "Module 6",
+        subtitle: "Working with Arrays",
+        topics: [
+          "Introduction to Arrays",
+          "Adding, Removing, and Finding Elements",
+          "Sorting & Filtering Arrays",
+          "Mapping & Reducing Arrays",
+          "Working with the Spread Operator",
+          "Exercises on Arrays",
+        ],
+      },
+      {
+        icon: "FaCode",
+        title: "Module 7",
+        subtitle: "Functions in JavaScript",
+        topics: [
+          "Function Declarations vs Expressions",
+          "Hoisting in JavaScript",
+          "Function Arguments & Default Parameters",
+          "Getters and Setters",
+          "Error Handling with Try and Catch",
+          "Understanding Scope in JavaScript",
+          "Exercises on Functions",
+        ],
+      },
+      {
+        icon: "FaProjectDiagram",
+        title: "Module 8",
+        subtitle: "Final Project & Assessment",
+        topics: [
+          "Developing a JavaScript Project",
+          "Implementing Core JavaScript Concepts",
+          "Debugging and Code Optimization",
+          "Final Assessment and Certification",
+        ],
+      },
+    ],
+  },
+];
