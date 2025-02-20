@@ -30,6 +30,7 @@ export default async function Page({
     "algorithms-python",
     "algorithms-cpp",
     "sql-mastery",
+    "mongodb-mastery",
   ];
   const CourseId = (await params).CourseId;
 

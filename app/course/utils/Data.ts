@@ -3758,5 +3758,299 @@ export const CourseData = [
       },
     ],
   },
+
+  //Mongo-db
+  {
+    courseTitle: "MongoDB Mastery - From Basics to Advanced",
+    instructor: "Sachin",
+    rating: 4.9,
+    reviews: "5.2k Ratings",
+    courseIcon: "SiMongodb",
+    level: "Intermediate",
+    liveClasses: "Live Classes",
+    weekdays: "Weekdays: 1 Hour/Day",
+    weekends: "Weekends: 3 Hours/Day",
+    totalHours: "Total: 100 Hours",
+    topicsCount: "16 Topics",
+    problemsCount: "250+ MongoDB Challenges",
+    projectsCount: "6+ Real-World MongoDB Projects",
+    portalAccess: "LMS Portal Access (6 Months)",
+    sessionRecordings: "Session Recordings in LMS",
+    certificate: "Certificate of Completion",
+    originalPrice: 5999,
+    discountedPrice: 2999,
+    discountPercentage: 50,
+    courseIntroVideo: "/course-intro.mp4",
+    videoPoster: "/images/thumbnail/image.png",
+    aboutData: {
+      description: [
+        "The MongoDB Mastery course is designed to provide a solid foundation in MongoDB, a widely used NoSQL database. It covers core database concepts, CRUD operations, schema design, indexing, aggregation, transactions, and advanced topics such as replication and sharding.",
+        "This course focuses on hands-on learning, real-world projects, and practical applications of MongoDB in modern development environments.",
+        "By the end of this course, you will be proficient in managing large-scale databases, optimizing query performance, and implementing MongoDB solutions for real-world applications.",
+      ],
+      structure: [
+        "Weekdays: 1 Hour per Day",
+        "Weekends: 3 Hours per Day",
+        "Total Duration: 100 Hours of Live Training",
+      ],
+    },
+    prerequisites: [
+      {
+        text: "This course is designed for beginners, and no prior experience with databases is required. It is structured to guide you step by step, making it accessible even if you are new to NoSQL databases. Whether you're a student, aspiring developer, or working professional, you can confidently enroll and start learning from scratch.",
+      },
+    ],
+    certificateData: {
+      imageUrl: "/images/certificate/c-1.png",
+      title: "Certificate of Excellence",
+      description:
+        "Upon successfully completing the course, you will be awarded the Certificate of Excellence from LearnLogicify Technologies. This certification validates your expertise in MongoDB, demonstrating your ability to handle NoSQL databases, optimize query performance, and implement scalable database solutions.",
+      certificateLink: "/images/certificate/c-1.png",
+    },
+    certificationProcessData: {
+      title: "Certification Process and Requirements",
+      description: [
+        "To qualify for certification, you must complete the MongoDB Mastery course and pass a final assessment.",
+        "The assessment evaluates your ability to perform CRUD operations, optimize queries, implement indexing, and manage MongoDB in real-world applications.",
+        "It is conducted under strict guidelines to ensure fairness and integrity.",
+      ],
+      assessmentDetails:
+        "The final assessment consists of a 100-mark MongoDB exam, contributing 100% to your certification score. While practice exercises throughout the course reinforce learning, they do not contribute to the final score.",
+      criteriaTitle: "Certification Eligibility Criteria",
+      criteria: ["Achieve a minimum score of 60% in the final assessment."],
+      retakeInfo:
+        "If you do not meet the required score, you will have the opportunity to retake the final assessment once.",
+      finalNote:
+        "This evaluation ensures that only individuals who demonstrate strong MongoDB skills and NoSQL database management proficiency receive the certificate.",
+    },
+    faqData: [
+      {
+        title: "What is the format of this course?",
+        description:
+          "MongoDB Mastery is a live online training program featuring interactive sessions, hands-on database design, query writing, Q&A discussions, and instructor-led problem-solving.",
+      },
+      {
+        title: "What are the prerequisites for this course?",
+        description:
+          "No prior experience with databases is required, but familiarity with basic programming concepts will be helpful.",
+      },
+      {
+        title: "Will I have access to recorded sessions?",
+        description:
+          "Yes! All live session recordings will be available in the LMS portal for 6 months.",
+      },
+      {
+        title: "What projects will I work on?",
+        description:
+          "You will work on 6+ real-world projects, covering database design, CRUD operations, aggregation frameworks, and performance tuning.",
+      },
+      {
+        title: "How long is the course and what is the schedule?",
+        description:
+          "The course includes 100 hours of training: 1-hour sessions on weekdays and 3-hour sessions on weekends.",
+      },
+      {
+        title: "Do I receive a certificate upon completion?",
+        description:
+          "Yes! You will receive a Certificate of Excellence upon successfully completing the course and passing the assessment.",
+      },
+      {
+        title: "What kind of support is available during the course?",
+        description:
+          "You will have 24/7 access to the LMS portal, live Q&A sessions, community forums, and mentor support.",
+      },
+      {
+        title: "Is there a final assessment?",
+        description:
+          "Yes, a final assessment is required to earn the certification. It consists of practical MongoDB challenges and optimization problems.",
+      },
+    ],
+    syllabusData: [
+      {
+        icon: "SiMongodb",
+        title: "Module 1",
+        subtitle: "Introduction to MongoDB",
+        topics: [
+          "What is MongoDB?",
+          "SQL vs NoSQL Databases",
+          "Document-Oriented Data Model",
+          "MongoDB Installation & Setup",
+          "MongoDB Compass & Atlas Overview",
+        ],
+      },
+      {
+        icon: "FaCode",
+        title: "Module 2",
+        subtitle: "CRUD Operations in MongoDB",
+        topics: [
+          "Creating Databases & Collections",
+          "Inserting Documents",
+          "Reading Data (Find, Sort, Limit)",
+          "Updating & Deleting Documents",
+          "MongoDB Query Operators",
+        ],
+      },
+      {
+        icon: "IoCubeOutline",
+        title: "Module 3",
+        subtitle: "Schema Design & Data Modeling",
+        topics: [
+          "MongoDB Schema Design Principles",
+          "Embedding vs Referencing Data",
+          "Designing Scalable Collections",
+          "Indexing Strategies",
+          "Working with Relationships in NoSQL",
+        ],
+      },
+      {
+        icon: "RiDatabase2Line",
+        title: "Module 4",
+        subtitle: "Indexes & Performance Optimization",
+        topics: [
+          "Types of Indexes in MongoDB",
+          "Creating & Managing Indexes",
+          "Query Optimization with Indexes",
+          "Indexing Best Practices",
+          "Profiling MongoDB Queries",
+        ],
+      },
+      {
+        icon: "FaProjectDiagram",
+        title: "Module 5",
+        subtitle: "Aggregation Framework",
+        topics: [
+          "Introduction to Aggregation Pipeline",
+          "Stages in Aggregation",
+          "Data Transformation & Processing",
+          "Grouping & Sorting with Aggregations",
+          "Performance Optimization in Aggregations",
+        ],
+      },
+      {
+        icon: "FaSyncAlt",
+        title: "Module 6",
+        subtitle: "Replication & Sharding",
+        topics: [
+          "Replication Concepts & Benefits",
+          "Configuring Replica Sets",
+          "Failover & High Availability",
+          "Sharding for Horizontal Scaling",
+          "Sharding Key Selection & Strategy",
+        ],
+      },
+      {
+        icon: "BsShieldLock",
+        title: "Module 7",
+        subtitle: "Security & Authentication",
+        topics: [
+          "User Roles & Permissions",
+          "Authentication & Authorization",
+          "Encryption & Data Protection",
+          "Auditing & Access Control",
+          "Secure MongoDB Deployment",
+        ],
+      },
+      {
+        icon: "FaFileArchive",
+        title: "Module 8",
+        subtitle: "Backup & Restore in MongoDB",
+        topics: [
+          "Backup Methods (mongodump, mongorestore)",
+          "Automating Backups & Scheduling",
+          "Disaster Recovery Strategies",
+          "Point-in-Time Recovery",
+          "Best Practices for Data Safety",
+        ],
+      },
+      {
+        icon: "RiTableFill",
+        title: "Module 9",
+        subtitle: "Transactions in MongoDB",
+        topics: [
+          "Understanding Transactions in NoSQL",
+          "Multi-Document ACID Transactions",
+          "Rollback & Commit Mechanisms",
+          "Concurrency Control & Isolation Levels",
+          "Optimizing Transactions for Scalability",
+        ],
+      },
+      {
+        icon: "BsGraphUp",
+        title: "Module 10",
+        subtitle: "Working with Geospatial Data",
+        topics: [
+          "Introduction to Geospatial Data",
+          "Creating Geospatial Indexes",
+          "Running Geospatial Queries",
+          "Use Cases for Location-Based Applications",
+        ],
+      },
+      {
+        icon: "GiNetworkBars",
+        title: "Module 11",
+        subtitle: "Change Streams & Real-Time Applications",
+        topics: [
+          "What are Change Streams?",
+          "Monitoring Data Changes",
+          "Using Change Streams with Node.js & Python",
+          "Building Real-Time Applications with MongoDB",
+        ],
+      },
+      {
+        icon: "GiOrganigram",
+        title: "Module 12",
+        subtitle: "MongoDB Atlas & Cloud Deployment",
+        topics: [
+          "Introduction to MongoDB Atlas",
+          "Deploying Databases on MongoDB Cloud",
+          "Scaling & Managing Cloud Instances",
+          "Using Atlas Triggers & Serverless Functions",
+        ],
+      },
+      {
+        icon: "FaNetworkWired",
+        title: "Module 13",
+        subtitle: "MongoDB in Microservices & DevOps",
+        topics: [
+          "Using MongoDB in Microservices Architecture",
+          "MongoDB Integration with Docker & Kubernetes",
+          "Continuous Integration & Deployment (CI/CD)",
+          "Monitoring MongoDB Performance",
+        ],
+      },
+      {
+        icon: "GiFiles",
+        title: "Module 14",
+        subtitle: "Text Search & Full-Text Indexing",
+        topics: [
+          "Introduction to Text Search in MongoDB",
+          "Creating Full-Text Indexes",
+          "Text Search Queries & Ranking",
+          "Multilingual Text Search",
+        ],
+      },
+      {
+        icon: "RiDatabase2Fill",
+        title: "Module 15",
+        subtitle: "ETL (Extract, Transform, Load) with MongoDB",
+        topics: [
+          "Understanding ETL in NoSQL",
+          "Extracting & Transforming Data",
+          "Data Migration Between SQL & NoSQL",
+          "Best Practices for Data Loading",
+        ],
+      },
+      {
+        icon: "FaProjectDiagram",
+        title: "Module 16",
+        subtitle: "Project Building & Real-World Applications",
+        topics: [
+          "Building a Scalable Database System",
+          "Optimizing Data for High Performance",
+          "Developing a Full-Stack App with MongoDB",
+          "Final Project Review & Assessment",
+        ],
+      },
+    ],
+  },
 ];
 

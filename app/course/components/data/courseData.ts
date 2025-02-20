@@ -427,12 +427,12 @@ const coursesData: Course[] = [
   },
 
   {
-    url: "/courses/pages/mongodb",
+    url: "/course/pages/mongodb-mastery",
     Level: "Intermediate",
     languageId: "mongodb",
     topicId: "dbms",
     learningTrack: "technical",
-    icon: FaDatabase,
+    icon: SiMongodb,
     title: "MongoDB",
     topics: 15,
     videos: 30,

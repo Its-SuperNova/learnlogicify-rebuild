@@ -7,7 +7,7 @@ import { MdOutlineAccessTimeFilled, MdOutlineLiveTv } from "react-icons/md";
 import { IoMdTime } from "react-icons/io";
 import { TbCube } from "react-icons/tb";
 import Link from "next/link";
-import { SiGo, SiRuby } from "react-icons/si";
+import { SiGo, SiMongodb, SiRuby } from "react-icons/si";
 
 interface OverviewProps {
   courseIcon: string;
@@ -34,6 +34,7 @@ const iconMap: Record<string, React.ElementType> = {
   FaPython,
   SiGo,
   FaDatabase,
+  SiMongodb,
 };
 const Overview: React.FC<OverviewProps> = ({
   courseIcon,
