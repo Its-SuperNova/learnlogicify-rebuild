@@ -4711,4 +4711,288 @@ export const CourseData = [
       },
     ],
   },
+
+  //HTML & CSS mastery
+  {
+    courseTitle: "Ultimate HTML & CSS Mastery",
+    instructor: "Sachin",
+    rating: 4.9,
+    reviews: "4.8k Ratings",
+    courseIcon: "FaHtml5",
+    level: "Beginner to Advanced",
+    liveClasses: "Live Classes",
+    weekdays: "Weekdays: 1 Hour/Day",
+    weekends: "Weekends: 3 Hours/Day",
+    totalHours: "Total: 120 Hours",
+    topicsCount: "12 Topics",
+    problemsCount: "200+ Exercises",
+    projectsCount: "5+ Real-World Projects",
+    portalAccess: "LMS Portal Access (6 Months)",
+    sessionRecordings: "Session Recordings in LMS",
+    certificate: "Certificate of Completion",
+    originalPrice: 5999,
+    discountedPrice: 2999,
+    discountPercentage: 50,
+    courseIntroVideo: "/course-intro.mp4",
+    videoPoster: "/images/thumbnail/image.png",
+    aboutData: {
+      description: [
+        "The Ultimate HTML & CSS Mastery course is designed to provide a strong foundation in web development. It covers everything from basic HTML elements and CSS styling to advanced concepts like responsive design, animations, and maintainable CSS.",
+        "With hands-on exercises, real-world projects, and best practices, this course will equip you with the skills to build modern, responsive, and visually appealing websites.",
+        "By the end of this course, you will have mastered HTML & CSS and be confident in creating professional web pages, optimizing layouts, and improving user experiences.",
+      ],
+      structure: [
+        "Weekdays: 1 Hour per Day",
+        "Weekends: 3 Hours per Day",
+        "Total Duration: 120 Hours of Live Training",
+      ],
+    },
+    prerequisites: [
+      {
+        text: "This course is perfect for absolute beginners—no prior experience in web development is required. Whether you're a student, an aspiring developer, or a professional looking to build a strong foundation in front-end development, this course will guide you step by step."
+      }
+    ]
+,
+    certificateData: {
+      imageUrl: "/images/certificate/c-1.png",
+      title: "Certificate of Excellence",
+      description:
+        "Upon successfully completing the course, you will be awarded the Certificate of Excellence from LearnLogicify Technologies. This certification validates your expertise in HTML and CSS, demonstrating your ability to design and develop modern, responsive websites.",
+      certificateLink: "/images/certificate/c-1.png",
+    },
+    certificationProcessData: {
+      title: "Certification Process and Requirements",
+      description: [
+        "To qualify for certification, you must complete the Ultimate HTML & CSS Mastery course and pass a final assessment.",
+        "The assessment evaluates your ability to write clean, semantic HTML, apply CSS effectively, and build responsive web layouts.",
+        "It is conducted under strict guidelines to ensure fairness and integrity.",
+      ],
+      assessmentDetails:
+        "The final assessment consists of a 100-mark project and a coding test, accounting for 100% of your certification score.",
+      criteriaTitle: "Certification Eligibility Criteria",
+      criteria: ["Achieve a minimum score of 60% in the final assessment."],
+      retakeInfo:
+        "If you do not meet the required score, you will have the opportunity to retake the final assessment once.",
+      finalNote:
+        "This certification ensures that only individuals with a strong grasp of HTML and CSS principles earn the certificate.",
+    },
+    faqData: [
+      {
+        title: "What is the format of this course?",
+        description:
+          "Ultimate HTML & CSS Mastery is a live online training program featuring interactive sessions, hands-on projects, Q&A discussions, and instructor-led exercises.",
+      },
+      {
+        title: "What are the prerequisites for this course?",
+        description:
+          "No prior web development experience is required. This course is beginner-friendly and structured for anyone interested in learning HTML & CSS from scratch.",
+      },
+      {
+        title: "Will I have access to recorded sessions?",
+        description:
+          "Yes! All live session recordings will be accessible through the LMS portal for 6 months.",
+      },
+      {
+        title: "What projects will I work on?",
+        description:
+          "You will work on 8+ real-world projects, covering responsive web design, layout techniques, CSS animations, and more.",
+      },
+      {
+        title: "How long is the course and what is the schedule?",
+        description:
+          "The course includes 120 hours of training: 1-hour sessions on weekdays and 3-hour sessions on weekends.",
+      },
+      {
+        title: "Do I receive a certificate upon completion?",
+        description:
+          "Yes! Upon successfully completing the course and passing the assessment, you will receive a Certificate of Excellence from LearnLogicify Technologies.",
+      },
+      {
+        title: "What kind of support is available during the course?",
+        description:
+          "You will have 24/7 access to the LMS portal, live Q&A sessions, community forums, and mentor support.",
+      },
+      {
+        title: "Is there a final assessment?",
+        description:
+          "Yes, a final assessment is required to qualify for the certificate. It includes a hands-on project and coding challenges to evaluate your skills.",
+      },
+    ],
+    syllabusData: [
+      {
+        icon: "FaGlobe",
+        title: "Module 1",
+        subtitle: "Web Development Fundamentals",
+        topics: [
+          "Introduction",
+          "Languages and Tools of Web Development",
+          "How the Web Works",
+          "Inspecting HTTP Requests and Responses",
+          "HTML Basics",
+          "CSS Basics",
+          "Formatting Code",
+          "Inspecting Pages Using DevTools",
+          "Validating Web Pages",
+          "Summary",
+        ],
+      },
+      {
+        icon: "FaHtml5",
+        title: "Module 2",
+        subtitle: "HTML Basics",
+        topics: [
+          "Introduction",
+          "The Head Section",
+          "Text",
+          "Entities",
+          "Hyperlinks",
+          "Images",
+          "Video and Audio",
+          "Lists",
+          "Tables",
+          "Containers",
+          "Semantic Elements",
+          "Structuring a Web Page",
+        ],
+      },
+      {
+        icon: "FaCss3Alt",
+        title: "Module 3",
+        subtitle: "CSS Basics",
+        topics: [
+          "Introduction",
+          "Providing CSS",
+          "Normalizing CSS",
+          "Basic Selectors",
+          "Relational Selectors",
+          "Pseudo-class Selectors",
+          "Pseudo-element Selectors",
+          "Selectors Specificity",
+          "Inheritance",
+          "Colors",
+          "Gradients",
+          "Borders",
+          "Shadows",
+        ],
+      },
+      {
+        icon: "FaColumns",
+        title: "Module 4",
+        subtitle: "Layout",
+        topics: [
+          "Introduction",
+          "The Box Model",
+          "Sizing Elements",
+          "Overflowing",
+          "Measurement Units",
+          "Positioning",
+          "Floating Elements",
+          "FlexBox",
+          "Grid",
+          "Hiding Elements",
+          "Media Queries",
+        ],
+      },
+      {
+        icon: "FaFont",
+        title: "Module 5",
+        subtitle: "Typography",
+        topics: [
+          "Introduction",
+          "Styling Fonts",
+          "Embedding Web Fonts",
+          "Flash of Unstyled Text",
+          "Font Services",
+          "System Font Stack",
+          "Sizing Fonts",
+          "Vertical Spacing",
+          "Horizontal Spacing",
+          "Formatting Text",
+        ],
+      },
+      {
+        icon: "FaImages",
+        title: "Module 6",
+        subtitle: "Images",
+        topics: [
+          "Introduction",
+          "Image Types and Formats",
+          "Content Images",
+          "Background Images",
+          "CSS Sprites",
+          "Data URLs",
+          "Clipping",
+          "Filters",
+          "Supporting High-Density Screens",
+          "Resolution Switching",
+          "Using Modern Image Formats",
+          "Art Direction",
+          "Scalable Vector Graphics",
+          "Font Icons",
+        ],
+      },
+      {
+        icon: "FaRegObjectGroup",
+        title: "Module 7",
+        subtitle: "Forms",
+        topics: [
+          "Introduction",
+          "Creating a Basic Form",
+          "Styling Forms",
+          "CSS Frameworks",
+          "Text Fields",
+          "Data Lists",
+          "Drop-down Lists",
+          "Check Boxes",
+          "Radio Buttons",
+          "Sliders",
+          "File Inputs",
+          "Grouping Related Fields",
+          "Hidden Fields",
+          "Data Validation",
+          "Submitting the Form",
+        ],
+      },
+      {
+        icon: "FaFilm",
+        title: "Module 8",
+        subtitle: "Transformations, Transitions, and Animations",
+        topics: [
+          "Introduction",
+          "Transformations",
+          "3D Transformations",
+          "Transitions",
+          "Animations",
+          "Reusable Animations",
+          "Summary",
+          "Exercises",
+        ],
+      },
+      {
+        icon: "FaClipboardCheck",
+        title: "Module 9",
+        subtitle: "Writing Clean, Maintainable CSS",
+        topics: [
+          "Introduction",
+          "CSS Best Practices",
+          "Variables",
+          "Object-Oriented CSS",
+          "BEM",
+        ],
+      },
+      {
+        icon: "FaProjectDiagram",
+        title: "Module 10",
+        subtitle: "Project Building - Responsive Website",
+        topics: [
+          "Planning a Responsive Web Project",
+          "Designing a Landing Page",
+          "Applying CSS Grid & Flexbox",
+          "Optimizing for Mobile Devices",
+          "Adding Animations and Interactions",
+          "Final Review and Deployment",
+        ],
+      },
+    ],
+  },
 ];
