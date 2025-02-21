@@ -445,7 +445,7 @@ const coursesData: Course[] = [
   },
 
   {
-    url: "/courses/pages/react-beginners",
+    url: "/course/pages/react-for-beginners",
     Level: "Beginner",
     languageId: "javascript",
     topicId: "web-development",

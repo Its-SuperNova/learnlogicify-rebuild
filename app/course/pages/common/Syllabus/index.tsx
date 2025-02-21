@@ -1,10 +1,10 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6"; 
-import { FaBug, FaClipboardCheck, FaCode, FaColumns, FaCss3Alt, FaDatabase, FaFileArchive, FaFilm, FaFont, FaGlobe, FaHtml5, FaImages, FaJava, FaJs, FaJsSquare, FaNetworkWired, FaProjectDiagram, FaPython, FaQuestion, FaRegFolderOpen, FaRegObjectGroup, FaSyncAlt, FaTools, FaTree, FaUserShield } from "react-icons/fa";
+import { FaBug, FaBuilding, FaClipboardCheck, FaCode, FaCogs, FaColumns, FaCss3Alt, FaDatabase, FaFileArchive, FaFilm, FaFont, FaGamepad, FaGlobe, FaHtml5, FaImages, FaJava, FaJs, FaJsSquare, FaNetworkWired, FaPaintBrush, FaProjectDiagram, FaPython, FaQuestion, FaReact, FaRegFolderOpen, FaRegObjectGroup, FaSyncAlt, FaTools, FaTree, FaUserShield, FaWpforms } from "react-icons/fa";
 import { IoCubeOutline, IoLogoPython } from "react-icons/io5";
 import { PiMathOperationsBold } from "react-icons/pi";
-import { RiDatabase2Fill, RiDatabase2Line, RiLoopLeftFill, RiSpyLine, RiTableFill } from "react-icons/ri";
+import { RiDashboardHorizontalFill, RiDatabase2Fill, RiDatabase2Line, RiLoopLeftFill, RiSpyLine, RiTableFill } from "react-icons/ri";
 import { TbMathFunction } from "react-icons/tb";
 import { AiOutlineExclamationCircle, AiOutlineFileAdd, AiOutlineSafety } from "react-icons/ai";
 import { BiMessageSquareDots } from "react-icons/bi";
@@ -79,6 +79,12 @@ const iconMap: Record<string, React.ElementType> = {
   FaRegObjectGroup,
   FaFilm,
   FaClipboardCheck,
+  FaReact,
+  RiDashboardHorizontalFill,
+  FaCogs,
+  FaPaintBrush,
+  FaWpforms,
+  FaGamepad,
 };
 
 interface SyllabusModule {
@@ -157,7 +163,7 @@ const Syllabus = ({ syllabusData }: { syllabusData: SyllabusModule[] }) => {
                 }}
                 className={`overflow-hidden transition-all duration-700 ease-in-out ${
                   isExpanded
-                    ? "max-h-[500px] opacity-100 py-4"
+                    ? "max-h-[1600px]  opacity-100 py-4"
                     : "max-h-0 opacity-0 py-0"
                 }`}
               >
