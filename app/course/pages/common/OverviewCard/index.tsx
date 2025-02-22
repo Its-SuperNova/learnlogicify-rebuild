@@ -2,6 +2,7 @@ import React from "react";
 import { BiSolidBarChartAlt2 } from "react-icons/bi";
 import {
   FaBook,
+  FaBrain,
   FaCode,
   FaDatabase,
   FaFlask,
@@ -55,6 +56,7 @@ const iconMap: Record<string, React.ElementType> = {
   FaFlask,
   RiNextjsFill,
   FaNodeJs,
+  FaBrain,
 };
 const Overview: React.FC<OverviewProps> = ({
   courseIcon,

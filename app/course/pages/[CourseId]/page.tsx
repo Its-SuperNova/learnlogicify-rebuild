@@ -40,6 +40,7 @@ export default async function Page({
     "react-testing",
     "nextjs-mastery",
     "complete-nodejs-mastery",
+    "ai-mastery",
   ];
   const CourseId = (await params).CourseId;
 

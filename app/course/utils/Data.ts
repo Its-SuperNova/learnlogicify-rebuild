@@ -6627,4 +6627,270 @@ export const CourseData = [
       },
     ],
   },
+
+  //AI
+  {
+    courseTitle: "AI Mastery",
+    instructor: "Sachin",
+    rating: 4.9,
+    reviews: "6.5k Ratings",
+    courseIcon: "FaBrain",
+    level: "Beginner to Advanced",
+    liveClasses: "Live Classes",
+    weekdays: "Weekdays: 1.5 Hours/Day",
+    weekends: "Weekends: 3 Hours/Day",
+    totalHours: "Total: 120+ Hours",
+    topicsCount: "15+ Modules",
+    problemsCount: "150+ Exercises",
+    projectsCount: "5+ Real-World AI Projects",
+    portalAccess: "LMS Portal Access (6 Months)",
+    sessionRecordings: "Session Recordings in LMS",
+    certificate: "Certificate of Completion",
+    originalPrice: 9999,
+    discountedPrice: 4999,
+    discountPercentage: 50,
+    courseIntroVideo: "/course-intro.mp4",
+    videoPoster: "/images/thumbnail/image.png",
+    aboutData: {
+      description: [
+        "AI Mastery is a comprehensive course that covers the fundamentals and advanced concepts of Artificial Intelligence. Whether you're a beginner looking to understand AI or an experienced developer aiming to build real-world AI applications, this course is designed for you. You'll explore Machine Learning, Deep Learning, Natural Language Processing (NLP), and Computer Vision.",
+        "With hands-on projects, live coding sessions, and practical exercises, you'll gain expertise in AI model development, data preprocessing, model deployment, and optimization techniques. By the end of this course, you’ll be able to develop AI-powered applications and implement AI solutions in various domains.",
+      ],
+      structure: [
+        "Weekdays: 1.5 Hours per Day",
+        "Weekends: 3 Hours per Day",
+        "Total Duration: 120+ Hours of Live Training",
+      ],
+    },
+    prerequisites: [
+      {
+        text: "Before enrolling in this course, it is strongly recommended to have a solid understanding of Python programming, as it will be the primary language used throughout the course. You should be comfortable with writing Python scripts, working with data structures like lists and dictionaries, using functions and loops, and handling basic file operations. While a background in mathematics (linear algebra, calculus, and probability) can be beneficial, it is not mandatory, as we will cover the necessary mathematical concepts in the course. If you're new to Python or need a refresher, we recommend completing the following course first:",
+        links: [
+          {
+            link: "/course/pages/python-programming",
+            linkText: "Python Programming",
+          },
+        ],
+      },
+    ],
+    certificateData: {
+      imageUrl: "/images/certificate/c-1.png",
+      title: "Certificate of Excellence",
+      description:
+        "Upon successfully completing the course, you will be awarded the Certificate of Excellence from LearnLogicify Technologies, recognizing your proficiency in Artificial Intelligence and Machine Learning. This certification validates your ability to build AI models, apply machine learning techniques, and work with deep learning, NLP, and computer vision. It serves as a testament to your expertise, enhancing your career prospects and credibility in the AI industry.",
+      certificateLink: "/images/certificate/c-1.png",
+    },
+    certificationProcessData: {
+      title: "Certification Process and Requirements",
+      description: [
+        "To qualify for certification, you must complete all course modules and pass a final assessment.",
+        "The final assessment will include a real-world AI project, coding challenges, and theoretical questions.",
+      ],
+      assessmentDetails:
+        "The final assessment consists of a 100-mark evaluation, with a minimum passing score of 60%.",
+      criteriaTitle: "Certification Eligibility Criteria",
+      criteria: ["Achieve a minimum score of 60% in the final assessment."],
+      retakeInfo:
+        "You will have one opportunity to retake the final assessment if needed.",
+      finalNote:
+        "This certification validates your AI expertise and hands-on skills, making you industry-ready.",
+    },
+    faqData: [
+      {
+        title: "What is the format of this course?",
+        description:
+          "AI Mastery is a live online training program with interactive sessions, real-world AI projects, and hands-on coding exercises.",
+      },
+      {
+        title: "Do I need prior AI experience?",
+        description:
+          "No prior AI experience is required. However, knowledge of Python and basic math concepts will be helpful.",
+      },
+      {
+        title: "Will I have access to recorded sessions?",
+        description:
+          "Yes! All session recordings will be available on the LMS portal for 6 months after course completion.",
+      },
+      {
+        title: "What projects will I work on?",
+        description:
+          "You will work on AI projects including image classification, chatbot development, text analysis, and real-world AI applications.",
+      },
+      {
+        title: "How long is the course and what is the schedule?",
+        description:
+          "The course consists of 120+ hours of training with live interactive sessions, 1.5-hour sessions on weekdays, and 3-hour sessions on weekends.",
+      },
+      {
+        title: "Do I receive a certificate upon completion?",
+        description:
+          "Yes! Upon successful completion of the course and passing the final assessment, you will receive a Certificate of Excellence.",
+      },
+      {
+        title: "What kind of support is available?",
+        description:
+          "You will have access to an LMS portal, live Q&A sessions, mentor support, and an active community forum.",
+      },
+      {
+        title: "Is there a final assessment?",
+        description:
+          "Yes, a final project-based assessment and coding challenge are required to qualify for certification.",
+      },
+      {
+        title: "What if I miss a live session?",
+        description:
+          "No worries! All session recordings will be available for review at your convenience.",
+      },
+    ],
+    syllabusData: [
+      {
+        icon: "FaBrain",
+        title: "Module 1",
+        subtitle: "Introduction to AI",
+        topics: [
+          "What is Artificial Intelligence?",
+          "History and Evolution of AI",
+          "Applications of AI in Real-World",
+          "Types of AI: Narrow AI vs General AI",
+          "Challenges and Future of AI",
+          "Ethics and Bias in AI Development",
+          "Setting Up the AI Development Environment",
+        ],
+      },
+      {
+        icon: "FaCalculator",
+        title: "Module 2",
+        subtitle: "Mathematics for AI",
+        topics: [
+          "Linear Algebra: Vectors, Matrices, and Tensors",
+          "Matrix Operations and Eigenvalues",
+          "Differential Calculus for Machine Learning",
+          "Gradient Descent and Convex Optimization",
+          "Probability and Statistics for AI",
+          "Discrete Mathematics (First-Order Logic, Graph Theory)",
+          "Optimization Techniques in AI",
+          "Bayesian Probability and Decision Theory",
+        ],
+      },
+      {
+        icon: "FaPython",
+        title: "Module 3",
+        subtitle: "Python for AI",
+        topics: [
+          "Python Basics for AI",
+          "NumPy and Pandas for Data Processing",
+          "Matplotlib & Seaborn for Data Visualization",
+          "Working with Large Datasets",
+          "Data Cleaning and Preprocessing",
+        ],
+      },
+      {
+        icon: "FaDatabase",
+        title: "Module 4",
+        subtitle: "Data Science & Feature Engineering",
+        topics: [
+          "Introduction to Data Science",
+          "Exploratory Data Analysis (EDA)",
+          "Feature Engineering Techniques",
+          "Dimensionality Reduction (PCA, t-SNE)",
+          "Data Wrangling and Transformation",
+        ],
+      },
+      {
+        icon: "FaChartLine",
+        title: "Module 5",
+        subtitle: "Machine Learning Fundamentals",
+        topics: [
+          "Supervised vs Unsupervised Learning",
+          "Regression and Classification Models",
+          "Overfitting and Underfitting",
+          "Hyperparameter Tuning",
+          "Model Evaluation Techniques",
+        ],
+      },
+      {
+        icon: "FaBrain",
+        title: "Module 6",
+        subtitle: "Deep Learning & Neural Networks",
+        topics: [
+          "Understanding Neural Networks",
+          "Building Neural Networks with TensorFlow & Keras",
+          "Backpropagation and Gradient Descent",
+          "Convolutional Neural Networks (CNNs)",
+          "Recurrent Neural Networks (RNNs) & LSTMs",
+        ],
+      },
+      {
+        icon: "FaLanguage",
+        title: "Module 7",
+        subtitle: "Natural Language Processing (NLP)",
+        topics: [
+          "Introduction to NLP",
+          "Tokenization & Word Embeddings (Word2Vec, GloVe, BERT)",
+          "Text Classification & Sentiment Analysis",
+          "Named Entity Recognition (NER)",
+          "Building Chatbots with NLP",
+        ],
+      },
+      {
+        icon: "FaCamera",
+        title: "Module 8",
+        subtitle: "Computer Vision",
+        topics: [
+          "Introduction to Computer Vision",
+          "Image Processing with OpenCV",
+          "Object Detection & Recognition",
+          "Building an Image Classifier",
+          "Face Detection and Recognition",
+        ],
+      },
+      {
+        icon: "FaCloud",
+        title: "Module 9",
+        subtitle: "Deploying AI Models",
+        topics: [
+          "Deploying AI Models with Flask & FastAPI",
+          "Model Deployment on AWS, GCP & Azure",
+          "Building AI-powered Web Apps",
+          "Optimizing AI Model Performance",
+          "AI in Edge Computing & Mobile Devices",
+        ],
+      },
+      {
+        icon: "FaCogs",
+        title: "Module 10",
+        subtitle: "Reinforcement Learning & Advanced AI",
+        topics: [
+          "Introduction to Reinforcement Learning (RL)",
+          "Markov Decision Processes",
+          "Deep Q-Learning Networks (DQN)",
+          "Multi-Agent Systems & Game AI",
+          "AI Ethics & Future Trends",
+        ],
+      },
+      {
+        icon: "FaRobot",
+        title: "Module 11",
+        subtitle: "AI for Robotics & Automation",
+        topics: [
+          "Using AI in Robotics & Industrial Automation",
+          "Computer Vision for Robotics",
+          "Reinforcement Learning in Robotics",
+          "AI in Self-Driving Cars",
+          "Building Intelligent Agents",
+        ],
+      },
+      {
+        icon: "FaProjectDiagram",
+        title: "Module 12",
+        subtitle: "Final AI Capstone Project",
+        topics: [
+          "Planning a Real-World AI Project",
+          "Building and Training AI Models",
+          "Deploying AI Applications",
+          "Final Project Review and Evaluation",
+        ],
+      },
+    ],
+  },
 ];
