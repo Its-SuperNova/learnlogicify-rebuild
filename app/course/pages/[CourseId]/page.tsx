@@ -41,6 +41,7 @@ export default async function Page({
     "nextjs-mastery",
     "complete-nodejs-mastery",
     "ai-mastery",
+    "ml-mastery",
   ];
   const CourseId = (await params).CourseId;
 

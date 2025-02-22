@@ -374,7 +374,7 @@ const coursesData: Course[] = [
     available: true,
   },
   {
-    url: "/courses/ml-mastery",
+    url: "/course/pages/ml-mastery",
     Level: "Intermediate",
     languageId: "python",
     topicId: "ai-data-science",

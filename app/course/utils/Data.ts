@@ -6628,7 +6628,7 @@ export const CourseData = [
     ],
   },
 
-  //AI
+  //AI-Mastery
   {
     courseTitle: "AI Mastery",
     instructor: "Sachin",
@@ -6889,6 +6889,267 @@ export const CourseData = [
           "Building and Training AI Models",
           "Deploying AI Applications",
           "Final Project Review and Evaluation",
+        ],
+      },
+    ],
+  },
+
+  //ML-Mastery
+  {
+    courseTitle: "ML Mastery",
+    instructor: "Sachin",
+    rating: 4.8,
+    reviews: "5.2k Ratings",
+    courseIcon: "FaChartLine",
+    level: "Beginner to Advanced",
+    liveClasses: "Live Classes",
+    weekdays: "Weekdays: 1.5 Hours/Day",
+    weekends: "Weekends: 3 Hours/Day",
+    totalHours: "Total: 100+ Hours",
+    topicsCount: "12+ Modules",
+    problemsCount: "120+ Exercises",
+    projectsCount: "4+ Real-World ML Projects",
+    portalAccess: "LMS Portal Access (6 Months)",
+    sessionRecordings: "Session Recordings in LMS",
+    certificate: "Certificate of Completion",
+    originalPrice: 8999,
+    discountedPrice: 4499,
+    discountPercentage: 50,
+    courseIntroVideo: "/course-intro.mp4",
+    videoPoster: "/images/thumbnail/image.png",
+    aboutData: {
+      description: [
+        "ML Mastery is an extensive course designed to provide a strong foundation in Machine Learning (ML). This course covers the core concepts of ML, including supervised and unsupervised learning, feature engineering, model evaluation, and deployment. Whether you are new to ML or looking to advance your skills, this course offers hands-on projects and real-world applications.",
+        "With interactive sessions, live coding, and practical exercises, you will gain expertise in training models, hyperparameter tuning, working with deep learning frameworks, and deploying ML solutions. By the end of this course, you will have the skills to develop and optimize machine learning models for various applications.",
+      ],
+      structure: [
+        "Weekdays: 1.5 Hours per Day",
+        "Weekends: 3 Hours per Day",
+        "Total Duration: 100+ Hours of Live Training",
+      ],
+    },
+    prerequisites: [
+      {
+        text: "Before enrolling in this course, it is strongly recommended to have a solid understanding of Python programming, as it will be extensively used throughout the course. You should be comfortable with writing Python scripts, handling data structures, working with libraries like NumPy and Pandas, and implementing basic functions and loops. While prior knowledge of statistics and linear algebra is beneficial, key mathematical concepts will be covered in the course. If you're new to Python, we recommend completing the following course first:",
+        links: [
+          {
+            link: "/course/pages/python-programming",
+            linkText: "Python Programming",
+          },
+        ],
+      },
+    ],
+    certificateData: {
+      imageUrl: "/images/certificate/c-1.png",
+      title: "Certificate of Excellence",
+      description:
+        "Upon successfully completing the course, you will be awarded the Certificate of Excellence from LearnLogicify Technologies, validating your expertise in Machine Learning. This certification demonstrates your ability to train, evaluate, and deploy ML models, work with real-world datasets, and implement optimization techniques, enhancing your career prospects in data science and AI.",
+      certificateLink: "/images/certificate/c-1.png",
+    },
+    certificationProcessData: {
+      title: "Certification Process and Requirements",
+      description: [
+        "To earn certification, you must complete all course modules and pass the final assessment.",
+        "The final assessment will consist of a real-world ML project, coding exercises, and conceptual quizzes.",
+      ],
+      assessmentDetails:
+        "The final assessment consists of a 100-mark evaluation, with a minimum passing score of 60%.",
+      criteriaTitle: "Certification Eligibility Criteria",
+      criteria: ["Achieve a minimum score of 60% in the final assessment."],
+      retakeInfo:
+        "You will have one opportunity to retake the final assessment if needed.",
+      finalNote:
+        "This certification validates your ML expertise and practical skills, making you industry-ready.",
+    },
+    faqData: [
+      {
+        title: "What is the format of this course?",
+        description:
+          "ML Mastery is a live online training program with interactive sessions, hands-on ML projects, and coding exercises.",
+      },
+      {
+        title: "Do I need prior ML experience?",
+        description:
+          "No prior ML experience is required. However, knowledge of Python and basic math concepts will be beneficial.",
+      },
+      {
+        title: "Will I have access to recorded sessions?",
+        description:
+          "Yes! All session recordings will be available on the LMS portal for 6 months after course completion.",
+      },
+      {
+        title: "What projects will I work on?",
+        description:
+          "You will work on real-world ML projects including predictive modeling, recommendation systems, and data-driven applications.",
+      },
+      {
+        title: "How long is the course and what is the schedule?",
+        description:
+          "The course consists of 100+ hours of training with live interactive sessions, 1.5-hour sessions on weekdays, and 3-hour sessions on weekends.",
+      },
+      {
+        title: "Do I receive a certificate upon completion?",
+        description:
+          "Yes! Upon successful completion of the course and passing the final assessment, you will receive a Certificate of Excellence.",
+      },
+      {
+        title: "What kind of support is available?",
+        description:
+          "You will have access to an LMS portal, live Q&A sessions, mentor support, and an active community forum.",
+      },
+      {
+        title: "Is there a final assessment?",
+        description:
+          "Yes, a final project-based assessment and coding challenge are required to qualify for certification.",
+      },
+      {
+        title: "What if I miss a live session?",
+        description:
+          "No worries! All session recordings will be available for review at your convenience.",
+      },
+    ],
+    syllabusData: [
+      {
+        icon: "FaBrain",
+        title: "Module 1",
+        subtitle: "Introduction to Machine Learning",
+        topics: [
+          "What is Machine Learning?",
+          "Types of Machine Learning: Supervised, Unsupervised, Reinforcement",
+          "Applications of ML in Various Domains",
+          "Challenges in Machine Learning",
+          "Setting Up the ML Development Environment",
+        ],
+      },
+      {
+        icon: "FaCalculator",
+        title: "Module 2",
+        subtitle: "Mathematics for Machine Learning",
+        topics: [
+          "Linear Algebra: Vectors, Matrices, and Tensors",
+          "Probability and Statistics for ML",
+          "Differential Calculus for Optimization",
+          "Gradient Descent and Optimization Techniques",
+          "Bayesian Statistics and Decision Theory",
+        ],
+      },
+      {
+        icon: "FaPython",
+        title: "Module 3",
+        subtitle: "Python for Machine Learning",
+        topics: [
+          "Working with NumPy and Pandas",
+          "Data Preprocessing and Feature Engineering",
+          "Data Cleaning and Handling Missing Data",
+          "Exploratory Data Analysis (EDA)",
+          "Using Matplotlib & Seaborn for Data Visualization",
+        ],
+      },
+      {
+        icon: "FaChartLine",
+        title: "Module 4",
+        subtitle: "Supervised Learning",
+        topics: [
+          "Linear Regression and Polynomial Regression",
+          "Classification Models: Logistic Regression, Decision Trees, SVM",
+          "K-Nearest Neighbors (KNN) and Naive Bayes",
+          "Model Selection & Hyperparameter Tuning",
+          "Evaluating Model Performance (Precision, Recall, F1-score)",
+        ],
+      },
+      {
+        icon: "FaProjectDiagram",
+        title: "Module 5",
+        subtitle: "Unsupervised Learning",
+        topics: [
+          "Introduction to Clustering: K-Means, DBSCAN, Hierarchical",
+          "Principal Component Analysis (PCA) and Dimensionality Reduction",
+          "Anomaly Detection and Outlier Analysis",
+          "Association Rule Learning (Apriori, FP-Growth)",
+          "Real-World Applications of Unsupervised Learning",
+        ],
+      },
+      {
+        icon: "FaBrain",
+        title: "Module 6",
+        subtitle: "Neural Networks and Deep Learning",
+        topics: [
+          "Introduction to Neural Networks and Perceptrons",
+          "Backpropagation and Activation Functions",
+          "Building Deep Learning Models with TensorFlow & Keras",
+          "Optimizing Deep Neural Networks (Batch Normalization, Dropout)",
+          "Convolutional Neural Networks (CNNs) and Computer Vision",
+        ],
+      },
+      {
+        icon: "FaLanguage",
+        title: "Module 7",
+        subtitle: "Natural Language Processing (NLP)",
+        topics: [
+          "Introduction to NLP and Text Preprocessing",
+          "Tokenization & Word Embeddings (Word2Vec, BERT, GloVe)",
+          "Text Classification & Sentiment Analysis",
+          "Named Entity Recognition (NER)",
+          "Building Chatbots with NLP",
+        ],
+      },
+      {
+        icon: "FaCloud",
+        title: "Module 8",
+        subtitle: "Reinforcement Learning",
+        topics: [
+          "Introduction to Reinforcement Learning",
+          "Markov Decision Processes (MDP)",
+          "Q-Learning and Deep Q Networks (DQN)",
+          "Multi-Agent Systems & Game AI",
+          "AI in Self-Driving Cars",
+        ],
+      },
+      {
+        icon: "FaDatabase",
+        title: "Module 9",
+        subtitle: "Working with Real-World Datasets",
+        topics: [
+          "Data Collection and Preprocessing",
+          "Handling Imbalanced Datasets",
+          "Feature Selection and Engineering",
+          "Data Augmentation Techniques",
+          "Data Pipelines and Workflow Automation",
+        ],
+      },
+      {
+        icon: "FaServer",
+        title: "Module 10",
+        subtitle: "Model Deployment and Optimization",
+        topics: [
+          "Deploying ML Models with Flask & FastAPI",
+          "Building ML APIs and Serving Predictions",
+          "Model Deployment on AWS, GCP & Azure",
+          "Model Performance Monitoring and Optimization",
+          "Using ONNX for Cross-Platform Model Deployment",
+        ],
+      },
+      {
+        icon: "FaCogs",
+        title: "Module 11",
+        subtitle: "Explainable AI and Ethical Considerations",
+        topics: [
+          "Understanding Explainable AI (XAI)",
+          "Bias and Fairness in Machine Learning Models",
+          "Ethical Considerations in AI and ML",
+          "Privacy and Security in AI Applications",
+          "Regulations and Compliance in AI Development",
+        ],
+      },
+      {
+        icon: "FaProjectDiagram",
+        title: "Module 12",
+        subtitle: "Final ML Capstone Project",
+        topics: [
+          "Planning and Developing an End-to-End ML Project",
+          "Building, Evaluating, and Deploying ML Models",
+          "Model Interpretability and Performance Analysis",
+          "Final Project Review and Presentation",
         ],
       },
     ],
