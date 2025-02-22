@@ -38,6 +38,7 @@ export default async function Page({
     "react-for-beginners",
     "react-intermediate",
     "react-testing",
+    "nextjs-mastery",
   ];
   const CourseId = (await params).CourseId;
 

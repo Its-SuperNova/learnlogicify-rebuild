@@ -499,13 +499,13 @@ const coursesData: Course[] = [
   },
 
   {
-    url: "/courses/pages/nextjs",
+    url: "/course/pages/nextjs-mastery",
     Level: "Advanced",
     languageId: "javascript",
     topicId: "web-development",
     learningTrack: "technical",
     icon: FaJsSquare,
-    title: "Next.js",
+    title: "Next.js Mastery",
     topics: 18,
     videos: 35,
     desc: "Master Next.js for server-side rendering and static site generation.",

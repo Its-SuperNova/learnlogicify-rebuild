@@ -1,6 +1,18 @@
 import React from "react";
 import { BiSolidBarChartAlt2 } from "react-icons/bi";
-import { FaBook, FaCode, FaDatabase, FaFlask, FaHtml5, FaJava, FaJs, FaJsSquare, FaPython, FaReact } from "react-icons/fa";
+import {
+  FaBook,
+  FaCode,
+  FaDatabase,
+  FaFlask,
+  FaHtml5,
+  FaJava,
+  FaJs,
+  FaJsSquare,
+  FaPython,
+  FaReact,
+} from "react-icons/fa";
+import { RiNextjsFill } from "react-icons/ri";
 import { IoExtensionPuzzleSharp, IoLogoPython } from "react-icons/io5";
 import { PiSidebarFill, PiCertificate } from "react-icons/pi";
 import { MdOutlineAccessTimeFilled, MdOutlineLiveTv } from "react-icons/md";
@@ -40,6 +52,7 @@ const iconMap: Record<string, React.ElementType> = {
   FaHtml5,
   FaReact,
   FaFlask,
+  RiNextjsFill,
 };
 const Overview: React.FC<OverviewProps> = ({
   courseIcon,
