@@ -4284,7 +4284,7 @@ export const CourseData = [
       },
     ],
   },
-
+  // js-advanced
   {
     courseTitle: "Advanced JavaScript",
     instructor: "Sachin",
@@ -5479,6 +5479,271 @@ export const CourseData = [
           "Exercise - Simplifying Query Objects",
           "Exercise - Creating Lookup Hooks",
           "Exercise - Simplifying Time Calculations",
+        ],
+      },
+    ],
+  },
+
+  // react - testing
+  {
+    courseTitle: "Testing React Apps",
+    instructor: "Sachin",
+    rating: 4.8,
+    reviews: "3.2k Ratings",
+    courseIcon: "FaFlask",
+    level: "Intermediate",
+    liveClasses: "Live Classes",
+    weekdays: "Weekdays: 1.5 Hours/Day",
+    weekends: "Weekends: 3 Hours/Day",
+    totalHours: "Total: 70 Hours",
+    topicsCount: "3 Modules",
+    problemsCount: "100+ Testing Scenarios",
+    projectsCount: "3+ Real-World Testing Projects",
+    portalAccess: "LMS Portal Access (6 Months)",
+    sessionRecordings: "Session Recordings in LMS",
+    certificate: "Certificate of Completion",
+    originalPrice: 5999,
+    discountedPrice: 2999,
+    discountPercentage: 50,
+    courseIntroVideo: "/course-intro.mp4",
+    videoPoster: "/images/thumbnail/image.png",
+    aboutData: {
+      description: [
+        "Testing React Apps is designed to equip developers with the necessary skills to test React components effectively. This course covers the fundamentals of unit testing, integration testing, and end-to-end testing. You'll learn how to write robust test cases using Jest, React Testing Library, and Cypress, ensuring the stability and reliability of your applications.",
+        "Through hands-on exercises and real-world projects, you'll explore test-driven development (TDD), mocking dependencies, testing asynchronous code, and handling complex state management scenarios. By the end of this course, you'll have mastered best practices for writing maintainable, high-quality tests in React applications.",
+      ],
+      structure: [
+        "Weekdays: 1.5 Hours per Day",
+        "Weekends: 3 Hours per Day",
+        "Total Duration: 70 Hours of Live Training",
+      ],
+    },
+    prerequisites: [
+      {
+        text: "To get the most out of this course, you should have a solid grasp of React fundamentals, including components, state, props, and hooks. Familiarity with JavaScript ES6+ features like async/await, destructuring, and arrow functions is recommended. Prior experience with managing API requests and handling application state using React Context or Redux will be beneficial. Basic knowledge of Git for version control is also useful, as you'll be working on structured projects. If you need to strengthen these skills, we suggest reviewing the following courses:",
+
+        links: [
+          {
+            link: "/course/pages/react-beginners",
+            linkText: "React for Beginners",
+          },
+          {
+            link: "/course/pages/react-intermediate",
+            linkText: "React Intermediate",
+          },
+          {
+            link: "/course/pages/git-mastery",
+            linkText: "Git & GitHub Mastery",
+          },
+        ],
+      },
+    ],
+    certificateData: {
+      imageUrl: "/images/certificate/c-1.png",
+      title: "Certificate of Excellence",
+      description:
+        "Upon successfully completing the course, you will be awarded the Certificate of Excellence from LearnLogicify Technologies. This certificate validates your ability to write high-quality tests for React applications, making your codebase more reliable and maintainable.",
+      certificateLink: "/images/certificate/c-1.png",
+    },
+    certificationProcessData: {
+      title: "Certification Process and Requirements",
+      description: [
+        "To earn certification, you must complete all course modules and pass the final assessment. The assessment evaluates your ability to write effective unit and integration tests for React applications.",
+        "You will be required to complete real-world testing projects and demonstrate proficiency in Jest, React Testing Library, and Cypress.",
+      ],
+      assessmentDetails:
+        "The final assessment consists of a project-based evaluation and multiple-choice questions, making up 100% of your certification score.",
+      criteriaTitle: "Certification Eligibility Criteria",
+      criteria: ["Achieve a minimum score of 70% in the final assessment."],
+      retakeInfo:
+        "One retake opportunity is available if the minimum score is not achieved.",
+      finalNote:
+        "This certification confirms your expertise in testing React applications effectively.",
+    },
+    faqData: [
+      {
+        title: "What is the format of this course?",
+        description:
+          "Testing React Apps is a live online training program with interactive sessions, hands-on exercises, and real-world projects.",
+      },
+      {
+        title: "Do I need prior React experience?",
+        description:
+          "Yes, a basic understanding of React, including components, state, and props, is recommended before taking this course.",
+      },
+      {
+        title: "Will I have access to recorded sessions?",
+        description:
+          "Yes! All live session recordings will be available on the LMS portal for 6 months after course completion.",
+      },
+      {
+        title: "What testing frameworks will be covered?",
+        description:
+          "This course covers Jest and React Testing Library for unit and integration testing, along with Cypress for end-to-end testing.",
+      },
+      {
+        title: "Will I learn how to test API calls and mock data?",
+        description:
+          "Yes! The course includes lessons on testing API calls using Mock Service Worker (MSW) and mocking data in unit and integration tests.",
+      },
+      {
+        title: "Are there any real-world projects in this course?",
+        description:
+          "Yes, you will build multiple real-world test cases, covering React components, forms, API calls, authentication, and state management.",
+      },
+      {
+        title: "What kind of support is available during the course?",
+        description:
+          "You will have access to live Q&A sessions, mentor support, community forums, and LMS resources.",
+      },
+      {
+        title: "How much coding experience do I need?",
+        description:
+          "You should be comfortable with JavaScript (ES6+) and have experience with React basics before enrolling in this course.",
+      },
+      {
+        title: "Is there a final assessment?",
+        description:
+          "Yes, a final assessment consisting of a test suite evaluation and real-world testing challenges is required to qualify for certification.",
+      },
+      {
+        title: "Will this course help me prepare for a React testing job role?",
+        description:
+          "Absolutely! This course will provide hands-on experience with modern testing tools and best practices, making you industry-ready.",
+      },
+    ],
+    syllabusData: [
+      {
+        icon: "FaFlask",
+        title: "Module 1",
+        subtitle: "Getting Started",
+        topics: [
+          "Introduction",
+          "Prerequisites",
+          "Course Structure",
+          "How to Take this Course",
+          "Setting Up the Development Environment",
+          "Setting Up the Starter Project",
+          "Setting Up Vitest",
+          "Setting Up React Testing Library",
+        ],
+      },
+      {
+        icon: "FaVial",
+        title: "Module 2",
+        subtitle: "Testing React Components",
+        topics: [
+          "Introduction",
+          "What to Test",
+          "Testing Rendering",
+          "Simplifying Test Setup",
+          "Exercise - Testing UserAccount",
+          "Testing Lists",
+          "Exercise - Testing ProductImageGallery",
+          "Testing User Interactions",
+          "Exercise - Testing ExpandableText",
+          "Simplifying Tests",
+          "Exercise - Testing SearchBox",
+          "Testing Asynchronous Code",
+          "Exercise - Testing ToastDemo",
+          "Working with Component Libraries",
+          "Exercise - Simplifying Code",
+          "Exercise - Testing OrderStatusSelector",
+          "Is Unit Testing Worth It",
+          "Catching Common Issues with ESLint",
+        ],
+      },
+      {
+        icon: "FaServer",
+        title: "Module 3",
+        subtitle: "Mocking APIs",
+        topics: [
+          "Introduction",
+          "Setting Up Mock Service Worker",
+          "Testing Data Fetching",
+          "Exercise - Testing Data Fetching",
+          "Generating Fake Data",
+          "Mocking Data",
+          "Exercise - Mocking Data",
+          "Testing Errors",
+          "Exercise - Testing Errors",
+          "Testing the Loading State",
+          "Exercise - Testing the Loading State",
+          "Refactoring - Using React Query",
+          "Wrapping Components for Testing",
+          "Exercise - Using React Query",
+          "Exercise - Testing BrowseProductsPage",
+          "Exercise - Testing Loading Skeletons",
+          "Exercise - Testing Error Handling",
+          "Exercise - Testing Data Rendering",
+          "Exercise - Refactoring Tests",
+          "Exercise - Testing Filtering",
+          "Exercise - Refactoring Tests",
+          "Code Coverage",
+          "Exercise - Refactoring with React Query",
+          "Exercise - Extracting CategorySelect",
+          "Exercise - Extracting ProductTable",
+        ],
+      },
+      {
+        icon: "FaWpforms",
+        title: "Module 4",
+        subtitle: "Testing Forms",
+        topics: [
+          "Introduction",
+          "What to Test",
+          "Testing Rendering",
+          "Exercise - Testing Initial Data",
+          "Exercise - Refactoring Tests",
+          "Exercise - Testing Focus",
+          "Testing Validation Rules",
+          "Parameterizing Tests",
+          "Exercise - Testing Validation Rules",
+          "Exercise - Extracting a Function for Filling Forms",
+          "Resolving the Act Warning",
+          "Exercise - Testing Form Submission",
+          "Testing Form Feedback",
+          "Additional Exercises",
+        ],
+      },
+      {
+        icon: "FaDatabase",
+        title: "Module 5",
+        subtitle: "Testing State Management",
+        topics: [
+          "Introduction",
+          "What to Test",
+          "Exercise - Testing Components that Use Context",
+          "Exercise - Testing Quantity Selector",
+          "Exercise - Extracting Utility Functions",
+          "Exercise - Testing Components that Use Redux",
+          "Exercise - Replacing Redux with React Query",
+        ],
+      },
+      {
+        icon: "FaLock",
+        title: "Module 6",
+        subtitle: "Testing Authentication",
+        topics: [
+          "Introduction",
+          "What to Test",
+          "Mocking the Authentication Status",
+          "Exercise - Testing AuthStatus",
+        ],
+      },
+      {
+        icon: "FaRoute",
+        title: "Module 7",
+        subtitle: "Testing Routing",
+        topics: [
+          "Introduction",
+          "What to Test",
+          "Testing Routes",
+          "Extracting navigateTo",
+          "Exercise - Testing Routes with Parameters",
+          "Exercise - Testing Invalid Routes",
+          "Testing Protected Routes",
+          "Exercise - Testing ProductDetailPage",
         ],
       },
     ],

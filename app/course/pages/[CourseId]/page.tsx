@@ -37,6 +37,7 @@ export default async function Page({
     "html-css-mastery",
     "react-for-beginners",
     "react-intermediate",
+    "react-testing",
   ];
   const CourseId = (await params).CourseId;
 

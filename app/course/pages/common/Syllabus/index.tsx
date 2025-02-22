@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6"; 
-import { FaBug, FaBuilding, FaClipboardCheck, FaCloudDownloadAlt, FaCode, FaCogs, FaColumns, FaCss3Alt, FaDatabase, FaFileArchive, FaFilm, FaFont, FaGamepad, FaGlobe, FaHtml5, FaImages, FaJava, FaJs, FaJsSquare, FaNetworkWired, FaPaintBrush, FaProjectDiagram, FaPython, FaQuestion, FaReact, FaRegFolderOpen, FaRegObjectGroup, FaRoute, FaSyncAlt, FaTools, FaTree, FaUserShield, FaWpforms } from "react-icons/fa";
+import { FaBug, FaBuilding, FaClipboardCheck, FaCloudDownloadAlt, FaCode, FaCogs, FaColumns, FaCss3Alt, FaDatabase, FaFileArchive, FaFilm, FaFlask, FaFont, FaGamepad, FaGlobe, FaHtml5, FaImages, FaJava, FaJs, FaJsSquare, FaLock, FaNetworkWired, FaPaintBrush, FaPlay, FaProjectDiagram, FaPython, FaQuestion, FaReact, FaRegFolderOpen, FaRegObjectGroup, FaRoute, FaServer, FaSyncAlt, FaTools, FaTree, FaUserShield, FaVial, FaWpforms } from "react-icons/fa";
 import { IoCubeOutline, IoLogoPython } from "react-icons/io5";
 import { PiMathOperationsBold } from "react-icons/pi";
 import { RiDashboardHorizontalFill, RiDatabase2Fill, RiDatabase2Line, RiLoopLeftFill, RiSpyLine, RiTableFill } from "react-icons/ri";
@@ -87,6 +87,11 @@ const iconMap: Record<string, React.ElementType> = {
   FaGamepad,
   FaRoute,
   FaCloudDownloadAlt,
+  FaPlay,
+  FaVial,
+  FaServer,
+  FaLock,
+  FaFlask,
 };
 
 interface SyllabusModule {

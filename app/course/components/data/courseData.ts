@@ -481,25 +481,7 @@ const coursesData: Course[] = [
   },
 
   {
-    url: "/courses/pages/react-advanced",
-    Level: "Advanced",
-    languageId: "javascript",
-    topicId: "web-development",
-    learningTrack: "technical",
-    icon: FaJsSquare,
-    title: "React Advanced",
-    topics: 20,
-    videos: 40,
-    desc: "Master advanced React patterns and performance optimizations.",
-    offer: "30% OFF",
-    price: "₹1999",
-    originalPrice: "₹2699",
-    bannerColor: "#EBEBEB",
-    available: true,
-  },
-
-  {
-    url: "/courses/pages/react-testing",
+    url: "/course/pages/react-testing",
     Level: "Advanced",
     languageId: "javascript",
     topicId: "web-development",
