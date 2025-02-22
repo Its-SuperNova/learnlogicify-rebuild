@@ -535,7 +535,7 @@ const coursesData: Course[] = [
   },
 
   {
-    url: "/courses/pages/django",
+    url: "/course/pages/ultimate-django",
     Level: "Intermediate",
     languageId: "python",
     topicId: "web-development",
