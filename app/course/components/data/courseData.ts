@@ -517,13 +517,13 @@ const coursesData: Course[] = [
   },
 
   {
-    url: "/courses/pages/nodejs",
+    url: "/course/pages/complete-nodejs-mastery",
     Level: "Intermediate",
     languageId: "javascript",
     topicId: "backend-development",
     learningTrack: "technical",
     icon: FaJsSquare,
-    title: "Node.js",
+    title: "Complete Node.js Mastery",
     topics: 20,
     videos: 40,
     desc: "Learn backend development with Node.js and Express.",

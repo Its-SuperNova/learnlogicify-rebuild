@@ -9,6 +9,7 @@ import {
   FaJava,
   FaJs,
   FaJsSquare,
+  FaNodeJs,
   FaPython,
   FaReact,
 } from "react-icons/fa";
@@ -53,6 +54,7 @@ const iconMap: Record<string, React.ElementType> = {
   FaReact,
   FaFlask,
   RiNextjsFill,
+  FaNodeJs,
 };
 const Overview: React.FC<OverviewProps> = ({
   courseIcon,

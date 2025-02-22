@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6"; 
-import { FaBug, FaBuilding, FaChartLine, FaChartPie, FaClipboardCheck, FaCloudDownloadAlt, FaCloudUploadAlt, FaCode, FaCogs, FaColumns, FaCss3Alt, FaDatabase, FaEdit, FaEnvelope, FaEye, FaFileArchive, FaFilm, FaFilter, FaFlask, FaFont, FaGamepad, FaGlobe, FaHtml5, FaImages, FaJava, FaJs, FaJsSquare, FaKey, FaLock, FaNetworkWired, FaPaintBrush, FaPalette, FaPlay, FaProjectDiagram, FaPython, FaQuestion, FaReact, FaRegFolderOpen, FaRegObjectGroup, FaRoad, FaRoute, FaServer, FaSyncAlt, FaTasks, FaTools, FaTrash, FaTree, FaUserShield, FaUserTag, FaVial, FaWpforms } from "react-icons/fa";
+import { FaBoxOpen, FaBug, FaBuilding, FaChartLine, FaChartPie, FaCheckCircle, FaClipboardCheck, FaClock, FaCloudDownloadAlt, FaCloudUploadAlt, FaCode, FaCodeBranch, FaCogs, FaColumns, FaCss3Alt, FaCubes, FaDatabase, FaEdit, FaEnvelope, FaExclamationTriangle, FaEye, FaFileArchive, FaFilm, FaFilter, FaFlask, FaFont, FaGamepad, FaGlobe, FaHtml5, FaImages, FaJava, FaJs, FaJsSquare, FaKey, FaLink, FaLock, FaNetworkWired, FaNodeJs, FaPaintBrush, FaPalette, FaPlay, FaProjectDiagram, FaPython, FaQuestion, FaReact, FaRegFolderOpen, FaRegObjectGroup, FaRoad, FaRoute, FaServer, FaSyncAlt, FaTasks, FaTools, FaTrash, FaTree, FaUserShield, FaUserTag, FaVial, FaWpforms } from "react-icons/fa";
 import { IoCubeOutline, IoLogoPython } from "react-icons/io5";
 import { PiMathOperationsBold } from "react-icons/pi";
 import { RiDashboardHorizontalFill, RiDatabase2Fill, RiDatabase2Line, RiLoopLeftFill, RiSpyLine, RiTableFill } from "react-icons/ri";
@@ -105,6 +105,14 @@ const iconMap: Record<string, React.ElementType> = {
   FaUserTag,
   FaFilter,
   FaChartPie,
+  FaNodeJs,
+  FaCubes,
+  FaBoxOpen,
+  FaClock,
+  FaCheckCircle,
+  FaLink,
+  FaCodeBranch,
+  FaExclamationTriangle
 };
 
 interface SyllabusModule {
