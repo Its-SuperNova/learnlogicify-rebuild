@@ -54,21 +54,20 @@ export const CourseData = [
     certificationProcessData: {
       title: "Certification Process and Requirements",
       description: [
-        "Upon successfully completing the C Programming course, you will be required to take a final assessment to qualify for certification.",
-        "This assessment evaluates your understanding of C programming fundamentals, data structures, and real-world problem-solving skills covered in the course.",
+        "Upon successfully completing the React Intermediate course, you will be required to take a final assessment to qualify for certification.",
+        "This assessment evaluates your understanding of advanced React concepts, including state management, React Router, API integration, and performance optimization covered in the course.",
         "It is conducted under structured guidelines to ensure fairness and integrity.",
       ],
       assessmentDetails:
-        "The final assessment is for 100 marks and contributes 100% to your certification score. Throughout the course, students are encouraged to solve practice problems and complete exercises to strengthen their understanding, but these do not contribute to the final certification score.",
+        "The final assessment is for 100 marks and contributes 100% to your certification score. Throughout the course, students are encouraged to solve practice exercises, implement real-world projects, and complete coding challenges to reinforce their knowledge, but these do not contribute to the final certification score.",
       criteriaTitle:
-        "To be eligible for the certificate, you must meet the following criteria",
-      criteria: ["Achieve a score of 50% or more in the final assessment."],
+        "To be eligible for the certificate, you must meet the following criteria:",
+      criteria: ["Achieve a score of 60% or more in the final assessment."],
       retakeInfo:
-        "If this condition is met, you will receive a certificate of completion for the C Programming course. If you do not achieve the required score, you will have the opportunity to retake the final assessment once.",
+        "If this condition is met, you will receive a certificate of completion for the React Intermediate course. If you do not achieve the required score, you will have the opportunity to retake the final assessment once.",
       finalNote:
-        "This structured evaluation ensures that only those who demonstrate a solid understanding of the course material and its applications are awarded the certificate, maintaining the integrity and value of the certification.",
+        "This structured evaluation ensures that only those who demonstrate a strong grasp of React concepts and their applications are awarded the certificate, maintaining the integrity and value of the certification.",
     },
-
     faqData: [
       {
         title: "What is the format of this course?",
@@ -5253,6 +5252,233 @@ export const CourseData = [
           "Refactoring Game Grid",
           "Building for Production",
           "Deploying to Vercel",
+        ],
+      },
+    ],
+  },
+
+  // react - intermediate
+  {
+    courseTitle: "React Intermediate",
+    instructor: "Sachin",
+    rating: 4.9,
+    reviews: "4.2k Ratings",
+    courseIcon: "FaReact",
+    level: "Intermediate",
+    liveClasses: "Live Classes",
+    weekdays: "Weekdays: 1.5 Hours/Day",
+    weekends: "Weekends: 3 Hours/Day",
+    totalHours: "Total: 80 Hours",
+    topicsCount: "3 Modules",
+    problemsCount: "120+ Exercises",
+    projectsCount: "3+ Real-World React Projects",
+    portalAccess: "LMS Portal Access (6 Months)",
+    sessionRecordings: "Session Recordings in LMS",
+    certificate: "Certificate of Completion",
+    originalPrice: 6999,
+    discountedPrice: 3499,
+    discountPercentage: 50,
+    courseIntroVideo: "/course-intro.mp4",
+    videoPoster: "/images/thumbnail/image.png",
+    aboutData: {
+      description: [
+        "React Intermediate is designed for developers who have a basic understanding of React and want to take their skills to the next level. This course dives deep into core React features such as state management, routing, and data fetching. You'll learn how to build scalable applications, manage state efficiently, and handle complex UI structures.",
+        "Throughout the course, you'll work on real-world projects, implement React Router for navigation, master state management using context and reducers, and optimize data fetching with React Query. By the end of this course, you will have the knowledge to build high-performance React applications with best practices.",
+      ],
+      structure: [
+        "Weekdays: 1.5 Hours per Day",
+        "Weekends: 3 Hours per Day",
+        "Total Duration: 80 Hours of Live Training",
+      ],
+    },
+    prerequisites: [
+      {
+        text: "Before starting this course, you should have completed React for Beginners or have experience with React basics, including components, state, and props. Familiarity with JavaScript ES6+ features and Git will also be helpful. If needed, we recommend reviewing the following courses:",
+        links: [
+          {
+            link: "/course/pages/react-beginners",
+            linkText: "React for Beginners",
+          },
+          {
+            link: "/course/pages/advanced-javascript",
+            linkText: "Advanced JavaScript",
+          },
+          {
+            link: "/course/pages/git-mastery",
+            linkText: "Git & GitHub Mastery",
+          },
+        ],
+      },
+    ],
+    certificateData: {
+      imageUrl: "/images/certificate/c-1.png",
+      title: "Certificate of Excellence",
+      description:
+        "Upon successfully completing the course, you will be awarded the prestigious Certificate of Excellence from LearnLogicify Technologies. This certificate is a testament to your dedication and mastery of React Intermediate, showcasing your commitment to continuous learning and your ability to apply advanced skills. It will be a valuable addition to your professional portfolio, helping you stand out to potential employers and opening doors to new career opportunities.",
+      certificateLink: "/images/certificate/c-1.png",
+    },
+    certificationProcessData: {
+      title: "Certification Process and Requirements",
+      description: [
+        "To earn certification, you must complete all course modules and pass the final assessment.The assessment evaluates your ability to build real-world React applications with proper state management, routing, and API integrations.",
+      ],
+      assessmentDetails:
+        "The final assessment consists of a project-based evaluation and coding exercises, making up 100% of your certification score.",
+      criteriaTitle: "Certification Eligibility Criteria",
+      criteria: ["Achieve a minimum score of 65% in the final assessment."],
+      retakeInfo:
+        "One retake opportunity is available if the minimum score is not achieved.",
+      finalNote:
+        "This certification confirms your ability to build scalable and maintainable React applications.",
+    },
+    faqData: [
+      {
+        title: "What is the format of this course?",
+        description:
+          "React Intermediate is a live online training program with interactive sessions, hands-on projects, and real-world exercises.",
+      },
+      {
+        title: "Do I need prior React experience?",
+        description:
+          "Yes, a basic understanding of React fundamentals, including components, state, and props, is recommended before taking this course.",
+      },
+      {
+        title: "Will I have access to recorded sessions?",
+        description:
+          "Yes! All live session recordings will be available on the LMS portal for 6 months after course completion.",
+      },
+      {
+        title: "What projects will I work on?",
+        description:
+          "You will work on real-world projects involving advanced React concepts like React Router, global state management, and API integrations.",
+      },
+      {
+        title: "How long is the course and what is the schedule?",
+        description:
+          "The course includes 80+ hours of training with live interactive sessions, scheduled for 1-hour sessions on weekdays and 3-hour sessions on weekends.",
+      },
+      {
+        title: "Do I receive a certificate upon completion?",
+        description:
+          "Yes! Upon successfully completing the course and passing the assessment, you will receive a Certificate of Excellence from LearnLogicify Technologies.",
+      },
+      {
+        title: "What kind of support is available during the course?",
+        description:
+          "You will have access to an LMS portal, live Q&A sessions, mentor support, and a dedicated community forum.",
+      },
+      {
+        title: "Is there a final assessment?",
+        description:
+          "Yes, a final assessment consisting of coding challenges and a project evaluation is required to qualify for certification.",
+      },
+      {
+        title: "What if I miss a live session?",
+        description:
+          "No worries! You can access all session recordings anytime through the LMS portal.",
+      },
+    ],
+    syllabusData: [
+      {
+        icon: "FaRoute",
+        title: "Module 1",
+        subtitle: "Routing with React Router",
+        topics: [
+          "Introduction",
+          "Setting Up Routing",
+          "Navigation",
+          "Passing Data with Route Parameters",
+          "Getting Data about the Current Route",
+          "Nested Routes",
+          "Exercise - Working with Nested Routes",
+          "Styling the Active Link",
+          "Handling Errors",
+          "Private Routes",
+          "Layout Routes",
+          "Part Two - Project Work",
+          "Exercise - Setting Up Routing",
+          "Exercise - Handling Errors",
+          "Exercise - Fetching a Game",
+          "Exercise - Refactoring Entities",
+          "Exercise - Building Expandable Text",
+          "Exercise - Building Game Attributes",
+          "Exercise - Building Game Trailer",
+          "Exercise - Building Game Screenshots",
+          "Exercise - Improving the Layout",
+          "Exercise - Fixing the NavBar",
+          "Exercise - Refactoring Entities",
+          "Summary",
+        ],
+      },
+      {
+        icon: "FaDatabase",
+        title: "Module 2",
+        subtitle: "Global State Management",
+        topics: [
+          "Introduction",
+          "Consolidating State Logic with a Reducer",
+          "Creating Complex Actions",
+          "Exercise - Working with Reducers",
+          "Sharing State using React Context",
+          "Exercise - Working with Context",
+          "Debugging with React DevTools",
+          "Creating a Custom Provider",
+          "Creating a Hook to Access Context",
+          "Exercise - Creating a Provider",
+          "Organizing Code for Scalability and Maintainability",
+          "Exercise - Organizing Code",
+          "Splitting Contexts for Efficiency",
+          "When to Use Context",
+          "Context vs Redux",
+          "Managing Application State with Zustand",
+          "Exercise - Working with Zustand",
+          "Preventing Unnecessary Renders with Selectors",
+          "Inspecting Stores with Zustand DevTools",
+          "Part Two - Project Work",
+          "Exercise - Picking the Right State Management Solution",
+          "Exercise - Setting Up a Zustand Store",
+          "Exercise - Removing Props",
+          "Discussion - Building Reusable Components",
+        ],
+      },
+      {
+        icon: "FaCloudDownloadAlt",
+        title: "Module 3",
+        subtitle: "Fetching and Updating Data with React Query",
+        topics: [
+          "Introduction",
+          "What is React Query",
+          "Setting Up React Query",
+          "Fetching Data",
+          "Handling Errors",
+          "Showing a Loading Indicator",
+          "Creating a Custom Query Hook",
+          "Using React Query DevTools",
+          "Customizing Query Settings",
+          "Exercise - Fetching Data",
+          "Parameterized Queries",
+          "Paginated Queries",
+          "Infinite Queries",
+          "Part Two - Mutating Data",
+          "Mutating Data",
+          "Handling Mutation Errors",
+          "Showing Mutation Progress",
+          "Optimistic Updates",
+          "Creating a Custom Mutation Hook",
+          "Creating a Reusable API Client",
+          "Creating a Reusable HTTP Service",
+          "Understanding the Application Layers",
+          "Part Three - Project Work",
+          "Exercise - Fetching Genres",
+          "Exercise - Fetching Platforms",
+          "Exercise - Fetching Games",
+          "Exercise - Removing Duplicate Interfaces",
+          "Exercise - Creating a Reusable API Client",
+          "Exercise - Implementing Infinite Queries",
+          "Exercise - Implementing Infinite Scroll",
+          "Exercise - Simplifying Query Objects",
+          "Exercise - Creating Lookup Hooks",
+          "Exercise - Simplifying Time Calculations",
         ],
       },
     ],

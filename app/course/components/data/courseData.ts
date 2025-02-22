@@ -463,7 +463,7 @@ const coursesData: Course[] = [
   },
 
   {
-    url: "/courses/pages/react-intermediate",
+    url: "/course/pages/react-intermediate",
     Level: "Intermediate",
     languageId: "javascript",
     topicId: "web-development",
