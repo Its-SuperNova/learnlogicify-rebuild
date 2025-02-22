@@ -42,6 +42,7 @@ export default async function Page({
     "complete-nodejs-mastery",
     "ai-mastery",
     "ml-mastery",
+    "ds-mastery",
   ];
   const CourseId = (await params).CourseId;
 

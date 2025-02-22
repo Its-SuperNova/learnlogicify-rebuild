@@ -7154,4 +7154,266 @@ export const CourseData = [
       },
     ],
   },
+
+  //DS-Mastery
+  {
+    courseTitle: "DS Mastery",
+    instructor: "Sachin",
+    rating: 4.8,
+    reviews: "5.0k Ratings",
+    courseIcon: "FaDatabase",
+    level: "Beginner to Advanced",
+    liveClasses: "Live Classes",
+    weekdays: "Weekdays: 1.5 Hours/Day",
+    weekends: "Weekends: 3 Hours/Day",
+    totalHours: "Total: 100+ Hours",
+    topicsCount: "12+ Modules",
+    problemsCount: "120+ Exercises",
+    projectsCount: "4+ Real-World DS Projects",
+    portalAccess: "LMS Portal Access (6 Months)",
+    sessionRecordings: "Session Recordings in LMS",
+    certificate: "Certificate of Completion",
+    originalPrice: 8999,
+    discountedPrice: 4499,
+    discountPercentage: 50,
+    courseIntroVideo: "/course-intro.mp4",
+    videoPoster: "/images/thumbnail/image.png",
+    aboutData: {
+      description: [
+        "DS Mastery is a comprehensive course designed to equip you with the essential skills in Data Science. This course covers core concepts including data manipulation, visualization, statistics, machine learning, and big data technologies. It's suitable for beginners aiming to start their journey in data science and experienced professionals who want to refine their analytical skills.",
+        "You will engage in interactive sessions, practical exercises, and hands-on projects that focus on real-world data analysis. By the end of the course, you will be proficient in extracting insights from complex datasets, building predictive models, and communicating results effectively.",
+      ],
+      structure: [
+        "Weekdays: 1.5 Hours per Day",
+        "Weekends: 3 Hours per Day",
+        "Total Duration: 100+ Hours of Live Training",
+      ],
+    },
+    prerequisites: [
+      {
+        text: "Before enrolling in this course, a strong understanding of Python programming is recommended. You should be familiar with basic Python concepts such as data structures, loops, functions, and libraries like NumPy and Pandas. While prior knowledge of basic statistics is helpful, essential statistical concepts will be covered in the course. If you're new to Python, consider completing the following course first:",
+        links: [
+          {
+            link: "/course/pages/python-programming",
+            linkText: "Python Programming",
+          },
+        ],
+      },
+    ],
+    certificateData: {
+      imageUrl: "/images/certificate/c-1.png",
+      title: "Certificate of Excellence",
+      description:
+        "Upon successfully completing the course, you will receive a Certificate of Excellence from LearnLogicify Technologies, validating your expertise in Data Science. This certification demonstrates your ability to perform data analysis, create visualizations, build predictive models, and deploy solutions, enhancing your career prospects in the data-driven industry.",
+      certificateLink: "/images/certificate/c-1.png",
+    },
+    certificationProcessData: {
+      title: "Certification Process and Requirements",
+      description: [
+        "To earn certification, you must complete all course modules and pass the final assessment.",
+        "The final assessment will include a real-world data science project, coding exercises, and conceptual quizzes.",
+      ],
+      assessmentDetails:
+        "The final assessment consists of a 100-mark evaluation, with a minimum passing score of 60%.",
+      criteriaTitle: "Certification Eligibility Criteria",
+      criteria: ["Achieve a minimum score of 60% in the final assessment."],
+      retakeInfo:
+        "You will have one opportunity to retake the final assessment if needed.",
+      finalNote:
+        "This certification validates your data science expertise and practical skills, making you industry-ready.",
+    },
+    faqData: [
+      {
+        title: "What is the format of this course?",
+        description:
+          "DS Mastery is a live online training program featuring interactive sessions, hands-on projects, and real-world exercises.",
+      },
+      {
+        title: "Do I need prior Data Science experience?",
+        description:
+          "No prior Data Science experience is required. However, familiarity with Python and basic math concepts will be beneficial.",
+      },
+      {
+        title: "Will I have access to recorded sessions?",
+        description:
+          "Yes! All session recordings will be available on the LMS portal for 6 months after course completion.",
+      },
+      {
+        title: "What projects will I work on?",
+        description:
+          "You will work on projects including data analysis, predictive modeling, visualization dashboards, and data-driven decision-making applications.",
+      },
+      {
+        title: "How long is the course and what is the schedule?",
+        description:
+          "The course consists of 100+ hours of training, with 1.5-hour sessions on weekdays and 3-hour sessions on weekends.",
+      },
+      {
+        title: "Do I receive a certificate upon completion?",
+        description:
+          "Yes! Upon successful completion and passing the final assessment, you will receive a Certificate of Excellence.",
+      },
+      {
+        title: "What kind of support is available?",
+        description:
+          "You will have access to an LMS portal, live Q&A sessions, mentor support, and an active community forum.",
+      },
+      {
+        title: "Is there a final assessment?",
+        description:
+          "Yes, a final project-based assessment and coding challenge are required to qualify for certification.",
+      },
+      {
+        title: "What if I miss a live session?",
+        description:
+          "No worries! All session recordings will be available for review at your convenience.",
+      },
+    ],
+    syllabusData: [
+      {
+        icon: "FaDatabase",
+        title: "Module 1",
+        subtitle: "Introduction to Data Science",
+        topics: [
+          "What is Data Science?",
+          "Data Science Lifecycle",
+          "Roles and Skills in Data Science",
+          "Applications and Case Studies",
+          "Setting Up the DS Environment",
+        ],
+      },
+      {
+        icon: "FaCalculator",
+        title: "Module 2",
+        subtitle: "Mathematics and Statistics",
+        topics: [
+          "Descriptive Statistics",
+          "Inferential Statistics",
+          "Probability Distributions",
+          "Hypothesis Testing",
+          "Linear Algebra Basics",
+        ],
+      },
+      {
+        icon: "FaPython",
+        title: "Module 3",
+        subtitle: "Python for Data Science",
+        topics: [
+          "Python Basics for Data Science",
+          "NumPy for Numerical Computations",
+          "Pandas for Data Manipulation",
+          "Matplotlib & Seaborn for Visualization",
+          "Data Cleaning and Preprocessing",
+        ],
+      },
+      {
+        icon: "FaChartBar",
+        title: "Module 4",
+        subtitle: "Data Visualization",
+        topics: [
+          "Principles of Data Visualization",
+          "Interactive Visualizations with Plotly",
+          "Dashboards with Tableau & Power BI",
+          "Visual Storytelling",
+          "Advanced Visualization Techniques",
+        ],
+      },
+      {
+        icon: "FaProjectDiagram",
+        title: "Module 5",
+        subtitle: "Data Wrangling and Feature Engineering",
+        topics: [
+          "Data Collection and Web Scraping",
+          "Handling Missing Data",
+          "Feature Extraction and Selection",
+          "Data Transformation Techniques",
+          "Working with Large Datasets",
+        ],
+      },
+      {
+        icon: "FaChartLine",
+        title: "Module 6",
+        subtitle: "Machine Learning Fundamentals",
+        topics: [
+          "Introduction to Machine Learning",
+          "Supervised Learning: Regression & Classification",
+          "Unsupervised Learning: Clustering",
+          "Model Evaluation and Validation",
+          "Hyperparameter Tuning",
+        ],
+      },
+      {
+        icon: "FaBrain",
+        title: "Module 7",
+        subtitle: "Advanced Machine Learning",
+        topics: [
+          "Decision Trees and Ensemble Methods",
+          "Support Vector Machines (SVM)",
+          "Neural Networks Basics",
+          "Deep Learning Overview",
+          "Time Series Analysis",
+        ],
+      },
+      {
+        icon: "FaLanguage",
+        title: "Module 8",
+        subtitle: "Natural Language Processing (NLP)",
+        topics: [
+          "Text Preprocessing and Tokenization",
+          "Sentiment Analysis",
+          "Topic Modeling",
+          "Named Entity Recognition (NER)",
+          "Building NLP Applications",
+        ],
+      },
+      {
+        icon: "FaDatabase",
+        title: "Module 9",
+        subtitle: "Databases and SQL",
+        topics: [
+          "SQL Fundamentals",
+          "Advanced SQL Queries",
+          "Database Design and Normalization",
+          "Working with NoSQL Databases",
+          "Integrating Databases with Python",
+        ],
+      },
+      {
+        icon: "FaCogs",
+        title: "Module 10",
+        subtitle: "Big Data Technologies",
+        topics: [
+          "Introduction to Big Data",
+          "Working with Hadoop & Spark",
+          "Distributed Computing",
+          "Cloud Platforms (AWS, GCP)",
+          "Real-Time Data Processing",
+        ],
+      },
+      {
+        icon: "FaCloud",
+        title: "Module 11",
+        subtitle: "Model Deployment and Production",
+        topics: [
+          "Deploying Models with Flask & FastAPI",
+          "Model Versioning and Monitoring",
+          "Containerization with Docker",
+          "Continuous Integration and Deployment",
+          "Building Scalable Data Products",
+        ],
+      },
+      {
+        icon: "FaProjectDiagram",
+        title: "Module 12",
+        subtitle: "Final Data Science Capstone Project",
+        topics: [
+          "Project Ideation and Planning",
+          "Data Collection and Preprocessing",
+          "Model Building and Evaluation",
+          "Visualization and Insights",
+          "Project Presentation and Deployment",
+        ],
+      },
+    ],
+  },
 ];
