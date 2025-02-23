@@ -620,7 +620,7 @@ const coursesData: Course[] = [
     offer: "30% OFF",
     price: "₹999",
     originalPrice: "₹1499",
-    bannerColor: "#FFD700",
+    bannerColor: "#C6F1FF",
     available: true,
   },
 
@@ -638,7 +638,7 @@ const coursesData: Course[] = [
     offer: "25% OFF",
     price: "₹999",
     originalPrice: "₹1399",
-    bannerColor: "#FFD700",
+    bannerColor: "#E6E6FA",
     available: true,
   },
 
@@ -656,7 +656,7 @@ const coursesData: Course[] = [
     offer: "30% OFF",
     price: "₹999",
     originalPrice: "₹1499",
-    bannerColor: "#F5E6CC",
+    bannerColor: "#FFCCCB",
     available: true,
   },
 
