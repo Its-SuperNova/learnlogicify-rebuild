@@ -11,6 +11,7 @@ import {
   FaJava,
   FaJs,
   FaJsSquare,
+  FaNetworkWired,
   FaNodeJs,
   FaPython,
   FaReact,
@@ -26,17 +27,17 @@ import { SiGo, SiMongodb, SiRuby } from "react-icons/si";
 
 interface OverviewProps {
   courseIcon: string;
-  level: string;
-  liveClasses: string;
-  weekdays: string;
-  weekends: string;
-  totalHours: string;
-  topicsCount: string;
-  problemsCount: string;
-  projectsCount: string;
-  portalAccess: string;
-  sessionRecordings: string;
-  certificate: string;
+  level?: string;
+  liveClasses?: string;
+  weekdays?: string;
+  weekends?: string;
+  totalHours?: string;
+  topicsCount?: string;
+  problemsCount?: string;
+  projectsCount?: string;
+  portalAccess?: string;
+  sessionRecordings?: string;
+  certificate?: string;
   originalPrice: number;
   discountedPrice: number;
   discountPercentage: number;
@@ -59,7 +60,9 @@ const iconMap: Record<string, React.ElementType> = {
   FaNodeJs,
   FaBrain,
   FaChartLine,
+  FaNetworkWired,
 };
+
 const Overview: React.FC<OverviewProps> = ({
   courseIcon,
   level,
@@ -78,6 +81,21 @@ const Overview: React.FC<OverviewProps> = ({
   discountPercentage,
 }) => {
   const IconComponent = iconMap[courseIcon];
+
+  const details = [
+    { icon: BiSolidBarChartAlt2, value: level },
+    { icon: MdOutlineLiveTv, value: liveClasses },
+    { icon: IoMdTime, value: weekdays },
+    { icon: IoMdTime, value: weekends },
+    { icon: MdOutlineAccessTimeFilled, value: totalHours },
+    { icon: FaBook, value: topicsCount },
+    { icon: IoExtensionPuzzleSharp, value: problemsCount },
+    { icon: TbCube, value: projectsCount },
+    { icon: PiSidebarFill, value: portalAccess },
+    { icon: MdOutlineLiveTv, value: sessionRecordings },
+    { icon: PiCertificate, value: certificate },
+  ];
+
   return (
     <div className="w-full lg:w-[400px] border border-gray-300 rounded-2xl p-3 flex flex-col">
       <div className="w-full h-auto rounded-2xl bg-[#E2D8FC] px-3 py-7">
@@ -87,55 +105,18 @@ const Overview: React.FC<OverviewProps> = ({
             {IconComponent && <IconComponent size={25} />}
           </div>
         </div>
-        <div className="pt-2 pl-5 flex md:gap-8 flex-col md:flex-row lg:flex-col lg:gap-0 text-md">
-          <div className="flex text-sm md:text-md flex-col gap-2">
-            <div className="flex items-center gap-2 text-gray-700">
-              <BiSolidBarChartAlt2 size={22} />
-              <p>{level}</p>
-            </div>
-            <div className="flex items-center gap-2 text-gray-700">
-              <MdOutlineLiveTv size={22} />
-              <p>{liveClasses}</p>
-            </div>
-            <div className="flex items-center gap-2 text-gray-700">
-              <IoMdTime size={22} />
-              <p>{weekdays}</p>
-            </div>
-            <div className="flex items-center gap-2 text-gray-700">
-              <IoMdTime size={22} />
-              <p>{weekends}</p>
-            </div>
-            <div className="flex items-center gap-2 text-gray-700">
-              <MdOutlineAccessTimeFilled size={22} />
-              <p>{totalHours}</p>
-            </div>
-            <div className="flex items-center gap-2 text-gray-700">
-              <FaBook size={18} />
-              <p>{topicsCount}</p>
-            </div>
-          </div>
-          <div className="flex text-sm md:text-md flex-col gap-2 mt-2 md:mt-0 lg:mt-2">
-            <div className="flex items-center gap-2 text-gray-700">
-              <IoExtensionPuzzleSharp size={22} />
-              <p>{problemsCount}</p>
-            </div>
-            <div className="flex items-center gap-2 text-gray-700">
-              <TbCube size={22} />
-              <p>{projectsCount}</p>
-            </div>
-            <div className="flex items-center gap-2 text-gray-700">
-              <PiSidebarFill size={22} />
-              <p>{portalAccess}</p>
-            </div>
-            <div className="flex items-center gap-2 text-gray-700">
-              <MdOutlineLiveTv size={22} />
-              <p>{sessionRecordings}</p>
-            </div>
-            <div className="flex items-center gap-2 text-gray-700">
-              <PiCertificate size={22} />
-              <p>{certificate}</p>
-            </div>
-          </div>
+        <div className="pt-2 pl-5 flex gap-2 flex-col md:flex-row lg:flex-col  text-md">
+          {details
+            .filter((detail) => detail.value)
+            .map((detail, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-2 text-gray-700 text-sm md:text-md"
+              >
+                <detail.icon size={22} />
+                <p>{detail.value}</p>
+              </div>
+            ))}
         </div>
       </div>
       <div className="py-2 mt-2 w-full flex items-center justify-between px-2">

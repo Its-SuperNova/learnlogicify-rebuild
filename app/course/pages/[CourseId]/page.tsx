@@ -44,6 +44,7 @@ export default async function Page({
     "ml-mastery",
     "ds-mastery",
     "ultimate-django",
+    "computer-networks",
   ];
   const CourseId = (await params).CourseId;
 

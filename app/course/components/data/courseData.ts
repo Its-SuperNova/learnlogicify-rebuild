@@ -570,7 +570,7 @@ const coursesData: Course[] = [
   },
 
   {
-    url: "/courses/pages/computer-networks",
+    url: "/course/pages/computer-networks",
     Level: "Intermediate",
     languageId: "general",
     topicId: "networking",

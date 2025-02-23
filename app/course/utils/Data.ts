@@ -7875,4 +7875,237 @@ export const CourseData = [
       },
     ],
   },
+
+  //Computer Networks
+  {
+    courseTitle: "Computer Networks Mastery",
+    instructor: "Sachin",
+    rating: 4.8,
+    reviews: "4.5k Ratings",
+    courseIcon: "FaNetworkWired",
+    level: "Beginner to Advanced",
+    liveClasses: "Live Classes",
+    weekdays: "Weekdays: 1.5 Hours/Day",
+    weekends: "Weekends: 3 Hours/Day",
+    totalHours: "Total: 90+ Hours",
+    topicsCount: "12+ Modules",
+    problemsCount: "100+ Exercises",
+    projectsCount: "",
+    portalAccess: "LMS Portal Access (6 Months)",
+    sessionRecordings: "Session Recordings in LMS",
+    certificate: "Certificate of Completion",
+    originalPrice: 7999,
+    discountedPrice: 3999,
+    discountPercentage: 50,
+    courseIntroVideo: "/course-intro.mp4",
+    videoPoster: "/images/thumbnail/image.png",
+    aboutData: {
+      description: [
+        "Computer Networks Mastery is a comprehensive course that covers fundamental to advanced concepts of networking. Whether you're preparing for interviews, certifications, or looking to gain in-depth networking knowledge, this course is designed for you. You will explore network architectures, protocols, security, cloud networking, and hands-on networking simulations.",
+        "With real-world scenarios, live demonstrations, and practical exercises, you'll gain expertise in networking fundamentals, OSI & TCP/IP models, switching & routing, network security, and troubleshooting techniques. By the end of this course, you will be able to design, configure, and manage computer networks efficiently.",
+      ],
+      structure: [
+        "Weekdays: 1.5 Hours per Day",
+        "Weekends: 3 Hours per Day",
+        "Total Duration: 90+ Hours of Live Training",
+      ],
+    },
+    prerequisites: [
+      {
+        text: "Before enrolling in this course, no prior knowledge of networking or technical expertise is required. This course is designed for absolute beginners and starts with fundamental concepts, gradually progressing to advanced topics. Whether you're a student, IT enthusiast, or someone looking to build a career in networking, this course will provide you with the necessary knowledge and hands-on skills to understand and work with computer networks effectively.",
+      },
+    ],
+    certificateData: {
+      imageUrl: "/images/certificate/c-1.png",
+      title: "Certificate of Excellence",
+      description:
+        "Upon successfully completing the course, you will receive a Certificate of Excellence from LearnLogicify Technologies, validating your expertise in Computer Networks. This certification demonstrates your knowledge of networking fundamentals, protocols, security, and troubleshooting, enhancing your career prospects in IT, cloud computing, and cybersecurity.",
+      certificateLink: "/images/certificate/c-1.png",
+    },
+    certificationProcessData: {
+      title: "Certification Process and Requirements",
+      description: [
+        "To earn certification, you must complete all course modules and pass the final assessment.",
+        "The final assessment includes multiple-choice quizzes, practical networking simulations, and case studies.",
+      ],
+      assessmentDetails:
+        "The final assessment consists of a 100-mark evaluation, with a minimum passing score of 60%.",
+      criteriaTitle: "Certification Eligibility Criteria",
+      criteria: ["Achieve a minimum score of 60% in the final assessment."],
+      retakeInfo:
+        "You will have one opportunity to retake the final assessment if needed.",
+      finalNote:
+        "This certification validates your networking expertise, making you industry-ready.",
+    },
+    faqData: [
+      {
+        title: "What is the format of this course?",
+        description:
+          "Computer Networks Mastery is a live online training program with interactive sessions, real-world networking simulations, and hands-on exercises.",
+      },
+      {
+        title: "Do I need prior networking experience?",
+        description:
+          "No prior networking experience is required. However, familiarity with basic IP addressing and OS concepts will be beneficial.",
+      },
+      {
+        title: "Will I have access to recorded sessions?",
+        description:
+          "Yes! All session recordings will be available on the LMS portal for 6 months after course completion.",
+      },
+      {
+        title: "What projects will I work on?",
+        description:
+          "You will work on networking projects such as configuring virtual networks, setting up firewalls, and troubleshooting real-world network issues.",
+      },
+      {
+        title: "How long is the course and what is the schedule?",
+        description:
+          "The course consists of 90+ hours of training with live interactive sessions, 1.5-hour sessions on weekdays, and 3-hour sessions on weekends.",
+      },
+      {
+        title: "Do I receive a certificate upon completion?",
+        description:
+          "Yes! Upon successful completion of the course and passing the final assessment, you will receive a Certificate of Excellence.",
+      },
+      {
+        title: "What kind of support is available?",
+        description:
+          "You will have access to an LMS portal, live Q&A sessions, mentor support, and an active community forum.",
+      },
+      {
+        title: "Is there a final assessment?",
+        description:
+          "Yes, a final project-based assessment and networking simulations are required to qualify for certification.",
+      },
+      {
+        title: "What if I miss a live session?",
+        description:
+          "No worries! All session recordings will be available for review at your convenience.",
+      },
+    ],
+    syllabusData: [
+      {
+        icon: "FaNetworkWired",
+        title: "Module 1",
+        subtitle: "Introduction to Computer Networks",
+        topics: [
+          "Introduction to Computer Networks Course",
+          "Computer Networks: Why Learn It?",
+          "OSI Model - I",
+          "OSI Model - II",
+          "TCP/IP Model",
+          "Physical Layer: Encoding of Bits, Transmission Media and Modes",
+          "Network Types & Topologies: Terminology",
+        ],
+      },
+      {
+        icon: "FaLayerGroup",
+        title: "Module 2",
+        subtitle: "Data Link Layer and LAN Protocols",
+        topics: [
+          "Introduction to DLL",
+          "Flow Control: Stop and Wait ARQ - I",
+          "Flow Control: Stop and Wait ARQ - II",
+          "Sliding Window Protocols",
+          "Go-Back-N ARQ",
+          "Selective-Repeat ARQ",
+          "Multiple/Media Access Protocols: FDMA, TDMA, and CDMA",
+          "Polling, Reservation, Token Passing",
+          "Token Passing Efficiency",
+          "Aloha: Pure & Slotted",
+          "CSMA Protocols",
+          "CSMA/CD Analysis & Efficiency",
+          "Exponential Backoff Algorithm",
+          "Error Control in MAC Layer",
+          "Framing",
+        ],
+      },
+      {
+        icon: "FaExchangeAlt",
+        title: "Module 3",
+        subtitle: "LAN Protocols & Network Devices",
+        topics: [
+          "Ethernet [IEEE 802.3]",
+          "Token Ring Protocol [IEEE 802.5]",
+          "IEEE 802.11 (Wireless LAN)",
+          "Network Devices: Repeater, Hub, Bridge, Router & Switch",
+          "Collision Domain and Broadcast Domain",
+          "Spanning Tree Protocol",
+        ],
+      },
+      {
+        icon: "FaGlobe",
+        title: "Module 4",
+        subtitle: "Network Layer",
+        topics: [
+          "An Overview of Network Layer",
+          "IP Addressing: Classful Addressing, Unicasting, Broadcasting",
+          "Subnetting - I",
+          "Subnetting - II",
+          "CIDR",
+          "Solved Problems - 1 on Network Layer",
+          "Supernetting",
+          "IPv4: Packet Format",
+          "IPv4: Fragmentation",
+          "Solved Problems - 2 on Network Layer",
+          "IPv4: Broadcasting, Localhost",
+          "ARP & RARP",
+          "BOOTP, DHCP & Private and Public IP Addresses",
+          "ICMP",
+          "Routing Algorithms: Adaptive vs Non-Adaptive",
+          "Distance Vector Algorithms",
+          "Link State Routing",
+          "Solved Problems - 3 on Network Layer",
+          "IPv6: Addressing",
+          "IPv6: Packet Format",
+          "Types of Switching",
+        ],
+      },
+      {
+        icon: "FaRandom",
+        title: "Module 5",
+        subtitle: "Transport Layer",
+        topics: [
+          "TCP: Introduction + Ports",
+          "Sequence Numbers and ACK",
+          "Header Length, CRC",
+          "Connection Establishment & Termination",
+          "TCP: State Transition Diagram",
+          "Other Fields in TCP Header",
+          "Window Scaling and Flow Control",
+          "Sliding Window & Retransmissions",
+          "TCP Congestion Control",
+          "Timers",
+          "Dynamic Timeout Setting Algorithms",
+          "Silly Window Syndrome",
+          "Congestion Control via Traffic Shaping",
+          "UDP",
+          "Network Address Translation: An Application of Ports",
+          "Solved Problems - Transport Layer",
+        ],
+      },
+      {
+        icon: "FaShieldAlt",
+        title: "Module 6",
+        subtitle: "Application Layer and Network Security",
+        topics: [
+          "Application Layer: DNS",
+          "SMTP & POP",
+          "HTTP",
+          "FTP",
+          "Solved Problems - 1 on Application Layer",
+          "Network Security & Cryptography: Introduction",
+          "Foundational Mathematics/Number Theory",
+          "RSA Algorithm",
+          "Primitive Roots and Discrete Logarithm",
+          "Diffie-Hellman Key Exchange",
+          "Digital Signatures & Firewalls",
+          "Solved Problems - 2 on Application Layer",
+          "Error Correction Using Hamming Distances",
+          "Design of Hamming Code",
+        ],
+      },
+    ],
+  },
 ];
