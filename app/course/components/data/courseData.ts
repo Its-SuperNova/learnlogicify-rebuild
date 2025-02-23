@@ -588,7 +588,7 @@ const coursesData: Course[] = [
   },
 
   {
-    url: "/courses/pages/operating-systems",
+    url: "/course/pages/operating-system",
     Level: "Intermediate",
     languageId: "general",
     topicId: "os",

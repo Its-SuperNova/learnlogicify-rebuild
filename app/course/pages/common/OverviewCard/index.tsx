@@ -15,6 +15,7 @@ import {
   FaNodeJs,
   FaPython,
   FaReact,
+  FaServer,
 } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 import { IoExtensionPuzzleSharp, IoLogoPython } from "react-icons/io5";
@@ -61,6 +62,7 @@ const iconMap: Record<string, React.ElementType> = {
   FaBrain,
   FaChartLine,
   FaNetworkWired,
+  FaServer,
 };
 
 const Overview: React.FC<OverviewProps> = ({

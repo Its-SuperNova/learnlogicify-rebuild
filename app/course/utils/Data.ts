@@ -8108,4 +8108,218 @@ export const CourseData = [
       },
     ],
   },
+  {
+    courseTitle: "Fundamentals of Operating System",
+    instructor: "Sachin",
+    rating: 4.8,
+    reviews: "5.1k Ratings",
+    courseIcon: "FaServer",
+    level: "Beginner to Intermediate",
+    liveClasses: "Live Classes",
+    weekdays: "Weekdays: 1.5 Hours/Day",
+    weekends: "Weekends: 3 Hours/Day",
+    totalHours: "Total: 80+ Hours",
+    topicsCount: "12+ Modules",
+    problemsCount: "100+ Exercises",
+    projectsCount: "2+ Hands-on Projects",
+    portalAccess: "LMS Portal Access (6 Months)",
+    sessionRecordings: "Session Recordings in LMS",
+    certificate: "Certificate of Completion",
+    originalPrice: 7999,
+    discountedPrice: 3999,
+    discountPercentage: 50,
+    courseIntroVideo: "/course-intro.mp4",
+    videoPoster: "/images/thumbnail/image.png",
+    aboutData: {
+      description: [
+        "The 'Fundamentals of Operating System' course provides an in-depth understanding of how operating systems function. This course covers core OS concepts, including process management, memory management, file systems, and scheduling algorithms. Whether you're a beginner or someone looking to strengthen your understanding, this course will help you grasp the critical concepts needed for software development, system programming, and competitive coding.",
+        "With a hands-on approach, live coding examples, and practical exercises, you will explore OS internals, concurrency, virtualization, and security. By the end of this course, you'll be proficient in understanding and working with operating systems in real-world scenarios.",
+      ],
+      structure: [
+        "Weekdays: 1.5 Hours per Day",
+        "Weekends: 3 Hours per Day",
+        "Total Duration: 80+ Hours of Live Training",
+      ],
+    },
+    prerequisites: [
+      {
+        text: "This course is designed for absolute beginners, and no prior experience with operating systems is required. Anyone with basic computer literacy can enroll in this course. Familiarity with programming concepts and command-line usage can be beneficial but is not mandatory.",
+        links: [],
+      },
+    ],
+    certificateData: {
+      imageUrl: "/images/certificate/c-1.png",
+      title: "Certificate of Excellence",
+      description:
+        "Upon successfully completing the course, you will be awarded the Certificate of Excellence from LearnLogicify Technologies, validating your understanding of Operating System concepts. This certification demonstrates your expertise in process scheduling, memory management, file systems, and system security, enhancing your career prospects in software development and computer science.",
+      certificateLink: "/images/certificate/c-1.png",
+    },
+    certificationProcessData: {
+      title: "Certification Process and Requirements",
+      description: [
+        "To qualify for certification, you must complete all course modules and pass the final assessment.",
+        "The final assessment will include a practical OS-related project, coding problems, and theoretical questions.",
+      ],
+      assessmentDetails:
+        "The final assessment consists of a 100-mark evaluation, with a minimum passing score of 60%.",
+      criteriaTitle: "Certification Eligibility Criteria",
+      criteria: ["Achieve a minimum score of 60% in the final assessment."],
+      retakeInfo:
+        "You will have one opportunity to retake the final assessment if needed.",
+      finalNote:
+        "This certification validates your OS knowledge and problem-solving skills, making you industry-ready.",
+    },
+    faqData: [
+      {
+        title: "What is the format of this course?",
+        description:
+          "The Fundamentals of Operating System course is a live online training program with interactive sessions, real-world exercises, and practical problem-solving approaches.",
+      },
+      {
+        title: "Do I need prior experience with OS?",
+        description:
+          "No prior OS experience is needed. This course is beginner-friendly and starts from scratch.",
+      },
+      {
+        title: "Will I have access to recorded sessions?",
+        description:
+          "Yes! All session recordings will be available on the LMS portal for 6 months after course completion.",
+      },
+      {
+        title: "What topics will this course cover?",
+        description:
+          "This course covers process management, memory management, file systems, concurrency, virtualization, security, and more.",
+      },
+      {
+        title: "How long is the course and what is the schedule?",
+        description:
+          "The course consists of 80+ hours of training with live interactive sessions, 1.5-hour sessions on weekdays, and 3-hour sessions on weekends.",
+      },
+      {
+        title: "Do I receive a certificate upon completion?",
+        description:
+          "Yes! Upon successful completion of the course and passing the final assessment, you will receive a Certificate of Excellence.",
+      },
+      {
+        title: "What kind of support is available?",
+        description:
+          "You will have access to an LMS portal, live Q&A sessions, mentor support, and an active community forum.",
+      },
+      {
+        title: "What if I miss a live session?",
+        description:
+          "No worries! All session recordings will be available for review at your convenience.",
+      },
+    ],
+    syllabusData: [
+      {
+        icon: "FaServer",
+        title: "Module 1",
+        subtitle: "Introduction to Operating Systems",
+        topics: [
+          "What is an Operating System?",
+          "History & Evolution of OS",
+          "Types of Operating Systems",
+          "Role of OS in Computer Systems",
+          "Operating System Services & Structure",
+        ],
+      },
+      {
+        icon: "FaTasks",
+        title: "Module 2",
+        subtitle: "Process Management",
+        topics: [
+          "Processes and Threads",
+          "Process States & Life Cycle",
+          "Interprocess Communication (IPC)",
+          "CPU Scheduling Algorithms",
+          "Process Synchronization & Deadlocks",
+        ],
+      },
+      {
+        icon: "FaMemory",
+        title: "Module 3",
+        subtitle: "Memory Management",
+        topics: [
+          "Memory Hierarchy & Addressing",
+          "Paging & Segmentation",
+          "Virtual Memory & Demand Paging",
+          "Page Replacement Algorithms",
+          "Memory Allocation Techniques",
+        ],
+      },
+      {
+        icon: "FaHdd",
+        title: "Module 4",
+        subtitle: "File System Management",
+        topics: [
+          "File System Concepts & Structure",
+          "File Allocation Methods",
+          "Directory & Disk Management",
+          "File Access Control & Security",
+          "File System Implementation",
+        ],
+      },
+      {
+        icon: "FaMicrochip",
+        title: "Module 5",
+        subtitle: "Concurrency & Synchronization",
+        topics: [
+          "Multithreading & Concurrency",
+          "Process Synchronization Techniques",
+          "Deadlock Prevention & Recovery",
+          "Semaphores & Monitors",
+          "Thread Scheduling & Management",
+        ],
+      },
+      {
+        icon: "FaCloud",
+        title: "Module 6",
+        subtitle: "Virtualization & Distributed Systems",
+        topics: [
+          "Introduction to Virtualization",
+          "Hypervisors & Virtual Machines",
+          "Distributed Operating Systems",
+          "Load Balancing & Fault Tolerance",
+          "Cloud Computing & OS Integration",
+        ],
+      },
+      {
+        icon: "FaShieldAlt",
+        title: "Module 7",
+        subtitle: "OS Security & Protection",
+        topics: [
+          "OS Security Fundamentals",
+          "User Authentication & Access Control",
+          "Malware & Security Threats",
+          "OS Hardening & Security Best Practices",
+          "Cryptography & Secure OS",
+        ],
+      },
+      {
+        icon: "FaBug",
+        title: "Module 8",
+        subtitle: "Troubleshooting & Debugging",
+        topics: [
+          "Common OS Issues & Fixes",
+          "Debugging Tools & Techniques",
+          "Kernel Debugging & Logs",
+          "Performance Monitoring & Optimization",
+          "Hands-on: Debugging an OS Issue",
+        ],
+      },
+      {
+        icon: "FaProjectDiagram",
+        title: "Module 9",
+        subtitle: "Final OS Capstone Project",
+        topics: [
+          "Building a Simple Operating System",
+          "Implementing Process Scheduling",
+          "Creating a Virtual Memory System",
+          "Building a Secure File System",
+          "Final Project Evaluation & Review",
+        ],
+      },
+    ],
+  },
 ];
