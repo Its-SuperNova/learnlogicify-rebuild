@@ -8121,7 +8121,7 @@ export const CourseData = [
     totalHours: "Total: 80+ Hours",
     topicsCount: "12+ Modules",
     problemsCount: "100+ Exercises",
-    projectsCount: "2+ Hands-on Projects",
+    projectsCount: "",
     portalAccess: "LMS Portal Access (6 Months)",
     sessionRecordings: "Session Recordings in LMS",
     certificate: "Certificate of Completion",
