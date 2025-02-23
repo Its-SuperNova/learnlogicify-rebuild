@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6"; 
-import { FaBoxOpen, FaBrain, FaBug, FaBuilding, FaCalculator, FaCamera, FaChartBar, FaChartLine, FaChartPie, FaCheckCircle, FaClipboardCheck, FaClock, FaCloud, FaCloudDownloadAlt, FaCloudUploadAlt, FaCode, FaCodeBranch, FaCogs, FaColumns, FaCss3Alt, FaCubes, FaDatabase, FaEdit, FaEnvelope, FaExchangeAlt, FaExclamationTriangle, FaEye, FaFileArchive, FaFilm, FaFilter, FaFlask, FaFont, FaGamepad, FaGlobe, FaHdd, FaHtml5, FaImages, FaJava, FaJs, FaJsSquare, FaKey, FaLanguage, FaLayerGroup, FaLink, FaLock, FaMemory, FaMicrochip, FaNetworkWired, FaNodeJs, FaPaintBrush, FaPalette, FaPlay, FaProjectDiagram, FaPython, FaQuestion, FaRandom, FaReact, FaRegFolderOpen, FaRegObjectGroup, FaRoad, FaRobot, FaRoute, FaServer, FaShieldAlt, FaShoppingCart, FaSyncAlt, FaTachometerAlt, FaTasks, FaTools, FaTrash, FaTree, FaUpload, FaUserLock, FaUserShield, FaUserTag, FaVial, FaWpforms } from "react-icons/fa";
+import { FaBoxOpen, FaBrain, FaBug, FaBuilding, FaCalculator, FaCamera, FaChartBar, FaChartLine, FaChartPie, FaCheckCircle, FaClipboardCheck, FaClipboardList, FaClock, FaCloud, FaCloudDownloadAlt, FaCloudUploadAlt, FaCode, FaCodeBranch, FaCogs, FaColumns, FaCss3Alt, FaCube, FaCubes, FaDatabase, FaEdit, FaEnvelope, FaExchangeAlt, FaExclamationTriangle, FaEye, FaFileArchive, FaFilm, FaFilter, FaFlask, FaFont, FaGamepad, FaGlobe, FaHdd, FaHtml5, FaImages, FaJava, FaJs, FaJsSquare, FaKey, FaLanguage, FaLayerGroup, FaLink, FaLock, FaMemory, FaMicrochip, FaNetworkWired, FaNodeJs, FaPaintBrush, FaPalette, FaPlay, FaProjectDiagram, FaPython, FaQuestion, FaRandom, FaReact, FaRegFolderOpen, FaRegObjectGroup, FaRoad, FaRobot, FaRoute, FaServer, FaShapes, FaShieldAlt, FaShoppingCart, FaSyncAlt, FaTachometerAlt, FaTasks, FaTools, FaTrash, FaTree, FaUpload, FaUserLock, FaUserShield, FaUserTag, FaVial, FaWpforms } from "react-icons/fa";
 import { IoCubeOutline, IoLogoPython } from "react-icons/io5";
 import { PiMathOperationsBold } from "react-icons/pi";
 import { RiDashboardHorizontalFill, RiDatabase2Fill, RiDatabase2Line, RiLoopLeftFill, RiSpyLine, RiTableFill } from "react-icons/ri";
@@ -131,6 +131,9 @@ const iconMap: Record<string, React.ElementType> = {
   FaMemory,
   FaHdd,
   FaMicrochip,
+  FaCube,
+  FaShapes,
+  FaClipboardList,
 };
 
 interface SyllabusModule {

@@ -46,6 +46,7 @@ export default async function Page({
     "ultimate-django",
     "computer-networks",
     "operating-system",
+    "object-oriented-programming",
   ];
   const CourseId = (await params).CourseId;
 

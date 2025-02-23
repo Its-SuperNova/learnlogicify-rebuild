@@ -5,6 +5,7 @@ import {
   FaBrain,
   FaChartLine,
   FaCode,
+  FaCogs,
   FaDatabase,
   FaFlask,
   FaHtml5,
@@ -63,6 +64,7 @@ const iconMap: Record<string, React.ElementType> = {
   FaChartLine,
   FaNetworkWired,
   FaServer,
+  FaCogs,
 };
 
 const Overview: React.FC<OverviewProps> = ({

@@ -272,7 +272,7 @@ const coursesData: Course[] = [
   },
 
   {
-    url: "/courses/pages/oop",
+    url: "/course/pages/object-oriented-programming",
     Level: "Intermediate",
     languageId: "general",
     topicId: "oop",
@@ -281,7 +281,7 @@ const coursesData: Course[] = [
     title: "Object-Oriented Programming",
     topics: 15,
     videos: 30,
-    desc: "Learn OOP principles.",
+    desc: "Learn Object-Oriented Programming principles.",
     offer: "20% OFF",
     price: "₹1499",
     originalPrice: "₹1899",

@@ -8108,6 +8108,7 @@ export const CourseData = [
       },
     ],
   },
+  //os
   {
     courseTitle: "Fundamentals of Operating System",
     instructor: "Sachin",
@@ -8318,6 +8319,224 @@ export const CourseData = [
           "Creating a Virtual Memory System",
           "Building a Secure File System",
           "Final Project Evaluation & Review",
+        ],
+      },
+    ],
+  },
+
+  //oops
+
+  {
+    courseTitle: "Object-Oriented Programming (OOP) Mastery",
+    instructor: "Sachin",
+    rating: 4.9,
+    reviews: "6.2k Ratings",
+    courseIcon: "FaCogs",
+    level: "Beginner to Advanced",
+    liveClasses: "Live Classes",
+    weekdays: "Weekdays: 1.5 Hours/Day",
+    weekends: "Weekends: 3 Hours/Day",
+    totalHours: "Total: 90+ Hours",
+    topicsCount: "12+ Modules",
+    problemsCount: "120+ Exercises",
+    projectsCount: "3+ Real-World OOP Projects",
+    portalAccess: "LMS Portal Access (6 Months)",
+    sessionRecordings: "Session Recordings in LMS",
+    certificate: "Certificate of Completion",
+    originalPrice: 8999,
+    discountedPrice: 4499,
+    discountPercentage: 50,
+    courseIntroVideo: "/course-intro.mp4",
+    videoPoster: "/images/thumbnail/image.png",
+    aboutData: {
+      description: [
+        "The 'Object-Oriented Programming (OOP) Mastery' course provides an in-depth understanding of OOP principles and their real-world applications. This course covers core OOP concepts such as classes, objects, inheritance, polymorphism, and encapsulation, along with advanced topics like design patterns and SOLID principles.",
+        "With hands-on projects, live coding sessions, and practical exercises, you will gain expertise in writing maintainable, scalable, and efficient code using OOP principles. By the end of this course, you’ll be able to apply OOP concepts in languages like Python, Java, and C++ to build robust applications.",
+      ],
+      structure: [
+        "Weekdays: 1.5 Hours per Day",
+        "Weekends: 3 Hours per Day",
+        "Total Duration: 90+ Hours of Live Training",
+      ],
+    },
+    prerequisites: [
+      {
+        text: "No prior programming experience is required. However, basic knowledge of any programming language like Python, Java, or C++ can be beneficial. This course is beginner-friendly and covers OOP from the fundamentals to advanced levels.",
+        links: [],
+      },
+    ],
+    certificateData: {
+      imageUrl: "/images/certificate/c-1.png",
+      title: "Certificate of Excellence",
+      description:
+        "Upon successfully completing the course, you will be awarded the Certificate of Excellence from LearnLogicify Technologies, validating your expertise in Object-Oriented Programming. This certification demonstrates your ability to design, implement, and optimize OOP-based applications, enhancing your career prospects in software development.",
+      certificateLink: "/images/certificate/c-1.png",
+    },
+    certificationProcessData: {
+      title: "Certification Process and Requirements",
+      description: [
+        "To earn certification, you must complete all course modules and pass the final assessment.",
+        "The final assessment will consist of a real-world OOP project, coding exercises, and theoretical quizzes.",
+      ],
+      assessmentDetails:
+        "The final assessment consists of a 100-mark evaluation, with a minimum passing score of 60%.",
+      criteriaTitle: "Certification Eligibility Criteria",
+      criteria: ["Achieve a minimum score of 60% in the final assessment."],
+      retakeInfo:
+        "You will have one opportunity to retake the final assessment if needed.",
+      finalNote:
+        "This certification validates your OOP knowledge and programming skills, making you industry-ready.",
+    },
+    faqData: [
+      {
+        title: "What is the format of this course?",
+        description:
+          "OOP Mastery is a live online training program with interactive sessions, real-world projects, and coding exercises.",
+      },
+      {
+        title: "Do I need prior programming experience?",
+        description:
+          "No prior experience is required. However, familiarity with any programming language will be beneficial.",
+      },
+      {
+        title: "Will I have access to recorded sessions?",
+        description:
+          "Yes! All session recordings will be available on the LMS portal for 6 months after course completion.",
+      },
+      {
+        title: "What topics will this course cover?",
+        description:
+          "This course covers OOP principles, object-oriented design, SOLID principles, design patterns, and real-world OOP applications.",
+      },
+      {
+        title: "How long is the course and what is the schedule?",
+        description:
+          "The course consists of 90+ hours of training with live interactive sessions, 1.5-hour sessions on weekdays, and 3-hour sessions on weekends.",
+      },
+      {
+        title: "Do I receive a certificate upon completion?",
+        description:
+          "Yes! Upon successful completion of the course and passing the final assessment, you will receive a Certificate of Excellence.",
+      },
+      {
+        title: "What kind of support is available?",
+        description:
+          "You will have access to an LMS portal, live Q&A sessions, mentor support, and an active community forum.",
+      },
+      {
+        title: "Is there a final assessment?",
+        description:
+          "Yes, a final project-based assessment and coding challenge are required to qualify for certification.",
+      },
+      {
+        title: "What if I miss a live session?",
+        description:
+          "No worries! All session recordings will be available for review at your convenience.",
+      },
+    ],
+    syllabusData: [
+      {
+        icon: "FaCogs",
+        title: "Module 1",
+        subtitle: "Introduction to Object-Oriented Programming",
+        topics: [
+          "What is Object-Oriented Programming?",
+          "Importance and Benefits of OOP",
+          "Procedural vs Object-Oriented Programming",
+          "Setting Up the Development Environment",
+          "OOP in Python, Java, and C++",
+        ],
+      },
+      {
+        icon: "FaCube",
+        title: "Module 2",
+        subtitle: "Classes and Objects",
+        topics: [
+          "Understanding Classes and Objects",
+          "Defining Classes and Creating Objects",
+          "Constructors and Destructors",
+          "Instance and Class Variables",
+          "Hands-on Practice: Creating Basic OOP Programs",
+        ],
+      },
+      {
+        icon: "FaNetworkWired",
+        title: "Module 3",
+        subtitle: "Encapsulation and Data Hiding",
+        topics: [
+          "Concept of Encapsulation",
+          "Access Modifiers: Public, Private, Protected",
+          "Getters and Setters",
+          "Encapsulation in Python, Java, and C++",
+          "Hands-on: Implementing Data Hiding",
+        ],
+      },
+      {
+        icon: "FaProjectDiagram",
+        title: "Module 4",
+        subtitle: "Inheritance and Code Reusability",
+        topics: [
+          "Introduction to Inheritance",
+          "Types of Inheritance (Single, Multiple, Multilevel, Hybrid)",
+          "Method Overriding and Super Keyword",
+          "Hands-on: Implementing Inheritance",
+          "Best Practices for Inheritance",
+        ],
+      },
+      {
+        icon: "FaShapes",
+        title: "Module 5",
+        subtitle: "Polymorphism and Method Overloading",
+        topics: [
+          "What is Polymorphism?",
+          "Method Overloading vs Method Overriding",
+          "Static and Dynamic Binding",
+          "Operator Overloading",
+          "Hands-on: Implementing Polymorphism",
+        ],
+      },
+      {
+        icon: "FaClipboardList",
+        title: "Module 6",
+        subtitle: "Abstraction and Interfaces",
+        topics: [
+          "Concept of Abstraction",
+          "Abstract Classes and Interfaces",
+          "Interface Implementation in Java and Python",
+          "Hands-on: Designing Abstract Classes",
+        ],
+      },
+      {
+        icon: "FaCode",
+        title: "Module 7",
+        subtitle: "Design Patterns and SOLID Principles",
+        topics: [
+          "Introduction to Design Patterns",
+          "SOLID Principles for Software Development",
+          "Common OOP Design Patterns (Singleton, Factory, Observer)",
+          "Hands-on: Implementing SOLID Principles",
+        ],
+      },
+      {
+        icon: "FaDatabase",
+        title: "Module 8",
+        subtitle: "OOP in Database Design",
+        topics: [
+          "Object-Oriented Databases",
+          "Relational Databases vs OOP Databases",
+          "ORM (Object-Relational Mapping)",
+          "Hands-on: Using ORM in Python (SQLAlchemy) and Java (Hibernate)",
+        ],
+      },
+      {
+        icon: "FaProjectDiagram",
+        title: "Module 9",
+        subtitle: "Final OOP Capstone Project",
+        topics: [
+          "Building a Real-World OOP Application",
+          "Applying OOP Principles in Software Development",
+          "Code Optimization and Best Practices",
+          "Project Evaluation and Review",
         ],
       },
     ],
