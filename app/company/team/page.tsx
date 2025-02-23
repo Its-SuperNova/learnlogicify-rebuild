@@ -4,7 +4,6 @@ import OurTeam from "./OurTeam";
 import JoinUs from "./JoinUs";
 import Header from "@/app/components/common/HeaderDark";
 import Footer from "@/app/components/common/Footer";
-import styles from "./styles.module.css";
 import dynamic from "next/dynamic";
 
 const ScrollHandler = dynamic(
@@ -19,7 +18,7 @@ const Team: React.FC = () => {
     <>
       <ScrollHandler />
       <Header />
-      <main className={styles.main}>
+      <main className="container mx-auto px-4 py-10">
         <OurTeam />
       </main>
       <JoinUs />
