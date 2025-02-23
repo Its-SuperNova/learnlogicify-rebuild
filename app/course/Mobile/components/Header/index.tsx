@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <header className="py-2 w-full border-b border-gray-300">
-      <div className="container w-full px-2 flex mb-1 justify-between">
+      <div className=" px-2 flex mb-1 justify-between">
         <div className="flex justify-between items-center">
           <div>
             <Link href={"/"}>

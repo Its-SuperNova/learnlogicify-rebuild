@@ -69,7 +69,7 @@ const MobileFilterDrawer: React.FC<MobileFilterDrawerProps> = ({
 
             <div className="flex gap-2 mt-4">
               <DrawerClose asChild>
-                <button className="w-1/2 text-black border border-gray-400 rounded-md py-2">
+                <button className="w-1/2 text-white border border-gray-400 rounded-md py-2">
                   Close
                 </button>
               </DrawerClose>

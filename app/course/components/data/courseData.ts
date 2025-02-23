@@ -676,7 +676,7 @@ const coursesData: Course[] = [
     price: "₹1499",
     originalPrice: "₹2299",
     bannerColor: "#C6F1FF",
-    available: true,
+    available: false,
   },
 
   {
@@ -694,7 +694,7 @@ const coursesData: Course[] = [
     price: "₹1499",
     originalPrice: "₹2499",
     bannerColor: "#ADD8E6",
-    available: true,
+    available: false,
   },
 
   {
@@ -712,7 +712,7 @@ const coursesData: Course[] = [
     price: "₹1399",
     originalPrice: "₹1999",
     bannerColor: "#D3D3D3",
-    available: true,
+    available: false,
   },
 
   {
@@ -730,7 +730,7 @@ const coursesData: Course[] = [
     price: "₹1599",
     originalPrice: "₹2099",
     bannerColor: "#F5E6CC",
-    available: true,
+    available: false,
   },
 
   {
@@ -748,7 +748,7 @@ const coursesData: Course[] = [
     price: "₹1499",
     originalPrice: "₹2199",
     bannerColor: "#E6E6FA",
-    available: true,
+    available: false,
   },
 
   {
@@ -765,8 +765,8 @@ const coursesData: Course[] = [
     offer: "35% OFF",
     price: "₹1999",
     originalPrice: "₹2999",
-    bannerColor: "#FFD700",
-    available: true,
+    bannerColor: "#FFF5C4",
+    available: false,
   },
 
   {
@@ -784,7 +784,7 @@ const coursesData: Course[] = [
     price: "₹1499",
     originalPrice: "₹2199",
     bannerColor: "#C6F1FF",
-    available: true,
+    available: false,
   },
 
   {
@@ -802,7 +802,7 @@ const coursesData: Course[] = [
     price: "₹1399",
     originalPrice: "₹1899",
     bannerColor: "#E2D8FC",
-    available: true,
+    available: false,
   },
 
   {
@@ -820,7 +820,7 @@ const coursesData: Course[] = [
     price: "₹1499",
     originalPrice: "₹2199",
     bannerColor: "#90EE90",
-    available: true,
+    available: false,
   },
 
   {
@@ -838,7 +838,7 @@ const coursesData: Course[] = [
     price: "₹1499",
     originalPrice: "₹1999",
     bannerColor: "#E2D8FC",
-    available: true,
+    available: false,
   },
 
   {
@@ -856,7 +856,7 @@ const coursesData: Course[] = [
     price: "₹1499",
     originalPrice: "₹2199",
     bannerColor: "#D3D3D3",
-    available: true,
+    available: false,
   },
 
   {
@@ -893,7 +893,7 @@ const coursesData: Course[] = [
     price: "₹1999",
     originalPrice: "₹2999",
     bannerColor: "#C6F1FF",
-    available: true,
+    available: false,
   },
 
   {
@@ -911,7 +911,7 @@ const coursesData: Course[] = [
     price: "₹1999",
     originalPrice: "₹2999",
     bannerColor: "#D1C6FF",
-    available: true,
+    available: false,
   },
 
   {
@@ -929,7 +929,7 @@ const coursesData: Course[] = [
     price: "₹1799",
     originalPrice: "₹2599",
     bannerColor: "#D3D3D3",
-    available: true,
+    available: false,
   },
 ];
 
