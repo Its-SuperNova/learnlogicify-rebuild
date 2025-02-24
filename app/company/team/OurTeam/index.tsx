@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const OurTeam = () => {
   return (
-    <main className="p-[50px] bg-white flex flex-col gap-[40px] items-center max-[460px]:p-[30px]">
+    <main className="bg-white flex flex-col gap-[40px] items-center">
       {/* Header Section */}
       <section className="flex flex-col items-center text-center">
         <h2 className="text-[24px] font-medium -mb-2 max-[768px]:text-[18px]">
@@ -27,7 +27,7 @@ const OurTeam = () => {
       </section>
 
       {/* Content Section */}
-      <section className="grid grid-cols-[repeat(3,255px)] gap-[30px] justify-center w-full max-[1180px]:grid-cols-[repeat(2,255px)] max-[1180px]:gap-x-[80px] max-[700px]:grid-cols-[repeat(1,255px)]">
+      <section className="grid grid-cols-[1fr] ss:grid-cols-2 mg:grid-cols-3 gap-[30px] justify-center w-full max-w-[1100px]">
         {teamMembers.map((member, index) => (
           <Card key={index} member={member} />
         ))}
@@ -35,7 +35,7 @@ const OurTeam = () => {
 
       {/* Description Section */}
       <section className="max-w-[1100px]">
-        <p className="text-[18px] font-light leading-[24px] mb-[10px] text-gray-500 text-center max-[768px]:text-left">
+        <p className="text-md font-light leading-[24px] mb-[10px] md:text-lg md:text-center">
           Our dynamic team at LearnLogicify Technologies is a fusion of talented
           individuals, each bringing a wealth of knowledge and experience from
           diverse backgrounds. Together, we share a deep commitment to
@@ -49,9 +49,9 @@ const OurTeam = () => {
       </section>
 
       {/* Image Section */}
-      <section className="relative flex justify-center items-center">
+      <section className="relative flex justify-center items-center md:rounded-[50px]">
         <Image
-          className="w-[950px] max-w-full h-auto rounded-[50px] max-[768px]:rounded-[40px]"
+          className="w-[950px] max-w-full h-auto rounded-3xl md:rounded-[50px]"
           src="/images/team/team.png"
           alt="Our Team"
           width={500}
@@ -60,11 +60,8 @@ const OurTeam = () => {
         />
         <div
           className="absolute top-[20px] left-1/2 transform -translate-x-1/2 
-          text-[62px] font-bold text-white py-[10px] px-[20px] rounded-[10px] text-center
-          max-[1024px]:text-[48px] max-[1024px]:top-[15px] max-[1024px]:py-[8px] max-[1024px]:px-[16px]
-          max-[768px]:text-[38px] max-[768px]:top-[15px] max-[768px]:py-[8px] max-[768px]:px-[16px]
-          max-[568px]:text-[28px] max-[568px]:top-[14px] max-[568px]:py-[6px] max-[568px]:px-[12px]
-          max-[460px]:text-[24px] max-[460px]:top-[10px] max-[460px]:py-[4px] max-[460px]:px-[8px]"
+          text-lg ss:text-[28px] ss:mt-5 md:text-[36px] md:mt-10 lx:text-[54px] lx:mt-[60px] font-bold text-white py-[10px] px-[20px] rounded-[10px] text-center
+          "
         >
           #TogetherWeGrow
         </div>

@@ -24,6 +24,7 @@ const config: Config = {
         darkGray: "#161616",
       },
       screens: {
+        ss:"600px",
         mg: "900px",
         lx: "1150px",
         lxx:"1290px",

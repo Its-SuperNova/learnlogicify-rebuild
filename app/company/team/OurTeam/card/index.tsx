@@ -38,7 +38,7 @@ const Card: React.FC<CardProps> = ({ member }) => {
         <div className="flex flex-col items-center">
           {/* Card Container */}
           <div
-            className="group w-[255px] h-[265px] rounded-[20px] relative overflow-hidden transition-transform duration-300 ease-in-out cursor-pointer hover:-translate-y-[5px] hover:scale-[1.03]"
+            className="group w-full h-auto ss:max-w-[300px] rounded-[20px] relative overflow-hidden transition-transform duration-300 ease-in-out cursor-pointer hover:-translate-y-[5px] hover:scale-[1.03]"
             style={{ backgroundColor: member.backgroundColor }}
           >
             {/* Profile Image */}
