@@ -15,15 +15,17 @@ const ScrollHandler = dynamic(
 
 const Team: React.FC = () => {
   return (
-    <div className="overflow-hidden">
+    <>
       <ScrollHandler />
-      <Header />
-      <main className="px-5 pt-3 pb-0">
-        <OurTeam />
-        <JoinUs />
-      </main>
-      <Footer />
-    </div>
+      <div className="overflow-hidden">
+        <Header />
+        <main className="px-5 pt-3 pb-0">
+          <OurTeam />
+          <JoinUs />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 

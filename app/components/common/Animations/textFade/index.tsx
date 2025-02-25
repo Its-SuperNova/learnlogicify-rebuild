@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import { fadeIn } from "./animation";
-import styles from "./styles.module.scss";
 
 // Define the types for props
 interface FadeTransitionProps {
@@ -19,8 +18,7 @@ export default function FadeTransition({
     <motion.p
       variants={fadeIn}
       initial="initial"
-      animate={isInView ? "open" : "initial"}
-      className={`${styles.descriptionText} ${className || ""}`} // Merge local and external styles
+      animate={isInView ? "open" : "initial"} 
     >
       {description}
     </motion.p>
