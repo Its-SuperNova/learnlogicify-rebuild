@@ -51,7 +51,7 @@ const Hero = () => {
               initial="initial"
               animate={isButtonInView ? "open" : "initial"}
             >
-              <Link href={"/courses"}>
+              <Link href={"/course"}>
                 <Rounded className="w-[100%] px-[20px] py-[10px] text-[14px] md:text-[16px] md:w-[200px]  z-[9999]">
                   <p>View Courses</p>
                 </Rounded>

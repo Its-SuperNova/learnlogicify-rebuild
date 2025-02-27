@@ -5,7 +5,6 @@ import Header from "@/app/components/common/HeaderDark";
 import OurVision from "./components/OurVision";
 import OurServices from "./components/OurServices";
 import Footer from "@/app/components/common/Footer";
-import Desc from "./components/desc";
 import dynamic from "next/dynamic";
 
 const ScrollHandler = dynamic(

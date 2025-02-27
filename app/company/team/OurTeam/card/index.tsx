@@ -114,7 +114,7 @@ const Card: React.FC<CardProps> = ({ member }) => {
       </DrawerTrigger>
 
       {/* Drawer Content: Team Member Details */}
-      <DrawerContent className="!bg-white border border-gray-200">
+      <DrawerContent className="!bg-white border border-gray-200 mb-[80px]">
         <div className="p-8 grid grid-cols-[auto_1fr] gap-8">
           <div>
             <Image
@@ -139,13 +139,6 @@ const Card: React.FC<CardProps> = ({ member }) => {
             <Social />
           </div>
         </div>
-        <DrawerFooter>
-          <DrawerClose asChild>
-            <button className="w-full rounded-md bg-[#1E1E1E] px-4 py-2 text-white">
-              Close
-            </button>
-          </DrawerClose>
-        </DrawerFooter>
       </DrawerContent>
     </Drawer>
   );
