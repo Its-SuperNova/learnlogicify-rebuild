@@ -19,9 +19,7 @@ const AboutPage: React.FC = () => {
       <ScrollHandler />
       <div className="bg-[#F0F1FA] overflow-hidden">
         <Header />
-        <div className="p-4 md:p-8 flex flex-col justify-center items-center">
-          <Hero />
-          <Desc />
+        <div className="p-5  ss:px-[50px] md:px-[80px] lg:px-[100px] md:mb-[100px]  flex flex-col justify-center items-center lg:gap-[60px]">
           <OurVision />
           <OurServices />
         </div>
