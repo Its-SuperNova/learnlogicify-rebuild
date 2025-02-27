@@ -20,6 +20,7 @@ const AboutPage: React.FC = () => {
       <div className="bg-[#F0F1FA] overflow-hidden">
         <Header />
         <div className="p-5  ss:px-[50px] md:px-[80px] lg:px-[100px] md:mb-[100px]  flex flex-col justify-center items-center lg:gap-[60px]">
+          <Hero />
           <OurVision />
           <OurServices />
         </div>
