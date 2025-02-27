@@ -11,6 +11,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import Link from "next/link";
 
 interface HeroProps {
   courseTitle: string;
@@ -134,12 +135,12 @@ const Hero: React.FC<HeroProps> = (props) => {
                         {" "}
                         {requirement.links.map((course, linkIndex) => (
                           <span key={linkIndex}>
-                            <a
+                            <Link
                               href={course.link}
                               className="text-blue-500 underline hover:text-blue-700"
                             >
                               {course.linkText}
-                            </a>
+                            </Link>
                             {requirement.links && linkIndex !== requirement.links.length - 1 && ", "}
                           </span>
                         ))}
