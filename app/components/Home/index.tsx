@@ -20,6 +20,19 @@ const AboutPortal = dynamic(() => import("./sections/AboutPortal"), {
 
 const HomePage: React.FC = () => {
   const [offerVisible, setOfferVisible] = useState(false); // Track if the offer is visible
+  const [isLargeScreen, setIsLargeScreen] = useState(true); // Track if the screen is large
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 1024); // `lg` breakpoint is typically 1024px
+    };
+
+    // Initial check
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <>
@@ -30,20 +43,20 @@ const HomePage: React.FC = () => {
         className="relative flex flex-col bg-white overflow-hidden transition-all duration-600 ease-in-out"
         initial={{ paddingTop: "0px" }}
         animate={{
-          paddingTop: offerVisible ? "60px" : "0px", // Dynamically push content down
-          transition: { type: "spring", stiffness: 100, damping: 25 },
+          paddingTop: offerVisible && isLargeScreen ? "60px" : "0px", // Apply paddingTop only if large screen and offer is visible
+          transition: { duration: 0.5, ease: "linear" },
         }}
       >
         <Header />
         <HeroPage />
         <Description />
-        {/* <VideoSection />
+        <VideoSection />
         <GetToKnow />
         <AboutPortal />
         <Courses />
         <Stats />
         <Testimonials />
-        <Banner /> */}
+        <Banner />
       </motion.main>
     </>
   );

@@ -96,17 +96,17 @@ const Offer: React.FC<OfferProps> = ({ setOfferVisible, className }) => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="absolute top-0 w-full h-[60px] z-[1000000000] bg-[#ffd700] hidden mg:flex items-center justify-between px-[20px] overflow-hidden font-normal"
+          className="absolute top-0 w-full h-[60px] z-[1000000000] bg-[#ffd700] hidden lg:flex items-center justify-between px-[20px] overflow-hidden font-normal"
           initial={{ y: "-100%", opacity: 0 }}
           animate={{
             y: 0,
             opacity: 1,
-            transition: { type: "spring", stiffness: 100, damping: 25 },
+            transition: { duration: 0.7, ease: "linear" }, // Linear transition for smoothness
           }}
           exit={{
             y: "-100%",
             opacity: 0,
-            transition: { type: "spring", stiffness: 100, damping: 25 },
+            transition: { duration: 0.9, ease: "linear" },
           }}
         >
           <canvas
