@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import SlideUpWord from "@/app/components/common/Animations/slideUpWord";
@@ -15,23 +16,12 @@ export default function Index() {
   const buttonParallaxRef = useRef<HTMLDivElement>(null);
   const [offsetMultiplier, setOffsetMultiplier] = useState(0.2); // Default for larger screens
 
+  // Combine scroll and resize event listeners into one useEffect
   useEffect(() => {
     const updateOffsetMultiplier = () => {
-      if (window.innerWidth < 730) {
-        setOffsetMultiplier(0.1);
-      } else {
-        setOffsetMultiplier(0.2);
-      }
+      setOffsetMultiplier(window.innerWidth < 730 ? 0.1 : 0.2);
     };
-    updateOffsetMultiplier();
 
-    window.addEventListener("resize", updateOffsetMultiplier);
-    return () => {
-      window.removeEventListener("resize", updateOffsetMultiplier);
-    };
-  }, []);
-
-  useEffect(() => {
     const handleScroll = () => {
       const buttonElement = buttonParallaxRef.current;
       if (buttonElement) {
@@ -41,29 +31,37 @@ export default function Index() {
       }
     };
 
+    // Initial call to set the offset multiplier
+    updateOffsetMultiplier();
+
+    // Add event listeners for resize and scroll
+    window.addEventListener("resize", updateOffsetMultiplier);
     window.addEventListener("scroll", handleScroll);
+
+    // Cleanup event listeners on component unmount
     return () => {
+      window.removeEventListener("resize", updateOffsetMultiplier);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [offsetMultiplier]); // Include offsetMultiplier as a dependency
+  }, [offsetMultiplier]); // Dependency on offsetMultiplier to trigger updates
 
   const title = ["One Platform,", "endless opportunities."];
   const description =
     "At LearnLogicify Technologies, we are committed to accelerating tech careers by providing a comprehensive, cutting-edge learning platform. Whether you're a beginner or an advanced learner, our courses cover essential skills in web development, AI, and other emerging technologies";
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center px-6 py-[50px] md:py-[50px] md:px-[80px] lg:p-[100px]">
       <div
         ref={descriptionRef}
-        className="relative bg-white w-full flex h-full max-w-[1200px]"
+        className="relative bg-white justify-around gap-5 w-full flex h-full max-w-[1200px]"
       >
-        <div className="max-w-screen-xl flex flex-col items-start gap-5">
+        <div className="max-w-screen-xl flex flex-col items-start gap-3 md:gap-5">
           <SlideUpWord
             title={title}
             isInView={isInView}
-            className="text-[28px] font-medium leading-[30px] md:font-normal md:text-6xl md:leading-[65px] md:mb-5 text-left z-10"
+            className="text-[28px] md:text-5xl md:leading-[52px] font-medium leading-[30px] md:font-normal lg:text-6xl lg:leading-[65px] lg:mb-5 text-left z-10"
           />
-          <div className="max-w-[900px] md:font-normal font-light text-gray-600 md:text-black  text-lg md:text-[20px]">
+          <div className="max-w-[900px] md:font-normal font-light text-gray-600 text-lg md:text-[20px]">
             <FadeTransition
               description={description}
               isInView={isInView}
@@ -78,11 +76,11 @@ export default function Index() {
           </Link>
         </div>
 
-        <div className="hidden absolute mg:top-8 right-36 w-[180px] h-[180px] mg:flex items-center justify-center z-10 rounded-full">
+        <div className="hidden mg:top-8 right-36 w-[180px] h-[180px] mg:flex items-center justify-center z-10 rounded-full">
           <div ref={buttonParallaxRef}>
             <Link href={"/company/about"}>
-              <Rounded className="w-[120px] lx:w-[150px] lx:h-[150px] h-[120px] bg-black text-white rounded-full flex items-center justify-center cursor-pointer p-0">
-                <p className="m-0  lx:text-lg font-medium z-10">About Us</p>
+              <Rounded className="w-[120px] lg:w-[150px] lg:h-[150px] h-[120px] bg-black text-white rounded-full flex items-center justify-center cursor-pointer p-0">
+                <p className="m-0 lx:text-lg font-medium z-10">About Us</p>
               </Rounded>
             </Link>
           </div>

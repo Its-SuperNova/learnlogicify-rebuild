@@ -28,7 +28,7 @@ const Offer: React.FC<OfferProps> = ({ setOfferVisible, className }) => {
     const timer = setTimeout(() => {
       setIsVisible(true);
       setOfferVisible(true);
-    }, 3000);
+    }, 3000); // Show after 3 seconds
 
     calculateTimeLeft();
     const countdownTimer = setInterval(calculateTimeLeft, 1000);
@@ -96,11 +96,18 @@ const Offer: React.FC<OfferProps> = ({ setOfferVisible, className }) => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="absolute top-0 w-full h-[60px] z-[1000000000] bg-[#ffd700] flex items-center justify-between px-[20px] overflow-hidden font-normal"
+          className="absolute top-0 w-full h-[60px] z-[1000000000] bg-[#ffd700] hidden mg:flex items-center justify-between px-[20px] overflow-hidden font-normal"
           initial={{ y: "-100%", opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: "-100%", opacity: 0 }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
+          animate={{
+            y: 0,
+            opacity: 1,
+            transition: { type: "spring", stiffness: 100, damping: 25 },
+          }}
+          exit={{
+            y: "-100%",
+            opacity: 0,
+            transition: { type: "spring", stiffness: 100, damping: 25 },
+          }}
         >
           <canvas
             ref={canvasRef}
