@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useRef, forwardRef } from "react";
-import styles from "./styles.module.css";
 
 // Define the props interface for the Video component
 interface VideoProps {
@@ -28,13 +27,18 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
     const combinedRef = ref || videoRef;
 
     return (
-      <div className={styles.videoWrapper}>
+      <div className="relative overflow-hidden rounded-[50px] w-full pt-[56.25%]">
+        {" "}
+        {/* 16:9 aspect ratio */}
         {!isPlaying && (
           <div
-            className={styles.thumbnail}
+            className="absolute top-0 left-0 w-full h-full flex justify-center items-center bg-cover bg-center cursor-pointer"
             style={{ backgroundImage: `url(${poster})` }}
           >
-            <button className={styles.playButton} onClick={handlePlay}>
+            <button
+              className="text-4xl text-black bg-white border-none rounded-full w-20 h-20 flex justify-center items-center cursor-pointer transition-all duration-300 hover:bg-black hover:text-white"
+              onClick={handlePlay}
+            >
               &#9658;
             </button>
           </div>
@@ -45,7 +49,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
           controls={controls}
           loop={loop}
           muted={muted}
-          className={styles.videoElement}
+          className="absolute top-0 left-0 w-full h-full"
           style={{ display: isPlaying ? "block" : "none" }} // Control visibility with inline styles
         />
       </div>

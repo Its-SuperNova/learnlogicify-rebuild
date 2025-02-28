@@ -1,7 +1,6 @@
 "use client"; // Ensure client-side rendering
 
 import React, { useEffect, useRef } from "react";
-import styles from "./styles.module.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Video from "../../VideoSection"; // Adjust path as necessary
@@ -15,23 +14,25 @@ const VideoSection: React.FC = () => {
   useEffect(() => {
     const screenWidth = window.innerWidth;
     if (screenWidth > 768 && videoRef.current) {
-      // Apply animation only on screens wider than 768px
       gsap.to(videoRef.current, {
-        width: "70%", // Target size when scrolled to the end
-        ease: "none", // Remove easing for smooth animation during scrolling
+        width: "70%", 
+        ease: "none", 
         scrollTrigger: {
           trigger: videoRef.current,
-          start: "top+=80px center", // Adjust start based on the padding
-          end: "bottom top", // End when the video leaves the top of the viewport
-          scrub: 1, // Scrub for smooth scroll-tied animation
+          start: "top+=0px center", 
+          end: "bottom top", 
+          scrub: 1, 
         },
       });
     }
   }, []);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.videoPlayer} ref={videoRef}>
+    <div className="h-full px-[130px] py-[80px] flex items-center justify-center flex-col bg-white z-20">
+      <div
+        className="h-full w-full rounded-[40px] object-cover z-20"
+        ref={videoRef}
+      >
         <Video
           ref={videoElementRef} // Pass the videoElementRef to the Video component
           src="/course-intro.mp4"
