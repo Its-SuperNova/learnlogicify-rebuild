@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import styles from "./styles.module.css";
 import { RxCross1 } from "react-icons/rx";
 import confetti from "canvas-confetti";
 import Link from "next/link";
@@ -11,9 +10,10 @@ import EnrollBtn from "./enrollBtn";
 
 interface OfferProps {
   setOfferVisible: (isVisible: boolean) => void;
+  className?: string; // Added className prop
 }
 
-const Offer: React.FC<OfferProps> = ({ setOfferVisible }) => {
+const Offer: React.FC<OfferProps> = ({ setOfferVisible, className }) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -96,39 +96,49 @@ const Offer: React.FC<OfferProps> = ({ setOfferVisible }) => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className={styles.offer}
+          className="absolute top-0 w-full h-[60px] z-[1000000000] bg-[#ffd700] flex items-center justify-between px-[20px] overflow-hidden font-normal"
           initial={{ y: "-100%", opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: "-100%", opacity: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
         >
-          <canvas ref={canvasRef} className={styles.confettiCanvas}></canvas>
-          <div className={styles.leftSection}>
-            <Image
-              src="/SVG/icons/giftbox.svg"
-              alt="Gift Icon"
-              className={styles.giftIcon}
-              width={50}
-              height={50}
-              priority
-            />
-            <div className={styles.timer}>
-              {timeLeft.days}d : {timeLeft.hours}h : {timeLeft.minutes}m :{" "}
-              {timeLeft.seconds}s
+          <canvas
+            ref={canvasRef}
+            className="absolute top-0 left-0 w-full h-full pointer-events-none z-[1]"
+          />
+          <div className="flex w-full justify-between items-center">
+            <div className="flex items-center gap-[10px]">
+              <Image
+                src="/SVG/icons/giftbox.svg"
+                alt="Gift Icon"
+                className="w-[24px] h-[24px]"
+                width={50}
+                height={50}
+                priority
+              />
+              <div className="text-[#333] text-[14px] font-semibold">
+                {timeLeft.days}d : {timeLeft.hours}h : {timeLeft.minutes}m :{" "}
+                {timeLeft.seconds}s
+              </div>
             </div>
-          </div>
-          <div className={styles.message}>
-            The Ultimate Webinar on Mastering the Git & Github
-          </div>
-          <Link href="/webinar/ultimate-webinar-on-mastering-git-&-github">
-            <EnrollBtn
-              color="black"
-              label="Enroll"
-              onClick={(e) => console.log("Button clicked!", e)}
-            />
-          </Link>
-          <div className={styles.icon}>
-            <RxCross1 className={styles.crossIcon} onClick={handleClose} />
+            <div className="flex-1 text-center text-[#333] text-[16px]">
+              The Ultimate Webinar on Mastering the Git & Github
+            </div>
+            <div className="flex items-center">
+              <Link href="/webinar/ultimate-webinar-on-mastering-git-&-github">
+                <EnrollBtn
+                  color="black"
+                  label="Enroll"
+                  onClick={(e) => console.log("Button clicked!", e)}
+                />
+              </Link>
+              <div className="bg-black rounded-full p-[10px] transition-transform duration-200 ease-in-out transform hover:scale-[1.1] hover:bg-[#333]">
+                <RxCross1
+                  className="text-white text-[18px] cursor-pointer"
+                  onClick={handleClose}
+                />
+              </div>
+            </div>
           </div>
         </motion.div>
       )}

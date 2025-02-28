@@ -61,7 +61,7 @@ const AboutPortal = () => {
       </div>
       <div className={styles.right}>
         <video
-          src="MP4/video1.mp4"
+          src="course-intro.mp4"
           className={styles.video}
           autoPlay
           loop

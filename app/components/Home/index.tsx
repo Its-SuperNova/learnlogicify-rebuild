@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-import styles from "./styles.module.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Offer from "../offer";
 import Header from "../common/HeaderDark";
 import HeroPage from "./sections/HeroSection";
@@ -12,10 +13,8 @@ import GetToKnow from "./sections/GetToKnow";
 import Courses from "./sections/Courses";
 import Stats from "./sections/Stats";
 import Testimonials from "./sections/Testimonial";
-import Banner from "@/app/components/common/WebinarBanner"
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import Banner from "@/app/components/common/WebinarBanner";
+import { motion } from "framer-motion";
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutPortal = dynamic(() => import("./sections/AboutPortal"), {
@@ -23,49 +22,19 @@ const AboutPortal = dynamic(() => import("./sections/AboutPortal"), {
 });
 
 const HomePage: React.FC = () => {
-  const [offerVisible, setOfferVisible] = useState<boolean>(false); // Manage Offer visibility
-  const [isDesktopView, setIsDesktopView] = useState<boolean>(true); // Track desktop view
-  const pathRef = useRef<SVGPathElement>(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktopView(window.innerWidth >= 840);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
-    if (pathRef.current) {
-      const pathLength = pathRef.current.getTotalLength();
-      gsap.set(pathRef.current, {
-        strokeDasharray: pathLength,
-        strokeDashoffset: pathLength,
-        strokeLinecap: "round",
-      });
-      gsap.to(pathRef.current, {
-        strokeDashoffset: 0,
-        ease: "none",
-        scrollTrigger: {
-          trigger: pathRef.current,
-          start: "top 50%",
-          end: "bottom top",
-          scrub: 1,
-        },
-      });
-    }
-  }, []);
+  const [offerVisible, setOfferVisible] = useState(false); // Track if the offer is visible
 
   return (
     <>
-      {isDesktopView && <Offer setOfferVisible={setOfferVisible} />}
-      <main
-        className={styles.main}
-        style={{
-          paddingTop: offerVisible && isDesktopView ? "70px" : "0px", 
-          transition: "padding-top 0.6s ease-in-out", 
+      {/* Show Offer on larger screens */}
+      <Offer className="hidden md:block" setOfferVisible={setOfferVisible} />
+      {/* Animate both main content and offer together */}
+      <motion.main
+        className="relative flex flex-col bg-white overflow-hidden transition-all duration-600 ease-in-out"
+        initial={{ paddingTop: "0px" }}
+        animate={{
+          paddingTop: offerVisible ? "60px" : "0px", // Add padding when offer is visible
+          transition: { duration: 0.6, ease: "easeInOut" },
         }}
       >
         <Header />
@@ -77,8 +46,8 @@ const HomePage: React.FC = () => {
         <Courses />
         <Stats />
         <Testimonials />
-        <Banner /> 
-      </main>
+        <Banner />
+      </motion.main>
     </>
   );
 };

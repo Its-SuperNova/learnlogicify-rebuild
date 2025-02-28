@@ -37,7 +37,7 @@ const AboutPortal = () => {
       <section className={styles.content}>
         <div className={styles.videoContainer}>
           <Video
-            src="/website-intro (1).mp4"
+            src="/course-intro.mp4"
             poster="/images/thumbnail/image.png"
             controls={true}
             loop={false}

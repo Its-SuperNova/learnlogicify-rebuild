@@ -34,7 +34,7 @@ const VideoSection: React.FC = () => {
       <div className={styles.videoPlayer} ref={videoRef}>
         <Video
           ref={videoElementRef} // Pass the videoElementRef to the Video component
-          src="/website-intro (1).mp4"
+          src="/course-intro.mp4"
           poster="/images/thumbnail/t1.png"
         />
       </div>
