@@ -15,28 +15,28 @@ const VideoSection: React.FC = () => {
     const screenWidth = window.innerWidth;
     if (screenWidth > 768 && videoRef.current) {
       gsap.to(videoRef.current, {
-        width: "70%", 
-        ease: "none", 
+        width: "70%",
+        ease: "none",
         scrollTrigger: {
           trigger: videoRef.current,
-          start: "top+=0px center", 
-          end: "bottom top", 
-          scrub: 1, 
+          start: "top+=0px center",
+          end: "bottom top",
+          scrub: 1,
         },
       });
     }
   }, []);
 
   return (
-    <div className="h-full px-[130px] py-[80px] flex items-center justify-center flex-col bg-white z-20">
+    <div className="h-full px-6 md:px-[130px] py- md:py-[80px] flex items-center justify-center flex-col bg-white z-20">
       <div
         className="h-full w-full rounded-[40px] object-cover z-20"
         ref={videoRef}
       >
         <Video
-          ref={videoElementRef} // Pass the videoElementRef to the Video component
           src="/course-intro.mp4"
           poster="/images/thumbnail/image.png"
+          controls={true}
         />
       </div>
     </div>
