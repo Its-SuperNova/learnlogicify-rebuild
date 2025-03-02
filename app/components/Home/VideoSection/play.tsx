@@ -6,8 +6,7 @@ const Button = () => {
   return (
     <StyledWrapper>
       <div>
-        <button className="c-button c-button--gooey">
-            
+        <button className="c-button c-button--gooey">   
           <FaPlay />
           <div className="c-button__blobs">
             <div />
