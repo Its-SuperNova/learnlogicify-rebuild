@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import styled from "styled-components";
 import { FaPlay } from "react-icons/fa6";
@@ -6,7 +7,8 @@ const Button = () => {
   return (
     <StyledWrapper>
       <div>
-        <button className="c-button c-button--gooey">   
+        <button className="c-button c-button--gooey">
+   
           <FaPlay />
           <div className="c-button__blobs">
             <div />
