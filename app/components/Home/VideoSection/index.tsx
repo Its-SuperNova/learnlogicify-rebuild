@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useRef, useState } from "react";
 import Play from "./play";
 
@@ -28,7 +28,7 @@ const Video: React.FC<VideoProps> = ({
   };
 
   return (
-    <div className="relative w-full  rounded-[40px] overflow-hidden">
+    <div className="relative w-full rounded-[40px] overflow-hidden">
       {!isPlaying && poster && (
         <div
           className="absolute inset-0 flex items-center justify-center z-10 cursor-pointer rounded-[40px] overflow-hidden"
@@ -39,7 +39,7 @@ const Video: React.FC<VideoProps> = ({
             alt="Thumbnail"
             className="w-full h-full object-cover rounded-[40px]"
           />
-          <div className="absolute p-2 ">
+          <div className="absolute p-2">
             <Play />
           </div>
         </div>

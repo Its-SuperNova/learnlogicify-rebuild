@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import styled from "styled-components";
 import { FaPlay } from "react-icons/fa6";
@@ -8,7 +8,6 @@ const Button = () => {
     <StyledWrapper>
       <div>
         <button className="c-button c-button--gooey">
-   
           <FaPlay />
           <div className="c-button__blobs">
             <div />
@@ -20,9 +19,10 @@ const Button = () => {
           style={{ display: "block", height: 0, width: 0 }}
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
         >
           <defs>
-            <filter id="goo">
+            <filter id="goo" x="0" y="0" width="100%" height="100%">
               <feGaussianBlur
                 result="blur"
                 stdDeviation={10}
@@ -108,8 +108,8 @@ const StyledWrapper = styled.div`
   }
 
   .c-button--gooey:hover {
-    color: white; /* Text color to black on hover */
-    background-color: white; /* Background color to white on hover */
+    color: white;
+    background-color: white;
     border-radius: 550px;
   }
 
