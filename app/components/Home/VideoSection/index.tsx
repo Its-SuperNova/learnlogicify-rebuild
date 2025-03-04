@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useState } from "react";
-import Play from "./play";
+import dynamic from "next/dynamic";
+const Play = dynamic(() => import("./play"), { ssr: false });
 
 interface VideoProps {
   src: string;
