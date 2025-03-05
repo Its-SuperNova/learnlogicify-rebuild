@@ -2,6 +2,7 @@
 import React, { useState, useCallback } from "react";
 import dynamic from "next/dynamic";
 import HeaderMobile from "./Mobile/components/Header";
+import Head from "next/head";
 
 const Sidebar = dynamic(() => import("./components/SideBar"), { ssr: false });
 const CollapsedSidebar = dynamic(
@@ -46,6 +47,9 @@ const Course = () => {
 
   return (
     <>
+      <Head>
+        <title>Courses</title>
+      </Head>
       <div className="flex bg-white md:bg-[#ececec] h-auto md:h-screen p-[10px] overflow-hidden">
         {/* Sidebar (Hidden on Small Screens) */}
         <div
@@ -89,7 +93,7 @@ const Course = () => {
             toggleMobileSidebar={toggleMobileSidebar}
             toggleAvailability={toggleAvailability}
             isAvailableOnly={isAvailableOnly}
-            />
+          />
           <Mobile
             selectedLanguage={filters.language}
             selectedTopic={filters.topic}
