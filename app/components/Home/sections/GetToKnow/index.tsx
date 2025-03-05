@@ -9,9 +9,8 @@ import {
   buttonReveal,
 } from "../../../common/Animations/animation";
 import Rounded from "../../../common/buttons/roundButton";
-import styles from "./styles.module.css"; // CSS Modules
-
 import Link from "next/link";
+
 export default function GetToKnow() {
   const { ref: descriptionRef, inView: isInView } = useInView({
     triggerOnce: false,
@@ -23,9 +22,8 @@ export default function GetToKnow() {
     threshold: 0.1,
   });
 
-  // Change triggerOnce to false to trigger every time the button enters the viewport
   const { ref: buttonRef, inView: isButtonInView } = useInView({
-    triggerOnce: false, // Trigger the animation every time the button enters the viewport
+    triggerOnce: false,
     threshold: 0.1,
   });
 
@@ -34,22 +32,28 @@ export default function GetToKnow() {
     "At LearnLogicify Technologies, we are dedicated to empowering individuals to achieve success in the tech industry through innovative and accessible learning solutions. Our platform bridges the gap between theoretical knowledge and real-world application, offering expertly crafted courses, hands-on projects, and tailored assessments.";
 
   return (
-    <div ref={descriptionRef} className={styles.getToKnow}>
-      <div className={styles.body}>
+    <div
+      ref={descriptionRef}
+      className="px-[200px] mb-[100px] h-full flex justify-center items-center bg-white"
+    >
+      <div className="max-w-[1400px] flex flex-col items-start gap-5">
         <SlideUpWord
           title={title}
           isInView={isInView}
-          className={styles.title}
+          className="text-[60px] leading-[65px] mb-5 text-left z-10"
         />
         <FadeTransition
           description={description}
           isInView={isInView}
-          className={styles.descriptionText}
+          className="text-[22px] text-left font-normal z-10"
         />
 
-        <div ref={gridRef} className={styles.gridSection}>
+        <div
+          ref={gridRef}
+          className="grid grid-cols-3 gap-[50px] mt-[50px] z-10"
+        >
           <motion.div
-            className={styles.gridItem}
+            className="text-left border-t border-gray-400 pt-5"
             variants={gridSlideUp}
             initial="initial"
             animate={isGridInView ? "open" : "initial"}
@@ -58,6 +62,7 @@ export default function GetToKnow() {
               variants={gridSlideUp}
               initial="initial"
               animate={isGridInView ? "open" : "initial"}
+              className="text-[22px] font-semibold"
             >
               Comprehensive Learning
             </motion.h2>
@@ -65,6 +70,7 @@ export default function GetToKnow() {
               variants={gridFadeIn}
               initial="initial"
               animate={isGridInView ? "open" : "initial"}
+              className="text-[16px] font-light mt-2.5"
             >
               We provide a wide range of learning materials, from video
               tutorials to interactive modules, ensuring that every aspect of
@@ -73,7 +79,7 @@ export default function GetToKnow() {
           </motion.div>
 
           <motion.div
-            className={styles.gridItem}
+            className="text-left border-t border-gray-400 pt-5"
             variants={gridSlideUp}
             initial="initial"
             animate={isGridInView ? "open" : "initial"}
@@ -82,6 +88,7 @@ export default function GetToKnow() {
               variants={gridSlideUp}
               initial="initial"
               animate={isGridInView ? "open" : "initial"}
+              className="text-[22px] font-semibold"
             >
               Expert Guidance
             </motion.h2>
@@ -89,6 +96,7 @@ export default function GetToKnow() {
               variants={gridFadeIn}
               initial="initial"
               animate={isGridInView ? "open" : "initial"}
+              className="text-[16px] font-light mt-2.5"
             >
               Learn from industry professionals with practical insights and
               experience, helping you gain real-world knowledge and skills.
@@ -96,7 +104,7 @@ export default function GetToKnow() {
           </motion.div>
 
           <motion.div
-            className={styles.gridItem}
+            className="text-left border-t border-gray-400 pt-5"
             variants={gridSlideUp}
             initial="initial"
             animate={isGridInView ? "open" : "initial"}
@@ -105,6 +113,7 @@ export default function GetToKnow() {
               variants={gridSlideUp}
               initial="initial"
               animate={isGridInView ? "open" : "initial"}
+              className="text-[22px] font-semibold"
             >
               Career Focused
             </motion.h2>
@@ -112,6 +121,7 @@ export default function GetToKnow() {
               variants={gridFadeIn}
               initial="initial"
               animate={isGridInView ? "open" : "initial"}
+              className="text-[16px] font-light mt-2.5"
             >
               Our programs equip you with the certifications and skills needed
               to thrive in the tech world and build a strong career foundation.
@@ -119,29 +129,33 @@ export default function GetToKnow() {
           </motion.div>
         </div>
 
-        {/* Apply button reveal animation */}
-        <div ref={buttonRef} className={styles.btnContainer}>
+        <div
+          ref={buttonRef}
+          className="flex gap-5 justify-between items-center mt-7 w-full max-w-[600px]"
+        >
           <motion.div
-            variants={buttonReveal} // Button reveal animation for "View Courses"
+            variants={buttonReveal}
             initial="initial"
             animate={isButtonInView ? "open" : "initial"}
-            className={styles.motionbtn}
+            className="w-full"
           >
-            <Link href={"/courses"}>
-              <Rounded className={styles.btn}>
+            <Link href="/courses">
+              <Rounded className="w-full max-w-[300px] h-[50px] z-[9999]">
                 <p>View Courses</p>
               </Rounded>
             </Link>
           </motion.div>
 
           <motion.div
-            variants={buttonReveal} // Button reveal animation for "Contact Us"
+            variants={buttonReveal}
             initial="initial"
             animate={isButtonInView ? "open" : "initial"}
-            className={styles.motionbtn1}
+            className="w-full"
           >
-            <Link href={"/contact"}>
-              <motion.button className={styles.btn1}>Contact Us</motion.button>
+            <Link href="/contact">
+              <motion.button className="w-full max-w-[300px] h-[50px] font-medium rounded-[25px] border-[1.5px] border-black bg-white text-black cursor-pointer transition-colors duration-300 ease-in-out hover:bg-blue-600 hover:text-white">
+                Contact Us
+              </motion.button>
             </Link>
           </motion.div>
         </div>
