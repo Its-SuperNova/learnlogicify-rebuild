@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useState } from "react";
-import dynamic from "next/dynamic";
-const Play = dynamic(() => import("./play"), { ssr: false });
+import Play from "./play";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface VideoProps {
   src: string;
@@ -20,31 +20,46 @@ const Video: React.FC<VideoProps> = ({
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [startPlay, setStartPlay] = useState(false);
 
   const handlePlay = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-      setIsPlaying(true);
-    }
+    setStartPlay(true);
+    setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.play();
+        setIsPlaying(true);
+      }
+    }, 500); // Delay to match animation duration
   };
 
   return (
     <div className="relative w-full rounded-[40px] overflow-hidden">
-      {!isPlaying && poster && (
-        <div
-          className="absolute inset-0 flex items-center justify-center z-10 cursor-pointer rounded-[40px] overflow-hidden"
-          onClick={handlePlay}
-        >
-          <img
-            src={poster}
-            alt="Thumbnail"
-            className="w-full h-full object-cover rounded-[40px]"
-          />
-          <div className="absolute p-2">
-            <Play />
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {!isPlaying && poster && (
+          <motion.div
+            className="absolute inset-0 flex items-center justify-center z-10 cursor-pointer rounded-[40px] overflow-hidden"
+            onClick={handlePlay}
+            initial={{ opacity: 1, scale: 1 }}
+            animate={startPlay ? { opacity: 0, scale: 1.2 } : {}}
+            exit={{ opacity: 0, scale: 1.2 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+          >
+            <img
+              src={poster}
+              alt="Thumbnail"
+              className="w-full h-full object-cover rounded-[40px]"
+            />
+            <motion.div
+              className="absolute p-2"
+              initial={{ opacity: 1, scale: 1 }}
+              animate={startPlay ? { opacity: 0, scale: 2 } : {}}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            >
+              <Play />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <video
         ref={videoRef}
         src={src}
@@ -53,7 +68,10 @@ const Video: React.FC<VideoProps> = ({
         muted={muted}
         poster={poster}
         className="w-full rounded-[40px]"
-        onEnded={() => setIsPlaying(false)}
+        onEnded={() => {
+          setIsPlaying(false);
+          setStartPlay(false);
+        }}
       />
     </div>
   );
