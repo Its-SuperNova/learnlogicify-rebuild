@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react";
 import Play from "./play";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 interface VideoProps {
   src: string;
@@ -44,10 +45,13 @@ const Video: React.FC<VideoProps> = ({
             exit={{ opacity: 0, scale: 1.2 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <img
+            <Image
               src={poster}
               alt="Thumbnail"
+              width={1920} // Use higher width for better quality
+              height={1080} // Use higher height for better quality
               className="w-full h-full object-cover rounded-[40px]"
+              quality={100}
             />
             <motion.div
               className="absolute p-2"
