@@ -50,7 +50,7 @@ export default function Index() {
     "At LearnLogicify Technologies, we are committed to accelerating tech careers by providing a comprehensive, cutting-edge learning platform. Whether you're a beginner or an advanced learner, our courses cover essential skills in web development, AI, and other emerging technologies";
 
   return (
-    <div className="flex justify-center px-6 py-[50px] md:py-[50px] md:px-[80px] lg:p-[100px]">
+    <div className="flex justify-center px-6 py-[50px]  md:px-[80px] lg:p-[100px]">
       <div
         ref={descriptionRef}
         className="relative bg-white justify-around gap-5 w-full flex h-full max-w-[1200px]"
@@ -61,7 +61,7 @@ export default function Index() {
             isInView={isInView}
             className="text-[28px] md:text-5xl md:leading-[52px] font-medium leading-[30px] md:font-normal lg:text-6xl lg:leading-[65px] lg:mb-5 text-left z-10"
           />
-          <div className="max-w-[900px] md:font-normal font-light text-gray-600 text-lg md:text-[20px]">
+          <div className="max-w-[900px] font-light text-[rgb(31,41,55)]  text-lg md:text-[20px] leading-[28px]">
             <FadeTransition
               description={description}
               isInView={isInView}
