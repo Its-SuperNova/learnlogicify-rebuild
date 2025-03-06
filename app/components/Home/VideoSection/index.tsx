@@ -34,11 +34,11 @@ const Video: React.FC<VideoProps> = ({
   };
 
   return (
-    <div className="relative w-full rounded-[40px] overflow-hidden">
+    <div className="relative w-full rounded-[20px] md:rounded-[40px] overflow-hidden ">
       <AnimatePresence>
         {!isPlaying && poster && (
           <motion.div
-            className="absolute inset-0 flex items-center justify-center z-10 cursor-pointer rounded-[40px] overflow-hidden"
+            className="absolute inset-0 flex items-center justify-center z-10 cursor-pointer rounded-[20px] md:rounded-[40px] overflow-hidden"
             onClick={handlePlay}
             initial={{ opacity: 1, scale: 1 }}
             animate={startPlay ? { opacity: 0, scale: 1.2 } : {}}
@@ -50,7 +50,7 @@ const Video: React.FC<VideoProps> = ({
               alt="Thumbnail"
               width={1920} // Use higher width for better quality
               height={1080} // Use higher height for better quality
-              className="w-full h-full object-cover rounded-[40px]"
+              className="w-full h-full object-cover"
               quality={100}
             />
             <motion.div
@@ -71,7 +71,7 @@ const Video: React.FC<VideoProps> = ({
         loop={loop}
         muted={muted}
         poster={poster}
-        className="w-full rounded-[40px]"
+        className="w-full rounded-[20px] md:rounded-[40px]"
         onEnded={() => {
           setIsPlaying(false);
           setStartPlay(false);

@@ -9,7 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const VideoSection: React.FC = () => {
   const videoRef = useRef<HTMLDivElement>(null); // Ref for the container
-  const videoElementRef = useRef<HTMLVideoElement>(null); // Ref for the video element
 
   useEffect(() => {
     const screenWidth = window.innerWidth;
@@ -28,16 +27,18 @@ const VideoSection: React.FC = () => {
   }, []);
 
   return (
-    <div className="h-full px-6 md:px-[130px] py- md:py-[80px] flex items-center justify-center flex-col bg-white z-20">
-      <div
-        className="h-full w-full rounded-[40px] object-cover z-20"
-        ref={videoRef}
-      >
-        <Video
-          src="/course-intro.mp4"
-          poster="/images/thumbnail/image.png"
-          controls={true}
-        />
+    <div className="flex justify-center items-center w-full">
+      <div className="h-full max-w-[1500px] px-6 md:px-[80px] lg:px-[100px] py- md:py-[50px] flex items-center justify-center flex-col bg-white ">
+        <div
+          className="h-full w-full rounded-[40px] object-cover "
+          ref={videoRef}
+        >
+          <Video
+            src="/course-intro.mp4"
+            poster="/images/thumbnail/image.png"
+            controls={true}
+          />
+        </div>
       </div>
     </div>
   );
