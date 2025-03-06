@@ -52,7 +52,6 @@ const HomePage: React.FC = () => {
         <Description />
         <VideoSection />
         <GetToKnow />
-        <AboutPortal />
         <Courses />
         <Stats />
         <Testimonials />
