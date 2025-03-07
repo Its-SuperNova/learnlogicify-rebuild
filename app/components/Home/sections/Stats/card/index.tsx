@@ -2,17 +2,14 @@
 
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
-import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import styles from "./styles.module.css";
-
-// Dynamically import Lottie with SSR disabled
+import CountUp from "../countup";
 const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 
 interface StatsCardProps {
   count: number;
   title: string;
-  animationData: any; // Type for Lottie animation data
+  animationData: any;
 }
 
 const StatsCard: React.FC<StatsCardProps> = ({
@@ -22,11 +19,10 @@ const StatsCard: React.FC<StatsCardProps> = ({
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Lottie animation configuration
   const defaultOptions = {
     loop: false,
     autoplay: false,
-    animationData: animationData, // Use the passed animation data
+    animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -39,12 +35,12 @@ const StatsCard: React.FC<StatsCardProps> = ({
 
   return (
     <div
-      className={styles.container}
+      className="w-full h-auto rounded-lg bg-[#f0f6ff] flex flex-row p-4 gap-4 transition-transform duration-300 ease-in-out hover:scale-105"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       ref={ref}
     >
-      <div className={styles.iconBox}>
+      <div className="w-[70px] h-full bg-white rounded-lg shadow-md flex items-center justify-center">
         <Lottie
           options={defaultOptions}
           isStopped={!isHovered}
@@ -53,27 +49,25 @@ const StatsCard: React.FC<StatsCardProps> = ({
           width={50}
         />
       </div>
-      <div className={styles.content}>
+      <div className="flex flex-col justify-around items-start">
         {inView ? (
           <CountUp
-            start={0}
-            end={count}
-            duration={2.5}
+            from={0}
+            to={count}
             separator=","
-            suffix="+"
-            key={inView ? "count-up-visible" : "count-up-hidden"}
-          >
-            {({ countUpRef }) => (
-              <p
-                className={styles.count}
-                ref={countUpRef as React.RefObject<HTMLParagraphElement>}
-              ></p>
-            )}
-          </CountUp>
+            direction="up"
+            duration={1}
+            className="text-3xl mg:text-4xl  font-bold text-[#5096ff] text-left mt-1"
+          />
+          
         ) : (
-          <p className={styles.count}>0</p>
+          <span className="text-4xl font-bold text-[#5096ff] text-left mt-1">
+            0
+          </span>
         )}
-        <p className={styles.title}>{title}</p>
+        <p className="text-[16px] mg:text-lg text-[#001638] font-medium text-left mb-1">
+          {title}
+        </p>
       </div>
     </div>
   );

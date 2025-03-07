@@ -1,7 +1,6 @@
 "use client";
 import { useInView } from "react-intersection-observer";
 import SlideUpWord from "../../../common/Animations/slideUpWord";
-import styles from "./styles.module.css";
 import Card from "./card";
 import Avator from "./lottie/avator.json";
 
@@ -14,27 +13,28 @@ export default function ExplorePopularCourses() {
   const title = ["Our work in Numbers"];
 
   return (
-    <div ref={descriptionRef} className={styles.Stats}>
-      <div className={styles.body}>
+    <div
+      ref={descriptionRef}
+      className="flex justify-center items-center bg-white py-10 px-5 md:px-20 lg:px-40 mb-12"
+    >
+      <div className="max-w-6xl flex flex-col items-start gap-5 w-full">
         <SlideUpWord
           title={title}
           isInView={isInView}
-          className={styles.title}
+          className="text-4xl md:text-[60px] text-left leading-tight"
         />
-        <div className={styles.grid}>
-          <Card count={1000} title="Active Learners" animationData={Avator} />
-          <Card count={500} title="Courses Available" animationData={Avator} />
-          <Card count={150} title="Trainers" animationData={Avator} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 xlx:grid-cols-3 gap-5 mt-5 w-full">
+          <Card count={3000} title="Active Learners" animationData={Avator} />
           <Card
-            count={300}
-            title="Certifications Issued"
+            count={7000}
+            title="Students Trained So Far"
             animationData={Avator}
           />
-          <Card count={200} title="Projects Completed" animationData={Avator} />
-          <Card count={50} title="Partner Companies" animationData={Avator} />
-          <Card count={120} title="Workshops Held" animationData={Avator} />
-          <Card count={80} title="Webinars Hosted" animationData={Avator} />
-          <Card count={80} title="Webinars Hosted" animationData={Avator} />
+          <Card count={50} title="Courses Available" animationData={Avator} />
+          <Card count={5} title="Experience" animationData={Avator} />
+          <Card count={10} title="Trainers" animationData={Avator} />
+          <Card count={15} title="Webinars Hosted" animationData={Avator} />
+          
         </div>
       </div>
     </div>
