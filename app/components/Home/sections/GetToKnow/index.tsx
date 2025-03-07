@@ -34,7 +34,7 @@ export default function GetToKnow() {
   return (
       <div
         ref={descriptionRef}
-        className="px-6 md:px-[80px] lg:px-[200px] py-[40px] mb-[50px] md:mb-[100px] h-full flex justify-center items-center bg-white "
+        className="px-6 md:px-[80px] lg:px-[200px] py-[40px] mb-[30px]  h-full flex justify-center items-center bg-white "
       >
         <div className="max-w-[1200px] flex flex-col items-start gap-2 md:gap-5">
           <SlideUpWord
