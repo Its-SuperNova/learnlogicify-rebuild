@@ -69,11 +69,7 @@ export default function ExplorePopularCourses() {
           isInView={isInView}
           className={styles.title}
         />
-        <FadeTransition
-          description={description}
-          isInView={isInView}
-          className={styles.descriptionText}
-        />
+
         <div className={styles.gridWrapper}>
           {showLeftArrow && (
             <button
