@@ -18,7 +18,7 @@ const Header = () => {
       </nav>
       <div className="h-full flex flex-row justify-end items-center p-0 max-md:pr-[20px]">
         <div className="max-md:hidden z-10">
-          <Link href={"https://learnlogicify.com/login/index.php"}>
+          <Link href={"https://lmansys.learnlogicify.com/login/index.php"}>
             <AnimatedButton />
           </Link>
         </div>
