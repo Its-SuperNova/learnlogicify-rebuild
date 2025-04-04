@@ -140,7 +140,7 @@ const Hero = () => {
               comprehensive workshop!
             </p>
             <div className="flex justify-center mt-5">
-              <Link href={"/webinar/MultiStepForm"}>
+              <Link href={"/webinar/registration"}>
                 <Button>Register for just ₹199</Button>
               </Link>
             </div>
