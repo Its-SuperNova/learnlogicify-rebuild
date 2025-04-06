@@ -27,7 +27,7 @@ const HeroHome = () => {
             your skills.
           </p>
           <div className={styles.btn}>
-            <Link href={"/course"}>
+            <Link href="/course">
               {isClient && (
                 <MagicButton
                   buttonText="View Courses"

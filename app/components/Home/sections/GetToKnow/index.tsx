@@ -141,7 +141,7 @@ export default function GetToKnow() {
               animate={isButtonInView ? "open" : "initial"}
               className="w-full"
             >
-              <Link href="/courses">
+              <Link href="/course">
                 <Rounded className="w-full rounded-sm md:max-w-[300px] h-[50px] z-[9999]">
                   <p>View Courses</p>
                 </Rounded>

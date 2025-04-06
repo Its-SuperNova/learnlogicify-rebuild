@@ -30,16 +30,16 @@ const Header = () => {
           </div>
           <div className="hidden md:block">
             <nav className="flex gap-8 text-sm">
-              <Link href="" className="text-white/70 hover:text-white transition">
+              <Link href="/company/about" className="text-white/70 hover:text-white transition">
                 Company
               </Link>
-              <Link href="" className="text-white/70 hover:text-white transition">
+              <Link href="/course" className="text-white/70 hover:text-white transition">
                 Courses
               </Link>
-              <Link href="" className="text-white/70 hover:text-white transition">
+              <Link href="/portal" className="text-white/70 hover:text-white transition">
                 Portal
               </Link>
-              <Link href="" className="text-white/70 hover:text-white transition">
+              <Link href="/contact" className="text-white/70 hover:text-white transition">
                 Contact
               </Link>
             </nav>

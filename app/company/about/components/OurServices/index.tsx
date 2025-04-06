@@ -112,7 +112,7 @@ const OurServices = () => {
               />
             </div>
             <div className="flex justify-start mt-[20px]">
-              <Link href="/courses">
+              <Link href="/course">
                 <Rounded className="z-[9999] w-[160px] h-[45px]">
                   <p>View Course</p>
                 </Rounded>
@@ -204,7 +204,7 @@ const OurServices = () => {
               />
             </div>
             <div className="flex justify-start mt-[20px]">
-              <Link href="/courses">
+              <Link href="/course">
                 <Rounded className="z-[9999] w-[160px] h-[45px]">
                   <p>View Course</p>
                 </Rounded>

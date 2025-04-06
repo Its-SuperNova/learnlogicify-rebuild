@@ -18,8 +18,7 @@ const MagicButton: React.FC<MagicButtonProps> = ({
 }) => {
   return (
     <div className={styles.container}>
-      <Link
-        href="#"
+      <div
         className={styles.button}
         style={{
           width: width || "auto", // Default to 'auto' if no width is provided
@@ -77,7 +76,7 @@ const MagicButton: React.FC<MagicButtonProps> = ({
         />
 
         <div className={styles.buttonShadow}></div>
-      </Link>
+      </div>
     </div>
   );
 };
