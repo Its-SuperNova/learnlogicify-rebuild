@@ -59,7 +59,7 @@ const RegistrationSuccessPage = () => {
       </Link>
 
       <p className="mt-8 text-sm text-muted-foreground">
-        If the button doesn't work, copy and paste this link into your browser: <br />
+        If the button doesn&apos;t work, copy and paste this link into your browser: <br />
         <a href={WHATSAPP_GROUP_LINK} target="_blank" rel="noopener noreferrer" className="underline break-all">{WHATSAPP_GROUP_LINK}</a>
       </p>
 
