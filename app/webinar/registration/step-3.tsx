@@ -1,39 +1,34 @@
 "use client"
 
 import type { UseFormReturn } from "react-hook-form"
-import { Input } from "@/components/ui/input"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form"
+import { FormValues, expectedPriceOptions } from "./schema"
 
 interface Step3Props {
-  form: UseFormReturn<any>
+  form: UseFormReturn<FormValues>
 }
 
 export default function Step3({ form }: Step3Props) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       <FormField
         control={form.control}
         name="willingToLearnFullStack"
         render={({ field }) => (
-          <FormItem className="space-y-3">
+          <FormItem>
             <FormLabel>Are you willing to learn full-stack development?</FormLabel>
-            <FormControl>
-              <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex space-x-4">
-                <FormItem className="flex items-center space-x-2 space-y-0">
-                  <FormControl>
-                    <RadioGroupItem value="yes" />
-                  </FormControl>
-                  <FormLabel className="font-normal">Yes</FormLabel>
-                </FormItem>
-                <FormItem className="flex items-center space-x-2 space-y-0">
-                  <FormControl>
-                    <RadioGroupItem value="no" />
-                  </FormControl>
-                  <FormLabel className="font-normal">No</FormLabel>
-                </FormItem>
-              </RadioGroup>
-            </FormControl>
+            <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <FormControl>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select an option" />
+                </SelectTrigger>
+              </FormControl>
+              <SelectContent>
+                <SelectItem value="yes">Yes</SelectItem>
+                <SelectItem value="no">No</SelectItem>
+              </SelectContent>
+            </Select>
             <FormMessage />
           </FormItem>
         )}
@@ -43,24 +38,19 @@ export default function Step3({ form }: Step3Props) {
         control={form.control}
         name="interestedIn30DayWorkshop"
         render={({ field }) => (
-          <FormItem className="space-y-3">
-            <FormLabel>If we organize a 30-day full-stack workshop, would you be interested?</FormLabel>
-            <FormControl>
-              <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex space-x-4">
-                <FormItem className="flex items-center space-x-2 space-y-0">
-                  <FormControl>
-                    <RadioGroupItem value="yes" />
-                  </FormControl>
-                  <FormLabel className="font-normal">Yes</FormLabel>
-                </FormItem>
-                <FormItem className="flex items-center space-x-2 space-y-0">
-                  <FormControl>
-                    <RadioGroupItem value="no" />
-                  </FormControl>
-                  <FormLabel className="font-normal">No</FormLabel>
-                </FormItem>
-              </RadioGroup>
-            </FormControl>
+          <FormItem>
+            <FormLabel>Are you interested in the 30-day workshop?</FormLabel>
+            <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <FormControl>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select an option" />
+                </SelectTrigger>
+              </FormControl>
+              <SelectContent>
+                <SelectItem value="yes">Yes</SelectItem>
+                <SelectItem value="no">No</SelectItem>
+              </SelectContent>
+            </Select>
             <FormMessage />
           </FormItem>
         )}
@@ -71,30 +61,24 @@ export default function Step3({ form }: Step3Props) {
         name="expectedPriceRange"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>What price range would you expect for the 30-day workshop? (₹)</FormLabel>
-            <FormControl>
-              <Input
-                type="number"
-                min={1999}
-                step={500}
-                placeholder="Enter expected price (min ₹1999)"
-                {...field}
-                onChange={(e) => {
-                  // Ensure the value is at least 1999 and increments by 500
-                  let value = Number.parseInt(e.target.value)
-                  if (isNaN(value) || value < 1999) {
-                    value = 1999
-                  } else {
-                    // Round to nearest 500
-                    const remainder = value % 500
-                    if (remainder !== 0) {
-                      value = remainder < 250 ? value - remainder : value + (500 - remainder)
-                    }
-                  }
-                  field.onChange(value)
-                }}
-              />
-            </FormControl>
+            <FormLabel>What price range do you expect for this program?</FormLabel>
+            <Select
+              onValueChange={(value) => field.onChange(Number(value))}
+              defaultValue={field.value?.toString()}
+            >
+              <FormControl>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select a price range" />
+                </SelectTrigger>
+              </FormControl>
+              <SelectContent>
+                {expectedPriceOptions.map((price) => (
+                  <SelectItem key={price} value={price.toString()}>
+                    ₹{price}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
             <FormMessage />
           </FormItem>
         )}
@@ -102,4 +86,3 @@ export default function Step3({ form }: Step3Props) {
     </div>
   )
 }
-

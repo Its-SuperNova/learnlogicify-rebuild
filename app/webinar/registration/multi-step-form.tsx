@@ -1,13 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
+import { useForm, FormProvider, SubmitHandler } from "react-hook-form"
 import { motion, AnimatePresence } from "framer-motion"
-import type { z } from "zod"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
-import { formSchema } from "./schema"
+import { formSchema, FormValues } from "./schema"
+import { z } from "zod"
 import Step1 from "./step-1"
 import Step2 from "./step-2"
 import Step3 from "./step-3"
@@ -18,14 +18,15 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import { saveRegistration } from "@/lib/supabase"
 import { initializeRazorpayPayment } from "@/lib/razorpay"
 import Swal from "sweetalert2"
-import { Form } from "@/components/ui/form"
+import { useRouter } from "next/navigation"
 
-type FormValues = z.infer<typeof formSchema>
+const PAYMENT_FLAG_KEY = "paymentInitiatedEmail"
 
 export default function MultiStepForm() {
   const [formData, setFormData] = useState<Partial<FormValues>>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [currentStep, setCurrentStep] = useState(0)
+  const router = useRouter()
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -43,16 +44,30 @@ export default function MultiStepForm() {
       linkedinProfile: "",
       willingToLearnFullStack: "yes",
       interestedIn30DayWorkshop: "yes",
-      expectedPriceRange: 1999, // Updated default value to 1999
+      expectedPriceRange: 2499 as 2499, // Important: use literal
       learningExpectations: "",
       needGitSetupHelp: "yes",
       interestedTopics: [],
       gitKnowledgeLevel: "beginner",
       needInvoice: "no",
-      agreeToTerms: false,
+      agreeToTerms: true,
     },
     mode: "onChange",
   })
+
+  useEffect(() => {
+    const initiatedEmail = localStorage.getItem(PAYMENT_FLAG_KEY)
+    if (initiatedEmail) {
+      Swal.fire({
+        title: "Payment Incomplete?",
+        text: "It looks like you may have started the payment process but didn't complete it. Your registration details were saved.",
+        icon: "warning",
+        confirmButtonText: "OK",
+      }).finally(() => setIsSubmitting(false))
+
+      localStorage.removeItem(PAYMENT_FLAG_KEY)
+    }
+  }, [])
 
   const steps = [
     { id: "step-1", name: "Personal Details", component: <Step1 form={form} /> },
@@ -75,7 +90,6 @@ export default function MultiStepForm() {
       return
     }
 
-    // Save current step data
     setFormData({ ...formData, ...form.getValues() })
     next()
     setCurrentStep((prev) => prev + 1)
@@ -99,16 +113,19 @@ export default function MultiStepForm() {
   }
 
   const redirectToPayment = (formData: FormValues) => {
+    localStorage.setItem(PAYMENT_FLAG_KEY, formData.email)
+
     const options = {
-      key: "rzp_live_72F0ktzbrHtyfp", // Razorpay Key ID
-      amount: formData.expectedPriceRange * 100, // Amount in paisa
+      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "rzp_test_your_key_here",
+      amount: Math.round(199 * 1.18 * 100),
       currency: "INR",
-      name: "Workshop Registration",
-      description: "30-Day Full-Stack Workshop Registration",
+      name: "Git & GitHub Workshop Registration",
+      description: "Ultimate Webinar on Mastering Git & GitHub",
       handler: (response: any) => {
-        // Handle successful payment
-        console.log("Payment successful", response)
-        // You can add additional logic here to update payment status in Supabase
+        localStorage.removeItem(PAYMENT_FLAG_KEY)
+        sessionStorage.setItem("paymentVerified", "true")
+        setIsSubmitting(false)
+        router.push("/webinar/registration/success")
       },
       prefill: {
         name: formData.fullName,
@@ -119,89 +136,41 @@ export default function MultiStepForm() {
         address: formData.address,
       },
       theme: {
-        color: "#3399cc",
+        color: "#6A0DAD",
+      },
+      modal: {
+        ondismiss: () => {
+          localStorage.removeItem(PAYMENT_FLAG_KEY)
+          setIsSubmitting(false)
+          Swal.fire({
+            title: "Payment Cancelled",
+            text: "You closed the payment window. Your registration details were saved, but payment was not completed.",
+            icon: "warning",
+            confirmButtonText: "OK",
+          })
+        },
       },
     }
 
     initializeRazorpayPayment(options)
   }
 
-  const onSubmit = async (data: FormValues) => {
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    setIsSubmitting(true)
     try {
-      setIsSubmitting(true)
-
-      // Save data to Supabase
-      await saveRegistration({
-        fullName: data.fullName,
-        email: data.email,
-        phoneNumber: data.phoneNumber,
-        referralSource: data.referralSource,
-        yearOfStudy: data.yearOfStudy,
-        graduationYear: data.graduationYear,
-        collegeName: data.collegeName,
-        department: data.department,
-        address: data.address,
-        status: data.status,
-        linkedinProfile: data.linkedinProfile,
-        willingToLearnFullStack: data.willingToLearnFullStack,
-        interestedIn30DayWorkshop: data.interestedIn30DayWorkshop,
-        expectedPriceRange: data.expectedPriceRange,
-        learningExpectations: data.learningExpectations,
-        needGitSetupHelp: data.needGitSetupHelp,
-        interestedTopics: data.interestedTopics,
-        gitKnowledgeLevel: data.gitKnowledgeLevel,
-        needInvoice: data.needInvoice,
-      })
-
-      // Show success message with SweetAlert2
-      Swal.fire({
-        title: "Success!",
-        text: "Your registration has been successfully submitted.",
-        icon: "success",
-        timer: 3000,
-        timerProgressBar: true,
-        showConfirmButton: false,
-        didOpen: () => {
-          Swal.showLoading()
-          const timer = Swal.getPopup()?.querySelector("b")
-          if (timer) {
-            const timerInterval = setInterval(() => {
-              if (timer) {
-                timer.textContent = `${Swal.getTimerLeft()}`
-              }
-            }, 100)
-            Swal.getPopup()?.addEventListener("mouseenter", () => {
-              clearInterval(timerInterval)
-            })
-          }
-        },
-        willClose: () => {
-          // Show redirection message
-          Swal.fire({
-            title: "Redirecting...",
-            text: "Redirecting to payment gateway...",
-            icon: "info",
-            showConfirmButton: false,
-            allowOutsideClick: false,
-            didOpen: () => {
-              Swal.showLoading()
-              // Redirect to Razorpay after a short delay
-              setTimeout(() => {
-                redirectToPayment(data)
-              }, 1500)
-            },
-          })
-        },
-      })
+      await saveRegistration(data)
+      redirectToPayment(data)
     } catch (error) {
-      console.error("Error submitting form:", error)
+      let errorMessage = "There was an error submitting your registration. Please try again."
+      if (error instanceof Error) {
+        errorMessage += ` Details: ${error.message}`
+      }
       Swal.fire({
-        title: "Error!",
-        text: "There was an error submitting your registration. Please try again.",
+        title: "Registration Error!",
+        text: errorMessage,
         icon: "error",
         confirmButtonText: "OK",
       })
-    } finally {
       setIsSubmitting(false)
     }
   }
@@ -213,61 +182,60 @@ export default function MultiStepForm() {
           <h2 className="text-2xl font-bold">Workshop Registration</h2>
           <p className="text-muted-foreground">Complete all steps to register for the workshop</p>
         </div>
-
-        {/* Theme toggle button */}
         <ThemeToggle />
       </div>
 
-      {/* Progress bar */}
       <div className="px-6 pt-4">
         <Progress value={progress} className="h-2" />
         <div className="flex justify-between mt-2 text-sm text-muted-foreground">
           {steps.map((step, index) => (
-            <span key={step.id} className={`${index <= currentStep ? "text-primary font-medium" : ""}`}>
+            <span
+              key={step.id}
+              className={index <= currentStep ? "text-primary font-medium" : ""}
+            >
               {index + 1}
             </span>
           ))}
         </div>
       </div>
 
-      {/* Form */}
-      <Form {...form}>
-        <div className="p-6">
-          <div className="mb-4">
-            <h3 className="text-lg font-medium">{step.name}</h3>
+      <FormProvider {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="contents">
+          <div className="p-6">
+            <div className="mb-4">
+              <h3 className="text-lg font-medium">{step.name}</h3>
+            </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={step.id}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.3 }}
+              >
+                {step.component}
+              </motion.div>
+            </AnimatePresence>
           </div>
 
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={step.id}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.3 }}
+          <div className="p-6 border-t flex justify-between">
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => {
+                back()
+                setCurrentStep((prev) => Math.max(0, prev - 1))
+              }}
+              disabled={isFirstStep || isSubmitting}
             >
-              {step.component}
-            </motion.div>
-          </AnimatePresence>
-        </div>
-
-        <div className="p-6 border-t flex justify-between">
-          <Button
-            type="button"
-            variant="outline"
-            onClick={() => {
-              back()
-              setCurrentStep((prev) => Math.max(0, prev - 1))
-            }}
-            disabled={isFirstStep}
-          >
-            Back
-          </Button>
-          <Button type="button" onClick={handleNext} disabled={isSubmitting}>
-            {isLastStep ? (isSubmitting ? "Submitting..." : "Submit") : "Next"}
-          </Button>
-        </div>
-      </Form>
+              Back
+            </Button>
+            <Button type="button" onClick={handleNext} disabled={isSubmitting}>
+              {isLastStep ? (isSubmitting ? "Processing..." : "Submit & Pay ₹235") : "Next"}
+            </Button>
+          </div>
+        </form>
+      </FormProvider>
     </div>
   )
 }
-
