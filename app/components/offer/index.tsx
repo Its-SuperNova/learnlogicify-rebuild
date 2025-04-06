@@ -43,7 +43,7 @@ const Offer: React.FC<OfferProps> = ({ setOfferVisible, className }) => {
   }, [setOfferVisible]);
 
   const calculateTimeLeft = (): void => {
-    const webinarDate = new Date("2025-01-23T20:00:00").getTime();
+    const webinarDate = new Date("2025-04-23T20:00:00").getTime();
     const now = new Date().getTime();
     const difference = webinarDate - now;
 
