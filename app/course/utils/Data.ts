@@ -2,7 +2,6 @@ import { IoLogoPython } from "react-icons/io";
 export const CourseData = [
   //Problem solving
 
-  //C-Programming
   {
     courseTitle: "C Programming for Beginners",
     instructor: "Sachin",
