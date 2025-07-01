@@ -40,10 +40,10 @@ const testimonials: Testimonial[] = [
     rating: 5,
   },
   {
-    image: "/images/students/s1.jpg", // Corrected path
+    image: "/images/team/arun.png", // Corrected path
     feedback:
       "As a trainer at LearnLogicify, we ensure every student gets personalized attention. We strive to make even the toughest concepts easy to understand and ensure students excel in their careers.",
-    name: "Anjali Patel",
+    name: "Arun Kumar",
     role: "Trainer",
     rating: 5,
   },
@@ -56,18 +56,18 @@ const testimonials: Testimonial[] = [
     rating: 5,
   },
   {
-    image: "/images/students/s1.jpg", // Corrected path
+    image: "/images/team/ashwin x.png", // Corrected path
     feedback:
       "As the Designer and Developer behind LearnLogicify Technologies, I’ve focused on creating a seamless and user-friendly experience for students. Your journey through our courses should feel smooth and engaging.",
-    name: "Sneha Gupta",
+    name: "Ashhhh",
     role: "Designer and Developer",
     rating: 5,
   },
   {
-    image: "/images/students/s1.jpg", // Corrected path
+    image: "/images/team/sachin.png", // Corrected path
     feedback:
       "As the Founder & CEO of LearnLogicify, I’m committed to empowering students with the skills and knowledge they need to succeed in the tech industry. We’ve built a platform that supports your learning every step of the way.",
-    name: "Amit Kumar",
+    name: "Sachin Nandha Sabarish J",
     role: "Founder & CEO",
     rating: 5,
   },
